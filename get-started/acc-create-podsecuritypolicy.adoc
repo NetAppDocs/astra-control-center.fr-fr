@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: get-started/acc-create-podsecuritypolicy.html 
+keywords: Create podsecurity policy, pod, security, policy, Astra Control, kubernetes 
+summary: Vous devez créer une stratégie de sécurité de pod moins restrictive pour permettre à Astra Control de créer et de mettre à jour des pods sur des clusters gérés. 
+---
+= Créez une stratégie de sécurité de pod personnalisée
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control doit créer et gérer des pods Kubernetes sur les clusters qu'il gère. Si votre cluster utilise une politique de sécurité de pod restrictive qui ne permet pas la création de pod privilégié ou l'exécution des processus dans les conteneurs de pod en tant qu'utilisateur racine, vous devez créer une stratégie de sécurité de pod moins restrictive pour permettre à Astra Control de créer et de gérer ces pods.
+
+.Étapes
+. Créez une politique de sécurité du pod pour le cluster qui est moins restrictive par défaut et enregistrez-la dans un fichier. Par exemple :
++
+[source, yaml]
+----
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: astracontrol
+  annotations:
+    seccomp.security.alpha.kubernetes.io/allowedProfileNames: '*'
+spec:
+  privileged: true
+  allowPrivilegeEscalation: true
+  allowedCapabilities:
+  - '*'
+  volumes:
+  - '*'
+  hostNetwork: true
+  hostPorts:
+  - min: 0
+    max: 65535
+  hostIPC: true
+  hostPID: true
+  runAsUser:
+    rule: 'RunAsAny'
+  seLinux:
+    rule: 'RunAsAny'
+  supplementalGroups:
+    rule: 'RunAsAny'
+  fsGroup:
+    rule: 'RunAsAny'
+----
+. Créez un nouveau rôle pour la stratégie de sécurité du pod.
++
+[source, sh]
+----
+kubectl-admin create role psp:astracontrol \
+    --verb=use \
+    --resource=podsecuritypolicy \
+    --resource-name=astracontrol
+----
+. Lier le nouveau rôle au compte de service.
++
+[source, sh]
+----
+kubectl-admin create rolebinding default:psp:astracontrol \
+    --role=psp:astracontrol \
+    --serviceaccount=astracontrol-service-account:default
+----
+

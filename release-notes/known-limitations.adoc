@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-limitations.html 
+keywords: astra, control center, limitations, known limitations, interoperability 
+summary: Les limitations connues identifient les plateformes, les périphériques ou les fonctions qui ne sont pas pris en charge par cette version du produit, ou qui ne fonctionnent pas correctement avec elle. Examinez attentivement ces limites. 
+---
+= Limites connues
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+Les limitations connues identifient les plateformes, les périphériques ou les fonctions qui ne sont pas pris en charge par cette version du produit, ou qui ne fonctionnent pas correctement avec elle. Examinez attentivement ces limites.
+
+.Limites de gestion du cluster
+*  same cluster cannot be managed by two Astra Control Center instances
+*  Control Center cannot manage two identically named clusters
+
+
+.Limites du contrôle d'accès basé sur des rôles (RBAC)
+*  user with namespace RBAC constraints can add and unmanage a cluster
+*  member with namespace constraints cannot access the cloned or restored apps until admin adds the namespace to the constraint
+
+
+.Limites de gestion des applications
+*  of apps installed using pass-by-reference operators can fail
+*  restore operations of apps that use a certificate manager are not supported
+*  and cluster-scoped operator deployed apps not supported
+*  deployed with Helm 2 are not supported
+
+
+.Limitations générales
+*  buckets in Astra Control Center do not report available capacity
+*  Control Center does not validate the details you enter for your proxy server
+*  connections to a Postgres pod causes failures
+*  and snapshots might not be retained during removal of an Astra Control Center instance
+
+
+
+
+== Le même cluster ne peut pas être géré par deux instances Astra Control Center
+
+Si vous souhaitez gérer un cluster sur une autre instance Astra Control Center, vous devez d'abord link:../use/unmanage.html#stop-managing-compute["annuler la gestion du cluster"] à partir de l'instance sur laquelle elle est gérée avant de la gérer sur une autre instance. Une fois le cluster supprimé de la gestion, vérifiez que le cluster n'est pas géré en exécutant la commande suivante :
+
+[listing]
+----
+oc get pods n -netapp-monitoring
+----
+Il ne doit y avoir aucun pod en cours d'exécution dans cet espace de nom, sinon l'espace de noms ne doit pas exister. Si l'un de ces deux éléments est vrai, le cluster n'est pas géré.
+
+
+
+== Astra Control Center ne peut pas gérer deux clusters nommés de manière identique
+
+Si vous tentez d'ajouter un cluster portant le même nom qu'un cluster existant, l'opération échoue. Ce problème se produit le plus souvent dans un environnement Kubernetes standard si vous n'avez pas modifié le nom de cluster par défaut dans les fichiers de configuration Kubernetes.
+
+Pour résoudre ce problème, procédez comme suit :
+
+. Modifiez votre carte de configuration kubeadm-config :
++
+[listing]
+----
+kubectl edit configmaps -n kube-system kubeadm-config
+----
+. Modifiez le `clusterName` valeur de champ de `kubernetes` (Nom par défaut de Kubernetes) vers un nom personnalisé unique.
+. Modifiez kubecconfig (`.kube/config`).
+. Mettre à jour le nom de cluster depuis `kubernetes` à un nom personnalisé unique (`xyz-cluster` est utilisé dans les exemples ci-dessous). Effectuez la mise à jour dans les deux `clusters` et `contexts` sections comme indiqué dans cet exemple :
++
+[listing, subs="+quotes"]
+----
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: ExAmPLERb2tCcjZ5K3E2Njk4eQotLExAMpLEORCBDRVJUSUZJQ0FURS0txxxxXX==
+    server: https://x.x.x.x:6443
+  *name: xyz-cluster*
+contexts:
+- context:
+    *cluster: xyz-cluster*
+    namespace: default
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+----
+
+
+
+
+== Un utilisateur doté de contraintes RBAC d'espace de noms peut ajouter et annuler la gestion d'un cluster
+
+Un utilisateur doté de contraintes RBAC d'espace de noms ne doit pas être autorisé à ajouter ou annuler la gestion des clusters. En raison d'une limitation actuelle, Astra n'empêche pas ces utilisateurs de dégérer les clusters.
+
+
+
+== Un membre avec des contraintes d'espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n'ajoute pas l'espace de noms à la contrainte
+
+Toutes `member` Les utilisateurs ayant des contraintes RBAC en fonction du nom/ID de l'espace de noms peuvent cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de leur entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après la création d'un espace de noms par une opération de clonage ou de restauration, le compte admin/propriétaire peut modifier le `member` contraintes de compte d'utilisateur et de rôle de mise à jour pour l'utilisateur affecté pour accorder l'accès au nouvel espace de noms.
+
+
+
+== Les clones des applications installées à l'aide d'opérateurs pass-by-Reference peuvent échouer
+
+Astra Control prend en charge les applications installées avec des opérateurs à espace de noms. Ces opérateurs sont généralement conçus avec une architecture « pass-by-value » plutôt qu'une architecture « pass-by-Reference ». Voici quelques applications opérateur qui suivent ces modèles :
+
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
++
+
+NOTE: Pour K8ssandra, les opérations de restauration sur place sont prises en charge. Pour effectuer une opération de restauration vers un nouvel espace de noms ou un cluster, l'instance d'origine de l'application doit être arrêté. Cela permet de s'assurer que les informations du groupe de pairs transmises ne conduisent pas à une communication entre les instances. Le clonage de l'application n'est pas pris en charge.
+
+* https://github.com/jenkinsci/kubernetes-operator["IC Jenkins"^]
+* https://github.com/percona/percona-xtradb-cluster-operator["Cluster Percona XtraDB"^]
+
+
+Astra Control peut ne pas être en mesure de cloner un opérateur conçu avec une architecture « pass-by-Reference » (par exemple, l'opérateur CockroachDB). Lors de ces types d'opérations de clonage, l'opérateur cloné tente de référencer les secrets de Kubernetes de l'opérateur source malgré avoir son propre nouveau secret dans le cadre du processus de clonage. Il est possible que le clonage échoue, car Astra Control ne connaît pas les secrets de Kubernetes qui sont présents dans l'opérateur source.
+
+
+
+== Les opérations de restauration sur place des applications qui utilisent un gestionnaire de certificats ne sont pas prises en charge
+
+Cette version d'Astra Control Center ne prend pas en charge la restauration sur place des applications avec des gestionnaires de certificats. Les opérations de restauration vers un espace de noms et des clones différents sont prises en charge.
+
+
+
+== Applications activées par OLM et déployées par l'opérateur à étendue de cluster non prises en charge
+
+Astra Control Center ne prend pas en charge les activités de gestion d'applications avec des opérateurs à périmètre de cluster.
+
+
+
+== Les applications déployées avec Helm 2 ne sont pas prises en charge
+
+Si vous utilisez Helm pour déployer des applications, Astra Control Center requiert Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Pour plus d'informations, voir link:../get-started/requirements.html["Exigences du centre de contrôle Astra"].
+
+
+
+== Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible
+
+Avant de sauvegarder ou de cloner des applications gérées par Astra Control Center, vérifiez les informations de compartiment dans le système de gestion ONTAP ou StorageGRID.
+
+
+
+== Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy
+
+Assurez-vous que vous link:../use/monitor-protect.html#add-a-proxy-server["entrez les valeurs correctes"] lors de l'établissement d'une connexion.
+
+
+
+== Les connexions existantes à un pod Postgres provoquent des défaillances
+
+Lorsque vous exécutez des opérations sur les modules Postgres, vous ne devez pas vous connecter directement dans le pod pour utiliser la commande psql. Astra Control nécessite un accès psql pour geler et dégeler les bases de données. S'il existe une connexion existante, le snapshot, la sauvegarde ou le clone échoueront.
+
+
+
+== Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center
+
+Si vous disposez d'une licence d'évaluation, veillez à stocker votre identifiant de compte afin d'éviter toute perte de données en cas d'échec du Centre de contrôle Astra si vous n'envoyez pas d'ASUP.
+
+
+
+== Trouvez plus d'informations
+
+* link:../release-notes/known-issues.html["Problèmes connus"]
+* link:../release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
+

@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: use/manage-connections.html 
+keywords: manage package, packages, install 
+summary: Vous pouvez télécharger et installer des paquets sur Astra Control Center. 
+---
+= Gérer les connexions au référentiel
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+Vous pouvez connecter des référentiels à Astra Control afin de les utiliser comme référence pour les images d'installation de progiciels et les artefacts. Lorsque vous importez des logiciels, Astra Control fait référence aux images d'installation dans le référentiel d'images, les binaires et autres artefacts dans le référentiel d'artefacts.
+
+.Ce dont vous avez besoin, 8217;ll
+* Cluster Kubernetes avec Astra Control Center installé
+* Un référentiel Docker en cours d'exécution auquel vous pouvez accéder
+* Un référentiel d'artéfacts en cours d'exécution (comme Artifactory) auquel vous pouvez accéder
+
+
+
+
+== Connectez un référentiel d'images Docker
+
+Vous pouvez connecter un référentiel d'images Docker pour contenir des images d'installation de package, telles que celles d'Astra Data Store. Lorsque vous installez des packages, Astra Control importe les fichiers d'image du package à partir du référentiel d'images.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *connexions*.
+. Dans la section *Docker image Repository*, sélectionnez le menu en haut à droite.
+. Sélectionnez *connexion*.
+. Ajoutez l'URL et le port du référentiel.
+. Saisissez les informations d'identification du référentiel.
+. Sélectionnez *connexion*.
+
+
+Le référentiel est connecté. Dans la section *Docker image Repository*, le référentiel doit afficher l'état connecté.
+
+
+
+== Déconnectez un référentiel d'images Docker
+
+Vous pouvez supprimer la connexion à un référentiel d'images Docker s'il n'est plus nécessaire.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *connexions*.
+. Dans la section *Docker image Repository*, sélectionnez le menu en haut à droite.
+. Sélectionnez *déconnecter*.
+. Sélectionnez *Oui, déconnectez le référentiel d'images Docker*.
+
+
+Le référentiel est déconnecté. Dans la section *Docker image Repository*, le référentiel doit afficher un état déconnecté.
+
+
+
+== Connectez un référentiel d'artefacts
+
+Vous pouvez connecter un référentiel d'artéfacts à des artefacts hôtes tels que les binaires du progiciel. Lorsque vous installez des packages, Astra Control importe les artefacts des packages logiciels à partir du référentiel d'images.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *connexions*.
+. Dans la section *dépôt d'artéfacts*, sélectionnez le menu en haut à droite.
+. Sélectionnez *connexion*.
+. Ajoutez l'URL et le port du référentiel.
+. Si une authentification est requise, activez la case à cocher *use Authentication* et entrez les informations d'identification du référentiel.
+. Sélectionnez *connexion*.
+
+
+Le référentiel est connecté. Dans la section *artefact Repository*, le référentiel doit afficher un état connecté.
+
+
+
+== Déconnectez un référentiel d'artefacts
+
+Vous pouvez supprimer la connexion à un référentiel d'artefacts s'il n'est plus nécessaire.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *connexions*.
+. Dans la section *dépôt d'artéfacts*, sélectionnez le menu en haut à droite.
+. Sélectionnez *déconnecter*.
+. Sélectionnez *Oui, déconnectez le référentiel d'artefacts*.
+
+
+Le référentiel est déconnecté. Dans la section *artefact Repository*, le référentiel doit afficher un état connecté.
+
+[discrete]
+== Trouvez plus d'informations
+
+* link:manage-packages-acc.html["Gérer les packs logiciels"]
+

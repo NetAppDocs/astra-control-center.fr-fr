@@ -1,0 +1,18 @@
+---
+section: concepts
+title: Concepts
+entries:
+- title: Découvrez Astra Control
+  url: "/concepts/intro.html"
+- title: Architecture et composants
+  url: "/concepts/architecture.html"
+- title: Protection des données
+  url: "/concepts/data-protection.html"
+- title: Licences
+  url: "/concepts/licensing.html"
+- title: Comprendre la gestion des applications
+  url: "/learn/app-management.html"
+- title: Classes de stockage et taille PV
+  url: "/concepts/choose-class-and-size.html"
+- title: Rôles et espaces de noms d'utilisateur
+  url: "/concepts/user-roles-namespaces.html"

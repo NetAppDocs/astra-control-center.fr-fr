@@ -1,0 +1,139 @@
+---
+sidebar: sidebar 
+permalink: use/manage-buckets.html 
+keywords: how to set up object storage in astra, how to set up astra buckets, s3, astra, setting up astra control, astra control center, kubernetes 
+summary: 'Il est essentiel d"ajouter des fournisseurs de compartiments de stockage objet pour sauvegarder les applications et le stockage persistant ou pour cloner les applications entre les clusters.' 
+---
+= Gestion des compartiments
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+Un fournisseur de compartiments de stockage est essentiel pour la sauvegarde de vos applications et du stockage persistant, ou pour le clonage d'applications entre les clusters. Avec Astra Control Center, ajoutez un fournisseur de magasin d'objets comme destination de sauvegarde externe pour vos applications.
+
+Il n'est pas nécessaire de cloner la configuration de vos applications et le stockage persistant vers le même cluster.
+
+Utilisez l'un des fournisseurs de compartiments Amazon simple Storage Service (S3) suivants :
+
+* NetApp ONTAP S3
+* NetApp StorageGRID S3
+* Microsoft Azure
+* S3 générique
++
+
+NOTE: Amazon Web Services (AWS) et Google Cloud Platform (GCP) utilisent le type de compartiment S3 générique.
+
++
+
+NOTE: Bien qu'Astra Control Center prenne en charge Amazon S3 en tant que fournisseur de compartiments S3 génériques, Astra Control Center peut ne pas prendre en charge tous les fournisseurs de magasins d'objets qui affirment la prise en charge d'Amazon S3.
+
+
+
+Un godet peut être dans l'un des États suivants :
+
+* En attente : le compartiment est planifié pour la découverte.
+* Disponible : le godet est disponible.
+* Retiré : le godet n'est pas accessible actuellement.
+
+
+Pour plus d'informations sur la gestion des compartiments à l'aide de l'API de contrôle Astra, reportez-vous au link:https://docs.netapp.com/us-en/astra-automation/["Informations sur l'automatisation et les API d'Astra"^].
+
+Vous pouvez effectuer les tâches suivantes liées à la gestion des compartiments :
+
+* link:../get-started/setup_overview.html#add-a-bucket["Ajouter un godet"]
+*  a bucket
+*  or remove bucket credentials
+*  a bucket
+
+
+
+NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible. Avant de sauvegarder ou de cloner des applications gérées par Astra Control Center, vérifiez les informations de compartiment dans le système de gestion ONTAP ou StorageGRID.
+
+
+
+== Modifier un godet
+
+Vous pouvez modifier les informations d'identification d'accès pour un compartiment et modifier si un compartiment sélectionné est le compartiment par défaut.
+
+
+NOTE: Lorsque vous ajoutez un compartiment, sélectionnez le fournisseur approprié et fournissez les identifiants appropriés pour ce fournisseur. Par exemple, l'interface utilisateur accepte NetApp ONTAP S3 comme type et accepte les identifiants StorageGRID. Toutefois, toutes les futures sauvegardes et restaurations des applications à l'aide de ce compartiment échoueront. Voir la link:../release-notes/known-issues.html#selecting-a-bucket-provider-type-with-credentials-for-another-type-causes-data-protection-failures["Notes de version"].
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *seaux*.
+. Dans le menu Options de la colonne *actions*, sélectionnez *Modifier*.
+. Modifier toute information autre que le type de godet.
++
+
+TIP: Vous ne pouvez pas modifier le type de compartiment.
+
+. Sélectionnez *mettre à jour*.
+
+
+
+
+== Faire pivoter ou supprimer les identifiants de compartiment
+
+Astra Control utilise des identifiants de compartiment pour accéder à ce compartiment et fournit des clés secrètes pour le compartiment S3 afin qu'Astra Control Center puisse communiquer avec le compartiment.
+
+
+
+=== Faire pivoter les identifiants du godet
+
+Si vous faites pivoter les informations d'identification, faites-les pivoter pendant une fenêtre de maintenance lorsqu'aucune sauvegarde n'est en cours (planifiée ou à la demande).
+
+.Procédure de modification et de rotation des informations d'identification
+. Dans le menu de navigation de gauche, sélectionnez *seaux*.
+. Dans le menu Options de la colonne *actions*, sélectionnez *Modifier*.
+. Créer les nouvelles informations d'identification.
+. Sélectionnez *mettre à jour*.
+
+
+
+
+=== Supprimer les identifiants du compartiment
+
+Le retrait des identifiants de compartiment est uniquement possible si de nouvelles informations d'identification ont été appliquées à un compartiment ou si ce dernier n'est plus utilisé activement.
+
+
+TIP: Le premier ensemble d'informations d'identification que vous ajoutez à Astra Control est toujours utilisé car Astra Control utilise les informations d'identification pour authentifier le compartiment de secours. Ne pas supprimer ces identifiants si le compartiment est en cours d'utilisation, car cela entraînera des défaillances de sauvegarde et des problèmes d'indisponibilité des sauvegardes.
+
+
+NOTE: Si vous supprimez les identifiants de compartiment actifs, reportez-vous à la section https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Deleting_active_S3_bucket_credentials_leads_to_spurious_500_errors_reported_in_the_UI["dépannage de la dépose des informations d'identification du godet"].
+
+Pour obtenir des instructions sur la suppression des informations d'identification S3 à l'aide de l'API de contrôle Astra, reportez-vous au link:https://docs.netapp.com/us-en/astra-automation/["Informations sur l'automatisation et les API d'Astra"^].
+
+
+
+== Déposer un godet
+
+Il est possible de retirer un godet qui n'est plus utilisé ou qui n'est pas en bon état. Pour simplifier et à jour la configuration du magasin d'objets,
+
+
+NOTE: Vous ne pouvez pas supprimer un compartiment par défaut. Si vous souhaitez retirer ce compartiment, sélectionnez tout d'abord un autre compartiment comme valeur par défaut.
+
+.Ce dont vous avez besoin, 8217;ll
+* Avant de commencer, assurez-vous qu'aucune sauvegarde n'est en cours d'exécution ou terminée pour ce compartiment.
+* Vérifiez que le godet n'est pas utilisé dans le cadre d'une politique de protection active.
+
+
+Si c'est le cas, vous ne pourrez pas continuer.
+
+.Étapes
+. Dans la navigation à gauche, sélectionnez *seaux*.
+. Dans le menu *actions*, sélectionnez *Supprimer*.
++
+
+NOTE: Astra Control veille à l'absence de règles de planification qui utilise le compartiment pour les sauvegardes et à l'absence de sauvegardes actives dans le compartiment.
+
+. Tapez « Supprimer » pour confirmer l'action.
+. Sélectionnez *Oui, retirez le godet*.
+
+
+
+
+== Trouvez plus d'informations
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
+

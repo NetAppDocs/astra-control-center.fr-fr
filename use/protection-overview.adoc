@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: use/protection-overview.html 
+keywords: backup, back up, backup apps, back up apps, snapshots, snapshot an app, take a snapshot, take a backup, view backups, view snapshots, set policy, set schedule, schedule backups, schedule snapshots 
+summary: Découvrez les types de protection des données disponibles dans Astra Control Center, et comment il est préférable de les utiliser pour protéger vos applications. 
+---
+= Présentation de la protection
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+Vous pouvez créer des sauvegardes, des clones, des copies Snapshot et des règles de protection pour vos applications à l'aide d'Astra Control Center. La sauvegarde de vos applications aide vos services et vos données associées à être aussi disponibles que possible. En cas d'incident, la restauration à partir d'une sauvegarde permet une restauration complète d'une application et de ses données, avec une interruption minimale. Les sauvegardes, les clones et les snapshots contribuent à vous protéger contre les menaces classiques, comme les ransomwares, la perte accidentelle de données et les incidents environnementaux. link:../concepts/data-protection.html["Découvrez les types de protection des données disponibles dans Astra Control Center et le moment de les utiliser"].
+
+En outre, vous pouvez répliquer des applications sur un cluster distant en préparation de la reprise après incident.
+
+
+
+== Workflow de protection des applications
+
+Vous pouvez utiliser l'exemple de flux de travail suivant pour commencer à protéger vos applications.
+
+
+
+=== Protégez toutes vos applications
+
+[role="quick-margin-para"]
+Pour être sûr que vos applications sont immédiatement protégées, link:protect-apps.html#create-a-backup["créez une sauvegarde manuelle de toutes les applications"].
+
+
+
+=== Configurez une stratégie de protection pour chaque application
+
+[role="quick-margin-para"]
+Pour automatiser les sauvegardes et snapshots futurs, link:protect-apps.html#configure-a-protection-policy["configurez une stratégie de protection pour chaque application"]. Par exemple, vous pouvez commencer avec des sauvegardes hebdomadaires et des snapshots quotidiens, et en conserver un mois pour les deux. Il est fortement recommandé d'automatiser les sauvegardes et les snapshots avec une règle de protection par rapport aux sauvegardes et snapshots manuels.
+
+
+
+=== Ajuster les règles de protection
+
+[role="quick-margin-para"]
+À mesure que les applications et leurs modèles d'utilisation évoluent, ajustez les règles de protection selon les besoins pour bénéficier d'une protection optimale.
+
+
+
+=== Répliquer les applications sur un cluster distant
+
+[role="quick-margin-para"]
+link:replicate_snapmirror.html["Réplication d'applications"] Sur un cluster distant avec la technologie NetApp SnapMirror. Astra Control réplique les copies Snapshot sur un cluster distant, offrant une fonctionnalité de reprise après incident asynchrone.
+
+
+
+=== En cas d'incident, restaurez vos applications avec la dernière sauvegarde ou réplication sur un système distant
+
+[role="quick-margin-para"]
+En cas de perte de données, vous pouvez effectuer une restauration par link:restore-apps.html["restauration de la dernière sauvegarde"] d'abord pour chaque application. Vous pouvez alors restaurer le dernier snapshot (si disponible). Vous pouvez également utiliser la réplication sur un système distant.

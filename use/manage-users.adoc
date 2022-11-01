@@ -1,0 +1,161 @@
+---
+sidebar: sidebar 
+permalink: use/manage-users.html 
+keywords: add users, edit users, remove users, delete users 
+summary: Ajoutez des utilisateurs à votre système Astra Control Center et supprimez les utilisateurs qui ne devraient plus avoir accès au système. 
+---
+= Gérer les utilisateurs
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+Vous pouvez inviter, ajouter, supprimer et modifier les utilisateurs de votre installation Astra Control Center à l'aide de l'interface utilisateur Astra Control. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour gérer les utilisateurs.
+
+Vous pouvez également utiliser LDAP pour effectuer l'authentification pour certains utilisateurs.
+
+
+
+== Utiliser LDAP
+
+LDAP est un protocole standard de l'industrie pour l'accès aux informations d'annuaires distribués et un choix populaire pour l'authentification d'entreprise. Vous pouvez connecter Astra Control Center à un serveur LDAP pour effectuer l'authentification de certains utilisateurs Astra. À un niveau élevé, la configuration implique l'intégration d'Astra avec LDAP et la définition des utilisateurs et des groupes Astra correspondant aux définitions LDAP. Voir https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["Authentification LDAP"^] pour en savoir plus.
+
+
+
+== Inviter des utilisateurs
+
+Les propriétaires et administrateurs de comptes peuvent inviter de nouveaux utilisateurs à Astra Control Center.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *utilisateurs*.
+. Sélectionnez *inviter utilisateur*.
+. Entrez le nom et l'adresse e-mail de l'utilisateur.
+. Sélectionnez un rôle d'utilisateur avec les autorisations système appropriées.
++
+Chaque rôle offre les autorisations suivantes :
+
++
+** Un *Viewer* peut afficher les ressources.
+** Un *membre* dispose des autorisations de rôle Viewer et peut gérer les applications et les clusters, annuler la gestion des applications et supprimer des instantanés et des sauvegardes.
+** Un *Admin* dispose des autorisations de rôle de membre et peut ajouter et supprimer d'autres utilisateurs, à l'exception du propriétaire.
+** Un *propriétaire* possède des autorisations de rôle d'administrateur et peut ajouter et supprimer des comptes d'utilisateur.
+
+
+. Pour ajouter des contraintes à un utilisateur avec un rôle membre ou visualiseur, activez la case à cocher *restreindre le rôle aux contraintes*.
++
+Pour plus d'informations sur l'ajout de contraintes, voir link:manage-roles.html["Gérez les rôles"].
+
+. Sélectionnez *inviter des utilisateurs*.
++
+L'utilisateur reçoit un e-mail l'informant qu'il a été invité à Astra Control Center. L'e-mail inclut un mot de passe temporaire qu'il devra modifier lors de la première connexion.
+
+
+
+
+
+== Ajouter des utilisateurs
+
+Les propriétaires et administrateurs de comptes peuvent ajouter d'autres utilisateurs à l'installation d'Astra Control Center.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *utilisateurs*.
+. Sélectionnez *Ajouter utilisateur*.
+. Entrez le nom de l'utilisateur, son adresse e-mail et son mot de passe temporaire.
++
+L'utilisateur doit modifier le mot de passe lors de sa première connexion.
+
+. Sélectionnez un rôle d'utilisateur avec les autorisations système appropriées.
++
+Chaque rôle offre les autorisations suivantes :
+
++
+** Un *Viewer* peut afficher les ressources.
+** Un *membre* dispose des autorisations de rôle Viewer et peut gérer les applications et les clusters, annuler la gestion des applications et supprimer des instantanés et des sauvegardes.
+** Un *Admin* dispose des autorisations de rôle de membre et peut ajouter et supprimer d'autres utilisateurs, à l'exception du propriétaire.
+** Un *propriétaire* possède des autorisations de rôle d'administrateur et peut ajouter et supprimer des comptes d'utilisateur.
+
+
+. Pour ajouter des contraintes à un utilisateur avec un rôle membre ou visualiseur, activez la case à cocher *restreindre le rôle aux contraintes*.
++
+Pour plus d'informations sur l'ajout de contraintes, voir link:manage-roles.html["Gérez les rôles"].
+
+. Sélectionnez *Ajouter*.
+
+
+
+
+== Gérer les mots de passe
+
+Vous pouvez gérer les mots de passe des comptes utilisateur dans Astra Control Center.
+
+
+
+=== Changer votre mot de passe
+
+Vous pouvez modifier le mot de passe de votre compte utilisateur à tout moment.
+
+.Étapes
+. Sélectionnez l'icône utilisateur en haut à droite de l'écran.
+. Sélectionnez *Profile*.
+. Dans le menu Options de la colonne *actions*, sélectionnez *changer mot de passe*.
+. Saisissez un mot de passe conforme aux exigences de mot de passe.
+. Saisissez à nouveau le mot de passe pour le confirmer.
+. Sélectionnez *changer mot de passe*.
+
+
+
+
+=== Réinitialiser le mot de passe d'un autre utilisateur
+
+Si votre compte dispose des autorisations de rôle Administrateur ou propriétaire, vous pouvez réinitialiser les mots de passe des autres comptes utilisateur ainsi que les vôtres. Lorsque vous réinitialisez un mot de passe, vous attribuez un mot de passe temporaire que l'utilisateur devra modifier lors de la connexion.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez la liste déroulante *actions*.
+. Sélectionnez *Réinitialiser le mot de passe*.
+. Saisissez un mot de passe temporaire conforme aux exigences de mot de passe.
+. Saisissez à nouveau le mot de passe pour le confirmer.
++
+
+NOTE: Lors de la prochaine connexion de l'utilisateur, l'utilisateur est invité à modifier le mot de passe.
+
+. Sélectionnez *Réinitialiser le mot de passe*.
+
+
+
+
+== Modifier le rôle d'un utilisateur
+
+Les utilisateurs ayant le rôle propriétaire peuvent modifier le rôle de tous les utilisateurs, tandis que les utilisateurs disposant du rôle Administrateur peuvent modifier le rôle des utilisateurs qui ont le rôle Administrateur, membre ou Visionneuse.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez la liste déroulante *actions*.
+. Sélectionnez *Modifier le rôle*.
+. Sélectionnez un nouveau rôle.
+. Pour appliquer des contraintes au rôle, activez la case à cocher *restreindre le rôle aux contraintes* et sélectionnez une contrainte dans la liste.
++
+S'il n'y a pas de contraintes, vous pouvez ajouter une contrainte. Pour plus d'informations, voir link:manage-roles.html["Gérez les rôles"].
+
+. Sélectionnez *confirmer*.
+
+
+Astra Control Center met à jour les autorisations de l'utilisateur en fonction du nouveau rôle que vous avez sélectionné.
+
+
+
+== Supprimer des utilisateurs
+
+Les utilisateurs disposant du rôle propriétaire ou administrateur peuvent à tout moment supprimer d'autres utilisateurs du compte.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Dans l'onglet *Users*, cochez la case de la ligne de chaque utilisateur que vous souhaitez supprimer.
+. Dans le menu Options de la colonne *actions*, sélectionnez *Supprimer utilisateur/s*.
+. Lorsque vous y êtes invité, confirmez la suppression en saisissant le mot "supprimer", puis sélectionnez *Oui, Supprimer l'utilisateur*.
+
+
+Astra Control Center supprime l'utilisateur du compte.

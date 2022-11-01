@@ -1,0 +1,121 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new.html 
+keywords: 'what"s new, bugs, bug fixes, new features, enhancements' 
+summary: NetApp met régulièrement à jour Astra Control Center afin de vous apporter de nouvelles fonctionnalités, des améliorations et des correctifs. 
+---
+= Nouveautés de cette version d'Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
+
+
+
+== 8 septembre 2022 (22.08.1)
+
+Cette version (22.08.1) pour Astra Control Center (22.08.0) corrige les bugs mineurs dans la réplication d'applications à l'aide de NetApp SnapMirror.
+
+
+
+== 10 août 2022 (22.08.0)
+
+.Nouvelles fonctionnalités et prises en charge
+* link:../use/replicate_snapmirror.html["Réplication d'applications à l'aide de la technologie NetApp SnapMirror"]
+* link:../use/manage-apps.html#manage-apps["Workflow de gestion des applications amélioré"]
+* link:../use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution"]
++
+
+NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp ont été retirés pour des applications spécifiques dans cette version. Si vous effectuez une mise à niveau vers cette version et que vous ne fournissez pas vos propres crochets d'exécution pour les instantanés, Astra Control ne prendra que des instantanés cohérents avec les collisions. Consultez le https://github.com/NetApp/Verda["NetApp Verda"] Référentiel GitHub pour des exemples de scripts de hook d'exécution que vous pouvez modifier en fonction de votre environnement.
+
+* link:../get-started/requirements.html["Prise en charge de VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)"]
+* link:../get-started/requirements.html#operational-environment-requirements["Prise en charge de Google Anthos"]
+* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["Configuration LDAP (via l'API de contrôle Astra)"^]
+
+
+.Problèmes et limites connus
+* link:../release-notes/known-issues.html["Problèmes connus pour cette version"]
+* link:../release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
+* link:../release-notes/known-limitations.html["Restrictions connues pour cette version"]
+
+
+
+
+== 26 avril 2022 (22.04.0)
+
+.Détails
+====
+.Nouvelles fonctionnalités et prises en charge
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/setup_overview.html#add-a-storage-backend["Déploiement d'un magasin de données Astra Control Center"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["Prise en charge de Cloud Volumes ONTAP"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Activation d'entrée générique pour le centre de contrôle Astra"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/use/manage-buckets.html#remove-a-bucket["Dépose du godet de l'Astra Control"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["Prise en charge de la gamme VMware Tanzu"]
+
+
+.Problèmes et limites connus
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["Problèmes connus pour cette version"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["Restrictions connues pour cette version"]
+
+
+====
+
+
+== 14 décembre 2021 (21.12)
+
+.Détails
+====
+.Nouvelles fonctionnalités et prises en charge
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["Restauration des applications"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["Crochets d'exécution"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html#supported-app-installation-methods["Prise en charge des applications déployées avec des opérateurs du système namespace"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html["Prise en charge supplémentaire de Kubernetes et Rancher en amont"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/setup_overview.html#add-a-storage-backend["Découvrez la gestion et la surveillance du système back-end avec Astra Data Store"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/upgrade-acc.html["Mises à niveau d'Astra Control Center"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/acc_operatorhub_install.html["Option Red Hat OperatorHub pour l'installation"^]
+
+
+.Résolution des problèmes
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/resolved-issues.html["Problèmes résolus pour cette version"^]
+
+
+.Problèmes et limites connus
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues-ads.html["Problèmes connus avec la présentation d'Astra Data Store et ce centre de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
+
+
+====
+
+
+== 5 août 2021 (21.08)
+
+.Détails
+====
+Lancement initial du centre de contrôle Astra.
+
+* https://docs.netapp.com/us-en/astra-control-center-2108/concepts/intro.html["Ce qu'il est"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/concepts/architecture.html["Analysez l'architecture et les composants"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/get-started/requirements.html["Commencez dès maintenant"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/get-started/install_acc.html["Installer"^] et https://docs.netapp.com/us-en/astra-control-center-2108/get-started/setup_overview.html["configuration"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-apps.html["Gérez"^] et https://docs.netapp.com/us-en/astra-control-center-2108/use/protect-apps.html["protéger"^] en applications
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-buckets.html["Gestion des compartiments"^] et https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-backend.html["systèmes back-end"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-users.html["Gestion des comptes"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/rest-api/api-intro.html["Automatisez votre système avec des API"^]
+
+
+====
+
+
+== Trouvez plus d'informations
+
+* link:../release-notes/known-issues.html["Problèmes connus pour cette version"]
+* link:../release-notes/known-limitations.html["Restrictions connues pour cette version"]
+* https://docs.netapp.com/us-en/astra-data-store/index.html["Documentation Astra Data Store"]
+* link:../acc-earlier-versions.html["Versions antérieures de la documentation Astra Control Center"]
+

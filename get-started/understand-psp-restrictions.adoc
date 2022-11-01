@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: get-started/understand-psp-restrictions.html 
+keywords: login, Astra Control Center, web ui, tls, certificate 
+summary: 'Vous devez comprendre comment fonctionnent les politiques de sécurité de pod avant d"installer Astra Control Center.' 
+---
+= Comprendre les restrictions de la stratégie de sécurité du pod
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control Center prend en charge la limitation des privilèges via les politiques de sécurité du pod (PSP). Les stratégies de sécurité des pods vous permettent de limiter les utilisateurs ou les groupes capables d'exécuter des conteneurs et les privilèges dont ils disposent.
+
+Certaines distributions Kubernetes, telles que RKE2, ont une stratégie de sécurité de pod par défaut trop restrictive et provoquent des problèmes lors de l'installation d'Astra Control Center.
+
+Vous pouvez utiliser les informations et exemples inclus ici pour comprendre les politiques de sécurité du pod que le Control Center d'Astra et configurer les règles de sécurité du pod qui fournissent la protection dont vous avez besoin sans interférer avec les fonctions du Control Center d'Astra.
+
+
+
+== PSP installé par Astra Control Center
+
+Astra Control Center crée plusieurs politiques de sécurité de pod pendant l'installation. Certaines sont permanentes, certaines d'entre elles sont créées pendant certaines opérations et sont supprimées une fois l'opération terminée.
+
+
+
+=== PSP créé lors de l'installation
+
+Lors de l'installation d'Astra Control Center, l'opérateur d'Astra Control Center installe une stratégie de sécurité de pod personnalisée, un objet de rôle et un objet RoleBinding pour prendre en charge le déploiement des services Astra Control Center dans l'espace de noms Astra Control Center.
+
+La nouvelle règle et les objets ont les attributs suivants :
+
+[listing]
+----
+kubectl get psp
+
+NAME                           PRIV    CAPS          SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+avp-psp                        false                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+netapp-astra-deployment-psp    false                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+kubectl get role
+
+NAME                                     CREATED AT
+netapp-astra-deployment-role             2022-06-27T19:34:58Z
+
+kubectl get rolebinding
+
+NAME                                     ROLE                                          AGE
+netapp-astra-deployment-rb               Role/netapp-astra-deployment-role             32m
+----
+
+
+=== PSP créé pendant les opérations de sauvegarde
+
+Pendant les opérations de sauvegarde, Astra Control Center crée une règle de sécurité dynamique de pod, un objet ClusterRole et un objet RoleBinding. Ils prennent en charge le processus de sauvegarde, qui se produit dans un espace de noms distinct.
+
+La nouvelle règle et les objets ont les attributs suivants :
+
+[listing]
+----
+kubectl get psp
+
+NAME                           PRIV    CAPS                            SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-astra-backup            false   DAC_READ_SEARCH                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+kubectl get role
+
+NAME                  CREATED AT
+netapp-astra-backup   2022-07-21T00:00:00Z
+
+kubectl get rolebinding
+
+NAME                  ROLE                       AGE
+netapp-astra-backup   Role/netapp-astra-backup   62s
+----
+
+
+=== PSP créé lors de la gestion du cluster
+
+Lorsque vous gérez un cluster, Astra Control Center installe l'opérateur de surveillance netapp dans le cluster géré. Cet opérateur crée une politique de sécurité pod, un objet ClusterRole et un objet RoleBinding pour déployer des services de télémétrie dans l'espace de noms Astra Control Center.
+
+La nouvelle règle et les objets ont les attributs suivants :
+
+[listing]
+----
+kubectl get psp
+
+NAME                           PRIV    CAPS                            SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-monitoring-psp-nkmo     true    AUDIT_WRITE,NET_ADMIN,NET_RAW   RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+kubectl get role
+
+NAME                                           CREATED AT
+netapp-monitoring-role-privileged              2022-07-21T00:00:00Z
+
+kubectl get rolebinding
+
+NAME                                                  ROLE                                                AGE
+netapp-monitoring-role-binding-privileged             Role/netapp-monitoring-role-privileged              2m5s
+----
+
+
+== Activer la communication réseau entre les espaces de noms
+
+Certains environnements utilisent les constructions NetworkPolicy pour limiter le trafic entre les espaces de noms. L'opérateur d'Astra Control Center, Astra Control Center et le plug-in Astra pour VMware vSphere sont tous dans des espaces de noms différents. Les services de ces différents espaces de noms doivent être capables de communiquer les uns avec les autres. Pour activer cette communication, procédez comme suit.
+
+.Étapes
+. Supprimez toutes les ressources NetworkPolicy qui existent dans l'espace de noms Astra Control Center :
++
+[source, sh]
+----
+kubectl get networkpolicy -n netapp-acc
+----
+. Pour chaque objet NetworkPolicy renvoyé par la commande précédente, utilisez la commande suivante pour le supprimer. Remplacez <NOM_OBJET> par le nom de l'objet renvoyé :
++
+[source, sh]
+----
+kubectl delete networkpolicy <OBJECT_NAME> -n netapp-acc
+----
+. Appliquez le fichier de ressources suivant pour configurer l'objet de stratégie réseau-acc-avp pour permettre à Astra Plugin pour les services VMware vSphere de faire des demandes aux services Astra Control Center. Remplacez entre parenthèses <> par les informations relatives à votre environnement :
++
+[source, yaml]
+----
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: acc-avp-network-policy
+  namespace: <ACC_NAMESPACE_NAME> # REPLACE THIS WITH THE ASTRA CONTROL CENTER NAMESPACE NAME
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: <PLUGIN_NAMESPACE_NAME> # REPLACE THIS WITH THE ASTRA PLUGIN FOR VMWARE VSPHERE NAMESPACE NAME
+----
+. Appliquez le fichier de ressources suivant pour configurer l'objet de stratégie réseau ACC-opérateur pour permettre à l'opérateur Astra Control Center de communiquer avec les services Astra Control Center. Remplacez entre parenthèses <> par les informations relatives à votre environnement :
++
+[source, yaml]
+----
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: acc-operator-network-policy
+  namespace: <ACC_NAMESPACE_NAME> # REPLACE THIS WITH THE ASTRA CONTROL CENTER NAMESPACE NAME
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: <NETAPP-ACC-OPERATOR> # REPLACE THIS WITH THE OPERATOR NAMESPACE NAME
+----
+
+
+
+
+== Supprimer les limitations de ressources
+
+Certains environnements utilisent les objets ResourceQuotas et LimitRanges pour empêcher les ressources d'un namespace de consommer l'ensemble des CPU et de la mémoire disponibles sur le cluster. Le centre de contrôle Astra ne fixe pas de limites maximales, il ne sera donc pas conforme à ces ressources. Vous devez les supprimer des espaces de noms où vous prévoyez d'installer Astra Control Center.
+
+Vous pouvez suivre les étapes suivantes pour récupérer et supprimer ces quotas et ces limites. Dans ces exemples, la sortie de la commande est affichée immédiatement après la commande.
+
+.Étapes
+. Obtenez les quotas de ressources dans l'espace de noms netapp-acc :
++
+[source, sh]
+----
+kubectl get quota -n netapp-acc
+----
++
+Réponse :
+
++
+[listing]
+----
+NAME          AGE   REQUEST                                        LIMIT
+pods-high     16s   requests.cpu: 0/20, requests.memory: 0/100Gi   limits.cpu: 0/200, limits.memory: 0/1000Gi
+pods-low      15s   requests.cpu: 0/1, requests.memory: 0/1Gi      limits.cpu: 0/2, limits.memory: 0/2Gi
+pods-medium   16s   requests.cpu: 0/10, requests.memory: 0/20Gi    limits.cpu: 0/20, limits.memory: 0/200Gi
+----
+. Supprimez tous les quotas de ressources par nom :
++
+[source, sh]
+----
+kubectl delete resourcequota  pods-high -n netapp-acc
+----
++
+[source, sh]
+----
+kubectl delete resourcequota  pods-low -n netapp-acc
+----
++
+[source, sh]
+----
+kubectl delete resourcequota  pods-medium -n netapp-acc
+----
+. Consultez les plages de limite dans l'espace de noms netapp-acc :
++
+[source, sh]
+----
+kubectl get limits -n netapp-acc
+----
++
+Réponse :
+
++
+[listing]
+----
+NAME              CREATED AT
+cpu-limit-range   2022-06-27T19:01:23Z
+----
+. Supprimez les plages de limite par nom :
++
+[source, sh]
+----
+kubectl delete limitrange cpu-limit-range -n netapp-acc
+----
+

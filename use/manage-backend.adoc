@@ -1,0 +1,269 @@
+---
+sidebar: sidebar 
+permalink: use/manage-backend.html 
+keywords: how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, backend storage in astra 
+summary: Ajoutez du stockage pour vos applications Kubernetes sur site. Astra Control détecte et utilise les ressources déjà déployées, notamment Trident, ONTAP et les classes de stockage associées. 
+---
+= Gérer le stockage back-end
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+La gestion des clusters de stockage d'Astra Control en tant que backend de stockage vous permet d'obtenir des liens entre les volumes persistants (PVS) et le back-end de stockage, ainsi que des metrics de stockage supplémentaires. Il est possible de surveiller la capacité du stockage et les informations concernant son état, y compris les performances si le centre de contrôle Astra est connecté à Cloud Insights.
+
+Pour obtenir des instructions sur la gestion des systèmes back-end avec l'API Astra Control, consultez le link:https://docs.netapp.com/us-en/astra-automation/["Informations sur l'automatisation et les API d'Astra"^].
+
+Vous pouvez effectuer les tâches suivantes liées à la gestion d'un système back-end :
+
+* link:../get-started/setup_overview.html#add-a-storage-backend["Ajout d'un système back-end"]
+*  storage backend details
+*  a storage backend
+*  an Astra Data Store storage backend license
+*  an Astra Data Store storage backend
+*  a storage backend
+*  nodes to a storage backend cluster
+*  nodes from a storage backend cluster
+
+
+
+
+== Afficher les détails du système back-end
+
+Vous pouvez afficher les informations de stockage back-end à partir du tableau de bord ou de l'option Backends.
+
+Sur la page Détails du système back-end de stockage, pour le magasin de données Astra, vous trouverez les informations suivantes :
+
+* Cluster de magasin de données Astra
++
+** Débit, IOPS et latence
+** Capacité utilisée par rapport à la capacité totale
+
+
+* Pour chaque volume de cluster de magasin de données Astra
++
+** Capacité utilisée par rapport à la capacité totale
+** Débit
+
+
+
+
+
+
+=== Affichez les détails du système de stockage back-end à partir du tableau de bord
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Tableau de bord*.
+. Vérifiez la section Storage backend qui affiche l'état :
++
+** *Malsain*: Le stockage n'est pas dans un état optimal. Cela peut être dû à un problème de latence ou à une application dégradée en raison d'un problème de conteneur, par exemple.
+** *Tout en bonne santé*: Le stockage a été géré et est dans un état optimal.
+** *Découvert*: Le stockage a été découvert, mais pas géré par Astra Control.
+
+
+
+
+
+
+=== Afficher les détails du système de stockage back-end à partir de l'option Backends
+
+Affichez des informations sur l'état du système back-end, la capacité et les performances (débit et/ou latence des IOPS).
+
+Vous pouvez voir les volumes utilisés par les applications Kubernetes, qui sont stockés sur un back-end de stockage sélectionné. Avec Cloud Insights, des informations supplémentaires s'affichent. Voir https://docs.netapp.com/us-en/cloudinsights/["Documentation Cloud Insights"].
+
+.Étapes
+. Dans la zone de navigation de gauche, sélectionnez *Backends*.
+. Sélectionnez le système back-end.
++
+
+TIP: Si vous êtes connecté à NetApp Cloud Insights, des extraits de données de Cloud Insights s'affichent sur la page Backends.
+
++
+image:../use/acc_backends_ci_connection2.png["Capture d'écran de la page Backends"]
+
+. Pour accéder directement à Cloud Insights, sélectionnez l'icône *Cloud Insights* située en regard de l'image de metrics.
+
+
+
+
+== Annuler la gestion d'un système back-end
+
+Vous pouvez annuler la gestion du système back-end.
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Backends*.
+. Sélectionnez le système back-end.
+. Dans le menu Options de la colonne *actions*, sélectionnez *Unmanage*.
+. Saisissez « Unmanage » pour confirmer l'action.
+. Sélectionnez *Oui, annulez la gestion du stockage back-end*.
+
+
+
+
+== Retirer un système back-end
+
+Vous pouvez supprimer un système back-end de stockage qui n'est plus utilisé. Pour que votre configuration reste simple et à jour, nous vous le souhaitons.
+
+
+TIP: Si vous supprimez un système back-end de magasin de données Astra, il ne doit pas avoir été créé par vCenter.
+
+.Ce dont vous avez besoin, 8217;ll
+* Assurez-vous que le système de stockage back-end n'est pas géré.
+* Assurez-vous que le système back-end ne contient aucun volume associé au cluster de magasin de données Astra.
+
+
+.Étapes
+. Dans le menu de navigation gauche, sélectionnez *Backends*.
+. Si le système back-end est géré, le annuler sa gestion.
++
+.. Sélectionnez *géré*.
+.. Sélectionnez le système back-end.
+.. Dans l'option *actions*, sélectionnez *Unmanage*.
+.. Saisissez « Unmanage » pour confirmer l'action.
+.. Sélectionnez *Oui, annulez la gestion du stockage back-end*.
+
+
+. Sélectionnez *découvert*.
++
+.. Sélectionnez le système back-end.
+.. Dans l'option *actions*, sélectionnez *Supprimer*.
+.. Tapez « Supprimer » pour confirmer l'action.
+.. Sélectionnez *Oui, retirez le back-end de stockage*.
+
+
+
+
+
+
+== Mettre à jour une licence backend de stockage de magasin de données Astra
+
+Vous pouvez mettre à jour la licence d'un système back-end de stockage en magasin de données Astra afin de prendre en charge un déploiement plus important ou des fonctionnalités améliorées.
+
+.Ce dont vous avez besoin, 8217;ll
+* Un système back-end de stockage de magasin de données Astra déployé et géré
+* Fichier de licence Astra Data Store (contactez votre ingénieur commercial NetApp pour acheter une licence Astra Data Store)
+
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Backends*.
+. Sélectionner le nom d'un système back-end de stockage.
+. Sous *informations de base*, vous pouvez voir le type de licence installé.
++
+Si vous passez le curseur sur les informations de licence, une fenêtre contextuelle contenant plus d'informations, telles que l'expiration et les droits d'utilisation s'affiche.
+
+. Sous *Licence*, sélectionnez l'icône de modification en regard du nom de la licence.
+. Dans la page *mettre à jour la licence*, effectuez l'une des opérations suivantes :
++
+|===
+| État de la licence | Action 
+
+
+| Au moins une licence a été ajoutée à Astra Data Store.  a| 
+Sélectionnez une licence dans la liste.
+
+
+
+| Aucune licence n'a été ajoutée à Astra Data Store.  a| 
+.. Sélectionnez le bouton *Ajouter*.
+.. Sélectionnez un fichier de licence à télécharger.
+.. Sélectionnez *Ajouter* pour télécharger le fichier de licence.
+
+
+|===
+. Sélectionnez *mettre à jour*.
+
+
+
+
+== Mettez à niveau le système back-end de stockage de magasin de données Astra
+
+Vous pouvez mettre à niveau votre magasin de données Astra depuis le centre de contrôle Astra. Pour ce faire, vous devez d'abord télécharger un forfait de mise à niveau. Astra Control Center utilisera ce kit de mise à niveau pour mettre à niveau Astra Data Store.
+
+.Ce dont vous avez besoin, 8217;ll
+* Système back-end géré de stockage de magasin de données Astra
+* Un kit de mise à niveau Astra Data Store chargé (voir link:manage-packages-acc.html["Gérer les packs logiciels"])
+
+
+.Étapes
+. Sélectionnez *Backends*.
+. Choisissez un back-end de stockage de données Astra dans la liste et sélectionnez le menu correspondant dans la colonne *actions*.
+. Sélectionnez *Upgrade*.
+. Sélectionnez une version de mise à niveau dans la liste.
++
+Si vous disposez de plusieurs packages de mise à niveau dans votre référentiel qui sont des versions différentes, vous pouvez ouvrir la liste déroulante pour sélectionner la version dont vous avez besoin.
+
+. Sélectionnez *Suivant*.
+. Sélectionnez *Démarrer la mise à niveau*.
+
+
+La page *Backends* affiche l'état *Upgrade* dans la colonne *Status* jusqu'à la fin de la mise à niveau.
+
+
+
+== Ajout de nœuds à un cluster back-end de stockage
+
+Vous pouvez ajouter des nœuds à un cluster Astra Data Store, jusqu'au nombre de nœuds pris en charge par le type de licence installé pour Astra Data Store.
+
+.Ce dont vous avez besoin, 8217;ll
+* Système back-end de stockage de magasin de données Astra déployé et sous licence
+* Vous avez ajouté le logiciel Astra Data Store dans Astra Control Center
+* Un ou plusieurs nœuds à ajouter au cluster
+
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Backends*.
+. Sélectionner le nom d'un système back-end de stockage.
+. Sous informations de base, vous pouvez voir le nombre de nœuds dans ce cluster back-end de stockage.
+. Sous *noeuds*, sélectionnez l'icône de modification en regard du nombre de noeuds.
+. Dans la page *Ajouter des nœuds*, entrez les informations sur le ou les nouveaux nœuds :
++
+.. Attribuez un libellé de nœud à chaque nœud.
+.. Effectuez l'une des opérations suivantes :
++
+*** Si vous souhaitez qu'Astra Data Store utilise toujours le nombre maximal de nœuds disponibles en fonction de votre licence, activez la case à cocher *toujours utiliser jusqu'au nombre maximum de nœuds autorisés*.
+*** Si vous ne souhaitez pas qu'Astra Data Store utilise toujours le nombre maximal de nœuds disponibles, sélectionnez le nombre total de nœuds à utiliser.
+
+
+.. Si vous avez déployé Astra Data Store avec les domaines de protection activés, affectez le ou les nouveaux nœuds aux domaines de protection.
+
+
+. Sélectionnez *Suivant*.
+. Entrez l'adresse IP et les informations réseau pour chaque nouveau nœud. Entrez une adresse IP unique pour un nouveau nœud ou un pool d'adresses IP pour plusieurs nouveaux nœuds.
++
+Si le magasin de données Astra peut utiliser les adresses IP configurées pendant le déploiement, il n'est pas nécessaire de saisir des informations d'adresse IP.
+
+. Sélectionnez *Suivant*.
+. Vérifiez la configuration du ou des nouveaux nœuds.
+. Sélectionnez *Ajouter nœuds*.
+
+
+
+
+== Retirer des nœuds d'un cluster back-end de stockage
+
+Vous pouvez supprimer des nœuds d'un cluster de magasin de données Astra. Ces nœuds peuvent être défectueux ou en état de fonctionnement.
+
+Le retrait d'un nœud d'un cluster de magasin de données Astra déplace ses données vers d'autres nœuds du cluster et supprime le nœud du magasin de données Astra.
+
+Le processus nécessite les conditions suivantes :
+
+* L'espace disponible sur les autres nœuds doit être suffisant pour recevoir les données.
+* Le cluster doit comporter au moins 4 nœuds.
+
+
+.Étapes
+. Dans le menu de navigation de gauche, sélectionnez *Backends*.
+. Sélectionner le nom d'un système back-end de stockage.
+. Sélectionnez l'onglet *noeuds*.
+. Dans le menu actions, sélectionnez *Supprimer*.
+. Confirmez la suppression en entrant « supprimer ».
+. Sélectionnez *Oui, supprimer le noeud*.
+
+
+
+
+== Trouvez plus d'informations
+
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
+

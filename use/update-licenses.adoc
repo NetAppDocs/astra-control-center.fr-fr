@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/update-licenses.html 
+keywords: manage, licenses, licensing, Astra Control Center, add license, update license 
+summary: 'Vous pouvez convertir une licence d"évaluation en licence complète, ou mettre à jour une évaluation existante ou une licence complète avec une nouvelle licence.' 
+---
+= Mettre à jour une licence existante
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Vous pouvez convertir une licence d'évaluation en licence complète, ou mettre à jour une évaluation existante ou une licence complète avec une nouvelle licence. Si vous ne disposez pas d'une licence complète, contactez votre contact commercial NetApp pour obtenir une licence complète et un numéro de série. Vous pouvez utiliser l'interface utilisateur Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour mettre à jour une licence existante.
+
+.Étapes
+. Connectez-vous au https://mysupport.netapp.com/site/["Site de support NetApp"^].
+. Accédez à la page de téléchargement d'Astra Control Center, entrez le numéro de série et téléchargez le fichier de licence NetApp complet (NLF).
+. Connectez-vous à l'interface utilisateur du centre de contrôle Astra.
+. Dans le menu de navigation de gauche, sélectionnez *compte* > *Licence*.
+. Dans la page *compte* > *Licence*, sélectionnez le menu déroulant d'état de la licence existante et sélectionnez *remplacer*.
+. Accédez au fichier de licence que vous avez téléchargé.
+. Sélectionnez *Ajouter*.
+
+
+La page *compte* > *licences* affiche les informations de licence, la date d'expiration, le numéro de série de licence, l'ID de compte et les unités UC utilisées.
+
+
+
+== Pour en savoir plus
+
+* link:../concepts/licensing.html["Licence Astra Control Center"]
+

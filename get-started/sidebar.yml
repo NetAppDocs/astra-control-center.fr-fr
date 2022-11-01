@@ -1,0 +1,36 @@
+---
+section: get-started
+title: Commencez
+entries:
+- title: Exigences du centre de contrôle Astra
+  url: "/get-started/requirements.html"
+- title: Démarrage rapide pour Astra Control Center
+  url: "/get-started/quick-start.html"
+- title: Présentation de l'installation
+  url: "/get-started/install_overview.html"
+  entries:
+  - title: Poser le centre de contrôle Astra
+    url: "/get-started/install_acc.html"
+    entries:
+    - title: Découvrez les options CR du cluster Astra Control Center
+      url: "/get-started/acc_cluster_cr_options.html"
+    - title: Comprendre les restrictions de la stratégie de sécurité du pod
+      url: "/get-started/understand-psp-restrictions.html"
+    - title: Configurez un cert-Manager externe
+      url: "/get-started/cert-manager-prereqs.html"
+  - title: Installez Astra Control Center à l'aide d'OpenShift OperatorHub
+    url: "/get-started/acc_operatorhub_install.html"
+  - title: Installer le centre de contrôle Astra avec un système de stockage back-end
+      Cloud Volumes ONTAP
+    url: "/get-started/install_acc-cvo.html"
+- title: Configurer le centre de contrôle Astra
+  url: "/get-started/setup_overview.html"
+  entries:
+  - title: Conditions préalables à l'ajout d'un cluster
+    url: "/get-started/add-cluster-reqs.html"
+  - title: Ajouter un certificat TLS personnalisé
+    url: "/get-started/add-custom-tls-certificate.html"
+  - title: Créez une stratégie de sécurité de pod personnalisée
+    url: "/get-started/acc-create-podsecuritypolicy.html"
+- title: FAQ
+  url: "/get-started/faq.html"

@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: release-notes/rn_overview.html 
+keywords: 'what"s new, bugs, bug fixes, new features, enhancements' 
+summary: NetApp met régulièrement à jour Astra Control Center afin de vous apporter de nouvelles fonctionnalités, des améliorations et des correctifs. 
+---
+= Notes de mise à jour
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
+
+* link:../release-notes/whats-new.html["Dans cette version d'Astra Control Center"]
+* link:../release-notes/known-issues.html["Problèmes connus"]
+* link:../release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
+* link:../release-notes/known-limitations.html["Limites connues"]
+
+
+Suivez-nous sur Twitter @NetAppDoc. Envoyez vos commentaires sur la documentation en devenant un link:https://docs.netapp.com/us-en/contribute/["Contributeur GitHub"^] ou en envoyant un e-mail à doccomments@netapp.com.

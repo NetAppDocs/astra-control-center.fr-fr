@@ -1,0 +1,134 @@
+---
+sidebar: sidebar 
+permalink: use/manage-packages-acc.html 
+keywords: manage package, packages, install 
+summary: Vous pouvez télécharger et installer des paquets sur Astra Control Center. 
+---
+= Gérer les packs logiciels
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+NetApp propose des fonctionnalités supplémentaires pour Astra Control Center avec des packages logiciels que vous pouvez télécharger sur le site de support NetApp. Après avoir connecté Docker et les référentiels d'artéfacts, vous pouvez télécharger et importer des packages pour ajouter cette fonctionnalité à Astra Control Center. Vous pouvez utiliser l'interface CLI ou l'interface utilisateur Web Astra Control Center pour gérer les progiciels.
+
+.Ce dont vous avez besoin, 8217;ll
+* Cluster Kubernetes avec Astra Control Center installé
+* Un référentiel d'images Docker connecté pour conserver les images du progiciel. Pour plus d'informations, voir link:manage-connections.html["Gérer les connexions au référentiel"].
+* Un référentiel d'artéfacts connecté pour contenir les fichiers binaires et les artefacts du logiciel. Pour plus d'informations, voir link:manage-connections.html["Gérer les connexions au référentiel"].
+* Un pack logiciel sur le site de support NetApp
+
+
+
+
+== Téléchargez des images de progiciels dans les référentiels
+
+Astra Control Center référence les images de package et les artefacts dans les référentiels connectés. Vous pouvez télécharger des images et des artéfacts vers les référentiels à l'aide de l'interface de ligne de commande.
+
+.Étapes
+. Téléchargez le pack logiciel depuis le site de support NetApp et enregistrez-le sur une machine équipée du `kubectl` utilitaire installé.
+. Extrayez le fichier de package compressé et remplacez le répertoire par l'emplacement du fichier de bundle Astra Control (par exemple, `acc.manifest.yaml`).
+. Envoyez les images du package vers le référentiel Docker. Effectuer les substitutions suivantes :
++
+** Remplacez BUNDLE_FILE par le nom du fichier bundle Astra Control (par exemple, `acc.manifest.yaml`).
+** Remplacez MON_REGISTRE par l'URL du référentiel Docker.
+** Remplacez MON_REGISTRE_UTILISATEUR par le nom d'utilisateur.
+** Remplacez MON_REGISTRY_TOKEN par un jeton autorisé pour le Registre.
++
+[listing]
+----
+kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_TOKEN
+----
+
+
+. Si le package contient des artefacts, copiez les artefacts dans le référentiel d'artefacts. Remplacez BUNDLE_FILE par le nom du fichier de bundle Astra Control et NETWORK_LOCATION par l'emplacement du réseau pour copier les fichiers d'artefact vers :
++
+[listing]
+----
+kubectl astra packages copy-artifacts -m BUNDLE_FILE -n NETWORK_LOCATION
+----
+
+
+
+
+== Ajouter un pack logiciel
+
+Vous pouvez importer des packages logiciels à l'aide d'un fichier bundle Astra Control Center. Cela permet d'installer le paquet et de mettre à disposition le logiciel pour Astra Control Center.
+
+
+
+=== Ajoutez un logiciel à l'aide de l'interface utilisateur Web Astra Control
+
+Vous pouvez utiliser l'interface utilisateur Web Astra Control Center pour ajouter un progiciel qui a été chargé dans les référentiels connectés.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *Forfaits*.
+. Sélectionnez le bouton *Ajouter*.
+. Dans la boîte de dialogue de sélection de fichier, sélectionnez l'icône de téléchargement.
+. Choisissez un fichier de pack Astra Control, dans `.yaml` format, pour charger.
+. Sélectionnez *Ajouter*.
+
+
+Si le fichier de bundle est valide et que les images de package et les artefacts se trouvent dans vos référentiels connectés, le package est ajouté à Astra Control Center. Lorsque l'état de la colonne *Status* devient *Available*, vous pouvez utiliser le package. Vous pouvez positionner le curseur de la souris sur l'état d'un pack pour obtenir plus d'informations.
+
+
+NOTE: Si une ou plusieurs images ou artefacts d'un package sont introuvables dans votre référentiel, un message d'erreur s'affiche pour ce package.
+
+
+
+=== Ajout d'un pack logiciel à l'aide de l'interface de ligne de commandes
+
+Vous pouvez utiliser l'interface de ligne de commande pour importer un progiciel que vous avez téléchargé vers les référentiels connectés. Pour ce faire, vous devez d'abord enregistrer votre ID de compte Astra Control Center et un jeton API.
+
+.Étapes
+. À l'aide d'un navigateur Web, connectez-vous à l'interface utilisateur Web Astra Control Center.
+. Dans le Tableau de bord, sélectionnez l'icône utilisateur en haut à droite.
+. Sélectionnez *accès API*.
+. Notez l'ID du compte en haut de l'écran.
+. Sélectionnez *Generate API token*.
+. Dans la boîte de dialogue qui s'affiche, sélectionnez *Generate API token*.
+. Notez le jeton obtenu et sélectionnez *Fermer*. Dans l'interface de ligne de commande, passez aux répertoires à l'emplacement du `.yaml` fichier de bundle dans le contenu du pack extrait.
+. Importez le package à l'aide du fichier de regroupement, en procédant comme suit :
++
+** Remplacez BUNDLE_FILE par le nom du fichier bundle Astra Control.
+** Remplacez LE SERVEUR par le nom DNS de l'instance Astra Control.
+** Remplacez ACCOUNT_ID et TOKEN par l'ID de compte et le jeton API que vous avez enregistrés précédemment.
++
+[listing]
+----
+kubectl astra packages import -m BUNDLE_FILE -u SERVER -a ACCOUNT_ID -k TOKEN
+----
+
+
+
+
+Si le fichier de bundle est valide et que les images de package et les artefacts se trouvent dans vos référentiels connectés, le package est ajouté à Astra Control Center.
+
+
+NOTE: Si une ou plusieurs images ou artefacts d'un package sont introuvables dans votre référentiel, un message d'erreur s'affiche pour ce package.
+
+
+
+== Supprimer un pack logiciel
+
+Vous pouvez utiliser l'interface utilisateur Web Astra Control Center pour supprimer un logiciel que vous avez précédemment importé dans Astra Control Center.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *Forfaits*.
++
+Vous pouvez voir la liste des packages installés et leur état sur cette page.
+
+. Dans la colonne *actions* du paquet, ouvrez le menu actions.
+. Sélectionnez *Supprimer*.
+
+
+Le package est supprimé d'Astra Control Center, mais les images et les artefacts du package restent dans vos référentiels.
+
+[discrete]
+== Trouvez plus d'informations
+
+* link:manage-connections.html["Gérer les connexions au référentiel"]
+

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concepts/choose-class-and-size.html 
+keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
+summary: Le centre de contrôle Astra prend en charge les classes de stockage Trident basées sur le stockage ONTAP ou le magasin de données Astra. Comprenez comment la classe de stockage et la taille de volume persistant peuvent vous aider à atteindre vos objectifs de performance. 
+---
+= Classes de stockage et taille de volume persistant
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/concepts/
+
+
+[role="lead"]
+Le centre de contrôle Astra prend en charge ONTAP ou le magasin de données Astra comme système de stockage back-end.
+
+
+
+== Présentation
+
+Le centre de contrôle Astra est compatible avec les éléments suivants :
+
+* *Classes de stockage Trident soutenues par le stockage de magasin de données Astra* : si vous avez installé manuellement un ou plusieurs clusters Astra Data Store, Astra Control Center permet de les importer et de récupérer leur topologie (nœuds, disques) ainsi que divers États.
++
+Astra Control Center affiche le cluster Kubernetes sous-jacent de la configuration du magasin de données Astra, le cloud dont le cluster Kubernetes appartient, tout volume persistant provisionné par Astra Data Store, le nom du volume interne correspondant, l'application qui utilise le volume persistant et le cluster contenant l'application.
+
+* *Classes de stockage Trident soutenues par ONTAP Storage* : si vous utilisez un back-end ONTAP, Astra Control Center permet d'importer le back-end ONTAP pour signaler diverses informations de surveillance.
+
+
+
+NOTE: Les classes de stockage Trident doivent être préconfigurées en dehors du centre de contrôle Astra.
+
+
+
+== Classes de stockage
+
+Lorsque vous ajoutez un cluster à Astra Control Center, vous êtes invité à sélectionner une classe de stockage précédemment configurée sur ce cluster comme classe de stockage par défaut. Cette classe de stockage sera utilisée lorsqu'aucune classe de stockage n'est spécifiée dans une demande de volume persistant. La classe de stockage par défaut peut être modifiée à tout moment dans Astra Control Center et toute classe de stockage peut être utilisée à tout moment en spécifiant le nom de la classe de stockage dans le graphique ESV ou Helm. Assurez-vous de n'avoir qu'une seule classe de stockage par défaut définie pour votre cluster Kubernetes.
+
+Lorsque vous utilisez Astra Control Center intégré à un système back-end de stockage de magasin de données, aucune classe de stockage n'est définie après l'installation. Vous devez créer la classe de stockage par défaut Trident et l'appliquer au système back-end. Voir https://docs.netapp.com/us-en/astra-data-store/get-started/setup-ads.html#set-up-astra-data-store-as-storage-backend["Lancement d'Astra Data Store"] Pour créer une classe de stockage de magasin de données Astra par défaut.
+
+
+
+== Pour en savoir plus
+
+* https://docs.netapp.com/us-en/trident/index.html["Documentation Astra Trident"^]
+

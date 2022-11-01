@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: use/unmanage.html 
+keywords: unmanage app, remove app, stop managing app, stop managing clusters, unmanage cluster, remove cluster, kubernetes, astra, astra control 
+summary: 'Supprimez toutes les applications et tous les calculs que vous ne souhaitez plus gérer d"Astra Control.' 
+---
+= Annuler la gestion des applications et des clusters
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+Supprimez toutes les applications ou clusters que vous ne souhaitez plus gérer à partir d'Astra Control Center.
+
+
+
+== Annuler la gestion d'une application
+
+Arrêtez de gérer les applications que vous ne souhaitez plus sauvegarder, créer des instantanés ou cloner à partir d'Astra Control Center.
+
+* Toutes les sauvegardes et tous les instantanés existants seront supprimés.
+* Les applications et les données restent disponibles.
+
+
+.Étapes
+. Dans la barre de navigation de gauche, sélectionnez *applications*.
+. Cochez la case correspondant aux applications que vous ne souhaitez plus gérer.
+. Dans le menu *action*, sélectionnez *Unmanage*.
+. Tapez « Unmanage » pour confirmer.
+. Confirmez que vous souhaitez annuler la gestion des applications, puis sélectionnez *Oui, annuler la gestion de l'application*.
+
+
+Astra Control Center cesse de gérer l'application.
+
+
+
+== Annuler la gestion d'un cluster
+
+Dégérer le cluster que vous ne souhaitez plus gérer à partir d'Astra Control Center.
+
+* Cette action empêche votre cluster d'être géré par Astra Control Center. Elle ne modifie pas la configuration du cluster et ne supprime pas le cluster.
+* Trident ne sera pas désinstallé du cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Découvrez comment désinstaller Trident"^].
+
+
+
+NOTE: Avant d'annuler la gestion du cluster, vous devez annuler la gestion des applications associées au cluster.
+
+.Étapes
+. Dans la barre de navigation de gauche, sélectionnez *clusters*.
+. Cochez la case correspondant au groupe d'instruments que vous ne souhaitez plus gérer dans Astra Control Center.
+. Dans le menu Options de la colonne *actions*, sélectionnez *Unmanage*.
+. Confirmez que vous souhaitez annuler la gestion du cluster, puis sélectionnez *Oui, Unmanage cluster*.
+
+
+L'état du cluster passe à *Suppression* et le cluster sera supprimé de la page *clusters* et n'est plus géré par Astra Control Center.
+
+
+IMPORTANT: *Si le Centre de contrôle Astra et le Cloud Insights ne sont pas connectés*, la dégestion du cluster supprime toutes les ressources qui ont été installées pour envoyer des données de télémétrie. *Si le Centre de contrôle Astra et le Cloud Insights sont connectés*, la dégestion du cluster supprime uniquement le `fluentbit` et `event-exporter` pods.

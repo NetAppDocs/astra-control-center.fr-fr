@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: get-started/acc_cluster_cr_options.html 
+keywords: astra cr, cluster cr, astra control center, how to configure, deploy 
+summary: Découvrez les options CR du cluster Astra Control Center pour les configurations personnalisées pendant le déploiement. 
+---
+= Découvrez les options CR du cluster Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Vous pouvez utiliser les options CR de cluster Astra Control Center suivantes pour créer des configurations personnalisées pendant le déploiement.
+
+|===
+| Réglage | Type | Utiliser | Exemple de valeur | Description 
+
+
+| AstraVersion | chaîne | Obligatoire | 1.5.2 | Version d'AstrakControlCenter à déployer. Vous disposez d'un référentiel Helm avec une version correspondante. 
+
+
+| Adresse postale | chaîne | Obligatoire | astra.example.com | Définit la façon dont Astra est présente dans le data Center. Cette adresse IP et/ou DNS Un enregistrement doit être créé avant le provisionnement de Astra Control Center. 
+
+
+| Nom du compte | chaîne | Obligatoire | Exemple | Nom du compte Astra Control Center. Il ne peut y en avoir qu'un seul. 
+
+
+| e-mail | chaîne | Obligatoire | admin@example.com | Nom d'utilisateur de l'administrateur à ajouter en tant que premier utilisateur d'Astra. Cette adresse e-mail sera communiquée par Astra Control à mesure que les événements le justifient. 
+
+
+| Prénom | chaîne | Obligatoire | SRE | Prénom de l'administrateur responsable d'Astra. 
+
+
+| Nom de famille | chaîne | Obligatoire | Admin | Nom de famille de l'administrateur prenant en charge Astra. 
+
+
+| Classe de stockage | chaîne | Facultatif (il s'agit de la valeur par défaut) | ontap-gold | Classe de stockage à utiliser pour les ESV. Si elle n'est pas définie, la classe de stockage par défaut sera utilisée. 
+
+
+| Volume ReclaimPolicy | Non défini | Facultatif | Fidélisation | Règle de récupération à définir pour les volumes persistants. 
+
+
+| AstressourcesScaler | chaîne | Obligatoire | Valeur par défaut | Options d'évolutivité pour les limites de ressources AstrakControlCenter. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres. 
+
+
+| AstraKubeConfigSecret | chaîne | Obligatoire | acc-kubeconfig-cred | Si cette valeur est présente et qu'un secret existe, l'opérateur tente d'ajouter ce KubeConfig pour devenir le premier cluster géré. 
+
+
+| Type d'esseType | chaîne | Facultatif | Générique (il s'agit de la valeur par défaut) | Le type de centre de contrôle Astra d'entrée doit être configuré pour. Les valeurs valides sont `Generic` et `AccTraefik`. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres. 
+
+
+| Déployer | Booléen | Facultatif | vrai (il s'agit de la valeur par défaut) | Option permettant à un utilisateur de désactiver le déploiement d'Astra Plugin pour l'opérateur VMware vSphere. 
+
+
+| Registre d'imageRegistry | Non défini | Facultatif |  | Le registre d'images de conteneur qui héberge les images d'application Astra, l'opérateur du centre de contrôle Astra et le référentiel Helm d'Astra Control Center. 
+
+
+| imageRegistry.name | chaîne | Obligatoire si vous utilisez imageRegistry | example.registry.com/astra | Nom du registre d'images. Ne pas utiliser de préfixe avec le protocole. 
+
+
+| imageRegistry.secret | chaîne | Obligatoire si vous utilisez imageRegistry | registre-astra-cred | Nom du secret Kubernetes utilisé pour s'authentifier auprès du registre d'images. 
+
+
+| AutoSupport | Non défini | Obligatoire |  | Indique le statut de participation à l'application de support proactif de NetApp, NetApp Active IQ. Une connexion Internet est requise (port 442) et toutes les données de support sont anonymisées. 
+
+
+| Autosupport.enrôlé | Booléen | En option, mais les deux `enrolled` ou `url` les champs doivent être sélectionnés | false (valeur par défaut) | L'inscription détermine si vous souhaitez envoyer des données anonymes à NetApp à des fins de support. La sélection par défaut est `false` Aucune donnée de support n'est envoyée à NetApp. 
+
+
+| url AutoSupport | chaîne | En option, mais les deux `enrolled` ou `url` les champs doivent être sélectionnés | https://support.netapp.com/asupprod/post/1.0/postAsup[] | L'URL détermine l'emplacement d'envoi des données anonymes. 
+
+
+| crds | Non défini | Non défini |  | Options pour la façon dont Astra Control Center doit traiter les CRD. 
+
+
+| crds.externalTraefik | Booléen | Facultatif | Vrai (cette valeur est la valeur par défaut) | Par défaut, Astra Control Center installe les CRD Traefik requis. Les CRDS sont des objets à l'échelle du cluster et leur installation peut avoir un impact sur d'autres parties du cluster. Vous pouvez utiliser cet indicateur pour signaler à Astra Control Center que ces CRD seront installés et gérés par l'administrateur de cluster en dehors du centre de contrôle Astra. 
+
+
+| crds.externalCertManager | Booléen | Facultatif | Vrai (cette valeur est la valeur par défaut) | Par défaut, Astra Control Center installera les CRD de cert-Manager requis. Les CRDS sont des objets à l'échelle du cluster et leur installation peut avoir un impact sur d'autres parties du cluster. Vous pouvez utiliser cet indicateur pour signaler à Astra Control Center que ces CRD seront installés et gérés par l'administrateur de cluster en dehors du centre de contrôle Astra. 
+
+
+| crds.shouldUpgrade | Booléen | Facultatif | Non défini | Détermine si les CRD doivent être mis à niveau lorsque le Centre de contrôle Astra est mis à niveau. 
+
+
+| mtls |  |  |  | Options pour la mise en œuvre de l'entretien du MTLS dans le groupe d'instruments. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres 
+
+
+| mtls.activé | Booléen | Facultatif | vrai (cette valeur est la valeur par défaut) | Par défaut, Astra Control Center utilise MTLS pour la communication entre services. Cette option doit être désactivée lors de l'utilisation d'un maillage de service pour crypter à la place la communication service à service. 
+
+
+| mtls.certDuration | chaîne | Facultatif | 2140 h (cette valeur est la durée par défaut) | Durée en heures d'utilisation comme durée de vie du certificat lors de l'émission de certificats TLS de service. Ce paramètre ne fonctionne que lorsque `mtls.enabled` est défini sur `true`. 
+|===
+
+
+== Combinaisons de configuration et incompatibilités
+
+Certains paramètres de configuration CR du cluster Astra Control Center affectent considérablement la façon dont Astra Control Center est installé et peuvent entrer en conflit avec d'autres paramètres. Le contenu suivant décrit les paramètres de configuration importants et explique comment éviter les combinaisons incompatibles.
+
+
+
+=== AstressourcesScaler
+
+Par défaut, Astra Control Center se déploie avec des demandes de ressources définies pour la plupart des composants d'Astra. Avec cette configuration, la pile logicielle Astra Control Center est plus performante dans les environnements soumis à une charge et à une évolutivité accrues des applications.
+
+Cependant, dans les scénarios utilisant des grappes de développement ou de test plus petites, le champ CR `AstraResourcesScalar` peut être réglé sur `Off`. Cela désactive les demandes de ressources et permet un déploiement sur les clusters plus petits.
+
+
+
+=== Type d'esseType
+
+Il existe deux valeurs valides pour ingressType :
+
+* Générique
+* AccTraefik
+
+
+Quand `ingressType` est défini sur `Generic`, Astra Control n'installe aucune ressource d'entrée. L'hypothèse est que l'utilisateur dispose d'un moyen commun de sécuriser et de router le trafic via leur réseau vers des applications qui s'exécutent sur des clusters Kubernetes, et qu'il souhaite utiliser les mêmes mécanismes ici. Lorsque l'utilisateur crée une entrée pour acheminer le trafic vers Astra Control, l'entrée doit pointer vers le service de trafik interne sur le port 80. Voici un exemple de ressource d'entrée Nginx qui fonctionne avec le paramètre Generic ingressType.
+
+[listing]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: netapp-acc-ingress
+  namespace: [netapp-acc or custom namespace]
+spec:
+  ingressClassName: [class name for nginx controller]
+  tls:
+  - hosts:
+    - <ACC address>
+    secretName: [tls secret name]
+  rules:
+  - host: <ACC addess>
+    http:
+      paths:
+        - path:
+          backend:
+            service:
+              name: traefik
+              port:
+                number: 80
+          pathType: ImplementationSpecific
+----
+
+WARNING: Lorsque MTLS est désactivé à l'aide du paramètre mtls.enabled du CR, vous devez utiliser `ingressType: Generic`.
+
+Quand `ingressType` est défini sur `AccTraefik`, Astra Control Center déploie sa passerelle Traefik en tant que service de type Kubernetes LoadBalancer. Les utilisateurs doivent fournir un équilibreur de charge externe (tel que MetalLB) pour qu'Astra Control Center puisse obtenir une adresse IP externe.
+
+
+
+=== mtls
+
+Les paramètres utilisés dans la CR déterminent comment la communication intra-application est sécurisée. Il est très important pour l'utilisateur de savoir à l'avance s'il utilisera ou non un maillage de service.
+
+* `enabled=true`: Lorsque ce paramètre est activé, Astra déploiera un réseau de communication interne service à service qui sécurise tout le trafic au sein de l'application.
+
+
+
+WARNING: Ne couvrez pas le centre de contrôle Astra dans un maillage de service lorsque ce paramètre est de `true`.
+
+* `enabled=false`: Lorsque ce paramètre est désactivé, Astra Control Center ne sécurise pas le trafic interne et vous devez sécuriser les espaces de noms Astra indépendamment avec un maillage de service.
+
+
+
+WARNING: Lorsque MTLS est désactivé à l'aide du paramètre mtls.enabled du CR, vous devez utiliser `ingressType: Generic`.
+
+
+WARNING: Si aucun maillage de service n'est utilisé et que ce paramètre est désactivé, la communication interne ne sera pas sécurisée.

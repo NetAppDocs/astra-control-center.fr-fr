@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-issues-ads.html 
+keywords: astra, control center, ads, data store, bugs, known issues, problems 
+summary: 'Les problèmes connus identifient les problèmes susceptibles de vous empêcher d"utiliser cette version du produit avec succès.' 
+---
+= Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+Les problèmes connus identifient les problèmes susceptibles de vous empêcher d'utiliser cette version du produit avec succès.
+
+https://docs.netapp.com/us-en/astra-data-store/release-notes/known-issues.html["Découvrez d'autres problèmes connus avec le data Store d'Astra"^] Il pourrait donc avoir un impact sur la gestion du magasin de données Astra avec la version actuelle du centre de contrôle Astra.
+
+
+
+== Les détails du volume du magasin de données Astra n'apparaissent pas dans la page Storage Backend de l'interface utilisateur du centre de contrôle Astra
+
+Des détails tels que la capacité et le débit n'apparaissent pas dans l'interface utilisateur. Lorsque ce problème se produit, annulez la gestion du stockage back-end et ajoutez-end à nouveau.
+
+
+
+== La dégestion d'un cluster avec Astra Data Store requiert d'abord la suppression d'une application système gérée
+
+Si vous avez ajouté un cluster contenant Astra Data Store à un cluster Astra Control Center, l'application système astrads est gérée par défaut comme une application masquée. Pour annuler la gestion du cluster, vous devez d'abord annuler la gestion de l'application système astrads. Vous ne pouvez pas annuler la gestion de ce type d'application à l'aide de l'interface utilisateur du centre de contrôle Astra. Utilisez plutôt une demande d'API de contrôle Astra pour supprimer manuellement l'application :
+
+.Détails
+====
+.Étapes
+. Obtenez l'ID du cluster géré à l'aide de cette API :
++
+[listing]
+----
+/accounts/{account_id}/topology/v1/managedClusters
+----
++
+Réponse :
+
++
+[listing, subs="+quotes"]
+----
+{
+"items": [
+{
+"type": "application/astra-managedCluster",
+"version": "1.1",
+*"id": "123ab987-0bc0-00d0-a00a-1234567abd8d",*
+"name": "astrads-cluster-1234567",
+...
+----
+. Obtenir l'ID d'application du système astrads géré :
++
+[listing]
+----
+/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps
+----
++
+Réponse :
+
++
+[listing, subs="+quotes"]
+----
+{
+  "items": [
+    [
+      *"1b011d11-bb88-40c7-a1a1-ab1234c123d3",*
+      "astrads-system",
+      "ready"
+    ]
+  ],
+  "metadata": {}
+}
+----
+. Supprimez l'application système astrads à l'aide de l'ID d'application que vous avez acquis à l'étape précédente (`1b011d11-bb88-40c7-a1a1-ab1234c123d3`).
++
+[listing]
+----
+/accounts/{account_id}/k8s/v2/apps/{astrads-system_app_id}
+----
+
+
+====
+
+
+== Trouvez plus d'informations
+
+* link:../release-notes/known-issues.html["Problèmes connus"]
+* link:../release-notes/known-limitations.html["Limites connues"]
+

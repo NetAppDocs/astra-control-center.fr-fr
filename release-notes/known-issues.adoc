@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-issues.html 
+keywords: astra, control center, bugs, known issues, problems 
+summary: 'Les problèmes connus identifient les problèmes susceptibles de vous empêcher d"utiliser cette version du produit avec succès.' 
+---
+= Problèmes connus
+:hardbreaks:
+:allow-uri-read: 
+:source-highlighter: highlight.js
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+Les problèmes connus identifient les problèmes susceptibles de vous empêcher d'utiliser cette version du produit avec succès.
+
+Les problèmes connus suivants ont une incidence sur la version actuelle :
+
+.En applications
+*  of an app results in PV size larger than original PV
+*  clones fail using a specific version of PostgreSQL
+*  clones fail when using Service Account level OCP Security Context Constraints (SCC)
+*  clones fail after an application is deployed with a set storage class
+*  backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
+
+
+.Clusters
+*  a cluster with Astra Control Center fails when default kubeconfig file contains more than one context
+
+
+.Autres questions
+*  data management operations fail with Internal Service Error (500) when Astra Trident is offline
+*  might fail with snapshot controller version 4.2.0
+
+
+
+
+== La restauration d'une application entraîne une taille de volume persistant supérieure à celle de l'application initiale
+
+Si vous redimensionnez un volume persistant après avoir créé une sauvegarde puis restauré à partir de cette sauvegarde, la taille du volume persistant correspond à la nouvelle taille du volume persistant, et non à la taille de la sauvegarde.
+
+
+
+== Les clones d'applications échouent à l'aide d'une version spécifique de PostgreSQL
+
+Les clones d'applications au sein du même cluster échouent systématiquement avec le graphique Bitnami PostgreSQL 11.5.0. Pour effectuer un clonage réussi, utilisez une version antérieure ou ultérieure du graphique.
+
+
+
+== Les clones d'application échouent lors de l'utilisation des contraintes de contexte de sécurité OCP au niveau du compte de service (SCC)
+
+Un clone d'application peut échouer si les contraintes de contexte de sécurité d'origine sont configurées au niveau du compte de service dans l'espace de noms du cluster OpenShift Container Platform. Lorsque le clone de l'application échoue, il apparaît dans la zone applications gérées du Centre de contrôle Astra avec l'état `Removed`. Voir la https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Application_clone_is_failing_for_an_application_in_Astra_Control_Center["article de la base de connaissances"^] pour en savoir plus.
+
+
+
+== Les sauvegardes d'applications et les snapshots échouent si la classe volumesnapshotclass est ajoutée après la gestion d'un cluster
+
+Les sauvegardes et les snapshots échouent avec un `UI 500 error` dans ce scénario. Pour contourner ce problème, actualisez la liste des applications.
+
+
+
+== Les clones d'application échouent après le déploiement d'une application avec une classe de stockage définie
+
+Après le déploiement d'une application avec une classe de stockage définie explicitement (par exemple, `helm install ...-set global.storageClass=netapp-cvs-perf-extreme`), les tentatives ultérieures de clonage de l'application nécessitent que le cluster cible ait la classe de stockage spécifiée à l'origine. Le clonage d'une application avec une classe de stockage définie explicitement dans un cluster ne disposant pas de la même classe de stockage échouera. Il n'y a pas d'étapes de récupération dans ce scénario.
+
+
+
+== La gestion d'un cluster avec Astra Control Center échoue lorsque le fichier kubeconfig par défaut contient plusieurs contextes
+
+Vous ne pouvez pas utiliser un kubeconfig avec plus d'un cluster et un contexte. Voir la link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context["article de la base de connaissances"^] pour en savoir plus.
+
+
+
+== Les opérations de gestion des données d'application échouent avec l'erreur de service interne (500) lorsque Astra Trident est hors ligne
+
+Si Astra Trident sur un cluster d'application est mis hors ligne (et reconnecté) et 500 erreurs de service internes sont rencontrées lors de la tentative de gestion des données d'application, redémarrez tous les nœuds Kubernetes du cluster d'application pour restaurer la fonctionnalité.
+
+
+
+== Les snapshots peuvent échouer avec la version 4.2.0 du contrôleur de snapshot
+
+Lorsque vous utilisez le snapshot-contrôleur Kubernetes (également appelé External-snapshotter) version 4.2.0 avec Kubernetes 1.20 ou 1.21, les snapshots peuvent échouer. Pour éviter cela, utilisez un autre https://kubernetes-csi.github.io/docs/snapshot-controller.html["version prise en charge"^] D'un snapshoter externe, comme la version 4.2.1, avec Kubernetes version 1.20 ou 1.21.
+
+. Exécutez un appel POST pour ajouter un fichier kubeconfig mis à jour au `/credentials` et récupérer le noeud final affecté `id` du corps de réponse.
+. Effectuer un APPEL PUT à partir du `/clusters` À l'aide de l'ID de cluster approprié et définissez le `credentialID` à la `id` valeur de l'étape précédente.
+
+
+Une fois ces étapes terminées, les informations d'identification associées au cluster sont mises à jour et le cluster doit se reconnecter et mettre à jour son état sur `available`.
+
+
+
+== Trouvez plus d'informations
+
+* link:../release-notes/known-issues-ads.html["Problèmes connus avec la présentation d'Astra Data Store et ce centre de contrôle Astra"]
+* link:../release-notes/known-limitations.html["Limites connues"]
+

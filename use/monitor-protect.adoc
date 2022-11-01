@@ -1,0 +1,255 @@
+---
+sidebar: sidebar 
+permalink: use/monitor-protect.html 
+keywords: proxy, cloud insights, connections, fluent bit, accounts, protect, security 
+summary: 'Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Si le réseau où vous utilisez Astra Control Center requiert un proxy pour vous connecter à Internet, configurez ce serveur proxy dans Astra Control Center. Vous pouvez utiliser NetApp Cloud Insights pour surveiller l"ensemble de votre infrastructure et obtenir des informations exploitables. Vous pouvez ajouter une connexion binaire fluide pour recueillir des données et des journaux à partir de vos conteneurs.' 
+---
+= Surveillez l'infrastructure à l'aide de Cloud Insights et de connexions Fluentd
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Pour contrôler et obtenir des informations sur l'ensemble de votre infrastructure, créez une connexion à NetApp Cloud Insights. Pour collecter des événements Kubernetes à partir de systèmes surveillés par Astra Control Center, ajoutez une connexion Fluentd.
+
+Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans Astra Control Center.
+
+Il est également possible de surveiller le débit interne du stockage de données Astra, les IOPS et la capacité du système de stockage back-end d'Astra Control Center. Voir link:../use/manage-backend.html["Gestion des systèmes back-end"].
+
+
+
+== Ajoutez un serveur proxy pour les connexions à Cloud Insight ou au site de support NetApp
+
+Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans Astra Control Center.
+
+
+IMPORTANT: Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy. Assurez-vous de saisir les valeurs correctes.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *Connect* dans la liste déroulante pour ajouter un serveur proxy.
++
+image:proxy-connect.png["La montre l'option connexion pour activer la connexion proxy."]
+
+. Entrez le nom du serveur proxy ou l'adresse IP et le numéro du port proxy.
+. Si votre serveur proxy nécessite une authentification, cochez la case et saisissez le nom d'utilisateur et le mot de passe.
+. Sélectionnez *connexion*.
+
+
+Si les informations de proxy que vous avez saisies ont été enregistrées, la section *HTTP Proxy* de la page *Account* > *Connections* indique qu'elle est connectée et affiche le nom du serveur.
+
+image:proxy-new.png["Indique que le serveur proxy a été correctement connecté."]
+
+
+
+=== Modifier les paramètres du serveur proxy
+
+Vous pouvez modifier les paramètres du serveur proxy.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *Modifier* dans la liste déroulante pour modifier la connexion.
+. Modifiez les détails du serveur et les informations d'authentification.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+=== Désactiver la connexion au serveur proxy
+
+Vous pouvez désactiver la connexion au serveur proxy. Vous serez averti avant de désactiver cette interruption potentielle à d'autres connexions.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *déconnecter* dans la liste déroulante pour désactiver la connexion.
+. Dans la boîte de dialogue qui s'ouvre, confirmez l'opération.
+
+
+
+
+== Connectez-vous à Cloud Insights
+
+Pour surveiller et obtenir des informations exploitables sur l'ensemble de votre infrastructure, connectez NetApp Cloud Insights à votre instance Astra Control Center. Cloud Insights est inclus dans votre licence Astra Control Center.
+
+Cloud Insights doit être accessible à partir du réseau utilisé par Astra Control Center, ou indirectement via un serveur proxy.
+
+Lorsque le centre de contrôle Astra est connecté à Cloud Insights, un pod d'unité d'acquisition est créé. Ce pod collecte les données des systèmes back-end gérés par Astra Control Center et les pousse dans Cloud Insights. Ce pod requiert 8 Go de RAM et 2 cœurs de CPU.
+
+En outre, si vous gérez des clusters de magasin de données Astra avec un contrôleur Astra (qui est connecté à Cloud Insights), un pod d'unité d'acquisition est créé sur le magasin de données Astra pour chaque cluster de magasin de données Astra, et les mesures sont envoyées du magasin de données Astra vers le système Cloud Insights couplé. Chaque pod requiert 8 Go de RAM et 2 cœurs de CPU.
+
+
+NOTE: Après avoir activé la connexion Cloud Insights, vous pouvez afficher les informations de débit sur la page *Backends* et vous connecter à Cloud Insights à partir de là après avoir sélectionné un back-end de stockage. Vous trouverez également des informations sur le *Tableau de bord* dans la section Cluster et vous y connectez également à Cloud Insights.
+
+.Ce dont vous avez besoin, 8217;ll
+* Un compte Astra Control Center avec *admin*/*propriétaire* privilèges.
+* Licence Astra Control Center valide.
+* Un serveur proxy si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy pour se connecter à Internet.
+
+
+
+TIP: Si vous découvrez Cloud Insights, familiarisez-vous avec les fonctions et les fonctionnalités. Voir link:https://docs.netapp.com/us-en/cloudinsights/index.html["Documentation Cloud Insights"^].
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *Connect* où apparaît *déconnecté* dans la liste déroulante pour ajouter la connexion.
++
+image:ci-connect.png["La présente l'option connexion dans la liste déroulante pour activer la connexion Cloud Insights."]
+
+. Entrez les jetons de l'API Cloud Insights et l'URL du locataire. L'URL du locataire a le format suivant, par exemple :
++
+[listing]
+----
+https://<environment-name>.c01.cloudinsights.netapp.com/
+----
++
+Vous obtenez l'URL du locataire lorsque vous obtenez la licence Cloud Insights. Si vous ne disposez pas de l'URL du locataire, reportez-vous à la section link:https://docs.netapp.com/us-en/cloudinsights/task_cloud_insights_onboarding_1.html["Documentation Cloud Insights"^].
+
++
+.. Pour obtenir le link:https://docs.netapp.com/us-en/cloudinsights/API_Overview.html#api-access-tokens["Jeton API"^], Connectez-vous à l'URL de votre locataire Cloud Insights.
+.. Dans Cloud Insights, générez un jeton d'accès à l'API *lecture/écriture* et un jeton d'accès à l'API *lecture seule* en cliquant sur *Admin* > *API Access*.
++
+image:cloud-insights-api.png["La présente la page de génération de jeton de l'API Cloud Insights."]
+
+.. Copiez la clé *lecture seule*. Vous devrez la coller dans la fenêtre du centre de contrôle Astra pour activer la connexion Cloud Insights. Pour les autorisations de clé de token d'accès à l'API de lecture, sélectionnez : actifs, alertes, unité d'acquisition et collecte de données.
+.. Copiez la clé *lecture/écriture*. Vous devrez le coller dans la fenêtre Centre de contrôle Astra *connexion Cloud Insights*. Pour les autorisations de clés de token d'accès à l'API Read/Write, sélectionnez : Assets, Data ingestion, gestion des journaux, unité d'acquisition, Et collecte de données.
++
+
+NOTE: Nous vous recommandons de générer une clé *lecture seule* et une clé *lecture/écriture*, et de ne pas utiliser la même clé à ces deux fins. Par défaut, la période d'expiration du token est définie sur un an. Nous vous recommandons de conserver la sélection par défaut pour donner au token la durée maximale avant son expiration. Si votre jeton expire, la télémétrie s'arrête.
+
+.. Collez les clés que vous avez copiées de Cloud Insights dans le centre de contrôle Astra.
+
+
+. Sélectionnez *connexion*.
+
+
+
+IMPORTANT: Après avoir sélectionné *connexion,* l'état de la connexion devient *en attente* dans la section *Cloud Insights* de la page *compte* > *connexions*. Il peut y avoir quelques minutes pour que la connexion soit activée et que l'état passe à *Connected*.
+
+
+NOTE: Pour passer facilement entre le centre de contrôle Astra et les interfaces utilisateur Cloud Insights, assurez-vous d'être connecté aux deux.
+
+
+
+=== Afficher les données dans Cloud Insights
+
+Si la connexion a réussi, la section *Cloud Insights* de la page *compte* > *connexions* indique qu'elle est connectée et affiche l'URL du locataire. Vous pouvez accéder à Cloud Insights pour consulter les données reçues et affichées avec succès.
+
+image:cloud-insights.png["La présente la connexion Cloud Insights activée dans l'interface utilisateur du centre de contrôle Astra."]
+
+Si la connexion a échoué pour une raison quelconque, l'état indique *FAILED*. Vous pouvez trouver la raison de l'échec sous *Notifications* en haut à droite de l'interface utilisateur.
+
+image:cloud-insights-notifications.png["Affiche le message d'erreur en cas d'échec de la connexion Cloud Insights."]
+
+Vous pouvez également trouver les mêmes informations sous *compte* > *Notifications*.
+
+À partir du Centre de contrôle Astra, vous pouvez afficher les informations sur le débit sur la page *Backends* et vous connecter à Cloud Insights à partir d'ici après avoir sélectionné un back-end de stockage.image:throughput.png["Affiche les informations sur le débit sur la page Backends dans Astra Control Center."]
+
+Pour accéder directement à Cloud Insights, sélectionnez l'icône *Cloud Insights* située en regard de l'image de metrics.
+
+Vous pouvez également trouver les informations sur le *Dashboard*.
+
+image:dashboard-ci.png["Affiche l'icône Cloud Insights sur le Tableau de bord."]
+
+
+IMPORTANT: Après l'activation de la connexion Cloud Insights, si vous supprimez les systèmes back-end ajoutés dans Astra Control Center, le système back-end cesse de créer des rapports avec Cloud Insights.
+
+
+
+=== Modifier la connexion Cloud Insights
+
+Vous pouvez modifier la connexion Cloud Insights.
+
+
+NOTE: Vous pouvez uniquement modifier les clés API. Pour modifier l'URL du locataire Cloud Insights, nous vous recommandons de déconnecter la connexion Cloud Insights et de vous connecter à la nouvelle URL.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *Modifier* dans la liste déroulante pour modifier la connexion.
+. Modifiez les paramètres de connexion Cloud Insights.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+=== Désactiver la connexion Cloud Insights
+
+Vous pouvez désactiver la connexion Cloud Insights pour un cluster Kubernetes géré par Astra Control Center. La désactivation de la connexion Cloud Insights ne supprime pas les données de télémétrie déjà chargées sur Cloud Insights.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *déconnecter* dans la liste déroulante pour désactiver la connexion.
+. Dans la boîte de dialogue qui s'ouvre, confirmez l'opération. Après avoir confirmé l'opération, sur la page *compte* > *connexions*, l'état Cloud Insights devient *en attente*. Le changement d'état prend quelques minutes à *déconnecté*.
+
+
+
+
+== Connectez-vous à Fluentd
+
+Vous pouvez envoyer des journaux (événements Kubernetes) depuis Astra Control Center vers votre terminal Fluentd. La connexion Fluentd est désactivée par défaut.
+
+image:fluentbit.png["La présente un schéma conceptuel des journaux d'événements allant d'Astra à Fluentd."]
+
+
+NOTE: Seuls les journaux d'événements des clusters gérés sont transférés à Fluentd.
+
+.Ce dont vous avez besoin, 8217;ll
+* Un compte Astra Control Center avec *admin*/*propriétaire* privilèges.
+* Astra Control Center est installé et exécuté sur un cluster Kubernetes.
+
+
+
+IMPORTANT: Astra Control Center ne valide pas les détails que vous entrez pour votre serveur Fluentd. Assurez-vous de saisir les valeurs correctes.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *Connect* dans la liste déroulante où apparaît *déconnecté* pour ajouter la connexion.
++
+image:connect-fluentd.png["Affiche l'écran de l'interface utilisateur permettant d'activer la connexion à Fluentd."]
+
+. Entrez l'adresse IP de l'hôte, le numéro de port et la clé partagée pour votre serveur Fluentd.
+. Sélectionnez *connexion*.
+
+
+Si les détails que vous avez entrés pour votre serveur Fluentd ont été enregistrés, la section *Fluentd* de la page *compte* > *connexions* indique qu'il est connecté. Vous pouvez maintenant visiter le serveur Fluentd que vous avez connecté et afficher les journaux d'événements.
+
+Si la connexion a échoué pour une raison quelconque, l'état indique *FAILED*. Vous pouvez trouver la raison de l'échec sous *Notifications* en haut à droite de l'interface utilisateur.
+
+Vous pouvez également trouver les mêmes informations sous *compte* > *Notifications*.
+
+
+IMPORTANT: Si vous rencontrez des problèmes avec la collecte de journaux, vous devez vous connecter à votre nœud de travail et vous assurer que vos journaux sont disponibles dans `/var/log/containers/`.
+
+
+
+=== Modifiez la connexion Fluentd
+
+Vous pouvez modifier la connexion Fluentd à votre instance Astra Control Center.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *Modifier* dans la liste déroulante pour modifier la connexion.
+. Modifiez les paramètres du point final Fluentd.
+. Sélectionnez *Enregistrer*.
+
+
+
+
+=== Désactivez la connexion Fluentd
+
+Vous pouvez désactiver la connexion Fluentd à votre instance Astra Control Center.
+
+.Étapes
+. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
+. Sélectionnez *compte* > *connexions*.
+. Sélectionnez *déconnecter* dans la liste déroulante pour désactiver la connexion.
+. Dans la boîte de dialogue qui s'ouvre, confirmez l'opération.
+
