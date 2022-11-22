@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head class="at-element-marker">
-  <title>Conditions préalables à l&#8217;ajout d&#8217;un cluster</title>
+  <title>Gérer l&#8217;authentification à distance</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Conditions préalables à l&#8217;ajout d&#8217;un cluster" />
+  <meta property="og:title" content="Gérer l&#8217;authentification à distance" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/get-started/add-cluster-reqs.html" />
-	<meta property="og:description" content="Vous devez effectuer les contrôles d"élibilité pour vous assurer que votre groupe d"instruments est prêt à être ajouté à Astra Control Center." />
+	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/use/manage-remote-authentication.html" />
+	<meta property="og:description" content="Gérez l"authentification LDAP sur votre système Astra Control." />
   <meta property="og:image" content="https://docs.netapp.com/fr-fr/astra-control-center/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Vous devez effectuer les contrôles d"élibilité pour vous assurer que votre groupe d"instruments est prêt à être ajouté à Astra Control Center.">
-  <meta name="keywords" content=" what are astra prerequisites, what is Astra Control, add kubernetes cluster, astra trident version"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Gérez l"authentification LDAP sur votre système Astra Control.">
+  <meta name="keywords" content=" enable ldap authentication, disable, ldap, authentication, configure, manage"><!-- Icons -->
   <link rel="icon" href="/fr-fr/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -161,44 +161,44 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar"><div id="version-dropdown-new" class="custom-dropdown" >
-  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.08">
+  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.11">
     <label>Version</label>
-    <span translate="no" class="notranslate">Centre de contrôle Astra 22.08</span>
+    <span translate="no" class="notranslate">Centre de contrôle Astra 22.11</span>
     <img src="/fr-fr/astra-control-center/images/chevron_up.svg" alt="" class="custom-icon chevrondown invisible" />
     <img src="/fr-fr/astra-control-center/images/chevron_down.svg" alt="" class="custom-icon chevronup" />
   </div>
 
   <ul class="custom-dropdown-menu"><li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center/get-started/add-cluster-reqs.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center/use/manage-remote-authentication.html" target="_self">
+        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.11</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2208/use/manage-remote-authentication.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.08</span></span>
       </a>
                      
     </li>
     <li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2204/get-started/add-cluster-reqs.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2204/use/manage-remote-authentication.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.04</span></span>
       </a>
                      
     </li>
     <li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2112/get-started/add-cluster-reqs.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2112/use/manage-remote-authentication.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.12</span></span>
-      </a>
-                     
-    </li>
-    <li>
-      
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2108/get-started/add-cluster-reqs.html" target="_self">
-        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.08</span></span>
       </a>
                      
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Conditions préalables à l&#8217;ajout d&#8217;un cluster](https://docs.netapp.com/fr-fr/astra-control-center/get-started/add-cluster-reqs.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/get-started/add-cluster-reqs.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Gérer l&#8217;authentification à distance](https://docs.netapp.com/fr-fr/astra-control-center/use/manage-remote-authentication.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/manage-remote-authentication.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">SUR CETTE PAGE</div>
@@ -321,19 +321,19 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/fr-fr/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+          <a href="https://docs.netapp.com/fr-fr/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/de-de/astra-control-center/get-started/add-cluster-reqs.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+          <a href="https://docs.netapp.com/de-de/astra-control-center/use/manage-remote-authentication.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -411,6 +411,17 @@
 
 
 
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -419,13 +430,53 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Problèmes_connus.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Commencez.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Problèmes connus
+            Commencez
           </a>
           
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Présentation_de_l_installation.pdf" 
+            
+          >
+            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
+            Présentation de l'installation
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Poser_le_centre_de_contrôle_Astra.pdf" 
+            
+          >
+            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
+            Poser le centre de contrôle Astra
+          </a>
+          
+
+
 
 
         </li>
@@ -433,6 +484,21 @@
     
 
   
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
 
 
 
@@ -490,127 +556,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Commencez.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra_Control_Center.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Commencez
-          </a>
-          
-
-
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Présentation_de_l_installation.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Présentation de l'installation
-          </a>
-          
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Poser_le_centre_de_contrôle_Astra.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Poser le centre de contrôle Astra
-          </a>
-          
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Configurer_le_centre_de_contrôle_Astra.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Configurer le centre de contrôle Astra
-          </a>
-          
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Utilisez Astra
+            Utilisez Astra Control Center
           </a>
           
 
@@ -720,8 +670,8 @@
           
 
 
-
-
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
 
 
 
@@ -739,6 +689,8 @@
     
 
   
+
+
 
 
 
@@ -769,11 +721,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_les_API_REST.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_l_API_REST_d_Astra_Control.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Automatisez avec les API REST
+            Automatisez avec l'API REST d'Astra Control
           </a>
           
 
@@ -880,26 +832,114 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Problèmes connus"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/release-notes/known-issues.html">
-        <div class="na-navbar-padding"> Problèmes connus</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"
-      data-li-level="3#" 
+      data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues-ads.html">
-        Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra
-      </a></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues.html">
+        Problèmes connus
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Limites connues"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-limitations.html">
         Limites connues
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Commencez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Commencez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Découvrez Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/intro.html">
+        Découvrez Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Exigences du centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
+        Exigences du centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Démarrage rapide pour Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
+        Démarrage rapide pour Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Présentation de l'installation"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
+        <div class="na-navbar-padding"> Présentation de l'installation</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Poser le centre de contrôle Astra"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
+        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Options de ressources personnalisées du cluster Astra Control Center"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
+        Options de ressources personnalisées du cluster Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez un cert-Manager externe"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
+        Configurez un cert-Manager externe
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
+        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
+        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra après l'installation"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/configure-after-install.html">
+        Configurer le centre de contrôle Astra après l'installation
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/setup_overview.html">
+        Configurer le centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
+        FAQ
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Concepts"
@@ -910,13 +950,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez Astra Control"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/intro.html">
-        Découvrez Astra Control
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Architecture et composants"
       data-li-level="2#" 
@@ -958,126 +991,20 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/user-roles-namespaces.html">
         Rôles et espaces de noms d'utilisateur
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sécurité des pods"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/understand-pod-security.html">
+        Sécurité des pods
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Commencez"
+      data-pdf-filename="Utilisez Astra Control Center"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Commencez</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exigences du centre de contrôle Astra"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
-        Exigences du centre de contrôle Astra
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Démarrage rapide pour Astra Control Center"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
-        Démarrage rapide pour Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Présentation de l'installation"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
-        <div class="na-navbar-padding"> Présentation de l'installation</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Poser le centre de contrôle Astra"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
-        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez les options CR du cluster Astra Control Center"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
-        Découvrez les options CR du cluster Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Comprendre les restrictions de la stratégie de sécurité du pod"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/understand-psp-restrictions.html">
-        Comprendre les restrictions de la stratégie de sécurité du pod
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurez un cert-Manager externe"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
-        Configurez un cert-Manager externe
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
-        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
-        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurer le centre de contrôle Astra"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/setup_overview.html">
-        <div class="na-navbar-padding"> Configurer le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Conditions préalables à l'ajout d'un cluster"
-      data-li-level="3#" 
-      class="  active "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-cluster-reqs.html">
-        Conditions préalables à l'ajout d'un cluster
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Ajouter un certificat TLS personnalisé"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-custom-tls-certificate.html">
-        Ajouter un certificat TLS personnalisé
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Créez une stratégie de sécurité de pod personnalisée"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
-        Créez une stratégie de sécurité de pod personnalisée
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="FAQ"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
-        FAQ
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Utilisez Astra"
-      data-li-level="1" 
-      class="subfolders "
-    ><a href="#">
-        <div class="na-navbar-padding"> Utilisez Astra</div>
+        <div class="na-navbar-padding"> Utilisez Astra Control Center</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1188,18 +1115,25 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérer les utilisateurs"
+      data-pdf-filename="Gérez les utilisateurs et les rôles locaux"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-users.html">
-        Gérer les utilisateurs
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-local-users-and-roles.html">
+        Gérez les utilisateurs et les rôles locaux
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérez les rôles"
+      data-pdf-filename="Gérer l'authentification à distance"
+      data-li-level="3#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-authentication.html">
+        Gérer l'authentification à distance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez des utilisateurs et des groupes distants"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-roles.html">
-        Gérez les rôles
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-users-groups.html">
+        Gérez des utilisateurs et des groupes distants
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les notifications"
@@ -1228,20 +1162,6 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/update-licenses.html">
         Mettre à jour une licence existante
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les connexions au référentiel"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-connections.html">
-        Gérer les connexions au référentiel
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les packs logiciels"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-packages-acc.html">
-        Gérer les packs logiciels
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestion des compartiments"
@@ -1256,6 +1176,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-backend.html">
         Gérer le stockage back-end
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Surveillez les tâches en cours d'exécution"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/monitor-running-tasks.html">
+        Surveillez les tâches en cours d'exécution
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Contrôle de l'infrastructure avec Cloud Insights et Fluentd"
@@ -1286,11 +1213,11 @@
         Désinstaller Astra Control Center
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Automatisez avec les API REST"
+      data-pdf-filename="Automatisez avec l'API REST d'Astra Control"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Automatisez avec les API REST</div>
+        <div class="na-navbar-padding"> Automatisez avec l'API REST d'Astra Control</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1397,14 +1324,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Conditions préalables à l&#8217;ajout d&#8217;un cluster</h1>
+  <h1 class="n-doc__component-detail-heading">Gérer l&#8217;authentification à distance</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 05:14:11 +0000">11/17/2022</time>
+    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
     
   
 
@@ -1416,16 +1343,117 @@
 
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>LDAP est un protocole standard de l&#8217;industrie pour l&#8217;accès aux informations d&#8217;annuaires distribués et un choix populaire pour l&#8217;authentification d&#8217;entreprise. Vous pouvez connecter Astra Control Center à un serveur LDAP pour effectuer l&#8217;authentification de certains utilisateurs Astra Control.</p>
+</div>
 <div class="paragraph">
-<p>Assurez-vous que les conditions préalables sont remplies avant d&#8217;ajouter un cluster. Vous devez également effectuer les vérifications d&#8217;admissibilité pour vous assurer que votre grappe est prête à être ajoutée au Centre de contrôle Astra.</p>
+<p>À un niveau élevé, la configuration implique l&#8217;intégration d&#8217;Astra avec LDAP et la définition des utilisateurs et des groupes Astra Control correspondant aux définitions LDAP. Vous pouvez utiliser l&#8217;API de contrôle Astra ou l&#8217;interface utilisateur Web pour configurer l&#8217;authentification LDAP et les utilisateurs et groupes LDAP.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ce-dont-vous-aurez-besoin-avant-dajouter-un-cluster">Ce dont vous aurez besoin avant d&#8217;ajouter un cluster</h2>
+<h2 id="ajoutez-un-certificat-pour-lauthentification-ldaps">Ajoutez un certificat pour l&#8217;authentification LDAPS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Assurez-vous que votre cluster répond aux exigences décrites dans <a href="requirements.html#application-cluster-requirements">"Configuration requise en cluster des applications"</a>.</p>
+<p>Ajoutez le certificat TLS privé pour le serveur LDAP afin que Astra Control Center puisse s&#8217;authentifier auprès du serveur LDAP lorsque vous utilisez une connexion LDAPS. Vous ne devez le faire qu&#8217;une seule fois, ou lorsque le certificat que vous avez installé expire.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Accédez à <strong>compte</strong>.</p>
+</li>
+<li>
+<p>Sélectionnez l&#8217;onglet <strong>certificats</strong>.</p>
+</li>
+<li>
+<p>Sélectionnez <strong>Ajouter</strong>.</p>
+</li>
+<li>
+<p>Téléchargez le <code>.pem</code> importez ou collez le contenu du fichier à partir du presse-papiers.</p>
+</li>
+<li>
+<p>Cochez la case <strong>approuvé</strong>.</p>
+</li>
+<li>
+<p>Sélectionnez <strong>Ajouter un certificat</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="activez-lauthentification-à-distance">Activez l&#8217;authentification à distance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez activer l&#8217;authentification LDAP et configurer la connexion entre Astra Control et le serveur LDAP distant.</p>
+</div>
+<div class="paragraph">
+<p>Si vous prévoyez d&#8217;utiliser LDAPS, assurez-vous que le certificat TLS privé pour le serveur LDAP est installé dans Astra Control Center afin que le centre de contrôle Astra puisse s&#8217;authentifier auprès du serveur LDAP. Voir  a certificate for LDAPS authentication pour obtenir des instructions.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Accédez à <strong>compte &gt; connexions</strong>.</p>
+</li>
+<li>
+<p>Dans le volet <strong>authentification à distance</strong>, sélectionnez le menu de configuration.</p>
+</li>
+<li>
+<p>Sélectionnez <strong>connexion</strong>.</p>
+</li>
+<li>
+<p>Entrez l&#8217;adresse IP du serveur, le port et le protocole de connexion préféré (LDAP ou LDAPS).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Il est recommandé d&#8217;utiliser LDAPS lors de la connexion au serveur LDAP. Vous devez installer le certificat TLS privé du serveur LDAP dans Astra Control Center avant de vous connecter avec LDAPS.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Saisissez les informations d&#8217;identification du compte de service au format e-mail (<a href="mailto:administrator@example.com">administrator@example.com</a>). Astra Control utilisera ces informations d&#8217;identification lors de la connexion au serveur LDAP.</p>
+</li>
+<li>
+<p>Dans la section <strong>User Match</strong>, entrez le nom unique de base et un filtre de recherche d&#8217;utilisateur approprié à utiliser lors de la récupération des informations utilisateur à partir du serveur LDAP.</p>
+</li>
+<li>
+<p>Dans la section <strong>correspondance de groupe</strong>, entrez le nom unique de base de recherche de groupe et un filtre de recherche de groupe personnalisé approprié.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Veillez à utiliser le nom unique de base (DN) correct et un filtre de recherche approprié pour <strong>User Match</strong> et <strong>Group Match</strong>. Le DN de base indique à Astra Control à quel niveau de l&#8217;arborescence de répertoire démarrer la recherche, et le filtre de recherche limite les parties de l&#8217;arborescence de répertoires Astra Control à partir de.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Sélectionnez <strong>soumettre</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>L&#8217;état du volet <strong>authentification à distance</strong> passe à <strong>en attente</strong>, puis à <strong>connecté</strong> lorsque la connexion au serveur LDAP est établie.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="désactiver-lauthentification-à-distance">Désactiver l&#8217;authentification à distance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez désactiver temporairement une connexion active au serveur LDAP.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1434,62 +1462,35 @@
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Si vous prévoyez d&#8217;ajouter un deuxième cluster OpenShift 4.6, 4.7 ou 4.8 en tant que ressource de calcul gérée, assurez-vous que la fonctionnalité Snapshot de volume Astra Trident est activée. Découvrez l&#8217;Astra Trident officielle <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">"instructions"</a> Pour activer et tester des copies Snapshot de volume avec Astra Trident.
+Lorsque vous désactivez une connexion à un serveur LDAP, tous les paramètres sont enregistrés et tous les utilisateurs et groupes distants ajoutés à Astra Control à partir de ce serveur LDAP sont conservés. Vous pouvez vous reconnecter à ce serveur LDAP à tout moment.
 </td>
 </tr>
 </table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Les classes de stockage Astra Trident sont configurées avec un <a href="requirements.html#supported-storage-backends">"système back-end pris en charge"</a> (requis pour tout type de cluster)</p>
-</li>
-<li>
-<p>Le superutilisateur et l&#8217;ID utilisateur définis sur le système ONTAP de sauvegarde pour sauvegarder et restaurer des applications avec le Centre de contrôle Astra. Exécutez la commande suivante dans la ligne de commande ONTAP :<br>
-<code>export-policy rule modify -vserver &lt;storage virtual machine name&gt; -policyname &lt;policy name&gt;  -ruleindex 1 -superuser sysm --anon 65534</code></p>
-</li>
-<li>
-<p>Découvrez Astra Trident <code>volumesnapshotclass</code> objet défini par un administrateur. Découvrez Astra Trident <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">"instructions"</a> Pour activer et tester des copies Snapshot de volume avec Astra Trident.</p>
-</li>
-<li>
-<p>Assurez-vous de n&#8217;avoir qu&#8217;une seule classe de stockage par défaut définie pour votre cluster Kubernetes.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="effectuer-des-vérifications-déligibilité">Effectuer des vérifications d&#8217;éligibilité</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Effectuez les contrôles d&#8217;éligibilité suivants pour vous assurer que votre grappe est prête à être ajoutée au Centre de contrôle Astra.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Étapes</div>
 <ol class="arabic">
 <li>
-<p>Vérifiez la version de Trident.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get tridentversions -n trident</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Si Trident est présent, vous voyez des valeurs de sortie similaires à celles illustrées dans l&#8217;exemple suivant :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>NAME      VERSION
-trident   21.04.0</pre>
-</div>
+<p>Accédez à <strong>compte &gt; connexions</strong>.</p>
+</li>
+<li>
+<p>Dans le volet <strong>authentification à distance</strong>, sélectionnez le menu de configuration.</p>
+</li>
+<li>
+<p>Sélectionnez <strong>Désactiver</strong>.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Si Trident n&#8217;existe pas, vous voyez des résultats similaires à ce qui suit :</p>
+<p>L&#8217;état du volet <strong>authentification à distance</strong> passe à <strong>Désactivé</strong>. Tous les paramètres d&#8217;authentification à distance, les utilisateurs distants et les groupes distants sont conservés et vous pouvez réactiver la connexion à tout moment.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>error: the server doesn't have a resource type "tridentversions"</pre>
 </div>
+</div>
+<div class="sect1">
+<h2 id="modifier-les-paramètres-dauthentification-à-distance">Modifier les paramètres d&#8217;authentification à distance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si vous avez désactivé la connexion au serveur LDAP ou si le volet <strong>authentification à distance</strong> est à l&#8217;état "erreur de connexion", vous pouvez modifier les paramètres de configuration.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1498,277 +1499,64 @@ trident   21.04.0</pre>
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Si Trident n&#8217;est pas installé ou si la version installée n&#8217;est pas la dernière, vous devez installer la dernière version de Trident avant de continuer. Voir la <a href="https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html" target="_blank" rel="noopener">"Documentation Trident"</a> pour obtenir des instructions.
+Vous ne pouvez pas modifier l&#8217;adresse IP ou l&#8217;URL du serveur LDAP lorsque le volet <strong>authentification distante</strong> est à l&#8217;état "Désactivé". Vous devez le faire  remote authentication tout d&#8217;abord.
 </td>
 </tr>
 </table>
-</div>
-</li>
-<li>
-<p>Vérifiez si les classes de stockage utilisent les pilotes Trident pris en charge. Le nom de provisionnement doit être <code>csi.trident.netapp.io</code>. Voir l&#8217;exemple suivant :</p>
-<div class="listingblock">
-<div class="content">
-<pre>kubectl get sc
-NAME                   PROVISIONER                    RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate           true                   5d23h
-thin                   kubernetes.io/vsphere-volume   Delete          Immediate           false                  6d</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="créez-un-kubeconfig-rôle-admin">Créez un kubeconfig. Rôle admin</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Avant d&#8217;effectuer les étapes suivantes, assurez-vous que vous disposez des éléments suivants sur votre machine :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>kubectl</code> v1.19 ou version ultérieure installé</p>
-</li>
-<li>
-<p>Un kubeconfig actif avec des droits d&#8217;administrateur de cluster pour le contexte actif</p>
-</li>
-</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Étapes</div>
 <ol class="arabic">
 <li>
-<p>Créer un compte de service comme suit :</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Créez un fichier de compte de service appelé <code>astracontrol-service-account.yaml</code>.</p>
-<div class="paragraph">
-<p>Ajustez le nom et l&#8217;espace de noms selon vos besoins. Si des modifications sont apportées ici, vous devez appliquer les mêmes modifications dans les étapes suivantes.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code><strong>astracontrol-service-account.yaml</strong></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: astracontrol-service-account
-  namespace: default</code></pre>
-</div>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Appliquer le compte de service :</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl apply -f astracontrol-service-account.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
+<p>Accédez à <strong>compte &gt; connexions</strong>.</p>
 </li>
 <li>
-<p>(Facultatif) si votre cluster utilise une politique de sécurité de pod restrictive qui ne permet pas la création de pod privilégié ou l&#8217;exécution des processus dans les conteneurs de pod en tant qu&#8217;utilisateur racine, créez une politique de sécurité de pod personnalisée pour le cluster qui permet à Astra Control de créer et de gérer des pods. Pour obtenir des instructions, reportez-vous à la section <a href="acc-create-podsecuritypolicy.html">"Créez une stratégie de sécurité de pod personnalisée"</a>.</p>
+<p>Dans le volet <strong>authentification à distance</strong>, sélectionnez le menu de configuration.</p>
 </li>
 <li>
-<p>Accordez des autorisations d&#8217;administration du cluster comme suit :</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Créer un <code>ClusterRoleBinding</code> fichier appelé <code>astracontrol-clusterrolebinding.yaml</code>.</p>
-<div class="paragraph">
-<p>Ajustez les noms et espaces de noms modifiés lors de la création du compte de service, le cas échéant.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code><strong>astracontrol-clusterrolebinding.yaml</strong></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: astracontrol-admin
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-- kind: ServiceAccount
-  name: astracontrol-service-account
-  namespace: default</code></pre>
-</div>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Appliquer la liaison de rôle de cluster :</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl apply -f astracontrol-clusterrolebinding.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
+<p>Sélectionnez <strong>Modifier</strong>.</p>
 </li>
 <li>
-<p>Indiquez les secrets du compte de service, en les remplaçant <code>&lt;context&gt;</code> avec le contexte approprié pour votre installation :</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">kubectl get serviceaccount astracontrol-service-account --context &lt;context&gt; --namespace default -o json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>La fin de la sortie doit ressembler à ce qui suit :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>"secrets": [
-{ "name": "astracontrol-service-account-dockercfg-vhz87"},
-{ "name": "astracontrol-service-account-token-r59kr"}
-]</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Les indices pour chaque élément dans <code>secrets</code> la matrice commence par 0. Dans l&#8217;exemple ci-dessus, l&#8217;index de <code>astracontrol-service-account-dockercfg-vhz87</code> serait 0 et l&#8217;index pour <code>astracontrol-service-account-token-r59kr</code> serait 1. Dans votre résultat, notez l&#8217;index du nom du compte de service qui contient le mot "jeton".</p>
-</div>
-</li>
-<li>
-<p>Générez le kubeconfig comme suit :</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Créer un <code>create-kubeconfig.sh</code> fichier. Remplacement <code>TOKEN_INDEX</code> au début du script suivant avec la valeur correcte.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code><strong>create-kubeconfig.sh</strong></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh"># Update these to match your environment.
-# Replace TOKEN_INDEX with the correct value
-# from the output in the previous step. If you
-# didn't change anything else above, don't change
-# anything else here.
-
-SERVICE_ACCOUNT_NAME=astracontrol-service-account
-NAMESPACE=default
-NEW_CONTEXT=astracontrol
-KUBECONFIG_FILE='kubeconfig-sa'
-
-CONTEXT=$(kubectl config current-context)
-
-SECRET_NAME=$(kubectl get serviceaccount ${SERVICE_ACCOUNT_NAME} \
-  --context ${CONTEXT} \
-  --namespace ${NAMESPACE} \
-  -o jsonpath='{.secrets[TOKEN_INDEX].name}')
-TOKEN_DATA=$(kubectl get secret ${SECRET_NAME} \
-  --context ${CONTEXT} \
-  --namespace ${NAMESPACE} \
-  -o jsonpath='{.data.token}')
-
-TOKEN=$(echo ${TOKEN_DATA} | base64 -d)
-
-# Create dedicated kubeconfig
-# Create a full copy
-kubectl config view --raw &gt; ${KUBECONFIG_FILE}.full.tmp
-
-# Switch working context to correct context
-kubectl --kubeconfig ${KUBECONFIG_FILE}.full.tmp config use-context ${CONTEXT}
-
-# Minify
-kubectl --kubeconfig ${KUBECONFIG_FILE}.full.tmp \
-  config view --flatten --minify &gt; ${KUBECONFIG_FILE}.tmp
-
-# Rename context
-kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
-  rename-context ${CONTEXT} ${NEW_CONTEXT}
-
-# Create token user
-kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
-  set-credentials ${CONTEXT}-${NAMESPACE}-token-user \
-  --token ${TOKEN}
-
-# Set context to use token user
-kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
-  set-context ${NEW_CONTEXT} --user ${CONTEXT}-${NAMESPACE}-token-user
-
-# Set context to correct namespace
-kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
-  set-context ${NEW_CONTEXT} --namespace ${NAMESPACE}
-
-# Flatten/minify kubeconfig
-kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
-  view --flatten --minify &gt; ${KUBECONFIG_FILE}
-
-# Remove tmp
-rm ${KUBECONFIG_FILE}.full.tmp
-rm ${KUBECONFIG_FILE}.tmp</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Source des commandes à appliquer à votre cluster Kubernetes.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">source create-kubeconfig.sh</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>(<strong>Facultatif</strong>) Renommer le kubeconfig en un nom significatif pour votre grappe. Protéger les informations d&#8217;identification du cluster.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">chmod 700 create-kubeconfig.sh
-mv kubeconfig-sa.txt YOUR_CLUSTER_NAME_kubeconfig</code></pre>
-</div>
-</div>
+<p>Apportez les modifications nécessaires et sélectionnez <strong>Modifier</strong>.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="et-la-suite">Et la suite ?</h2>
+<h2 id="déconnectez-lauthentification-à-distance">Déconnectez l&#8217;authentification à distance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Maintenant que vous avez vérifié que les conditions préalables sont remplies, vous êtes prêt à <a href="setup_overview.html" target="_blank" rel="noopener">"ajouter un cluster"</a>.</p>
+<p>Vous pouvez vous déconnecter d&#8217;un serveur LDAP et supprimer les paramètres de configuration d&#8217;Astra Control.</p>
 </div>
-<h2 id="trouvez-plus-dinformations" class="discrete">Trouvez plus d&#8217;informations</h2>
-<div class="ulist">
-<ul>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/caution.svg" alt="Avertissement">
+</td>
+<td class="content">
+Lorsque vous vous déconnectez du serveur LDAP, tous les paramètres de configuration de ce serveur LDAP sont supprimés d&#8217;Astra Control, ainsi que tous les utilisateurs et groupes distants ajoutés à partir de ce serveur LDAP.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
 <li>
-<p><a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"Documentation Trident"</a></p>
+<p>Accédez à <strong>compte &gt; connexions</strong>.</p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"Utilisez l&#8217;API de contrôle Astra"</a></p>
+<p>Dans le volet <strong>authentification à distance</strong>, sélectionnez le menu de configuration.</p>
 </li>
-</ul>
+<li>
+<p>Sélectionnez <strong>déconnecter</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>L&#8217;état du volet <strong>authentification à distance</strong> passe à <strong>déconnecté</strong>. Les paramètres d&#8217;authentification à distance, les utilisateurs distants et les groupes distants sont supprimés d&#8217;Astra Control.</p>
 </div>
 </div>
 </div>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head class="at-element-marker">
-  <title>Afficher l&#8217;état de santé et les détails des clusters</title>
+  <title>Afficher l&#8217;état de santé des clusters et gérer les classes de stockage</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Afficher l&#8217;état de santé et les détails des clusters" />
+  <meta property="og:title" content="Afficher l&#8217;état de santé des clusters et gérer les classes de stockage" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/use/view-clusters.html" />
 	<meta property="og:description" content="Après avoir ajouté des clusters à Astra Control Center, vous pouvez afficher des informations détaillées sur le cluster, notamment son emplacement, les nœuds..." />
@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Après avoir ajouté des clusters à Astra Control Center, vous pouvez afficher des informations détaillées sur le cluster, notamment son emplacement, les nœuds...">
-  <meta name="keywords" content=" view cluster, cluster storage, cluster overview"><!-- Icons -->
+  <meta name="keywords" content=" view cluster, edit storage class, storage class, cluster storage, cluster overview"><!-- Icons -->
   <link rel="icon" href="/fr-fr/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -161,9 +161,9 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar"><div id="version-dropdown-new" class="custom-dropdown" >
-  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.08">
+  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.11">
     <label>Version</label>
-    <span translate="no" class="notranslate">Centre de contrôle Astra 22.08</span>
+    <span translate="no" class="notranslate">Centre de contrôle Astra 22.11</span>
     <img src="/fr-fr/astra-control-center/images/chevron_up.svg" alt="" class="custom-icon chevrondown invisible" />
     <img src="/fr-fr/astra-control-center/images/chevron_down.svg" alt="" class="custom-icon chevronup" />
   </div>
@@ -171,6 +171,13 @@
   <ul class="custom-dropdown-menu"><li>
       
       <a href="https://docs.netapp.com/fr-fr/astra-control-center/use/view-clusters.html" target="_self">
+        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.11</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2208/use/view-clusters.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.08</span></span>
       </a>
                      
@@ -189,16 +196,9 @@
       </a>
                      
     </li>
-    <li>
-      
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2108/use/view-clusters.html" target="_self">
-        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.08</span></span>
-      </a>
-                     
-    </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Afficher l&#8217;état de santé et les détails des clusters](https://docs.netapp.com/fr-fr/astra-control-center/use/view-clusters.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/view-clusters.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Afficher l&#8217;état de santé des clusters et gérer les classes de stockage](https://docs.netapp.com/fr-fr/astra-control-center/use/view-clusters.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/view-clusters.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">SUR CETTE PAGE</div>
@@ -411,6 +411,17 @@
 
 
 
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -419,13 +430,53 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Problèmes_connus.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Commencez.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Problèmes connus
+            Commencez
           </a>
           
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Présentation_de_l_installation.pdf" 
+            
+          >
+            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
+            Présentation de l'installation
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Poser_le_centre_de_contrôle_Astra.pdf" 
+            
+          >
+            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
+            Poser le centre de contrôle Astra
+          </a>
+          
+
+
 
 
         </li>
@@ -433,6 +484,21 @@
     
 
   
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
 
 
 
@@ -490,125 +556,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Commencez.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra_Control_Center.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Commencez
-          </a>
-          
-
-
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Présentation_de_l_installation.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Présentation de l'installation
-          </a>
-          
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Poser_le_centre_de_contrôle_Astra.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Poser le centre de contrôle Astra
-          </a>
-          
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Configurer_le_centre_de_contrôle_Astra.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Configurer le centre de contrôle Astra
-          </a>
-          
-
-
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Utilisez Astra
+            Utilisez Astra Control Center
           </a>
           
 
@@ -732,13 +684,13 @@
 
 
 
-
-
         </li>
       </ul>
     
 
   
+
+
 
 
 
@@ -769,11 +721,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_les_API_REST.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_l_API_REST_d_Astra_Control.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Automatisez avec les API REST
+            Automatisez avec l'API REST d'Astra Control
           </a>
           
 
@@ -880,26 +832,114 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Problèmes connus"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/release-notes/known-issues.html">
-        <div class="na-navbar-padding"> Problèmes connus</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"
-      data-li-level="3#" 
+      data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues-ads.html">
-        Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra
-      </a></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues.html">
+        Problèmes connus
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Limites connues"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-limitations.html">
         Limites connues
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Commencez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Commencez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Découvrez Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/intro.html">
+        Découvrez Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Exigences du centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
+        Exigences du centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Démarrage rapide pour Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
+        Démarrage rapide pour Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Présentation de l'installation"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
+        <div class="na-navbar-padding"> Présentation de l'installation</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Poser le centre de contrôle Astra"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
+        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Options de ressources personnalisées du cluster Astra Control Center"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
+        Options de ressources personnalisées du cluster Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez un cert-Manager externe"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
+        Configurez un cert-Manager externe
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
+        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
+        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra après l'installation"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/configure-after-install.html">
+        Configurer le centre de contrôle Astra après l'installation
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/setup_overview.html">
+        Configurer le centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
+        FAQ
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Concepts"
@@ -910,13 +950,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez Astra Control"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/intro.html">
-        Découvrez Astra Control
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Architecture et composants"
       data-li-level="2#" 
@@ -958,126 +991,20 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/user-roles-namespaces.html">
         Rôles et espaces de noms d'utilisateur
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sécurité des pods"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/understand-pod-security.html">
+        Sécurité des pods
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Commencez"
+      data-pdf-filename="Utilisez Astra Control Center"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Commencez</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exigences du centre de contrôle Astra"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
-        Exigences du centre de contrôle Astra
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Démarrage rapide pour Astra Control Center"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
-        Démarrage rapide pour Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Présentation de l'installation"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
-        <div class="na-navbar-padding"> Présentation de l'installation</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Poser le centre de contrôle Astra"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
-        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez les options CR du cluster Astra Control Center"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
-        Découvrez les options CR du cluster Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Comprendre les restrictions de la stratégie de sécurité du pod"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/understand-psp-restrictions.html">
-        Comprendre les restrictions de la stratégie de sécurité du pod
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurez un cert-Manager externe"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
-        Configurez un cert-Manager externe
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
-        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
-        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurer le centre de contrôle Astra"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/setup_overview.html">
-        <div class="na-navbar-padding"> Configurer le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Conditions préalables à l'ajout d'un cluster"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-cluster-reqs.html">
-        Conditions préalables à l'ajout d'un cluster
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Ajouter un certificat TLS personnalisé"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-custom-tls-certificate.html">
-        Ajouter un certificat TLS personnalisé
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Créez une stratégie de sécurité de pod personnalisée"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
-        Créez une stratégie de sécurité de pod personnalisée
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="FAQ"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
-        FAQ
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Utilisez Astra"
-      data-li-level="1" 
-      class="subfolders "
-    ><a href="#">
-        <div class="na-navbar-padding"> Utilisez Astra</div>
+        <div class="na-navbar-padding"> Utilisez Astra Control Center</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1188,18 +1115,25 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérer les utilisateurs"
+      data-pdf-filename="Gérez les utilisateurs et les rôles locaux"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-users.html">
-        Gérer les utilisateurs
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-local-users-and-roles.html">
+        Gérez les utilisateurs et les rôles locaux
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérez les rôles"
+      data-pdf-filename="Gérer l'authentification à distance"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-roles.html">
-        Gérez les rôles
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-authentication.html">
+        Gérer l'authentification à distance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez des utilisateurs et des groupes distants"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-users-groups.html">
+        Gérez des utilisateurs et des groupes distants
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les notifications"
@@ -1228,20 +1162,6 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/update-licenses.html">
         Mettre à jour une licence existante
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les connexions au référentiel"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-connections.html">
-        Gérer les connexions au référentiel
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les packs logiciels"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-packages-acc.html">
-        Gérer les packs logiciels
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestion des compartiments"
@@ -1256,6 +1176,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-backend.html">
         Gérer le stockage back-end
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Surveillez les tâches en cours d'exécution"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/monitor-running-tasks.html">
+        Surveillez les tâches en cours d'exécution
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Contrôle de l'infrastructure avec Cloud Insights et Fluentd"
@@ -1286,11 +1213,11 @@
         Désinstaller Astra Control Center
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Automatisez avec les API REST"
+      data-pdf-filename="Automatisez avec l'API REST d'Astra Control"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Automatisez avec les API REST</div>
+        <div class="na-navbar-padding"> Automatisez avec l'API REST d'Astra Control</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1397,14 +1324,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Afficher l&#8217;état de santé et les détails des clusters</h1>
+  <h1 class="n-doc__component-detail-heading">Afficher l&#8217;état de santé des clusters et gérer les classes de stockage</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 05:14:11 +0000">11/17/2022</time>
+    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
     
   
 
@@ -1414,8 +1341,18 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Une fois que vous avez ajouté des clusters à gérer par Astra Control Center, vous pouvez afficher des informations détaillées sur le cluster, notamment son emplacement, les nœuds de travail, les volumes persistants et les classes de stockage.</p>
+<p>Une fois que vous avez ajouté des clusters à gérer par Astra Control Center, vous pouvez afficher des informations détaillées sur le cluster, notamment son emplacement, les nœuds de travail, les volumes persistants et les classes de stockage. Vous pouvez également modifier la classe de stockage par défaut des clusters gérés.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="afficher-les-détails-et-létat-de-santé-des-clusters">Afficher les détails et l&#8217;état de santé des clusters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez afficher des informations détaillées sur le cluster, telles que son emplacement, les nœuds de travail, les volumes persistants et les classes de stockage.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Étapes</div>
@@ -1467,6 +1404,51 @@ Vous pouvez également afficher les informations du groupe d&#8217;instruments �
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modifiez-la-classe-de-stockage-par-défaut">Modifiez la classe de stockage par défaut</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez modifier la classe de stockage par défaut d&#8217;un cluster. Lorsque Astra Control gère un cluster, il conserve le suivi de la classe de stockage par défaut du cluster.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Ne modifiez pas la classe de stockage à l&#8217;aide des commandes kubectl. Utilisez plutôt cette procédure. Astra Control va rétablir les modifications si elles ont été effectuées à l&#8217;aide de kubectl.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans l&#8217;interface utilisateur Web Astra Control Center, sélectionnez <strong>clusters</strong>.</p>
+</li>
+<li>
+<p>Sur la page <strong>clusters</strong>, sélectionnez le cluster que vous souhaitez modifier.</p>
+</li>
+<li>
+<p>Sélectionnez l&#8217;onglet <strong>stockage</strong>.</p>
+</li>
+<li>
+<p>Sélectionnez la catégorie <strong>classes de stockage</strong>.</p>
+</li>
+<li>
+<p>Sélectionnez le menu <strong>actions</strong> pour la classe de stockage que vous souhaitez définir par défaut.</p>
+</li>
+<li>
+<p>Sélectionnez <strong>définir comme valeur par défaut</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 
     </article>

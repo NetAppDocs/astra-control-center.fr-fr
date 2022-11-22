@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head class="at-element-marker">
-  <title>Gérez les rôles</title>
+  <title>Sécurité des pods</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Gérez les rôles" />
+  <meta property="og:title" content="Sécurité des pods" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/use/manage-roles.html" />
-	<meta property="og:description" content="Apprenez à gérer les rôles d"utilisateur en ajoutant une contrainte au rôle." />
+	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/concepts/understand-pod-security.html" />
+	<meta property="og:description" content="Vous devez comprendre le fonctionnement de la sécurité du pod avant d"installer Astra Control Center." />
   <meta property="og:image" content="https://docs.netapp.com/fr-fr/astra-control-center/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Apprenez à gérer les rôles d"utilisateur en ajoutant une contrainte au rôle.">
-  <meta name="keywords" content=" users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint, constraints"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Vous devez comprendre le fonctionnement de la sécurité du pod avant d"installer Astra Control Center.">
+  <meta name="keywords" content=" login, Astra Control Center, web ui, tls, certificate"><!-- Icons -->
   <link rel="icon" href="/fr-fr/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -161,44 +161,44 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar"><div id="version-dropdown-new" class="custom-dropdown" >
-  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.08">
+  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.11">
     <label>Version</label>
-    <span translate="no" class="notranslate">Centre de contrôle Astra 22.08</span>
+    <span translate="no" class="notranslate">Centre de contrôle Astra 22.11</span>
     <img src="/fr-fr/astra-control-center/images/chevron_up.svg" alt="" class="custom-icon chevrondown invisible" />
     <img src="/fr-fr/astra-control-center/images/chevron_down.svg" alt="" class="custom-icon chevronup" />
   </div>
 
   <ul class="custom-dropdown-menu"><li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center/use/manage-roles.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center/concepts/understand-pod-security.html" target="_self">
+        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.11</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2208/concepts/understand-pod-security.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.08</span></span>
       </a>
                      
     </li>
     <li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2204/use/manage-roles.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2204/concepts/understand-pod-security.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.04</span></span>
       </a>
                      
     </li>
     <li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2112/use/manage-roles.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2112/concepts/understand-pod-security.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.12</span></span>
-      </a>
-                     
-    </li>
-    <li>
-      
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2108/use/manage-roles.html" target="_self">
-        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.08</span></span>
       </a>
                      
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Gérez les rôles](https://docs.netapp.com/fr-fr/astra-control-center/use/manage-roles.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/use/manage-roles.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Sécurité des pods](https://docs.netapp.com/fr-fr/astra-control-center/concepts/understand-pod-security.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/concepts/understand-pod-security.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">SUR CETTE PAGE</div>
@@ -321,19 +321,19 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/fr-fr/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+          <a href="https://docs.netapp.com/fr-fr/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/de-de/astra-control-center/use/manage-roles.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+          <a href="https://docs.netapp.com/de-de/astra-control-center/concepts/understand-pod-security.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -411,66 +411,6 @@
 
 
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Problèmes_connus.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Problèmes connus
-          </a>
-          
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Concepts.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Concepts
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -497,6 +437,8 @@
             Commencez
           </a>
           
+
+
 
 
 
@@ -537,6 +479,17 @@
 
 
 
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
 
 
         </li>
@@ -566,11 +519,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Configurer_le_centre_de_contrôle_Astra.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Concepts.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Configurer le centre de contrôle Astra
+            Concepts
           </a>
           
 
@@ -579,13 +532,14 @@
 
 
 
-        </li>
-      </ul>
-    
 
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
-
-
 
 
         </li>
@@ -604,11 +558,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra_Control_Center.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Utilisez Astra
+            Utilisez Astra Control Center
           </a>
           
 
@@ -718,10 +672,6 @@
           
 
 
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
-
-
 
 
 
@@ -739,6 +689,8 @@
     
 
   
+
+
 
 
 
@@ -769,11 +721,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_les_API_REST.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_l_API_REST_d_Astra_Control.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Automatisez avec les API REST
+            Automatisez avec l'API REST d'Astra Control
           </a>
           
 
@@ -880,26 +832,114 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Problèmes connus"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/release-notes/known-issues.html">
-        <div class="na-navbar-padding"> Problèmes connus</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"
-      data-li-level="3#" 
+      data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues-ads.html">
-        Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra
-      </a></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues.html">
+        Problèmes connus
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Limites connues"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-limitations.html">
         Limites connues
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Commencez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Commencez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Découvrez Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/intro.html">
+        Découvrez Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Exigences du centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
+        Exigences du centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Démarrage rapide pour Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
+        Démarrage rapide pour Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Présentation de l'installation"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
+        <div class="na-navbar-padding"> Présentation de l'installation</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Poser le centre de contrôle Astra"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
+        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Options de ressources personnalisées du cluster Astra Control Center"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
+        Options de ressources personnalisées du cluster Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez un cert-Manager externe"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
+        Configurez un cert-Manager externe
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
+        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
+        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra après l'installation"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/configure-after-install.html">
+        Configurer le centre de contrôle Astra après l'installation
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/setup_overview.html">
+        Configurer le centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
+        FAQ
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Concepts"
@@ -910,13 +950,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez Astra Control"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/intro.html">
-        Découvrez Astra Control
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Architecture et composants"
       data-li-level="2#" 
@@ -958,126 +991,20 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/user-roles-namespaces.html">
         Rôles et espaces de noms d'utilisateur
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sécurité des pods"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/understand-pod-security.html">
+        Sécurité des pods
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Commencez"
+      data-pdf-filename="Utilisez Astra Control Center"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Commencez</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exigences du centre de contrôle Astra"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
-        Exigences du centre de contrôle Astra
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Démarrage rapide pour Astra Control Center"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
-        Démarrage rapide pour Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Présentation de l'installation"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
-        <div class="na-navbar-padding"> Présentation de l'installation</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Poser le centre de contrôle Astra"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
-        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez les options CR du cluster Astra Control Center"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
-        Découvrez les options CR du cluster Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Comprendre les restrictions de la stratégie de sécurité du pod"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/understand-psp-restrictions.html">
-        Comprendre les restrictions de la stratégie de sécurité du pod
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurez un cert-Manager externe"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
-        Configurez un cert-Manager externe
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
-        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
-        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurer le centre de contrôle Astra"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/setup_overview.html">
-        <div class="na-navbar-padding"> Configurer le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Conditions préalables à l'ajout d'un cluster"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-cluster-reqs.html">
-        Conditions préalables à l'ajout d'un cluster
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Ajouter un certificat TLS personnalisé"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-custom-tls-certificate.html">
-        Ajouter un certificat TLS personnalisé
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Créez une stratégie de sécurité de pod personnalisée"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
-        Créez une stratégie de sécurité de pod personnalisée
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="FAQ"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
-        FAQ
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Utilisez Astra"
-      data-li-level="1" 
-      class="subfolders "
-    ><a href="#">
-        <div class="na-navbar-padding"> Utilisez Astra</div>
+        <div class="na-navbar-padding"> Utilisez Astra Control Center</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1188,18 +1115,25 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérer les utilisateurs"
+      data-pdf-filename="Gérez les utilisateurs et les rôles locaux"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-users.html">
-        Gérer les utilisateurs
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-local-users-and-roles.html">
+        Gérez les utilisateurs et les rôles locaux
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérez les rôles"
+      data-pdf-filename="Gérer l'authentification à distance"
       data-li-level="3#" 
-      class="  active "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-roles.html">
-        Gérez les rôles
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-authentication.html">
+        Gérer l'authentification à distance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez des utilisateurs et des groupes distants"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-users-groups.html">
+        Gérez des utilisateurs et des groupes distants
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les notifications"
@@ -1228,20 +1162,6 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/update-licenses.html">
         Mettre à jour une licence existante
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les connexions au référentiel"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-connections.html">
-        Gérer les connexions au référentiel
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les packs logiciels"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-packages-acc.html">
-        Gérer les packs logiciels
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestion des compartiments"
@@ -1256,6 +1176,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-backend.html">
         Gérer le stockage back-end
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Surveillez les tâches en cours d'exécution"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/monitor-running-tasks.html">
+        Surveillez les tâches en cours d'exécution
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Contrôle de l'infrastructure avec Cloud Insights et Fluentd"
@@ -1286,11 +1213,11 @@
         Désinstaller Astra Control Center
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Automatisez avec les API REST"
+      data-pdf-filename="Automatisez avec l'API REST d'Astra Control"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Automatisez avec les API REST</div>
+        <div class="na-navbar-padding"> Automatisez avec l'API REST d'Astra Control</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1397,14 +1324,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Gérez les rôles</h1>
+  <h1 class="n-doc__component-detail-heading">Sécurité des pods</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 05:14:11 +0000">11/17/2022</time>
+    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
     
   
 
@@ -1416,121 +1343,116 @@
 
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>Astra Control Center prend en charge la limitation des privilèges via les politiques de sécurité du pod (CSP) et l&#8217;admission à la sécurité du pod (PSA). Ces frameworks vous permettent de limiter les utilisateurs ou les groupes capables d&#8217;exécuter des conteneurs et les privilèges dont ils disposent.</p>
+</div>
 <div class="paragraph">
-<p>Vous pouvez gérer les rôles en ajoutant des contraintes d&#8217;espace de noms et en restreignant les rôles des utilisateurs à ces contraintes. Cela vous permet de contrôler l&#8217;accès aux ressources de votre organisation. Vous pouvez utiliser l&#8217;interface utilisateur de contrôle Astra ou <a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"API de contrôle Astra"</a> pour gérer les rôles.</p>
+<p>Certaines distributions Kubernetes peuvent disposer d&#8217;une configuration de sécurité du pod par défaut trop restrictive et entraîner des problèmes lors de l&#8217;installation d&#8217;Astra Control Center.</p>
+</div>
+<div class="paragraph">
+<p>Vous pouvez utiliser les informations et exemples inclus ici pour comprendre les changements de sécurité apportés par Astra Control Center et utiliser une approche de sécurité de pod qui fournit la protection dont vous avez besoin sans interférer avec les fonctions du Control Center Astra.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ajoutez-une-contrainte-despace-de-noms-à-un-rôle">Ajoutez une contrainte d&#8217;espace de noms à un rôle</h2>
+<h2 id="psa-appliquée-par-astra-control-center">PSA appliquée par Astra Control Center</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Un administrateur ou un propriétaire peut ajouter des contraintes d&#8217;espace de noms.</p>
+<p>Pendant l&#8217;installation, Astra Control Center permet d&#8217;appliquer une entrée de sécurité de pod en ajoutant l&#8217;étiquette suivante au <code>netapp-acc</code> ou un espace de noms personnalisé :</p>
 </div>
-<div class="olist arabic">
-<div class="title">Étapes</div>
-<ol class="arabic">
-<li>
-<p>Dans la zone de navigation <strong>gérer votre compte</strong>, sélectionnez <strong>compte</strong>.</p>
-</li>
-<li>
-<p>Sélectionnez l&#8217;onglet <strong>utilisateurs</strong>.</p>
-</li>
-<li>
-<p>Dans la colonne <strong>actions</strong>, sélectionnez le bouton de menu d&#8217;un utilisateur ayant le rôle membre ou visualiseur.</p>
-</li>
-<li>
-<p>Sélectionnez <strong>Modifier le rôle</strong>.</p>
-</li>
-<li>
-<p>Activez la case à cocher <strong>restreindre le rôle aux contraintes</strong>.</p>
-<div class="paragraph">
-<p>La case à cocher n&#8217;est disponible que pour les rôles de membre ou de visualiseur. Vous pouvez sélectionner un autre rôle dans la liste déroulante <strong>role</strong>.</p>
+<div class="listingblock">
+<div class="content">
+<pre>pod-security.kubernetes.io/enforce: privileged</pre>
 </div>
-</li>
-<li>
-<p>Sélectionnez <strong>Ajouter une contrainte</strong>.</p>
-<div class="paragraph">
-<p>Vous pouvez afficher la liste des contraintes disponibles par espace de noms ou par étiquette d&#8217;espace de noms.</p>
-</div>
-</li>
-<li>
-<p>Dans la liste déroulante <strong>Type de contrainte</strong>, sélectionnez <strong>espace de noms Kubernetes</strong> ou <strong>étiquette d&#8217;espace de noms Kubernetes</strong> selon la configuration de vos espaces de noms.</p>
-</li>
-<li>
-<p>Sélectionnez un ou plusieurs espaces de noms ou étiquettes dans la liste pour composer une contrainte qui restreint les rôles à ces espaces de noms.</p>
-</li>
-<li>
-<p>Sélectionnez <strong>confirmer</strong>.</p>
-<div class="paragraph">
-<p>La page <strong>Modifier rôle</strong> affiche la liste des contraintes que vous avez choisies pour ce rôle.</p>
-</div>
-</li>
-<li>
-<p>Sélectionnez <strong>confirmer</strong>.</p>
-<div class="paragraph">
-<p>Sur la page <strong>compte</strong>, vous pouvez afficher les contraintes pour n&#8217;importe quel rôle de membre ou de visualiseur dans la colonne <strong>rôle</strong>.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Si vous activez des contraintes pour un rôle et que vous sélectionnez <strong>confirmer</strong> sans ajouter de contraintes, le rôle est considéré comme étant soumis à des restrictions complètes (le rôle est refusé l&#8217;accès aux ressources affectées aux espaces de noms).
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="supprime-une-contrainte-despace-de-noms-dun-rôle">Supprime une contrainte d&#8217;espace de noms d&#8217;un rôle</h2>
+<h2 id="psp-installé-par-astra-control-center">PSP installé par Astra Control Center</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Un utilisateur Admin ou propriétaire peut supprimer une contrainte d&#8217;espace de noms d&#8217;un rôle.</p>
+<p>Lorsque vous installez Astra Control Center sur Kubernetes 1.23 ou 1.24, plusieurs règles de sécurité du pod sont créées lors de l&#8217;installation. Certaines sont permanentes, certaines d&#8217;entre elles sont créées pendant certaines opérations et sont supprimées une fois l&#8217;opération terminée. Astra Control Center ne tente pas d&#8217;installer les PSP lorsque le cluster hôte exécute Kubernetes 1.25 ou une version ultérieure, car ils ne sont pas pris en charge sur ces versions.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Étapes</div>
-<ol class="arabic">
-<li>
-<p>Dans la zone de navigation <strong>gérer votre compte</strong>, sélectionnez <strong>compte</strong>.</p>
-</li>
-<li>
-<p>Sélectionnez l&#8217;onglet <strong>utilisateurs</strong>.</p>
-</li>
-<li>
-<p>Dans la colonne <strong>actions</strong>, sélectionnez le bouton de menu d&#8217;un utilisateur ayant le rôle membre ou visualiseur ayant des contraintes actives.</p>
-</li>
-<li>
-<p>Sélectionnez <strong>Modifier le rôle</strong>.</p>
+<div class="sect2">
+<h3 id="psp-créé-lors-de-linstallation">PSP créé lors de l&#8217;installation</h3>
 <div class="paragraph">
-<p>La boîte de dialogue <strong>Modifier le rôle</strong> affiche les contraintes actives du rôle.</p>
+<p>Lors de l&#8217;installation d&#8217;Astra Control Center, l&#8217;opérateur d&#8217;Astra Control Center installe une stratégie de sécurité de pod personnalisée, un objet de rôle et un objet RoleBinding pour prendre en charge le déploiement des services Astra Control Center dans l&#8217;espace de noms Astra Control Center.</p>
 </div>
-</li>
-<li>
-<p>Sélectionnez <strong>X</strong> à droite de la contrainte à supprimer.</p>
-</li>
-<li>
-<p>Sélectionnez <strong>confirmer</strong>.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>La nouvelle règle et les objets ont les attributs suivants :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl get psp
+
+NAME                           PRIV    CAPS          SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-astra-deployment-psp    false                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+kubectl get role -n &lt;namespace_name&gt;
+
+NAME                                     CREATED AT
+netapp-astra-deployment-role             2022-06-27T19:34:58Z
+
+kubectl get rolebinding -n &lt;namespace_name&gt;
+
+NAME                                     ROLE                                          AGE
+netapp-astra-deployment-rb               Role/netapp-astra-deployment-role             32m</pre>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="pour-en-savoir-plus">Pour en savoir plus</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../concepts/user-roles-namespaces.html">"Rôles et espaces de noms d&#8217;utilisateur"</a></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="psp-créé-pendant-les-opérations-de-sauvegarde">PSP créé pendant les opérations de sauvegarde</h3>
+<div class="paragraph">
+<p>Pendant les opérations de sauvegarde, Astra Control Center crée une règle de sécurité dynamique de pod, un objet ClusterRole et un objet RoleBinding. Ils prennent en charge le processus de sauvegarde, qui se produit dans un espace de noms distinct.</p>
+</div>
+<div class="paragraph">
+<p>La nouvelle règle et les objets ont les attributs suivants :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl get psp
+
+NAME                           PRIV    CAPS                            SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-astra-backup            false   DAC_READ_SEARCH                 RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+kubectl get role -n &lt;namespace_name&gt;
+
+NAME                  CREATED AT
+netapp-astra-backup   2022-07-21T00:00:00Z
+
+kubectl get rolebinding -n &lt;namespace_name&gt;
+
+NAME                  ROLE                       AGE
+netapp-astra-backup   Role/netapp-astra-backup   62s</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="psp-créé-lors-de-la-gestion-du-cluster">PSP créé lors de la gestion du cluster</h3>
+<div class="paragraph">
+<p>Lorsque vous gérez un cluster, Astra Control Center installe l&#8217;opérateur de surveillance netapp dans le cluster géré. Cet opérateur crée une politique de sécurité pod, un objet ClusterRole et un objet RoleBinding pour déployer des services de télémétrie dans l&#8217;espace de noms Astra Control Center.</p>
+</div>
+<div class="paragraph">
+<p>La nouvelle règle et les objets ont les attributs suivants :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl get psp
+
+NAME                           PRIV    CAPS                            SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
+netapp-monitoring-psp-nkmo     true    AUDIT_WRITE,NET_ADMIN,NET_RAW   RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
+
+kubectl get role -n &lt;namespace_name&gt;
+
+NAME                                           CREATED AT
+netapp-monitoring-role-privileged              2022-07-21T00:00:00Z
+
+kubectl get rolebinding -n &lt;namespace_name&gt;
+
+NAME                                                  ROLE                                                AGE
+netapp-monitoring-role-binding-privileged             Role/netapp-monitoring-role-privileged              2m5s</pre>
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head class="at-element-marker">
-  <title>Découvrez Astra Control</title>
+  <title>Comprendre la gestion des applications</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Découvrez Astra Control" />
+  <meta property="og:title" content="Comprendre la gestion des applications" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/concepts/intro.html" />
-	<meta property="og:description" content="Astra, un service de gestion du cycle de vie des données applicatives Kubernetes, qui simplifie les opérations des applications avec état. Protégez, sauvegar..." />
+	<meta property="og:url" content="https://docs.netapp.com/fr-fr/astra-control-center/concepts/app-management.html" />
+	<meta property="og:description" content="Décrit le type d"applications gérées dans Astra Control." />
   <meta property="og:image" content="https://docs.netapp.com/fr-fr/astra-control-center/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Astra, un service de gestion du cycle de vie des données applicatives Kubernetes, qui simplifie les opérations des applications avec état. Protégez, sauvegar...">
-  <meta name="keywords" content=" how astra control works, what is astra, kubernetes cluster, cloud volumes ontap, what is astra control"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Décrit le type d"applications gérées dans Astra Control.">
+  <meta name="keywords" content=" app, labels, kubernetes labels, kubernetes resources, pods, define app"><!-- Icons -->
   <link rel="icon" href="/fr-fr/astra-control-center/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -161,44 +161,44 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar"><div id="version-dropdown-new" class="custom-dropdown" >
-  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.08">
+  <div class="custom-dropdown-select unselected" title="Centre de contrôle Astra 22.11">
     <label>Version</label>
-    <span translate="no" class="notranslate">Centre de contrôle Astra 22.08</span>
+    <span translate="no" class="notranslate">Centre de contrôle Astra 22.11</span>
     <img src="/fr-fr/astra-control-center/images/chevron_up.svg" alt="" class="custom-icon chevrondown invisible" />
     <img src="/fr-fr/astra-control-center/images/chevron_down.svg" alt="" class="custom-icon chevronup" />
   </div>
 
   <ul class="custom-dropdown-menu"><li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center/concepts/intro.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center/concepts/app-management.html" target="_self">
+        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.11</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2208/concepts/app-management.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.08</span></span>
       </a>
                      
     </li>
     <li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2204/concepts/intro.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2204/concepts/app-management.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 22.04</span></span>
       </a>
                      
     </li>
     <li>
       
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2112/concepts/intro.html" target="_self">
+      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2112/concepts/app-management.html" target="_self">
         <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.12</span></span>
-      </a>
-                     
-    </li>
-    <li>
-      
-      <a href="https://docs.netapp.com/fr-fr/astra-control-center-2108/concepts/intro.html" target="_self">
-        <span translate="no" class="notranslate"><span>Centre de contrôle Astra</span><span class="version"> 21.08</span></span>
       </a>
                      
     </li>
     
   </ul>
-</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Découvrez Astra Control](https://docs.netapp.com/fr-fr/astra-control-center/concepts/intro.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/concepts/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+</div><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/issues/new?body=Page%3A%20[Comprendre la gestion des applications](https://docs.netapp.com/fr-fr/astra-control-center/concepts/app-management.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-center/blob/main/concepts/app-management.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/astra-control-center/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/astra-control-center/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">SUR CETTE PAGE</div>
@@ -321,19 +321,19 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/fr-fr/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+          <a href="https://docs.netapp.com/fr-fr/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/de-de/astra-control-center/concepts/intro.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+          <a href="https://docs.netapp.com/de-de/astra-control-center/concepts/app-management.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -411,68 +411,6 @@
 
 
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Problèmes_connus.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Problèmes connus
-          </a>
-          
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Concepts.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Concepts
-          </a>
-          
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -499,6 +437,8 @@
             Commencez
           </a>
           
+
+
 
 
 
@@ -539,6 +479,17 @@
 
 
 
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
 
 
         </li>
@@ -568,11 +519,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Configurer_le_centre_de_contrôle_Astra.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Concepts.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Configurer le centre de contrôle Astra
+            Concepts
           </a>
           
 
@@ -581,11 +532,10 @@
 
 
 
-        </li>
-      </ul>
-    
 
-  
+
+
+
 
 
 
@@ -606,11 +556,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Utilisez_Astra_Control_Center.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Utilisez Astra
+            Utilisez Astra Control Center
           </a>
           
 
@@ -732,13 +682,13 @@
 
 
 
-
-
         </li>
       </ul>
     
 
   
+
+
 
 
 
@@ -769,11 +719,11 @@
           
           <a target="_blank" 
             
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_les_API_REST.pdf" 
+              href="/fr-fr/astra-control-center/pdfs/sidebar/Automatisez_avec_l_API_REST_d_Astra_Control.pdf" 
             
           >
             <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Automatisez avec les API REST
+            Automatisez avec l'API REST d'Astra Control
           </a>
           
 
@@ -880,26 +830,114 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Problèmes connus"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/release-notes/known-issues.html">
-        <div class="na-navbar-padding"> Problèmes connus</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"
-      data-li-level="3#" 
+      data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues-ads.html">
-        Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra
-      </a></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-issues.html">
+        Problèmes connus
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Limites connues"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/release-notes/known-limitations.html">
         Limites connues
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Commencez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Commencez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Découvrez Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/intro.html">
+        Découvrez Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Exigences du centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
+        Exigences du centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Démarrage rapide pour Astra Control Center"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
+        Démarrage rapide pour Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Présentation de l'installation"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
+        <div class="na-navbar-padding"> Présentation de l'installation</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Poser le centre de contrôle Astra"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
+        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Options de ressources personnalisées du cluster Astra Control Center"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
+        Options de ressources personnalisées du cluster Astra Control Center
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurez un cert-Manager externe"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
+        Configurez un cert-Manager externe
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
+        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
+        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra après l'installation"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/configure-after-install.html">
+        Configurer le centre de contrôle Astra après l'installation
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurer le centre de contrôle Astra"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/setup_overview.html">
+        Configurer le centre de contrôle Astra
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
+        FAQ
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Concepts"
@@ -910,13 +948,6 @@
       </a>
       <ul style="display: none;">
         <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez Astra Control"
-      data-li-level="2#" 
-      class="  active "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/intro.html">
-        Découvrez Astra Control
-      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Architecture et composants"
       data-li-level="2#" 
@@ -958,126 +989,20 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/user-roles-namespaces.html">
         Rôles et espaces de noms d'utilisateur
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sécurité des pods"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/concepts/understand-pod-security.html">
+        Sécurité des pods
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Commencez"
+      data-pdf-filename="Utilisez Astra Control Center"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Commencez</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exigences du centre de contrôle Astra"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/requirements.html">
-        Exigences du centre de contrôle Astra
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Démarrage rapide pour Astra Control Center"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/quick-start.html">
-        Démarrage rapide pour Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Présentation de l'installation"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_overview.html">
-        <div class="na-navbar-padding"> Présentation de l'installation</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Poser le centre de contrôle Astra"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/install_acc.html">
-        <div class="na-navbar-padding"> Poser le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Découvrez les options CR du cluster Astra Control Center"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_cluster_cr_options.html">
-        Découvrez les options CR du cluster Astra Control Center
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Comprendre les restrictions de la stratégie de sécurité du pod"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/understand-psp-restrictions.html">
-        Comprendre les restrictions de la stratégie de sécurité du pod
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurez un cert-Manager externe"
-      data-li-level="4#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/cert-manager-prereqs.html">
-        Configurez un cert-Manager externe
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installez Astra Control Center à l'aide d'OpenShift OperatorHub"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc_operatorhub_install.html">
-        Installez Astra Control Center à l'aide d'OpenShift OperatorHub
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/install_acc-cvo.html">
-        Installer le centre de contrôle Astra avec un système de stockage back-end Cloud Volumes ONTAP
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Configurer le centre de contrôle Astra"
-      data-li-level="2" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/get-started/setup_overview.html">
-        <div class="na-navbar-padding"> Configurer le centre de contrôle Astra</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Conditions préalables à l'ajout d'un cluster"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-cluster-reqs.html">
-        Conditions préalables à l'ajout d'un cluster
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Ajouter un certificat TLS personnalisé"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/add-custom-tls-certificate.html">
-        Ajouter un certificat TLS personnalisé
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Créez une stratégie de sécurité de pod personnalisée"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/acc-create-podsecuritypolicy.html">
-        Créez une stratégie de sécurité de pod personnalisée
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="FAQ"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/get-started/faq.html">
-        FAQ
-      </a></li></ul></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Utilisez Astra"
-      data-li-level="1" 
-      class="subfolders "
-    ><a href="#">
-        <div class="na-navbar-padding"> Utilisez Astra</div>
+        <div class="na-navbar-padding"> Utilisez Astra Control Center</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1188,18 +1113,25 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérer les utilisateurs"
+      data-pdf-filename="Gérez les utilisateurs et les rôles locaux"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-users.html">
-        Gérer les utilisateurs
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-local-users-and-roles.html">
+        Gérez les utilisateurs et les rôles locaux
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gérez les rôles"
+      data-pdf-filename="Gérer l'authentification à distance"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-roles.html">
-        Gérez les rôles
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-authentication.html">
+        Gérer l'authentification à distance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez des utilisateurs et des groupes distants"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-remote-users-groups.html">
+        Gérez des utilisateurs et des groupes distants
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les notifications"
@@ -1228,20 +1160,6 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/update-licenses.html">
         Mettre à jour une licence existante
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les connexions au référentiel"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-connections.html">
-        Gérer les connexions au référentiel
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Gérer les packs logiciels"
-      data-li-level="3#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-packages-acc.html">
-        Gérer les packs logiciels
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestion des compartiments"
@@ -1256,6 +1174,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/manage-backend.html">
         Gérer le stockage back-end
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Surveillez les tâches en cours d'exécution"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/monitor-running-tasks.html">
+        Surveillez les tâches en cours d'exécution
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Contrôle de l'infrastructure avec Cloud Insights et Fluentd"
@@ -1286,11 +1211,11 @@
         Désinstaller Astra Control Center
       </a></li></ul></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Automatisez avec les API REST"
+      data-pdf-filename="Automatisez avec l'API REST d'Astra Control"
       data-li-level="1" 
       class="subfolders "
     ><a href="#">
-        <div class="na-navbar-padding"> Automatisez avec les API REST</div>
+        <div class="na-navbar-padding"> Automatisez avec l'API REST d'Astra Control</div>
       </a>
       <ul style="display: none;">
         <li 
@@ -1397,14 +1322,14 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Découvrez Astra Control</h1>
+  <h1 class="n-doc__component-detail-heading">Comprendre la gestion des applications</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 05:14:11 +0000">11/17/2022</time>
+    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
     
   
 
@@ -1414,300 +1339,30 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Astra Control est une solution de gestion du cycle de vie des données applicatives Kubernetes qui simplifie les opérations des applications avec état. Protégez, sauvegardez, répliquez et migrez facilement des workloads Kubernetes, et créez instantanément des clones d&#8217;applications de travail.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="caractéristiques">Caractéristiques</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Astra Control offre des fonctionnalités stratégiques pour la gestion du cycle de vie des données d&#8217;application Kubernetes :</p>
+<div class="paragraph lead">
+<p>Lorsque Astra Control détecte vos clusters, les applications de ces clusters ne sont pas gérées jusqu&#8217;à ce que vous choisissiez comment les gérer. Une application gérée d&#8217;Astra Control peut être l&#8217;une des suivantes :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Gérez automatiquement le stockage persistant</p>
-</li>
-<li>
-<p>Création de copies Snapshot et de sauvegardes à la demande intégrant la cohérence applicative</p>
-</li>
-<li>
-<p>Automatisation des opérations de sauvegarde et de snapshots basées sur des règles</p>
-</li>
-<li>
-<p>Réplication d&#8217;applications sur un système distant grâce à la technologie NetApp SnapMirror</p>
-</li>
-<li>
-<p>Migrez des applications et des données d&#8217;un cluster Kubernetes vers un autre</p>
-</li>
-<li>
-<p>Cloner facilement une application de la production au stockage intermédiaire</p>
-</li>
-<li>
-<p>Visualiser l&#8217;état de santé et de protection des applications</p>
-</li>
-<li>
-<p>Utilisez une interface utilisateur ou une API pour implémenter vos workflows de sauvegarde et de migration</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="modèles-de-déploiement">Modèles de déploiement</h2>
-<div class="sectionbody">
+<p>Un espace de nom, y compris toutes les ressources de cet espace de nom</p>
 <div class="paragraph">
-<p>Astra Control est disponible dans deux modèles de déploiement :</p>
+<p><span class="image"><img src="../media/concepts/diagram-managed-app1.png" alt="Image conceptuelle qui montre qu&#8217;Astra gère toutes les ressources d&#8217;un espace de noms."></span></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Astra Control Service</strong> : service géré par NetApp qui permet la gestion des données intégrant la cohérence applicative de clusters Kubernetes dans Google Kubernetes Engine (GKE) et Azure Kubernetes Service (AKS).</p>
 </li>
 <li>
-<p><strong>Astra Control Center</strong> : logiciel autogéré qui assure une gestion des données compatible avec les applications de clusters Kubernetes exécutés dans votre environnement sur site.</p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">Service Astra Control</th>
-<th class="tableblock halign-left valign-top">Centre de contrôle Astra</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Comment est-elle proposée ?</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">En tant que service cloud entièrement géré de NetApp</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>En tant que logiciel que vous téléchargez, installez et gérez</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Où est-il hébergé ?</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dans le cloud public de votre choix</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Sur le cluster Kubernetes fourni</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Comment est-elle mise à jour ?</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Géré par NetApp</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Vous gérez toutes les mises à jour</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Quelles sont les fonctionnalités de gestion des données applicatives ?</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mêmes fonctionnalités sur les deux plateformes, avec des exceptions au système de stockage back-end ou aux services externes</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mêmes fonctionnalités sur les deux plateformes, avec des exceptions au système de stockage back-end ou aux services externes</p>
-</div></div></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Qu&#8217;est-ce que le système back-end prend en charge ?</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Offres de services clouds NetApp</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Systèmes NetApp ONTAP AFF et FAS</p>
-</li>
-<li>
-<p>Astra Data Store comme système de stockage back-end</p>
-</li>
-<li>
-<p>Système back-end Cloud Volumes ONTAP</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="fonctionnement-du-service-astra-control">Fonctionnement du service Astra Control</h2>
-<div class="sectionbody">
+<p>Une application individuelle déployée au sein d&#8217;un ou plusieurs espaces de noms (helm3 est utilisé dans cet exemple)</p>
 <div class="paragraph">
-<p>Astra Control Service est un service cloud géré par NetApp qui est constamment disponible et mis à jour avec les dernières fonctionnalités. Elle utilise plusieurs composants pour faciliter la gestion du cycle de vie des données des applications.</p>
+<p><span class="image"><img src="../media/concepts/diagram-managed-app2.png" alt="Image conceptuelle qui illustre la gestion d&#8217;une application individuelle déployée dans un espace de noms incluant d&#8217;autres applications."></span></p>
 </div>
+</li>
+<li>
+<p>Groupe de ressources identifié par une étiquette Kubernetes dans un ou plusieurs espaces de noms</p>
 <div class="paragraph">
-<p>À un niveau élevé, le service de contrôle Astra fonctionne comme suit :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Commencez avec le service Astra Control en configurant votre fournisseur de services cloud et en vous inscrivant à un compte Astra.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pour les clusters GKE, Astra Control Service utilise <a href="https://cloud.netapp.com/cloud-volumes-service-for-gcp" target="_blank" rel="noopener">"NetApp Cloud Volumes Service pour Google Cloud"</a> Ou des disques persistants Google en tant que système de stockage back-end pour vos volumes persistants.</p>
-</li>
-<li>
-<p>Pour les clusters AKS, Astra Control Service utilise <a href="https://cloud.netapp.com/azure-netapp-files" target="_blank" rel="noopener">"Azure NetApp Files"</a> Ou Azure Disk Storage en tant que système de stockage back-end pour les volumes persistants.</p>
-</li>
-<li>
-<p>Pour les clusters Amazon EKS, Astra Control Service utilise <a href="https://docs.aws.amazon.com/ebs/" target="_blank" rel="noopener">"Amazon Elastic Block Store"</a> ou <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html" target="_blank" rel="noopener">"Amazon FSX pour NetApp ONTAP"</a> en tant que système back-end de stockage pour vos volumes persistants.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Vous ajoutez votre première solution de calcul Kubernetes à Astra Control Service. Le service de contrôle d&#8217;Astra procède ensuite aux opérations suivantes :</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Crée un magasin d&#8217;objets sur votre compte de fournisseur cloud, où sont stockées les copies de sauvegarde.</p>
-<div class="paragraph">
-<p>Dans Azure, Astra Control Service crée également un groupe de ressources, un compte de stockage et des clés pour le conteneur Blob.</p>
-</div>
-</li>
-<li>
-<p>Crée un nouveau rôle d&#8217;administrateur et un compte de service Kubernetes sur le cluster.</p>
-</li>
-<li>
-<p>Utilise ce nouveau rôle d&#8217;administrateur pour l&#8217;installation <a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"Astra Trident"</a> sur le cluster et pour créer une ou plusieurs classes de stockage.</p>
-</li>
-<li>
-<p>Si vous utilisez Azure NetApp Files ou NetApp Cloud Volumes Service pour Google Cloud comme backend de stockage, Astra Control Service utilise Astra Trident pour provisionner des volumes persistants pour vos applications.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>À ce stade, vous pouvez ajouter des applications à votre cluster. Les volumes persistants seront provisionnés sur la nouvelle classe de stockage par défaut.</p>
-</li>
-<li>
-<p>Utilisez ensuite le service Astra Control pour gérer ces applications, et commencez à créer des copies Snapshot, des sauvegardes et des clones.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Le programme gratuit d&#8217;Astra Control vous permet de gérer jusqu&#8217;à 10 applications dans votre compte. Si vous voulez gérer plus de 10 applications, vous devrez configurer la facturation en passant du Plan gratuit au Plan Premium.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="fonctionnement-du-centre-de-contrôle-astra">Fonctionnement du centre de contrôle Astra</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Astra Control Center fonctionne localement dans votre propre cloud privé.</p>
-</div>
-<div class="paragraph">
-<p>Astra Control Center prend en charge les clusters Kubernetes avec :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Système back-end de stockage Trident avec ONTAP 9.5 et versions ultérieures</p>
-</li>
-<li>
-<p>Systèmes back-end de stockage de magasin de données Astra</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Dans un environnement connecté au cloud, Astra Control Center utilise Cloud Insights pour fournir des fonctionnalités avancées de surveillance et de télémétrie. En l&#8217;absence de connexion Cloud Insights, un monitoring et une télémétrie limités (7 jours de metrics) sont disponibles dans Astra Control Center, mais aussi exportés vers les outils de surveillance natifs de Kubernetes (comme Prometheus et Grafana) via des points de terminaison ouverts.</p>
-</div>
-<div class="paragraph">
-<p>Astra Control Center est entièrement intégré à l&#8217;écosystème AutoSupport et Active IQ. Il fournit aux utilisateurs et au support NetApp des informations relatives à la résolution de problèmes et à l&#8217;utilisation.</p>
-</div>
-<div class="paragraph">
-<p>Vous pouvez essayer Astra Control Center avec une licence d&#8217;évaluation de 90 jours. La version d&#8217;évaluation est prise en charge par e-mail et par la communauté (Channel Slack). Vous avez également accès aux articles et à la documentation de la base de connaissances à partir du tableau de bord de support des produits.</p>
-</div>
-<div class="paragraph">
-<p>Pour installer et utiliser Astra Control Center, vous devez vous en assurer <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html">"de formation"</a>.</p>
-</div>
-<div class="paragraph">
-<p>À un niveau élevé, le centre de contrôle Astra ressemble à ce qui suit :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Vous installez Astra Control Center dans votre environnement local. En savoir plus <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html">"Poser le centre de contrôle Astra"</a>.</p>
-</li>
-<li>
-<p>Vous avez effectué certaines tâches de configuration, telles que :</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Configuration des licences.</p>
-</li>
-<li>
-<p>Ajoutez votre premier cluster.</p>
-</li>
-<li>
-<p>Ajout du stockage back-end découvert lorsque vous avez ajouté le cluster</p>
-</li>
-<li>
-<p>Ajoutez un compartiment de magasin d&#8217;objets pour stocker vos sauvegardes d&#8217;applications.</p>
-</li>
-</ul>
+<p><span class="image"><img src="../media/concepts/diagram-managed-app3.png" alt="Image conceptuelle qui illustre la gestion d&#8217;une application basée sur une étiquette Kubernetes."></span></p>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>En savoir plus <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html">"Configurer le centre de contrôle Astra"</a>.</p>
-</div>
-<div class="paragraph">
-<p>Le centre de contrôle Astra :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Détecte les détails sur le cluster, y compris les espaces de noms, et vous permet de définir et protéger les applications.</p>
-</li>
-<li>
-<p>Détecte la configuration du data store Astra Trident ou Astra sur les clusters que vous avez à gérer et vous permet de surveiller le système back-end.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Vous pouvez ajouter des applications à votre cluster. Si certaines applications sont déjà gérées dans le cluster, vous pouvez aussi utiliser Astra Control Center pour les gérer. Utilisez ensuite Astra Control Center pour créer des copies Snapshot, des sauvegardes, des clones et des relations de réplication.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="pour-en-savoir-plus">Pour en savoir plus</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra/index.html" target="_blank" rel="noopener">"Documentation relative au service après-vente Astra Control"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-center/index.html" target="_blank" rel="noopener">"Documentation Astra Control Center"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-data-store/index.html">"Documentation Astra Data Store"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"Documentation Astra Trident"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"Utilisez l&#8217;API de contrôle Astra"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloudinsights/" target="_blank" rel="noopener">"Documentation Cloud Insights"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/ontap/index.html" target="_blank" rel="noopener">"Documentation ONTAP"</a></p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 
     </article>
