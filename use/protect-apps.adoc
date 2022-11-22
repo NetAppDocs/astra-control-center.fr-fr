@@ -11,15 +11,18 @@ summary: 'Protégez vos applications en effectuant des copies Snapshot et des sa
 :imagesdir: ../media/use/
 
 
-Protégez toutes les applications en effectuant des copies Snapshot et des sauvegardes à l'aide d'une stratégie de protection automatisée ou ad hoc. Vous pouvez utiliser l'interface utilisateur Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour protéger les applications.
+[role="lead"]
+Protégez toutes les applications en effectuant des copies Snapshot et des sauvegardes à l'aide d'une stratégie de protection automatisée ou ad hoc. Vous pouvez utiliser l'interface utilisateur du centre de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour protéger les applications.
 
-Si vous utilisez Helm pour déployer des applications, Astra Control Center requiert Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Les applications déployées avec Helm 2 ne sont pas prises en charge.
-
-Lorsque vous créez un projet d'hébergement d'une application sur un cluster OpenShift, un UID SecurityContext est attribué au projet (ou à l'espace de noms Kubernetes). Pour permettre à Astra Control Center de protéger votre application et de la déplacer vers un autre cluster ou projet dans OpenShift, vous devez ajouter des règles qui permettent à l'application de s'exécuter comme un UID. Par exemple, les commandes OpenShift CLI suivantes octroient les règles appropriées à une application WordPress.
-
+.Description de la tâche
+* *Helm Deployed apps* : si vous utilisez Helm pour déployer des applications, Astra Control Center nécessite Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Les applications déployées avec Helm 2 ne sont pas prises en charge.
+* *(clusters OpenShift uniquement) Ajouter des règles* : lorsque vous créez un projet pour héberger une application sur un cluster OpenShift, un UID SecurityContext est affecté au projet (ou à l'espace de noms Kubernetes). Pour permettre à Astra Control Center de protéger votre application et de la déplacer vers un autre cluster ou projet dans OpenShift, vous devez ajouter des règles qui permettent à l'application de s'exécuter comme un UID. Par exemple, les commandes OpenShift CLI suivantes octroient les règles appropriées à une application WordPress.
++
 `oc new-project wordpress`
 `oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
 `oc adm policy add-scc-to-user privileged -z default -n wordpress`
+
+
 
 Vous pouvez effectuer les tâches suivantes liées à la protection de vos données applicatives :
 
@@ -36,7 +39,9 @@ Vous pouvez effectuer les tâches suivantes liées à la protection de vos donn�
 
 == Configurer une règle de protection
 
-Une règle de protection protège une application en créant des snapshots, des sauvegardes ou les deux à un calendrier défini. Vous pouvez choisir de créer des snapshots et des sauvegardes toutes les heures, tous les jours, toutes les semaines et tous les mois, et vous pouvez spécifier le nombre de copies à conserver. Par exemple, une règle de protection peut créer des sauvegardes hebdomadaires et des snapshots quotidiens, et conserver les sauvegardes et les snapshots pendant un mois. La fréquence de création des snapshots et des sauvegardes et la durée de conservation dépendent des besoins de votre entreprise.
+Une règle de protection protège une application en créant des snapshots, des sauvegardes ou les deux à un calendrier défini. Vous pouvez choisir de créer des snapshots et des sauvegardes toutes les heures, tous les jours, toutes les semaines et tous les mois, et vous pouvez spécifier le nombre de copies à conserver.
+
+Si vous avez besoin de sauvegardes ou de snapshots pour qu'ils s'exécutent plus fréquemment qu'une fois par heure, vous pouvez https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Utilisez l'API REST Astra Control pour créer des snapshots et des sauvegardes"^].
 
 .Étapes
 . Sélectionnez *applications*, puis le nom d'une application.
@@ -45,6 +50,9 @@ Une règle de protection protège une application en créant des snapshots, des 
 . Définissez un planning de protection en choisissant le nombre de snapshots et de sauvegardes pour conserver toutes les heures, tous les jours, toutes les semaines et tous les mois.
 +
 Vous pouvez définir les horaires horaires, quotidiens, hebdomadaires et mensuels simultanément. Un programme ne s'active pas tant que vous n'avez pas défini de niveau de rétention.
+
++
+Lorsque vous définissez un niveau de conservation pour les sauvegardes, vous pouvez choisir le compartiment dans lequel vous souhaitez stocker les sauvegardes.
 
 +
 L'exemple suivant illustre quatre planifications de protection : toutes les heures, tous les jours, toutes les semaines et tous les mois pour les snapshots et les sauvegardes.
@@ -56,7 +64,7 @@ image:screenshot-config-protection-policy.png["Capture d'écran d'un exemple de 
 . Sélectionnez *définir la stratégie de protection.*
 
 
-Astra Control Center implémente la règle de protection des données en créant et en conservant des snapshots et des sauvegardes à l'aide du calendrier et de la règle de conservation que vous avez définis.
+Astra Control implémente la règle de protection des données en créant et en conservant des snapshots et des sauvegardes à l'aide du calendrier et de la règle de conservation que vous avez définis.
 
 
 
@@ -67,11 +75,11 @@ Vous pouvez créer un snapshot à la demande à tout moment.
 .Étapes
 . Sélectionnez *applications*.
 . Dans le menu Options de la colonne *actions* de l'application souhaitée, sélectionnez *instantané*.
-. Personnalisez le nom de l'instantané, puis sélectionnez *Review*.
+. Personnalisez le nom du snapshot, puis sélectionnez *Suivant*.
 . Examinez le résumé de l'instantané et sélectionnez *instantané*.
 
 
-Le processus d'instantané commence. Un instantané a réussi lorsque l'état est *disponible* dans la colonne *actions* de la page *protection des données* > *snapshots*.
+Le processus d'instantané commence. Un instantané a réussi lorsque l'état est *Healthy* dans la colonne *State* de la page *Data protection* > *snapshots*.
 
 
 
@@ -87,18 +95,18 @@ NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capac
 . Dans le menu Options de la colonne *actions* de l'application souhaitée, sélectionnez *Sauvegarder*.
 . Personnaliser le nom de la sauvegarde.
 . Choisissez de sauvegarder l'application à partir d'un snapshot existant. Si vous sélectionnez cette option, vous pouvez choisir parmi une liste de snapshots existants.
-. Choisissez une destination pour la sauvegarde en sélectionnant dans la liste des compartiments de stockage.
-. Sélectionnez *Revue*.
-. Passez en revue le résumé des sauvegardes et sélectionnez *Backup*.
+. Choisir un compartiment de destination pour la sauvegarde dans la liste des compartiments de stockage.
+. Sélectionnez *Suivant*.
+. Passez en revue le résumé des sauvegardes et sélectionnez *Sauvegarder*.
 
 
-Astra Control Center crée une sauvegarde de l'application.
+Astra Control crée une sauvegarde de l'application.
 
 
 NOTE: Si votre réseau est en panne ou anormalement lent, une opération de sauvegarde risque d'être terminée. Ceci entraîne l'échec de la sauvegarde.
 
 
-NOTE: Il est impossible d'arrêter une sauvegarde en cours d'exécution. Si vous devez supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez les instructions de la section  backups. Pour supprimer une sauvegarde défaillante, https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^].
+NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les instructions de la section  backups. Pour supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez les instructions de la section  backups.
 
 
 NOTE: Après une opération de protection des données (clonage, sauvegarde, restauration) et après le redimensionnement du volume persistant, il y a vingt minutes de retard avant que la nouvelle taille du volume ne s'affiche dans l'interface utilisateur. La protection des données fonctionne avec succès en quelques minutes et vous pouvez utiliser le logiciel de gestion pour le système back-end pour confirmer la modification de la taille du volume.
@@ -125,16 +133,16 @@ Les snapshots s'affichent par défaut.
 Supprimez les snapshots programmés ou à la demande dont vous n'avez plus besoin.
 
 
-NOTE: Vous ne pouvez pas supprimer une copie Snapshot en cours de réplication.
+NOTE: Vous ne pouvez pas supprimer un snapshot en cours de réplication.
 
 .Étapes
-. Sélectionnez *applications*, puis le nom d'une application.
+. Sélectionnez *applications*, puis le nom d'une application gérée.
 . Sélectionnez *protection des données*.
 . Dans le menu Options de la colonne *actions* pour l'instantané souhaité, sélectionnez *Supprimer instantané*.
 . Tapez le mot "supprimer" pour confirmer la suppression, puis sélectionnez *Oui, Supprimer l'instantané*.
 
 
-Astra Control Center supprime le snapshot.
+Astra Control supprime le snapshot.
 
 
 
@@ -143,14 +151,14 @@ Astra Control Center supprime le snapshot.
 Vous pouvez annuler une sauvegarde en cours.
 
 
-TIP: Pour annuler une sauvegarde, la sauvegarde doit être en cours d'exécution. Vous ne pouvez pas annuler une sauvegarde à l'état en attente.
+TIP: Pour annuler une sauvegarde, la sauvegarde doit être dans `Running` état. Vous ne pouvez pas annuler une sauvegarde dans `Pending` état.
 
 .Étapes
 . Sélectionnez *applications*, puis le nom d'une application.
 . Sélectionnez *protection des données*.
 . Sélectionnez *backups*.
 . Dans le menu Options de la colonne *actions* pour la sauvegarde souhaitée, sélectionnez *Annuler*.
-. Tapez le mot "annuler" pour confirmer la suppression, puis sélectionnez *Oui, annuler la sauvegarde*.
+. Tapez le mot "annuler" pour confirmer l'opération, puis sélectionnez *Oui, annuler la sauvegarde*.
 
 
 
@@ -160,7 +168,7 @@ TIP: Pour annuler une sauvegarde, la sauvegarde doit être en cours d'exécution
 Supprimez les sauvegardes planifiées ou à la demande qui ne vous sont plus nécessaires.
 
 
-NOTE: Il est impossible d'arrêter une sauvegarde en cours d'exécution. Si vous devez supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez ces instructions. Pour supprimer une sauvegarde défaillante, https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^].
+NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les instructions de la section  backups. Pour supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez ces instructions.
 
 .Étapes
 . Sélectionnez *applications*, puis le nom d'une application.
@@ -170,4 +178,4 @@ NOTE: Il est impossible d'arrêter une sauvegarde en cours d'exécution. Si vous
 . Tapez le mot "supprimer" pour confirmer la suppression, puis sélectionnez *Oui, Supprimer sauvegarde*.
 
 
-Astra Control Center supprime la sauvegarde.
+Astra Control supprime la sauvegarde.

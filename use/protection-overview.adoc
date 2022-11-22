@@ -11,6 +11,7 @@ summary: Découvrez les types de protection des données disponibles dans Astra 
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 Vous pouvez créer des sauvegardes, des clones, des copies Snapshot et des règles de protection pour vos applications à l'aide d'Astra Control Center. La sauvegarde de vos applications aide vos services et vos données associées à être aussi disponibles que possible. En cas d'incident, la restauration à partir d'une sauvegarde permet une restauration complète d'une application et de ses données, avec une interruption minimale. Les sauvegardes, les clones et les snapshots contribuent à vous protéger contre les menaces classiques, comme les ransomwares, la perte accidentelle de données et les incidents environnementaux. link:../concepts/data-protection.html["Découvrez les types de protection des données disponibles dans Astra Control Center et le moment de les utiliser"].
 
 En outre, vous pouvez répliquer des applications sur un cluster distant en préparation de la reprise après incident.

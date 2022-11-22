@@ -11,17 +11,16 @@ summary: 'Vous pouvez configurer plusieurs paramètres en option pour améliorer
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Pour contrôler et obtenir des informations sur l'ensemble de votre infrastructure, créez une connexion à NetApp Cloud Insights. Pour collecter des événements Kubernetes à partir de systèmes surveillés par Astra Control Center, ajoutez une connexion Fluentd.
 
-Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans Astra Control Center.
-
-Il est également possible de surveiller le débit interne du stockage de données Astra, les IOPS et la capacité du système de stockage back-end d'Astra Control Center. Voir link:../use/manage-backend.html["Gestion des systèmes back-end"].
+Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans le centre de contrôle Astra.
 
 
 
-== Ajoutez un serveur proxy pour les connexions à Cloud Insight ou au site de support NetApp
+== Ajoutez un serveur proxy pour les connexions à Cloud Insights ou au site de support NetApp
 
-Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans Astra Control Center.
+Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans le centre de contrôle Astra.
 
 
 IMPORTANT: Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy. Assurez-vous de saisir les valeurs correctes.
@@ -78,8 +77,6 @@ Pour surveiller et obtenir des informations exploitables sur l'ensemble de votre
 Cloud Insights doit être accessible à partir du réseau utilisé par Astra Control Center, ou indirectement via un serveur proxy.
 
 Lorsque le centre de contrôle Astra est connecté à Cloud Insights, un pod d'unité d'acquisition est créé. Ce pod collecte les données des systèmes back-end gérés par Astra Control Center et les pousse dans Cloud Insights. Ce pod requiert 8 Go de RAM et 2 cœurs de CPU.
-
-En outre, si vous gérez des clusters de magasin de données Astra avec un contrôleur Astra (qui est connecté à Cloud Insights), un pod d'unité d'acquisition est créé sur le magasin de données Astra pour chaque cluster de magasin de données Astra, et les mesures sont envoyées du magasin de données Astra vers le système Cloud Insights couplé. Chaque pod requiert 8 Go de RAM et 2 cœurs de CPU.
 
 
 NOTE: Après avoir activé la connexion Cloud Insights, vous pouvez afficher les informations de débit sur la page *Backends* et vous connecter à Cloud Insights à partir de là après avoir sélectionné un back-end de stockage. Vous trouverez également des informations sur le *Tableau de bord* dans la section Cluster et vous y connectez également à Cloud Insights.

@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: use/manage-remote-authentication.html 
+keywords: enable ldap authentication, disable, ldap, authentication, configure, manage 
+summary: 'Gérez l"authentification LDAP sur votre système Astra Control.' 
+---
+= Gérer l'authentification à distance
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+LDAP est un protocole standard de l'industrie pour l'accès aux informations d'annuaires distribués et un choix populaire pour l'authentification d'entreprise. Vous pouvez connecter Astra Control Center à un serveur LDAP pour effectuer l'authentification de certains utilisateurs Astra Control.
+
+À un niveau élevé, la configuration implique l'intégration d'Astra avec LDAP et la définition des utilisateurs et des groupes Astra Control correspondant aux définitions LDAP. Vous pouvez utiliser l'API de contrôle Astra ou l'interface utilisateur Web pour configurer l'authentification LDAP et les utilisateurs et groupes LDAP.
+
+
+
+== Ajoutez un certificat pour l'authentification LDAPS
+
+Ajoutez le certificat TLS privé pour le serveur LDAP afin que Astra Control Center puisse s'authentifier auprès du serveur LDAP lorsque vous utilisez une connexion LDAPS. Vous ne devez le faire qu'une seule fois, ou lorsque le certificat que vous avez installé expire.
+
+.Étapes
+. Accédez à *compte*.
+. Sélectionnez l'onglet *certificats*.
+. Sélectionnez *Ajouter*.
+. Téléchargez le `.pem` importez ou collez le contenu du fichier à partir du presse-papiers.
+. Cochez la case *approuvé*.
+. Sélectionnez *Ajouter un certificat*.
+
+
+
+
+== Activez l'authentification à distance
+
+Vous pouvez activer l'authentification LDAP et configurer la connexion entre Astra Control et le serveur LDAP distant.
+
+Si vous prévoyez d'utiliser LDAPS, assurez-vous que le certificat TLS privé pour le serveur LDAP est installé dans Astra Control Center afin que le centre de contrôle Astra puisse s'authentifier auprès du serveur LDAP. Voir  a certificate for LDAPS authentication pour obtenir des instructions.
+
+.Étapes
+. Accédez à *compte > connexions*.
+. Dans le volet *authentification à distance*, sélectionnez le menu de configuration.
+. Sélectionnez *connexion*.
+. Entrez l'adresse IP du serveur, le port et le protocole de connexion préféré (LDAP ou LDAPS).
++
+
+NOTE: Il est recommandé d'utiliser LDAPS lors de la connexion au serveur LDAP. Vous devez installer le certificat TLS privé du serveur LDAP dans Astra Control Center avant de vous connecter avec LDAPS.
+
+. Saisissez les informations d'identification du compte de service au format e-mail (administrator@example.com). Astra Control utilisera ces informations d'identification lors de la connexion au serveur LDAP.
+. Dans la section *User Match*, entrez le nom unique de base et un filtre de recherche d'utilisateur approprié à utiliser lors de la récupération des informations utilisateur à partir du serveur LDAP.
+. Dans la section *correspondance de groupe*, entrez le nom unique de base de recherche de groupe et un filtre de recherche de groupe personnalisé approprié.
++
+
+NOTE: Veillez à utiliser le nom unique de base (DN) correct et un filtre de recherche approprié pour *User Match* et *Group Match*. Le DN de base indique à Astra Control à quel niveau de l'arborescence de répertoire démarrer la recherche, et le filtre de recherche limite les parties de l'arborescence de répertoires Astra Control à partir de.
+
+. Sélectionnez *soumettre*.
+
+
+L'état du volet *authentification à distance* passe à *en attente*, puis à *connecté* lorsque la connexion au serveur LDAP est établie.
+
+
+
+== Désactiver l'authentification à distance
+
+Vous pouvez désactiver temporairement une connexion active au serveur LDAP.
+
+
+NOTE: Lorsque vous désactivez une connexion à un serveur LDAP, tous les paramètres sont enregistrés et tous les utilisateurs et groupes distants ajoutés à Astra Control à partir de ce serveur LDAP sont conservés. Vous pouvez vous reconnecter à ce serveur LDAP à tout moment.
+
+.Étapes
+. Accédez à *compte > connexions*.
+. Dans le volet *authentification à distance*, sélectionnez le menu de configuration.
+. Sélectionnez *Désactiver*.
+
+
+L'état du volet *authentification à distance* passe à *Désactivé*. Tous les paramètres d'authentification à distance, les utilisateurs distants et les groupes distants sont conservés et vous pouvez réactiver la connexion à tout moment.
+
+
+
+== Modifier les paramètres d'authentification à distance
+
+Si vous avez désactivé la connexion au serveur LDAP ou si le volet *authentification à distance* est à l'état "erreur de connexion", vous pouvez modifier les paramètres de configuration.
+
+
+NOTE: Vous ne pouvez pas modifier l'adresse IP ou l'URL du serveur LDAP lorsque le volet *authentification distante* est à l'état "Désactivé". Vous devez le faire  remote authentication tout d'abord.
+
+.Étapes
+. Accédez à *compte > connexions*.
+. Dans le volet *authentification à distance*, sélectionnez le menu de configuration.
+. Sélectionnez *Modifier*.
+. Apportez les modifications nécessaires et sélectionnez *Modifier*.
+
+
+
+
+== Déconnectez l'authentification à distance
+
+Vous pouvez vous déconnecter d'un serveur LDAP et supprimer les paramètres de configuration d'Astra Control.
+
+
+CAUTION: Lorsque vous vous déconnectez du serveur LDAP, tous les paramètres de configuration de ce serveur LDAP sont supprimés d'Astra Control, ainsi que tous les utilisateurs et groupes distants ajoutés à partir de ce serveur LDAP.
+
+.Étapes
+. Accédez à *compte > connexions*.
+. Dans le volet *authentification à distance*, sélectionnez le menu de configuration.
+. Sélectionnez *déconnecter*.
+
+
+L'état du volet *authentification à distance* passe à *déconnecté*. Les paramètres d'authentification à distance, les utilisateurs distants et les groupes distants sont supprimés d'Astra Control.

@@ -11,6 +11,7 @@ summary: Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à
 :imagesdir: ../media/
 
 
+[role="lead"]
 Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question.
 
 
@@ -27,7 +28,7 @@ Les sections suivantes fournissent des réponses à des questions supplémentair
 
 Astra Control Center utilise l'authentification locale et une URL spécifique à chaque environnement.
 
-Pour l'URL, dans un navigateur, entrez le nom de domaine complet (FQDN) que vous avez défini dans le champ spec.astraAddress dans le fichier astra_control_Center_min.yaml personnalisé Resource definition (CRD) lorsque vous avez installé Astra Control Center. L'e-mail est la valeur que vous avez définie dans le champ spec.email de l'astra_Control_Center_min.yaml CRD.
+Pour l'URL, dans un navigateur, entrez le nom de domaine complet (FQDN) que vous avez défini dans le champ spec.astraAddress du fichier de ressource personnalisée astra_control_Center.yaml lorsque vous avez installé Astra Control Center. L'e-mail est la valeur que vous avez définie dans le champ spec.email de l'astra_Control_Center.yaml CR.
 
 
 
@@ -39,9 +40,9 @@ Vous pouvez facilement passer à une licence complète en obtenant le fichier de
 
 *Étapes*
 
-* Dans le menu de navigation de gauche, sélectionnez *compte* > *Licence*.
-* Sélectionnez *Ajouter licence*.
-* Naviguez jusqu'au fichier de licence que vous avez téléchargé et sélectionnez *Ajouter*.
+. Dans le menu de navigation de gauche, sélectionnez *compte* > *Licence*.
+. Sélectionnez *Ajouter licence*.
+. Naviguez jusqu'au fichier de licence que vous avez téléchargé et sélectionnez *Ajouter*.
 
 
 *J'utilise la licence d'évaluation. Puis-je toujours gérer les applications ?*
@@ -95,11 +96,7 @@ Non Astra Control peut découvrir des applications qui utilisent un stockage aut
 
 == Les opérations de gestion des données
 
-*Il y a des instantanés dans mon compte que je n'ai pas créés. D'où viennent-ils?*
-
-Dans certains cas, Astra Control crée automatiquement un snapshot dans le cadre d'un processus de sauvegarde, de clonage ou de restauration.
-
-*Mon application utilise plusieurs PVS. ASTRA Control prendra-t-il des instantanés et des sauvegardes de toutes ces ESV?*
+*Mon application utilise plusieurs PVS. ASTRA Control prendra-t-il des snapshots et des sauvegardes de ces volumes persistants ?*
 
 Oui. Une opération d'instantané sur une application par Astra Control inclut un instantané de tous les volumes persistants liés aux demandes de volume persistant de l'application.
 

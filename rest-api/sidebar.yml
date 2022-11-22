@@ -1,6 +1,6 @@
 ---
 section: rest-api
-title: Automatisez avec les API REST
+title: Automatisez avec l'API REST d'Astra Control
 entries:
 - title: Introduction
   url: "/rest-api/api-intro.html"

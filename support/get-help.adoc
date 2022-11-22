@@ -11,6 +11,7 @@ summary: 'NetApp prend en charge Astra Control de plusieurs façons. De nombreus
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 NetApp prend en charge Astra Control de plusieurs façons. De nombreuses options d'auto-assistance gratuites sont disponibles 24 h/24 et 7 j/7, comme des articles de la base de connaissances (KB) et un canal discorde. Votre compte Astra Control inclut un support technique à distance via la billetterie en ligne.
 
 
@@ -37,7 +38,7 @@ Ces options sont disponibles gratuitement, 24h/24, 7j/7 :
 
 == Activer le téléchargement quotidien de bundle de support planifié vers le support NetApp
 
-Au cours de l'installation d'Astra Control Center, si vous spécifiez `enrolled: true` pour `autoSupport` Dans le fichier CRD (Custom Resource Definition) Astra Control Center (`astra_control_center_min.yaml`), les offres de support quotidien sont automatiquement téléchargées sur le https://mysupport.netapp.com/site/["Site de support NetApp"^].
+Au cours de l'installation d'Astra Control Center, si vous spécifiez `enrolled: true` pour `autoSupport` Dans le fichier de ressources personnalisées (CR) Astra Control Center (`astra_control_center.yaml`), les offres de support quotidien sont automatiquement téléchargées sur le https://mysupport.netapp.com/site/["Site de support NetApp"^].
 
 
 

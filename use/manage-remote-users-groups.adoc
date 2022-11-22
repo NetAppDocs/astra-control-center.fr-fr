@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: use/manage-remote-users-groups.html 
+keywords: import, import users, search, search users, groups, import groups 
+summary: Gérez les utilisateurs et les groupes LDAP distants sur votre système Astra Control Center. 
+---
+= Gérez des utilisateurs et des groupes distants
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Si vous avez activé l'authentification LDAP sur votre système Astra Control, vous pouvez rechercher des utilisateurs et des groupes LDAP et les inclure dans les utilisateurs approuvés du système.
+
+
+
+== Ajouter un utilisateur distant
+
+Les propriétaires et administrateurs de comptes peuvent ajouter des utilisateurs distants à Astra Control.
+
+
+NOTE: Vous ne pouvez pas ajouter un utilisateur distant si un utilisateur local avec la même adresse e-mail existe déjà sur le système. Pour ajouter l'utilisateur en tant qu'utilisateur distant, supprimez d'abord l'utilisateur local du système.
+
+.Étapes
+. Accédez à la zone *compte*.
+. Sélectionnez l'onglet *utilisateurs et groupes*.
+. À l'extrême droite de la page, sélectionnez *utilisateurs distants*.
+. Sélectionnez *Ajouter*.
+. Vous pouvez également rechercher un utilisateur LDAP en saisissant l'adresse e-mail de l'utilisateur dans le champ *Filter by email*.
+. Sélectionnez un ou plusieurs utilisateurs dans la liste.
+. Attribuez un rôle à l'utilisateur.
++
+
+NOTE: Si vous attribuez différents rôles à un utilisateur et au groupe de l'utilisateur, le rôle plus permissif est prioritaire.
+
+. Vous pouvez éventuellement attribuer une ou plusieurs contraintes d'espace de noms à cet utilisateur et sélectionner *restreindre le rôle aux contraintes* pour les appliquer. Vous pouvez ajouter une nouvelle contrainte d'espace de noms en sélectionnant *Ajouter une contrainte*.
++
+
+NOTE: Lorsqu'un utilisateur se voit attribuer plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes du rôle le plus permissif sont les seules qui prennent effet. Par exemple, si un utilisateur avec un rôle de visualiseur local rejoint trois groupes liés au rôle membre, la somme des contraintes des rôles de membre prend effet et toutes les contraintes du rôle de visualiseur sont ignorées.
+
+. Sélectionnez *Ajouter*.
+
+
+Le nouvel utilisateur apparaît dans la liste des utilisateurs distants. Dans cette liste, vous pouvez voir les contraintes actives sur l'utilisateur et gérer l'utilisateur à partir du menu *actions*.
+
+
+
+== Ajouter un groupe distant
+
+Pour ajouter plusieurs utilisateurs distants à la fois, les propriétaires et administrateurs de comptes peuvent ajouter des groupes distants à Astra Control. Lorsque vous ajoutez un groupe distant, tous les utilisateurs distants de ce groupe sont ajoutés à Astra Control et héritent du même rôle.
+
+.Étapes
+. Accédez à la zone *compte*.
+. Sélectionnez l'onglet *utilisateurs et groupes*.
+. À l'extrême droite de la page, sélectionnez *Remote Groups*.
+. Sélectionnez *Ajouter*.
++
+Dans cette fenêtre, vous pouvez voir une liste des noms communs et des noms distinctifs des groupes LDAP récupérés par Astra Control à partir du répertoire.
+
+. Vous pouvez également rechercher un groupe LDAP en saisissant le nom commun du groupe dans le champ *Filter by common name*.
+. Sélectionnez un ou plusieurs groupes dans la liste.
+. Attribuez un rôle aux groupes.
++
+
+NOTE: Le rôle que vous sélectionnez est attribué à tous les utilisateurs de ce groupe. Si vous attribuez différents rôles à un utilisateur et au groupe de l'utilisateur, le rôle plus permissif est prioritaire.
+
+. Vous pouvez éventuellement attribuer une ou plusieurs contraintes d'espace de noms à ce groupe et sélectionner *restreindre le rôle aux contraintes* pour les appliquer. Vous pouvez ajouter une nouvelle contrainte d'espace de noms en sélectionnant *Ajouter une contrainte*.
++
+
+NOTE: Lorsqu'un utilisateur se voit attribuer plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes du rôle le plus permissif sont les seules qui prennent effet. Par exemple, si un utilisateur avec un rôle de visualiseur local rejoint trois groupes liés au rôle membre, la somme des contraintes des rôles de membre prend effet et toutes les contraintes du rôle de visualiseur sont ignorées.
+
+. Sélectionnez *Ajouter*.
+
+
+Le nouveau groupe apparaît dans la liste des groupes distants et tous les utilisateurs distants de ce groupe apparaissent dans la liste des utilisateurs distants. Dans cette liste, vous pouvez afficher les détails du groupe et gérer le groupe à partir du menu *actions*.

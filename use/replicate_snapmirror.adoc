@@ -43,7 +43,30 @@ Avec Astra Control, vous pouvez effectuer les tâches suivantes relatives aux ap
 
 == Conditions préalables à la réplication
 
-Voir la link:../get-started/requirements.html#replication-prerequisites["conditions préalables à la réplication"] avant de commencer.
+La réplication de l'application Astra Control exige que les conditions préalables suivantes soient respectées avant de commencer :
+
+* Pour assurer une reprise après incident transparente, nous vous recommandons de déployer Astra Control Center dans un troisième domaine de pannes ou un troisième site secondaire.
+* Le cluster Kubernetes hôte de l'application et un cluster Kubernetes de destination doivent être gérés avec leurs clusters ONTAP, dans l'idéal dans différents domaines ou sites de défaillance.
+* Les clusters ONTAP et le SVM hôte doivent être associés. Voir https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["Présentation du cluster et de SVM peering"^].
+* Le SVM distant couplé doit être disponible avec Astra Trident sur le cluster de destination.
+* La version 22.07 ou ultérieure d'Astra Trident doit exister sur les clusters ONTAP source et de destination.
+* Les licences asynchrones ONTAP SnapMirror via le bundle protection des données doivent être activées sur les clusters ONTAP source et cible. Voir https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["Présentation des licences SnapMirror dans ONTAP"^].
+* Lorsque vous ajoutez un système de stockage back-end ONTAP à Astra Control Center, appliquez les identifiants de l'utilisateur avec le rôle « admin » qui possède des méthodes d'accès `http` et `ontapi` Activation sur les clusters ONTAP source et de destination Voir https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["Gérer les comptes utilisateur dans la documentation ONTAP"^] pour en savoir plus.
+* Les clusters Kubernetes source et destination et les clusters ONTAP doivent être gérés par Astra Control.
++
+
+NOTE: Vous pouvez répliquer simultanément une autre application (exécutée sur l'autre cluster ou site) dans la direction opposée. Par exemple, les applications A, B, C peuvent être répliquées depuis Datacenter 1 vers Datacenter 2. Et les applications X, y, Z peuvent être répliquées depuis Datacenter 2 vers Datacenter 1.
+
+* *Configuration de l'Astra Trident / ONTAP* : le Centre de contrôle Astra requiert la création et la définition d'une classe de stockage comme classe de stockage par défaut. Astra Control Center prend en charge les pilotes ONTAP suivants fournis par Astra Trident pour la réplication :
++
+** ontap-nas
+** ontap-nas-flexgroup
+** ontap-san
+
+
+
+
+Découvrez comment link:../use/replicate_snapmirror.html["Répliquez vos applications sur un système distant grâce à la technologie SnapMirror"^].
 
 
 
@@ -62,14 +85,11 @@ La configuration d'une relation de réplication implique les éléments suivants
 . Dans l'onglet protection des données > réplication, sélectionnez *configurer la stratégie de réplication*. Ou, dans la zone protection des applications, sélectionnez l'option actions et sélectionnez *configurer la stratégie de réplication*.
 . Entrez ou sélectionnez les informations suivantes :
 +
-** Cluster de destination
+** *Grappe de destination* : saisissez un cluster de destination différent de la source.
 ** *Classe de stockage de destination* : sélectionnez ou entrez la classe de stockage qui utilise le SVM apparié sur le cluster ONTAP de destination.
 ** *Type de réplication*: "Asynchrone" est actuellement le seul type de réplication disponible. 
-** *Espace de noms de destination* : saisissez un espace de noms de destination nouveau ou existant pour le cluster de destination.
-+
-
-NOTE: Toute ressource en conflit dans l'espace de noms sélectionné sera remplacée. 
-
+** *Espace de noms de destination* : saisissez des espaces de noms de destination nouveaux ou existants pour le cluster de destination.
+** (Facultatif) Ajouter des espaces de noms supplémentaires en sélectionnant *Ajouter espace de noms* et en choisissant l'espace de noms dans la liste déroulante.
 ** *Fréquence de réplication*: Définissez la fréquence à laquelle vous souhaitez qu'Astra Control prenne un instantané et le réplique à sa destination.
 ** *Décalage*: Définissez le nombre de minutes à partir du haut de l'heure que vous voulez que le contrôle Astra prenne un instantané. Vous pouvez utiliser un décalage afin qu'il ne coïncide pas avec d'autres opérations planifiées. Par exemple, si vous voulez prendre l'instantané toutes les 5 minutes à partir de 10:02, entrez "02" comme minutes de décalage. Le résultat serait 10:02, 10:07, 10:12, etc
 
@@ -102,7 +122,7 @@ La page protection des données indique l'état et le statut de la relation de r
 
 Par exemple : normal | établi
 
-En savoir plus sur les États et l'état de réplication ci-dessous.
+Pour en savoir plus sur l'état et l'état de la réplication, consultez cette rubrique.
 
 
 

@@ -31,7 +31,7 @@ NOTE: Il est possible d'ajouter un cluster, d'ajouter un compartiment et de gér
 
 Lorsque vous ajoutez un nouveau cluster à Astra Control Center, il ne prend pas en compte les licences consommées tant qu'au moins une application exécutée sur le cluster est gérée par Astra Control Center.
 
-Lorsque vous commencez à gérer une application sur un cluster, toutes les UC de ce cluster sont incluses dans la consommation de licence Astra Control Center.
+Lorsque vous commencez à gérer une application sur un cluster, toutes les unités CPU de ce cluster sont incluses dans la consommation de licence Astra Control Center.
 
 
 

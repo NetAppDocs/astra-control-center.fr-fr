@@ -11,11 +11,11 @@ summary: NetApp met régulièrement à jour Astra Control Center afin de vous ap
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 
 * link:../release-notes/whats-new.html["Dans cette version d'Astra Control Center"]
 * link:../release-notes/known-issues.html["Problèmes connus"]
-* link:../release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
 * link:../release-notes/known-limitations.html["Limites connues"]
 
 

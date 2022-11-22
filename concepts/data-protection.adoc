@@ -11,6 +11,7 @@ summary: Découvrez les types de protection des données disponibles dans Astra 
 :imagesdir: ../media/concepts/
 
 
+[role="lead"]
 Découvrez les types de protection des données disponibles dans Astra Control Center, et comment il est préférable de les utiliser pour protéger vos applications.
 
 

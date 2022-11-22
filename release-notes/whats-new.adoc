@@ -11,7 +11,25 @@ summary: NetApp met régulièrement à jour Astra Control Center afin de vous ap
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
+
+
+
+== 22 novembre 2022 (22.11.0)
+
+.Nouvelles fonctionnalités et prises en charge
+* link:../use/manage-apps.html#define-apps["Prise en charge des applications réparties sur plusieurs espaces de noms"]
+* link:../use/manage-apps.html#define-apps["La prise en charge de l'inclusion des ressources de cluster dans une définition d'application"]
+* link:../use/manage-remote-authentication.html["L'authentification LDAP optimisée avec l'intégration du contrôle d'accès basé sur des rôles (RBAC)"]
+* link:../get-started/requirements.html["Ajout de la prise en charge de Kubernetes 1.25 et de Pod Security admission (PSA)"]
+* link:../use/monitor-running-tasks.html["Création de rapports d'avancement pour les opérations de sauvegarde, de restauration et de clonage"]
+
+
+.Problèmes et limites connus
+* link:../release-notes/known-issues.html["Problèmes connus pour cette version"]
+* link:../release-notes/known-limitations.html["Restrictions connues pour cette version"]
+
 
 
 
@@ -23,9 +41,11 @@ Cette version (22.08.1) pour Astra Control Center (22.08.0) corrige les bugs min
 
 == 10 août 2022 (22.08.0)
 
+.Détails
+====
 .Nouvelles fonctionnalités et prises en charge
 * link:../use/replicate_snapmirror.html["Réplication d'applications à l'aide de la technologie NetApp SnapMirror"]
-* link:../use/manage-apps.html#manage-apps["Workflow de gestion des applications amélioré"]
+* link:../use/manage-apps.html#define-apps["Workflow de gestion des applications amélioré"]
 * link:../use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution"]
 +
 
@@ -38,10 +58,10 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 .Problèmes et limites connus
 * link:../release-notes/known-issues.html["Problèmes connus pour cette version"]
-* link:../release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
 * link:../release-notes/known-limitations.html["Restrictions connues pour cette version"]
 
 
+====
 
 
 == 26 avril 2022 (22.04.0)
@@ -49,7 +69,6 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 .Détails
 ====
 .Nouvelles fonctionnalités et prises en charge
-* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/setup_overview.html#add-a-storage-backend["Déploiement d'un magasin de données Astra Control Center"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["Prise en charge de Cloud Volumes ONTAP"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Activation d'entrée générique pour le centre de contrôle Astra"]
@@ -59,7 +78,6 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 .Problèmes et limites connus
 * https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["Problèmes connus pour cette version"]
-* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues-ads.html["Problèmes connus avec le magasin de données Astra et ce centre de contrôle Astra"]
 * https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["Restrictions connues pour cette version"]
 
 
@@ -75,7 +93,6 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["Crochets d'exécution"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html#supported-app-installation-methods["Prise en charge des applications déployées avec des opérateurs du système namespace"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html["Prise en charge supplémentaire de Kubernetes et Rancher en amont"^]
-* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/setup_overview.html#add-a-storage-backend["Découvrez la gestion et la surveillance du système back-end avec Astra Data Store"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/upgrade-acc.html["Mises à niveau d'Astra Control Center"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/get-started/acc_operatorhub_install.html["Option Red Hat OperatorHub pour l'installation"^]
 
@@ -86,7 +103,6 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 .Problèmes et limites connus
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues.html["Problèmes connus pour cette version"^]
-* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues-ads.html["Problèmes connus avec la présentation d'Astra Data Store et ce centre de contrôle Astra"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
@@ -116,6 +132,5 @@ Lancement initial du centre de contrôle Astra.
 
 * link:../release-notes/known-issues.html["Problèmes connus pour cette version"]
 * link:../release-notes/known-limitations.html["Restrictions connues pour cette version"]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Documentation Astra Data Store"]
 * link:../acc-earlier-versions.html["Versions antérieures de la documentation Astra Control Center"]
 

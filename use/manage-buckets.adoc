@@ -11,6 +11,7 @@ summary: 'Il est essentiel d"ajouter des fournisseurs de compartiments de stocka
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 Un fournisseur de compartiments de stockage est essentiel pour la sauvegarde de vos applications et du stockage persistant, ou pour le clonage d'applications entre les clusters. Avec Astra Control Center, ajoutez un fournisseur de magasin d'objets comme destination de sauvegarde externe pour vos applications.
 
 Il n'est pas nécessaire de cloner la configuration de vos applications et le stockage persistant vers le même cluster.
@@ -27,7 +28,7 @@ NOTE: Amazon Web Services (AWS) et Google Cloud Platform (GCP) utilisent le type
 
 +
 
-NOTE: Bien qu'Astra Control Center prenne en charge Amazon S3 en tant que fournisseur de compartiments S3 génériques, Astra Control Center peut ne pas prendre en charge tous les fournisseurs de magasins d'objets qui affirment la prise en charge d'Amazon S3.
+NOTE: Bien qu'Astra Control Center prenne en charge Amazon S3 en tant que fournisseur de compartiments génériques, Astra Control Center peut ne pas prendre en charge tous les fournisseurs de magasins d'objets qui affirment la prise en charge d'Amazon S3.
 
 
 
@@ -44,6 +45,7 @@ Vous pouvez effectuer les tâches suivantes liées à la gestion des compartimen
 
 * link:../get-started/setup_overview.html#add-a-bucket["Ajouter un godet"]
 *  a bucket
+*  the default bucket
 *  or remove bucket credentials
 *  a bucket
 
@@ -62,13 +64,27 @@ NOTE: Lorsque vous ajoutez un compartiment, sélectionnez le fournisseur appropr
 
 .Étapes
 . Dans le menu de navigation de gauche, sélectionnez *seaux*.
-. Dans le menu Options de la colonne *actions*, sélectionnez *Modifier*.
+. Dans le menu de la colonne *actions*, sélectionnez *Modifier*.
 . Modifier toute information autre que le type de godet.
 +
 
 TIP: Vous ne pouvez pas modifier le type de compartiment.
 
 . Sélectionnez *mettre à jour*.
+
+
+
+
+== Définir le compartiment par défaut
+
+Lorsque vous effectuez un clone entre les clusters, Astra Control requiert un compartiment par défaut. La procédure suivante permet de définir un compartiment par défaut pour l'ensemble des clusters.
+
+.Étapes
+. Accédez à *Cloud instances*.
+. Sélectionnez le menu dans la colonne *actions* pour l'instance de Cloud dans la liste.
+. Sélectionnez *Modifier*.
+. Dans la liste *godet*, sélectionnez le compartiment par défaut.
+. Sélectionnez *Enregistrer*.
 
 
 

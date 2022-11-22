@@ -1,6 +1,6 @@
 ---
 section: use
-title: Utilisez Astra
+title: Utilisez Astra Control Center
 entries:
 - title: Commencez à gérer les applications
   url: "/use/manage-apps.html"
@@ -31,10 +31,12 @@ entries:
     url: "/use/view-apps.html"
 - title: Gérez votre compte
   entries:
-  - title: Gérer les utilisateurs
-    url: "/use/manage-users.html"
-  - title: Gérez les rôles
-    url: "/use/manage-roles.html"
+  - title: Gérez les utilisateurs et les rôles locaux
+    url: "/use/manage-local-users-and-roles.html"
+  - title: Gérer l'authentification à distance
+    url: "/use/manage-remote-authentication.html"
+  - title: Gérez des utilisateurs et des groupes distants
+    url: "/use/manage-remote-users-groups.html"
   - title: Gérer les notifications
     url: "/use/manage-notifications.html"
   - title: Gérer les identifiants
@@ -43,14 +45,12 @@ entries:
     url: "/use/view-account-activity.html"
   - title: Mettre à jour une licence existante
     url: "/use/update-licenses.html"
-  - title: Gérer les connexions au référentiel
-    url: "/use/manage-connections.html"
-  - title: Gérer les packs logiciels
-    url: "/use/manage-packages-acc.html"
 - title: Gestion des compartiments
   url: "/use/manage-buckets.html"
 - title: Gérer le stockage back-end
   url: "/use/manage-backend.html"
+- title: Surveillez les tâches en cours d'exécution
+  url: "/use/monitor-running-tasks.html"
 - title: Contrôle de l'infrastructure avec Cloud Insights et Fluentd
   url: "/use/monitor-protect.html"
 - title: Annuler la gestion des applications et des clusters

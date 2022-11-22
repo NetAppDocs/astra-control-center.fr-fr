@@ -7,9 +7,5 @@ entries:
   url: "/release-notes/whats-new.html"
 - title: Problèmes connus
   url: "/release-notes/known-issues.html"
-  entries:
-  - title: Problèmes connus avec le magasin de données Astra et ce centre de contrôle
-      Astra
-    url: "/release-notes/known-issues-ads.html"
 - title: Limites connues
   url: "/release-notes/known-limitations.html"

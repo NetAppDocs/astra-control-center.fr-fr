@@ -11,12 +11,13 @@ summary: 'Si un cert-Manager existe déjà dans le cluster, vous devez effectuer
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Si un cert-Manager existe déjà dans votre cluster Kubernetes, vous devez effectuer certaines étapes préalables afin qu'Astra Control Center n'installe pas son propre cert-Manager.
 
 .Étapes
 . Vérifiez qu'un cert-Manager est installé :
 +
-[source, sh]
+[source, console]
 ----
 kubectl get pods -A | grep 'cert-manager'
 ----
@@ -32,7 +33,7 @@ cert-manager   essential-cert-manager-webhook-56b76db9cc-fjqrq      1/1     Runn
 ----
 . Créez une paire de certificats/clés pour le FQDN adresse :
 +
-[source, sh]
+[source, console]
 ----
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt
 ----
@@ -49,7 +50,7 @@ writing new private key to 'tls.key'
 ----
 . Créez un secret avec des fichiers générés précédemment :
 +
-[source, sh]
+[source, console]
 ----
 kubectl create secret tls selfsigned-tls --key tls.key --cert tls.crt -n <cert-manager-namespace>
 ----
@@ -75,7 +76,7 @@ spec:
     secretName: selfsigned-tls
 ----
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f ClusterIssuer.yaml
 ----
@@ -89,7 +90,7 @@ clusterissuer.cert-manager.io/astra-ca-clusterissuer created
 ----
 . Vérifiez que l'émetteur de ClusterIssuer s'est correctement installé. `Ready` doit être de `True` avant de pouvoir continuer :
 +
-[source, sh]
+[source, console]
 ----
 kubectl get ClusterIssuer
 ----

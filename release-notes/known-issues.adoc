@@ -12,6 +12,7 @@ summary: 'Les problèmes connus identifient les problèmes susceptibles de vous 
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 Les problèmes connus identifient les problèmes susceptibles de vous empêcher d'utiliser cette version du produit avec succès.
 
 Les problèmes connus suivants ont une incidence sur la version actuelle :
@@ -29,8 +30,8 @@ Les problèmes connus suivants ont une incidence sur la version actuelle :
 
 
 .Autres questions
+*  clusters do not appear in NetApp Cloud Insights when connecting through a proxy
 *  data management operations fail with Internal Service Error (500) when Astra Trident is offline
-*  might fail with snapshot controller version 4.2.0
 
 
 
@@ -71,26 +72,31 @@ Vous ne pouvez pas utiliser un kubeconfig avec plus d'un cluster et un contexte.
 
 
 
+== Les clusters gérés n'apparaissent pas dans NetApp Cloud Insights lors de la connexion via un proxy
+
+Lorsque le centre de contrôle Astra se connecte à NetApp Cloud Insights par le biais d'un proxy, il se peut que les clusters gérés n'apparaissent pas dans Cloud Insights. Pour contourner ce problème, exécutez les commandes suivantes sur chaque cluster géré :
+
+[source, console]
+----
+kubectl get cm telegraf-conf -o yaml -n netapp-monitoring | sed '/\[\[outputs.http\]\]/c\    [[outputs.http]]\n    use_system_proxy = true' | kubectl replace -f -
+----
+[source, console]
+----
+kubectl get cm telegraf-conf-rs -o yaml -n netapp-monitoring | sed '/\[\[outputs.http\]\]/c\    [[outputs.http]]\n    use_system_proxy = true' | kubectl replace -f -
+----
+[source, console]
+----
+kubectl get pods -n netapp-monitoring --no-headers=true | grep 'telegraf-ds\|telegraf-rs' | awk '{print $1}' | xargs kubectl delete -n netapp-monitoring pod
+----
+
+
 == Les opérations de gestion des données d'application échouent avec l'erreur de service interne (500) lorsque Astra Trident est hors ligne
 
 Si Astra Trident sur un cluster d'application est mis hors ligne (et reconnecté) et 500 erreurs de service internes sont rencontrées lors de la tentative de gestion des données d'application, redémarrez tous les nœuds Kubernetes du cluster d'application pour restaurer la fonctionnalité.
 
 
 
-== Les snapshots peuvent échouer avec la version 4.2.0 du contrôleur de snapshot
-
-Lorsque vous utilisez le snapshot-contrôleur Kubernetes (également appelé External-snapshotter) version 4.2.0 avec Kubernetes 1.20 ou 1.21, les snapshots peuvent échouer. Pour éviter cela, utilisez un autre https://kubernetes-csi.github.io/docs/snapshot-controller.html["version prise en charge"^] D'un snapshoter externe, comme la version 4.2.1, avec Kubernetes version 1.20 ou 1.21.
-
-. Exécutez un appel POST pour ajouter un fichier kubeconfig mis à jour au `/credentials` et récupérer le noeud final affecté `id` du corps de réponse.
-. Effectuer un APPEL PUT à partir du `/clusters` À l'aide de l'ID de cluster approprié et définissez le `credentialID` à la `id` valeur de l'étape précédente.
-
-
-Une fois ces étapes terminées, les informations d'identification associées au cluster sont mises à jour et le cluster doit se reconnecter et mettre à jour son état sur `available`.
-
-
-
 == Trouvez plus d'informations
 
-* link:../release-notes/known-issues-ads.html["Problèmes connus avec la présentation d'Astra Data Store et ce centre de contrôle Astra"]
 * link:../release-notes/known-limitations.html["Limites connues"]
 

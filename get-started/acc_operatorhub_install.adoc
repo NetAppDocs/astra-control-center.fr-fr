@@ -11,27 +11,28 @@ summary: 'Si vous utilisez Red Hat OpenShift, vous pouvez installer le centre de
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Si vous utilisez Red Hat OpenShift, vous pouvez installer Astra Control Center à l'aide de l'opérateur certifié Red Hat. Utiliser cette procédure pour installer le centre de contrôle Astra à partir du https://catalog.redhat.com/software/operators/explore["Catalogue de l'écosystème Red Hat"^] Ou utilisez Red Hat OpenShift Container Platform.
 
 Une fois cette procédure terminée, vous devez revenir à la procédure d'installation pour terminer le link:../get-started/install_acc.html#verify-system-status["les étapes restantes"] pour vérifier que l'installation a réussi et ouvrir une session.
 
 .Ce dont vous avez besoin, 8217;ll
 * link:requirements.html["Avant de commencer l'installation, préparez votre environnement pour le déploiement d'Astra Control Center"].
-* Depuis votre cluster OpenShift, assurez-vous que tous les opérateurs de clusters sont en état sain (`available` est `true`) :
+* Depuis votre cluster OpenShift, assurez-vous que tous les opérateurs de clusters sont en état sain :
 +
-[source, sh]
+[source, console]
 ----
 oc get clusteroperators
 ----
-* Depuis votre cluster OpenShift, assurez-vous que tous les services d'API sont en état sain (`available` est `true`) :
+* Depuis votre cluster OpenShift, assurez-vous que tous les services d'API sont en état sain :
 +
-[source, sh]
+[source, console]
 ----
 oc get apiservices
 ----
 * Créez une adresse FQDN pour Astra Control Center dans votre centre de données.
 * Obtenez les autorisations nécessaires et l'accès à Red Hat OpenShift Container Platform pour effectuer les étapes d'installation décrites.
-* Si un cert-Manager existe déjà dans le cluster, vous devez en effectuer certaines link:../get-started/cert-manager-prereqs.html["étapes préalables"] Pour qu'Astra Control Center n'installe pas son propre cert-Manager.
+* Si un cert-Manager existe déjà dans le cluster, vous devez en effectuer certaines link:../get-started/cert-manager-prereqs.html["étapes préalables"] Pour qu'Astra Control Center n'installe pas son propre cert-Manager. Par défaut, Astra Control Center installe son propre cert-Manager lors de l'installation.
 
 
 .Étapes
@@ -49,15 +50,15 @@ oc get apiservices
 
 . Téléchargez le pack Astra Control Center (`astra-control-center-[version].tar.gz`) du https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Site de support NetApp"^].
 . Téléchargez le code postal des certificats et clés Astra Control Center sur le https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Site de support NetApp"^].
-. (Facultatif) utilisez la commande suivante pour vérifier la signature du pack :
+. (Facultatif) Vérifiez la signature du lot :
 +
-[source, sh]
+[source, console]
 ----
 openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
 . Extraire les images :
 +
-[source, sh]
+[source, console]
 ----
 tar -vxzf astra-control-center-[version].tar.gz
 ----
@@ -67,20 +68,24 @@ tar -vxzf astra-control-center-[version].tar.gz
 
 == Installez le plug-in NetApp Astra kubectl
 
-NetApp Astra `kubectl` Le plug-in de ligne de commande permet de gagner du temps lors de l'exécution des tâches courantes associées au déploiement et à la mise à niveau d'Astra Control Center.
+Le plug-in de ligne de commande NetApp Astra kubectl permet de gagner du temps lors de l'exécution des tâches courantes associées au déploiement et à la mise à niveau d'Astra Control Center.
 
-NetApp fournit des binaires pour différents systèmes d'exploitation et architectures CPU. Avant d'effectuer cette tâche, vous devez savoir quelle unité centrale et quel système d'exploitation vous possédez. Sur les systèmes d'exploitation Linux et Mac, vous pouvez utiliser `uname -a` commande permettant de collecter ces informations.
+NetApp fournit des binaires de plug-ins pour différentes architectures CPU et systèmes d'exploitation. Avant d'effectuer cette tâche, vous devez savoir quelle unité centrale et quel système d'exploitation vous possédez.
 
 .Étapes
-. Répertoriez l'Astra de NetApp disponible `kubectl` Les binaires du plug-in, et notez le nom du fichier dont vous avez besoin pour votre système d'exploitation et l'architecture de l'UC :
+. Répertoriez les binaires NetApp Astra kubectl disponibles et notez le nom du fichier dont vous avez besoin pour votre système d'exploitation et votre architecture de processeur :
 +
-[source, sh]
+
+NOTE: La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite dans le dossier `kubectl-astra`.
+
++
+[source, console]
 ----
 ls kubectl-astra/
 ----
-. Copiez le fichier au même emplacement que la norme `kubectl` informatique. Dans cet exemple, le `kubectl` l'utilitaire se trouve dans le `/usr/local/bin` répertoire. Remplacement `<binary-name>` avec le nom du fichier dont vous avez besoin :
+. Déplacez le bon binaire dans le chemin actuel et renommez-le `kubectl-astra`:
 +
-[source, sh]
+[source, console]
 ----
 cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 ----
@@ -97,22 +102,26 @@ cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 ====
 .Docker
 --
-. Passez au répertoire Astra :
+. Passez à l' `acc` répertoire extrait du bundle tar :
 +
-[source, sh]
+Exemple :
+
+
+
+[listing]
 ----
-cd acc
+cd ../acc
 ----
 . [[subSTEP_image_local_registry_push]]placez les images du paquet dans le répertoire d'images Astra Control Center dans votre registre local. Exécutez les substitutions suivantes avant d'exécuter la commande :
 +
-** Remplacez BUNDLE_FILE par le nom du fichier bundle Astra Control (par exemple, `acc.manifest.yaml`).
-** Remplacez MON_REGISTRE par l'URL du référentiel Docker.
-** Remplacez MON_REGISTRE_UTILISATEUR par le nom d'utilisateur.
-** Remplacez MON_REGISTRY_TOKEN par un jeton autorisé pour le Registre.
+** Remplacez <BUNDLE_FILE> par le nom du fichier bundle Astra Control (`acc.manifest.yaml`).
+** Remplacer <MY_FULL_REGISTRY_PATH> par l'URL du référentiel Docker, par exemple https://exampledownloads.jfrog.io/docker-astra-control/v1/[].
+** Remplacez <MY_REGISTRY_USER> par le nom d'utilisateur.
+** Remplacez <MY_REGISTRY_TOKEN> par un jeton autorisé pour le registre.
 +
-[source, sh]
+[source, console]
 ----
-kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_USER -p MY_REGISTRY_TOKEN
+kubectl astra packages push-images -m <BUNDLE_FILE> -r <MY_FULL_REGISTRY_PATH> -u <MY_REGISTRY_USER> -p <MY_REGISTRY_TOKEN>
 ----
 
 
@@ -123,13 +132,13 @@ kubectl astra packages push-images -m BUNDLE_FILE -r MY_REGISTRY -u MY_REGISTRY_
 --
 . Connectez-vous à votre registre :
 +
-[source, sh]
+[source, console]
 ----
-podman login [your_registry_path]
+podman login <MY_FULL_REGISTRY_PATH>
 ----
 . Exécutez le script suivant, en procédant à la substitution <YOUR_REGISTRY> comme indiqué dans les commentaires :
 +
-[source, sh]
+[source, console]
 ----
 # You need to be at the root of the tarball.
 # You should see these files to confirm correct location:
@@ -139,7 +148,7 @@ podman login [your_registry_path]
 # Replace <YOUR_REGISTRY> with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
 export REGISTRY=<YOUR_REGISTRY>
 export PACKAGENAME=acc
-export PACKAGEVERSION=22.08.1-26
+export PACKAGEVERSION=22.11.0-82
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
   # Load to local cache

@@ -11,7 +11,8 @@ summary: 'Vous pouvez convertir une licence d"évaluation en licence complète, 
 :imagesdir: ../media/get-started/
 
 
-Vous pouvez convertir une licence d'évaluation en licence complète, ou mettre à jour une évaluation existante ou une licence complète avec une nouvelle licence. Si vous ne disposez pas d'une licence complète, contactez votre contact commercial NetApp pour obtenir une licence complète et un numéro de série. Vous pouvez utiliser l'interface utilisateur Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour mettre à jour une licence existante.
+[role="lead"]
+Vous pouvez convertir une licence d'évaluation en licence complète, ou mettre à jour une évaluation existante ou une licence complète avec une nouvelle licence. Si vous ne disposez pas d'une licence complète, contactez votre contact commercial NetApp pour obtenir une licence complète et un numéro de série. Vous pouvez utiliser l'interface utilisateur du centre de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour mettre à jour une licence existante.
 
 .Étapes
 . Connectez-vous au https://mysupport.netapp.com/site/["Site de support NetApp"^].

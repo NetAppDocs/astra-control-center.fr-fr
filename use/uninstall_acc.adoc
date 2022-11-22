@@ -11,6 +11,7 @@ summary: Décrit comment retirer le centre de contrôle Astra et le conducteur d
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Vous devrez peut-être retirer les composants du centre de contrôle Astra si vous effectuez une mise à niveau d'un essai vers une version complète du produit. Pour déposer le centre de commande Astra et le conducteur du centre de commande Astra, exécuter les commandes décrites dans cette procédure dans l'ordre.
 
 Si vous rencontrez des problèmes avec la désinstallation, reportez-vous à la section  uninstall issues.
@@ -24,7 +25,7 @@ Si vous rencontrez des problèmes avec la désinstallation, reportez-vous à la 
 +
 [listing]
 ----
-kubectl delete -f astra_control_center_min.yaml -n netapp-acc
+kubectl delete -f astra_control_center.yaml -n netapp-acc
 ----
 +
 Résultat :

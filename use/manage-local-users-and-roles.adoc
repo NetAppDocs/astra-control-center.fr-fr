@@ -1,0 +1,180 @@
+---
+sidebar: sidebar 
+permalink: use/manage-local-users-and-roles.html 
+keywords: add users, edit users, remove users, delete users, manage roles 
+summary: Gérez les utilisateurs et les rôles du système Astra Control Center. 
+---
+= Gérez les utilisateurs et les rôles locaux
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Vous pouvez ajouter, supprimer et modifier les utilisateurs de votre installation Astra Control Center à l'aide de l'interface utilisateur Astra Control. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour gérer les utilisateurs.
+
+Vous pouvez également utiliser LDAP pour effectuer l'authentification pour certains utilisateurs.
+
+
+
+== Utiliser LDAP
+
+LDAP est un protocole standard de l'industrie pour l'accès aux informations d'annuaires distribués et un choix populaire pour l'authentification d'entreprise. Vous pouvez connecter Astra Control Center à un serveur LDAP pour effectuer l'authentification de certains utilisateurs Astra Control. À un niveau élevé, la configuration implique l'intégration d'Astra avec LDAP et la définition des utilisateurs et des groupes Astra Control correspondant aux définitions LDAP. Vous pouvez utiliser l'API de contrôle Astra ou l'interface utilisateur Web pour configurer l'authentification LDAP et les utilisateurs et groupes LDAP. Pour plus d'informations, reportez-vous à la documentation suivante :
+
+* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["Utilisez l'API de contrôle Astra pour gérer l'authentification à distance et les utilisateurs"^]
+* link:manage-remote-users-groups.html["Utilisez l'interface utilisateur Astra Control pour gérer les utilisateurs et les groupes distants"]
+* link:manage-remote-authentication.html["Utilisez l'interface utilisateur Astra Control pour gérer l'authentification à distance"]
+
+
+
+
+== Ajouter des utilisateurs
+
+Les propriétaires et administrateurs de comptes peuvent ajouter d'autres utilisateurs à l'installation d'Astra Control Center.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *utilisateurs*.
+. Sélectionnez *Ajouter utilisateur*.
+. Entrez le nom de l'utilisateur, son adresse e-mail et son mot de passe temporaire.
++
+L'utilisateur doit modifier le mot de passe lors de sa première connexion.
+
+. Sélectionnez un rôle d'utilisateur avec les autorisations système appropriées.
++
+Chaque rôle offre les autorisations suivantes :
+
++
+** Un *Viewer* peut afficher les ressources.
+** Un *membre* dispose des autorisations de rôle Viewer et peut gérer les applications et les clusters, annuler la gestion des applications et supprimer des instantanés et des sauvegardes.
+** Un *Admin* dispose des autorisations de rôle de membre et peut ajouter et supprimer d'autres utilisateurs, à l'exception du propriétaire.
+** Un *propriétaire* possède des autorisations de rôle d'administrateur et peut ajouter et supprimer des comptes d'utilisateur.
+
+
+. Pour ajouter des contraintes à un utilisateur avec un rôle membre ou visualiseur, activez la case à cocher *restreindre le rôle aux contraintes*.
++
+Pour plus d'informations sur l'ajout de contraintes, voir link:manage-local-users-and-roles.html["Gérez les utilisateurs et les rôles locaux"].
+
+. Sélectionnez *Ajouter*.
+
+
+
+
+== Gérer les mots de passe
+
+Vous pouvez gérer les mots de passe des comptes utilisateur dans Astra Control Center.
+
+
+
+=== Changer votre mot de passe
+
+Vous pouvez modifier le mot de passe de votre compte utilisateur à tout moment.
+
+.Étapes
+. Sélectionnez l'icône utilisateur en haut à droite de l'écran.
+. Sélectionnez *Profile*.
+. Dans le menu Options de la colonne *actions*, sélectionnez *changer mot de passe*.
+. Saisissez un mot de passe conforme aux exigences de mot de passe.
+. Saisissez à nouveau le mot de passe pour le confirmer.
+. Sélectionnez *changer mot de passe*.
+
+
+
+
+=== Réinitialiser le mot de passe d'un autre utilisateur
+
+Si votre compte dispose des autorisations de rôle Administrateur ou propriétaire, vous pouvez réinitialiser les mots de passe des autres comptes utilisateur ainsi que les vôtres. Lorsque vous réinitialisez un mot de passe, vous attribuez un mot de passe temporaire que l'utilisateur devra modifier lors de la connexion.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez la liste déroulante *actions*.
+. Sélectionnez *Réinitialiser le mot de passe*.
+. Saisissez un mot de passe temporaire conforme aux exigences de mot de passe.
+. Saisissez à nouveau le mot de passe pour le confirmer.
++
+
+NOTE: Lors de la prochaine connexion de l'utilisateur, l'utilisateur est invité à modifier le mot de passe.
+
+. Sélectionnez *Réinitialiser le mot de passe*.
+
+
+
+
+== Supprimer des utilisateurs
+
+Les utilisateurs disposant du rôle propriétaire ou administrateur peuvent à tout moment supprimer d'autres utilisateurs du compte.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Dans l'onglet *Users*, cochez la case de la ligne de chaque utilisateur que vous souhaitez supprimer.
+. Dans le menu Options de la colonne *actions*, sélectionnez *Supprimer utilisateur/s*.
+. Lorsque vous y êtes invité, confirmez la suppression en saisissant le mot "supprimer", puis sélectionnez *Oui, Supprimer l'utilisateur*.
+
+
+Astra Control Center supprime l'utilisateur du compte.
+
+
+
+== Gérez les rôles
+
+Vous pouvez gérer les rôles en ajoutant des contraintes d'espace de noms et en restreignant les rôles des utilisateurs à ces contraintes. Cela vous permet de contrôler l'accès aux ressources de votre organisation. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour gérer les rôles.
+
+
+
+=== Ajoutez une contrainte d'espace de noms à un rôle
+
+Un administrateur ou un propriétaire peut ajouter des contraintes d'espace de noms aux rôles de membre ou de visualiseur.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *utilisateurs*.
+. Dans la colonne *actions*, sélectionnez le bouton de menu d'un utilisateur ayant le rôle membre ou visualiseur.
+. Sélectionnez *Modifier le rôle*.
+. Activez la case à cocher *restreindre le rôle aux contraintes*.
++
+La case à cocher n'est disponible que pour les rôles de membre ou de visualiseur. Vous pouvez sélectionner un autre rôle dans la liste déroulante *role*.
+
+. Sélectionnez *Ajouter une contrainte*.
++
+Vous pouvez afficher la liste des contraintes disponibles par espace de noms ou par étiquette d'espace de noms.
+
+. Dans la liste déroulante *Type de contrainte*, sélectionnez *espace de noms Kubernetes* ou *étiquette d'espace de noms Kubernetes* selon la configuration de vos espaces de noms.
+. Sélectionnez un ou plusieurs espaces de noms ou étiquettes dans la liste pour composer une contrainte qui restreint les rôles à ces espaces de noms.
+. Sélectionnez *confirmer*.
++
+La page *Modifier rôle* affiche la liste des contraintes que vous avez choisies pour ce rôle.
+
+. Sélectionnez *confirmer*.
++
+Sur la page *compte*, vous pouvez afficher les contraintes pour n'importe quel rôle de membre ou de visualiseur dans la colonne *rôle*.
+
+
+
+
+NOTE: Si vous activez des contraintes pour un rôle et que vous sélectionnez *confirmer* sans ajouter de contraintes, le rôle est considéré comme étant soumis à des restrictions complètes (le rôle est refusé l'accès aux ressources affectées aux espaces de noms).
+
+
+
+=== Supprime une contrainte d'espace de noms d'un rôle
+
+Un utilisateur Admin ou propriétaire peut supprimer une contrainte d'espace de noms d'un rôle.
+
+.Étapes
+. Dans la zone de navigation *gérer votre compte*, sélectionnez *compte*.
+. Sélectionnez l'onglet *utilisateurs*.
+. Dans la colonne *actions*, sélectionnez le bouton de menu d'un utilisateur ayant le rôle membre ou visualiseur ayant des contraintes actives.
+. Sélectionnez *Modifier le rôle*.
++
+La boîte de dialogue *Modifier le rôle* affiche les contraintes actives du rôle.
+
+. Sélectionnez *X* à droite de la contrainte à supprimer.
+. Sélectionnez *confirmer*.
+
+
+
+
+== Pour en savoir plus
+
+* link:../concepts/user-roles-namespaces.html["Rôles et espaces de noms d'utilisateur"]
+
