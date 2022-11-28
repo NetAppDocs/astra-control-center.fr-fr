@@ -21,7 +21,7 @@ Pour mettre à niveau Astra Control Center, téléchargez le pack d'installation
 +
 [listing]
 ----
-../../trident-installer/tridentctl -n trident version
+kubectl get tridentversion -n trident
 ----
 +
 Reportez-vous à la section https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html#determine-the-version-to-upgrade-to["Documentation Astra Trident"] pour effectuer une mise à niveau à partir d'une ancienne version.
