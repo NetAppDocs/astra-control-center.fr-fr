@@ -8,8 +8,8 @@ entries:
   url: "/concepts/data-protection.html"
 - title: Licences
   url: "/concepts/licensing.html"
-- title: Comprendre la gestion des applications
-  url: "/learn/app-management.html"
+- title: Gestion des applications
+  url: "/concepts/app-management.html"
 - title: Classes de stockage et taille PV
   url: "/concepts/choose-class-and-size.html"
 - title: Rôles et espaces de noms d'utilisateur

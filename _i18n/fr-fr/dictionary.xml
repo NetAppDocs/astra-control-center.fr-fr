@@ -177,7 +177,6 @@
   <block id="a5f8603aae16ddbbbcfc6f63de01008d" category="inline-image-macro">Image réplication et basculement</block>
   <block id="de57d5c9dad5ff2e5621f7541a798fe9" category="paragraph"><block ref="de57d5c9dad5ff2e5621f7541a798fe9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">Décrit le type d'applications gérées dans Astra Control.</block>
-  <block id="0aec310f3808bce2063a2292e6052cf8" category="doc">Comprendre la gestion des applications</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">Lorsque Astra Control détecte vos clusters, les applications de ces clusters ne sont pas gérées jusqu'à ce que vous choisissiez comment les gérer. Une application gérée d'Astra Control peut être l'une des suivantes :</block>
   <block id="3757d3597962f660c54cb3f9ed5ba251" category="list-text">Un espace de nom, y compris toutes les ressources de cet espace de nom</block>
   <block id="99185f9c0e1b271b9c7c1684898a4b91" category="inline-image-macro">Image conceptuelle qui montre qu'Astra gère toutes les ressources d'un espace de noms.</block>
@@ -2598,4 +2597,5 @@
   <block id="fcd1b815fb4ca6cac38239194b4c8a5f" category="admonition">Ne modifiez pas la classe de stockage à l'aide des commandes kubectl. Utilisez plutôt cette procédure. Astra Control va rétablir les modifications si elles ont été effectuées à l'aide de kubectl.</block>
   <block id="b42200f7280deb01c16bf89a68f5395d" category="sidebar">Avec l'API REST d'Astra Control</block>
   <block id="f789b438cbc1e82cd52918fc029eeb85" category="sidebar">Automatisez avec l'API REST d'Astra Control</block>
+  <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">Gestion des applications</block>
 </blocks>
