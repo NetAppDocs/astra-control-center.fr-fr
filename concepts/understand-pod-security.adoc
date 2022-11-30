@@ -38,7 +38,7 @@ Lorsque vous installez Astra Control Center sur Kubernetes 1.23 ou 1.24, plusieu
 
 === PSP créé lors de l'installation
 
-Lors de l'installation d'Astra Control Center, l'opérateur d'Astra Control Center installe une stratégie de sécurité de pod personnalisée, un objet de rôle et un objet RoleBinding pour prendre en charge le déploiement des services Astra Control Center dans l'espace de noms Astra Control Center.
+Lors de l'installation d'Astra Control Center, l'opérateur du centre de contrôle Astra installe une politique de sécurité de pod personnalisée, a `Role` objet, et un `RoleBinding` Objet prenant en charge le déploiement des services de centre de contrôle Astra dans l'espace de noms d'Astra Control Center.
 
 La nouvelle règle et les objets ont les attributs suivants :
 
@@ -63,7 +63,7 @@ netapp-astra-deployment-rb               Role/netapp-astra-deployment-role      
 
 === PSP créé pendant les opérations de sauvegarde
 
-Pendant les opérations de sauvegarde, Astra Control Center crée une règle de sécurité dynamique de pod, un objet ClusterRole et un objet RoleBinding. Ils prennent en charge le processus de sauvegarde, qui se produit dans un espace de noms distinct.
+Pendant les opérations de sauvegarde, Astra Control Center crée une règle de sécurité dynamique de pod, A. `ClusterRole` objet, et un `RoleBinding` objet. Ils prennent en charge le processus de sauvegarde, qui se produit dans un espace de noms distinct.
 
 La nouvelle règle et les objets ont les attributs suivants :
 
@@ -88,7 +88,7 @@ netapp-astra-backup   Role/netapp-astra-backup   62s
 
 === PSP créé lors de la gestion du cluster
 
-Lorsque vous gérez un cluster, Astra Control Center installe l'opérateur de surveillance netapp dans le cluster géré. Cet opérateur crée une politique de sécurité pod, un objet ClusterRole et un objet RoleBinding pour déployer des services de télémétrie dans l'espace de noms Astra Control Center.
+Lorsque vous gérez un cluster, Astra Control Center installe l'opérateur de surveillance netapp dans le cluster géré. Cet opérateur crée une stratégie de sécurité de pod, A. `ClusterRole` objet, et un `RoleBinding` Objet permettant de déployer des services de télémétrie dans l'espace de noms Astra Control Center.
 
 La nouvelle règle et les objets ont les attributs suivants :
 

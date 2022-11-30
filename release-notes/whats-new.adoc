@@ -42,6 +42,7 @@ Cette version (22.08.1) pour Astra Control Center (22.08.0) corrige les bugs min
 == 10 août 2022 (22.08.0)
 
 .Détails
+[%collapsible]
 ====
 .Nouvelles fonctionnalités et prises en charge
 * link:../use/replicate_snapmirror.html["Réplication d'applications à l'aide de la technologie NetApp SnapMirror"]
@@ -67,6 +68,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 == 26 avril 2022 (22.04.0)
 
 .Détails
+[%collapsible]
 ====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms"]
@@ -87,6 +89,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 == 14 décembre 2021 (21.12)
 
 .Détails
+[%collapsible]
 ====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["Restauration des applications"^]
@@ -112,6 +115,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 == 5 août 2021 (21.08)
 
 .Détails
+[%collapsible]
 ====
 Lancement initial du centre de contrôle Astra.
 

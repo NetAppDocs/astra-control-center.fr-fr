@@ -163,6 +163,7 @@ NOTE: Pour cette procédure, il n'est pas nécessaire d'avoir un accès kubectl 
 
 
 .Étapes
+[%collapsible]
 ====
 . Créer un compte de service :
 +
