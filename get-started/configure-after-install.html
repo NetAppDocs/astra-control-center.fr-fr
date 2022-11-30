@@ -1331,7 +1331,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
+    <time datetime="2022-11-30 23:08:11 +0000">11/30/2022</time>
     
   
 
@@ -1352,7 +1352,7 @@
 <h2 id="supprimer-les-limitations-de-ressources">Supprimer les limitations de ressources</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Certains environnements utilisent les objets ResourceQuotas et LimitRanges pour empêcher les ressources d&#8217;un namespace de consommer l&#8217;ensemble des CPU et de la mémoire disponibles sur le cluster. Le centre de contrôle Astra ne fixe pas de limites maximales, il ne sera donc pas conforme à ces ressources. Vous devez les supprimer des espaces de noms où vous prévoyez d&#8217;installer Astra Control Center.</p>
+<p>Certains environnements utilisent les objets ResourceQuotas et LimitRanges pour empêcher les ressources d&#8217;un namespace de consommer l&#8217;ensemble des CPU et de la mémoire disponibles sur le cluster. Le centre de contrôle Astra ne fixe pas de limites maximales, il ne sera donc pas conforme à ces ressources. Si votre environnement est configuré de cette façon, vous devez supprimer ces ressources des espaces de noms où vous prévoyez d&#8217;installer Astra Control Center.</p>
 </div>
 <div class="paragraph">
 <p>Vous pouvez suivre les étapes suivantes pour récupérer et supprimer ces quotas et ces limites. Dans ces exemples, la sortie de la commande est affichée immédiatement après la commande.</p>
@@ -1361,7 +1361,7 @@
 <div class="title">Étapes</div>
 <ol class="arabic">
 <li>
-<p>Obtenez les quotas de ressources dans l&#8217;espace de noms netapp-acc :</p>
+<p>Obtenez les quotas de ressources dans <code>netapp-acc</code> espace de noms :</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">kubectl get quota -n netapp-acc</code></pre>
@@ -1452,7 +1452,7 @@ cpu-limit-range   2022-06-27T19:01:23Z</pre>
 </div>
 </li>
 <li>
-<p>Appliquez le fichier de ressources suivant pour configurer l&#8217;objet de stratégie réseau-acc-avp pour permettre aux services de plug-in Astra d&#8217;effectuer des demandes vers les services du centre de contrôle Astra. Remplacez entre parenthèses &lt;&gt; par les informations relatives à votre environnement :</p>
+<p>Appliquez le fichier de ressources suivant pour configurer le <code>acc-avp-network-policy</code> Objet permettant aux services de plug-ins Astra de faire des demandes aux services du centre de contrôle Astra. Remplacez entre parenthèses &lt;&gt; par les informations relatives à votre environnement :</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: networking.k8s.io/v1
@@ -1473,7 +1473,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Appliquez le fichier de ressources suivant pour configurer l&#8217;objet de stratégie réseau ACC-opérateur pour permettre à l&#8217;opérateur Astra Control Center de communiquer avec les services Astra Control Center. Remplacez entre parenthèses &lt;&gt; par les informations relatives à votre environnement :</p>
+<p>Appliquez le fichier de ressources suivant pour configurer le <code>acc-operator-network-policy</code> Objet permettant à l&#8217;opérateur du centre de contrôle Astra de communiquer avec les services du centre de contrôle Astra. Remplacez entre parenthèses &lt;&gt; par les informations relatives à votre environnement :</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">apiVersion: networking.k8s.io/v1
