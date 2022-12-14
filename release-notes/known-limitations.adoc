@@ -15,30 +15,30 @@ summary: Les limitations connues identifient les plateformes, les périphérique
 Les limitations connues identifient les plateformes, les périphériques ou les fonctions qui ne sont pas pris en charge par cette version du produit, ou qui ne fonctionnent pas correctement avec elle. Examinez attentivement ces limites.
 
 .Limites de gestion du cluster
-*  same cluster cannot be managed by two Astra Control Center instances
-*  Control Center cannot manage two identically named clusters
+* <<Le même cluster ne peut pas être géré par deux instances Astra Control Center>>
+* <<Astra Control Center ne peut pas gérer deux clusters nommés de manière identique>>
 
 
 .Limites du contrôle d'accès basé sur des rôles (RBAC)
-*  user with namespace RBAC constraints can add and unmanage a cluster
-*  member with namespace constraints cannot access the cloned or restored apps until admin adds the namespace to the constraint
+* <<Un utilisateur doté de contraintes RBAC d'espace de noms peut ajouter et annuler la gestion d'un cluster>>
+* <<Un membre avec des contraintes d'espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n'ajoute pas l'espace de noms à la contrainte>>
 
 
 .Limites de gestion des applications
-*  applications in a single namespace cannot be restored collectively to a different namespace
-*  Control does not automatically assign default buckets for cloud instances
-*  of apps installed using pass-by-reference operators can fail
-*  restore operations of apps that use a certificate manager are not supported
-*  and cluster-scoped operator deployed apps not supported
-*  deployed with Helm 2 are not supported
+* <<De même, vous ne pouvez pas restaurer collectivement plusieurs applications dans un autre espace de noms>>
+* <<Astra Control n'attribue pas automatiquement de compartiments par défaut pour les instances de cloud>>
+* <<Les clones des applications installées à l'aide d'opérateurs pass-by-Reference peuvent échouer>>
+* <<Les opérations de restauration sur place des applications qui utilisent un gestionnaire de certificats ne sont pas prises en charge>>
+* <<Applications activées par OLM et déployées par l'opérateur à étendue de cluster non prises en charge>>
+* <<Les applications déployées avec Helm 2 ne sont pas prises en charge>>
 
 
 .Limitations générales
-*  buckets in Astra Control Center do not report available capacity
-*  Control Center does not validate the details you enter for your proxy server
-*  connections to a Postgres pod causes failures
-*  and snapshots might not be retained during removal of an Astra Control Center instance
-*  user and group limitations
+* <<Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible>>
+* <<Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy>>
+* <<Les connexions existantes à un pod Postgres provoquent des défaillances>>
+* <<Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center>>
+* <<Limitations de l'utilisateur et du groupe LDAP>>
 
 
 

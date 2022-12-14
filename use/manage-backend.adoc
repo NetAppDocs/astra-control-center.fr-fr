@@ -19,9 +19,9 @@ Pour obtenir des instructions sur la gestion des systèmes back-end avec l'API A
 Vous pouvez effectuer les tâches suivantes liées à la gestion d'un système back-end :
 
 * link:../get-started/setup_overview.html#add-a-storage-backend["Ajout d'un système back-end"]
-*  storage backend details
-*  a storage backend
-*  a storage backend
+* <<Afficher les détails du système back-end>>
+* <<Annuler la gestion d'un système back-end>>
+* <<Retirer un système back-end>>
 
 
 
@@ -86,7 +86,7 @@ Vous pouvez annuler la gestion du système back-end.
 
 Vous pouvez supprimer un système back-end de stockage qui n'est plus utilisé. Pour que votre configuration reste simple et à jour, nous vous le souhaitons.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Assurez-vous que le système de stockage back-end n'est pas géré.
 * Assurez-vous que le système back-end ne dispose d'aucun volume associé au cluster.
 

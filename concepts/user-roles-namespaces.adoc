@@ -26,7 +26,7 @@ Vous pouvez utiliser des rôles pour contrôler l'accès des utilisateurs aux re
 * Un *propriétaire* possède des autorisations de rôle d'administrateur et peut ajouter et supprimer des comptes d'utilisateur.
 
 
-Vous pouvez ajouter des contraintes à un membre ou à un visualiseur pour limiter l'utilisateur à un ou plusieurs .
+Vous pouvez ajouter des contraintes à un membre ou à un visualiseur pour limiter l'utilisateur à un ou plusieurs <<Espaces de noms>>.
 
 
 

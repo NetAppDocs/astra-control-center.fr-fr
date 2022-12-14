@@ -14,9 +14,9 @@ summary: Décrit comment retirer le centre de contrôle Astra et le conducteur d
 [role="lead"]
 Vous devrez peut-être retirer les composants du centre de contrôle Astra si vous effectuez une mise à niveau d'un essai vers une version complète du produit. Pour déposer le centre de commande Astra et le conducteur du centre de commande Astra, exécuter les commandes décrites dans cette procédure dans l'ordre.
 
-Si vous rencontrez des problèmes avec la désinstallation, reportez-vous à la section  uninstall issues.
+Si vous rencontrez des problèmes avec la désinstallation, reportez-vous à la section <<Dépannage des problèmes de désinstallation>>.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Utilisez l'interface utilisateur d'Astra Control Center pour tout supprimer link:../use/unmanage.html#stop-managing-compute["clusters"].
 
 

@@ -49,6 +49,7 @@ Avec le centre de contrôle Astra, l'utilisateur administratif peut générer de
 
 NOTE: Le temps passé par Astra Control Center à générer le pack dépend de la taille de votre installation Astra Control Center ainsi que des paramètres du pack de support demandé. La durée spécifiée lors de la demande d'un bundle de support détermine le temps nécessaire à la génération du bundle (par exemple, une période de temps plus courte entraîne une génération plus rapide du bundle).
 
+.Avant de commencer
 Déterminez si une connexion proxy sera nécessaire pour télécharger des packs sur NSS. Si une connexion proxy est nécessaire, vérifiez que le centre de contrôle Astra a été configuré pour utiliser un serveur proxy.
 
 . Sélectionnez *comptes* > *connexions*.

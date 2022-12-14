@@ -16,7 +16,8 @@ Cette page offre un aperçu détaillé des étapes à suivre pour commencer à u
 
 Essayez-le ! Si vous voulez essayer Astra Control Center, vous pouvez utiliser une licence d'évaluation de 90 jours. Reportez-vous à la section link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["informations de licence"] pour plus d'informations.
 
-.<span class=« image »><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt=« one »></span> consultez les exigences du cluster Kubernetes
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Vérifiez la configuration des clusters Kubernetes
+[role="quick-margin-list"]
 * Astra fonctionne avec des clusters Kubernetes qui utilisent une classe de stockage basée sur Trident avec un système back-end de stockage ONTAP.
 * Les clusters doivent fonctionner correctement, avec au moins trois nœuds de travail en ligne.
 
@@ -24,7 +25,8 @@ Essayez-le ! Si vous voulez essayer Astra Control Center, vous pouvez utiliser u
 [role="quick-margin-para"]
 En savoir plus sur link:../get-started/requirements.html["Exigences du centre de contrôle Astra"].
 
-.<span class=« image »><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] alt=« deux »></span> Télécharger et installer Astra Control Center
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Téléchargez et installez Astra Control Center
+[role="quick-margin-list"]
 * Téléchargez Astra Control Center à partir du https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Page de téléchargements de l'Astra Control Center du site de support NetApp"^].
 * Installez Astra Control Center dans votre environnement local.
 +
@@ -33,7 +35,8 @@ Vous pouvez également installer Astra Control Center à l'aide de Red Hat Opera
 * Si vous le souhaitez, vous pouvez également compléter la configuration supplémentaire en fonction de votre environnement link:configure-after-install.html["étapes de configuration"]. En savoir plus sur link:../get-started/install_overview.html["Installation du centre de contrôle Astra"].
 
 
-.<span class=« image »><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt=« trois »></span> terminez certaines tâches de configuration initiales
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Effectuez certaines tâches de configuration initiales
+[role="quick-margin-list"]
 * Ajoutez une licence Astra Control et toutes les licences ONTAP compatibles.
 * Ajouter un cluster Kubernetes.
 * Ajouter un système back-end de stockage ONTAP.
@@ -43,15 +46,18 @@ Vous pouvez également installer Astra Control Center à l'aide de Red Hat Opera
 [role="quick-margin-para"]
 En savoir plus sur le link:../get-started/setup_overview.html["processus de configuration initiale"].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Utilisez Astra Control Center
 [role="quick-margin-list"]
 Après avoir terminé la configuration du centre de contrôle Astra, voici ce que vous pourriez faire :
 
+[role="quick-margin-list"]
 * Gérer une application. En savoir plus sur link:../use/manage-apps.html["comment gérer des applications"].
 * Protégez les applications en configurant des stratégies de protection pour les applications, en répliquant les applications sur des systèmes distants, en clonant des applications et en migrant les applications. En savoir plus sur link:../use/protection-overview.html["comment protéger les applications"].
 * Gérez des comptes (utilisateurs, rôles, LDAP pour l'authentification des utilisateurs, informations d'identification, etc.). En savoir plus sur link:../use/manage-local-users-and-roles.html["Comment gérer les utilisateurs locaux, les rôles et LDAP"].
 * Vous pouvez également vous connecter à NetApp Cloud Insights pour afficher des mesures sur l'état de santé de votre système, la capacité et le débit dans l'interface utilisateur de l'Astra Control Center. En savoir plus sur link:../use/monitor-protect.html["Comment se connecter à Cloud Insights"].
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"] Continuez à partir de ce démarrage rapide
 [role="quick-margin-para"]
 link:../get-started/install_overview.html["Poser le centre de contrôle Astra"].
 

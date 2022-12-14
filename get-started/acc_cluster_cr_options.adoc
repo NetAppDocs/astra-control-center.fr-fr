@@ -27,7 +27,7 @@ Vous pouvez utiliser les options de ressource personnalisée (CR) de cluster Ast
 | AstraKubeConfigSecret | chaîne | Obligatoire | acc-kubeconfig-cred | Si cette valeur est présente et qu'un secret existe, l'opérateur tente d'ajouter ce KubeConfig pour devenir le premier cluster géré. 
 
 
-| AstressourcesScaler | chaîne | Obligatoire | Valeur par défaut | Options d'évolutivité pour les limites de ressources AstrakControlCenter. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres. 
+| AstressourcesScaler | chaîne | Obligatoire | Valeur par défaut | Options d'évolutivité pour les limites de ressources AstrakControlCenter. Voir <<Combinaisons de configuration et incompatibilités,la définition de complexités>> pour comprendre comment ces paramètres affectent les autres paramètres. 
 
 
 | AstraVersion | chaîne | Obligatoire | 1.5.2 | Version d'AstrakControlCenter à déployer. Vous disposez d'un référentiel Helm avec une version correspondante. 
@@ -72,7 +72,7 @@ Vous pouvez utiliser les options de ressource personnalisée (CR) de cluster Ast
 | imageRegistry.secret | chaîne | Obligatoire si vous utilisez imageRegistry qui requiert un secret | registre-astra-cred | Nom du secret Kubernetes utilisé pour s'authentifier auprès du registre d'images. 
 
 
-| Type d'esseType | chaîne | Facultatif | Générique (il s'agit de la valeur par défaut) | Le type de centre de contrôle Astra d'entrée doit être configuré pour. Les valeurs valides sont `Generic` et `AccTraefik`. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres. 
+| Type d'esseType | chaîne | Facultatif | Générique (il s'agit de la valeur par défaut) | Le type de centre de contrôle Astra d'entrée doit être configuré pour. Les valeurs valides sont `Generic` et `AccTraefik`. Voir <<Combinaisons de configuration et incompatibilités,la définition de complexités>> pour comprendre comment ces paramètres affectent les autres paramètres. 
 
 
 | Nom de famille | chaîne | Obligatoire | Admin | Nom de famille de l'administrateur prenant en charge Astra. 
@@ -107,6 +107,7 @@ Il existe deux valeurs valides pour ingressType :
 * AccTraefik
 
 
+.Générique (par défaut)
 Quand `ingressType` est défini sur `Generic`, Astra Control n'installe aucune ressource d'entrée. L'hypothèse est que l'utilisateur dispose d'un moyen commun de sécuriser et de router le trafic via leur réseau vers des applications qui s'exécutent sur des clusters Kubernetes, et qu'il souhaite utiliser les mêmes mécanismes ici. Lorsque l'utilisateur crée une entrée pour acheminer le trafic vers Astra Control, l'entrée doit pointer vers le service de trafik interne sur le port 80. Voici un exemple de ressource d'entrée Nginx qui fonctionne avec le paramètre Generic ingressType.
 
 [listing]
@@ -134,4 +135,5 @@ spec:
                 number: 80
           pathType: ImplementationSpecific
 ----
+.AccTraefik
 Quand `ingressType` est défini sur `AccTraefik`, Astra Control Center déploie sa passerelle Traefik en tant que service de type Kubernetes LoadBalancer. Les utilisateurs doivent fournir un équilibreur de charge externe (tel que MetalLB) pour qu'Astra Control Center puisse obtenir une adresse IP externe.

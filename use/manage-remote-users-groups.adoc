@@ -43,6 +43,7 @@ NOTE: Lorsqu'un utilisateur se voit attribuer plusieurs rôles via l'appartenanc
 . Sélectionnez *Ajouter*.
 
 
+.Résultat
 Le nouvel utilisateur apparaît dans la liste des utilisateurs distants. Dans cette liste, vous pouvez voir les contraintes actives sur l'utilisateur et gérer l'utilisateur à partir du menu *actions*.
 
 
@@ -74,4 +75,5 @@ NOTE: Lorsqu'un utilisateur se voit attribuer plusieurs rôles via l'appartenanc
 . Sélectionnez *Ajouter*.
 
 
+.Résultat
 Le nouveau groupe apparaît dans la liste des groupes distants et tous les utilisateurs distants de ce groupe apparaissent dans la liste des utilisateurs distants. Dans cette liste, vous pouvez afficher les détails du groupe et gérer le groupe à partir du menu *actions*.

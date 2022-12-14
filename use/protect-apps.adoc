@@ -26,13 +26,13 @@ Protégez toutes les applications en effectuant des copies Snapshot et des sauve
 
 Vous pouvez effectuer les tâches suivantes liées à la protection de vos données applicatives :
 
-*  a protection policy
-*  a snapshot
-*  a backup
-*  snapshots and backups
-*  snapshots
-*  backups
-*  backups
+* <<Configurer une règle de protection>>
+* <<Créer un snapshot>>
+* <<Créer une sauvegarde>>
+* <<Afficher les snapshots et les sauvegardes>>
+* <<Supprimer les instantanés>>
+* <<Annuler les sauvegardes>>
+* <<Supprimer les sauvegardes>>
 
 
 
@@ -64,6 +64,7 @@ image:screenshot-config-protection-policy.png["Capture d'écran d'un exemple de 
 . Sélectionnez *définir la stratégie de protection.*
 
 
+.Résultat
 Astra Control implémente la règle de protection des données en créant et en conservant des snapshots et des sauvegardes à l'aide du calendrier et de la règle de conservation que vous avez définis.
 
 
@@ -79,6 +80,7 @@ Vous pouvez créer un snapshot à la demande à tout moment.
 . Examinez le résumé de l'instantané et sélectionnez *instantané*.
 
 
+.Résultat
 Le processus d'instantané commence. Un instantané a réussi lorsque l'état est *Healthy* dans la colonne *State* de la page *Data protection* > *snapshots*.
 
 
@@ -100,13 +102,14 @@ NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capac
 . Passez en revue le résumé des sauvegardes et sélectionnez *Sauvegarder*.
 
 
+.Résultat
 Astra Control crée une sauvegarde de l'application.
 
 
 NOTE: Si votre réseau est en panne ou anormalement lent, une opération de sauvegarde risque d'être terminée. Ceci entraîne l'échec de la sauvegarde.
 
 
-NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les instructions de la section  backups. Pour supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez les instructions de la section  backups.
+NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les instructions de la section <<Annuler les sauvegardes>>. Pour supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez les instructions de la section <<Supprimer les sauvegardes>>.
 
 
 NOTE: Après une opération de protection des données (clonage, sauvegarde, restauration) et après le redimensionnement du volume persistant, il y a vingt minutes de retard avant que la nouvelle taille du volume ne s'affiche dans l'interface utilisateur. La protection des données fonctionne avec succès en quelques minutes et vous pouvez utiliser le logiciel de gestion pour le système back-end pour confirmer la modification de la taille du volume.
@@ -142,6 +145,7 @@ NOTE: Vous ne pouvez pas supprimer un snapshot en cours de réplication.
 . Tapez le mot "supprimer" pour confirmer la suppression, puis sélectionnez *Oui, Supprimer l'instantané*.
 
 
+.Résultat
 Astra Control supprime le snapshot.
 
 
@@ -168,7 +172,7 @@ TIP: Pour annuler une sauvegarde, la sauvegarde doit être dans `Running` état.
 Supprimez les sauvegardes planifiées ou à la demande qui ne vous sont plus nécessaires.
 
 
-NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les instructions de la section  backups. Pour supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez ces instructions.
+NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les instructions de la section <<Annuler les sauvegardes>>. Pour supprimer la sauvegarde, attendez qu'elle soit terminée, puis suivez ces instructions.
 
 .Étapes
 . Sélectionnez *applications*, puis le nom d'une application.
@@ -178,4 +182,5 @@ NOTE: Si vous devez annuler une sauvegarde en cours d'exécution, suivez les ins
 . Tapez le mot "supprimer" pour confirmer la suppression, puis sélectionnez *Oui, Supprimer sauvegarde*.
 
 
+.Résultat
 Astra Control supprime la sauvegarde.

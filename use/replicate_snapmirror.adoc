@@ -31,12 +31,12 @@ NOTE: Vous pouvez répliquer simultanément une autre application (exécutée su
 
 Avec Astra Control, vous pouvez effectuer les tâches suivantes relatives aux applications de réplication :
 
-*  up a replication relationship
-*  a replicated app online on the destination cluster (fail over)
-*  a failed over replication
-*  application replication
-*  back applications to the original source cluster
-*  an application replication relationship
+* <<Configuration d'une relation de réplication>>
+* <<Mettre une application répliquée en ligne sur le cluster de destination (basculement)>>
+* <<Resynchroniser un basculement de réplication impossible>>
+* <<Réplication inverse des applications>>
+* <<Rétablir le fonctionnement des applications sur le cluster source d'origine>>
+* <<Supprime une relation de réplication d'application>>
 
 
 
@@ -108,6 +108,7 @@ Le nom d'un snapshot utilise le format « Replication-schedule-<chaîne> ». Ast
 
 
 
+.Résultat
 Cela crée la relation de réplication.
 
 Astra Control effectue les actions suivantes à la suite de l'établissement de la relation :
@@ -137,6 +138,7 @@ Avec Astra Control, vous pouvez basculer les applications répliquées vers un c
 . Dans la page basculement, consultez les informations et sélectionnez *basculer*.
 
 
+.Résultat
 Les actions suivantes se produisent suite à la procédure de basculement :
 
 * Sur le cluster de destination, l'application démarre en fonction du dernier snapshot répliqué.
@@ -193,6 +195,7 @@ Dans ce cas, vous permutez la source et la destination. Le cluster source d'orig
 . Dans la page réplication inverse, vérifiez les informations et sélectionnez *réplication inverse* pour continuer.
 
 
+.Résultat
 Les actions suivantes se produisent suite à la réplication inverse :
 
 * Une copie Snapshot est réalisée des ressources Kubernetes de l'application source d'origine.
@@ -227,6 +230,7 @@ Ce processus commence par une relation qui a terminé un basculement vers une de
 . Dans la page réplication inverse, vérifiez les informations et sélectionnez *réplication inverse*.
 
 
+.Résultat
 Cette action associe les résultats des opérations de resynchronisation et de « relation inversée » pour que l'application soit en ligne sur le cluster source d'origine et que la réplication reprend au cluster de destination d'origine.
 
 
@@ -241,6 +245,7 @@ La suppression de la relation se traduit par deux applications distinctes sans r
 . Dans l'onglet protection des données > réplication, dans la zone protection des applications ou dans le diagramme de relations, sélectionnez *Supprimer la relation de réplication*.
 
 
+.Résultat
 Les actions suivantes se produisent suite à la suppression d'une relation de réplication :
 
 * Si la relation est établie mais que l'application n'a pas encore été mise en ligne sur le cluster de destination (échec), Astra Control conserve les demandes de volume persistant créées lors de l'initialisation, laisse une application gérée « vide » sur le cluster de destination et conserve l'application de destination pour conserver les sauvegardes qui pourraient avoir été créées.

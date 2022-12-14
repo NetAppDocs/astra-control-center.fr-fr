@@ -24,35 +24,35 @@ Vous pouvez utiliser l'exemple de flux de travail suivant pour commencer à prot
 
 
 
-=== Protégez toutes vos applications
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Protégez toutes vos applications
 
 [role="quick-margin-para"]
 Pour être sûr que vos applications sont immédiatement protégées, link:protect-apps.html#create-a-backup["créez une sauvegarde manuelle de toutes les applications"].
 
 
 
-=== Configurez une stratégie de protection pour chaque application
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurez une stratégie de protection pour chaque application
 
 [role="quick-margin-para"]
 Pour automatiser les sauvegardes et snapshots futurs, link:protect-apps.html#configure-a-protection-policy["configurez une stratégie de protection pour chaque application"]. Par exemple, vous pouvez commencer avec des sauvegardes hebdomadaires et des snapshots quotidiens, et en conserver un mois pour les deux. Il est fortement recommandé d'automatiser les sauvegardes et les snapshots avec une règle de protection par rapport aux sauvegardes et snapshots manuels.
 
 
 
-=== Ajuster les règles de protection
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Ajuster les règles de protection
 
 [role="quick-margin-para"]
 À mesure que les applications et leurs modèles d'utilisation évoluent, ajustez les règles de protection selon les besoins pour bénéficier d'une protection optimale.
 
 
 
-=== Répliquer les applications sur un cluster distant
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Répliquer les applications sur un cluster distant
 
 [role="quick-margin-para"]
 link:replicate_snapmirror.html["Réplication d'applications"] Sur un cluster distant avec la technologie NetApp SnapMirror. Astra Control réplique les copies Snapshot sur un cluster distant, offrant une fonctionnalité de reprise après incident asynchrone.
 
 
 
-=== En cas d'incident, restaurez vos applications avec la dernière sauvegarde ou réplication sur un système distant
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"] En cas d'incident, restaurez vos applications avec la dernière sauvegarde ou réplication sur un système distant
 
 [role="quick-margin-para"]
 En cas de perte de données, vous pouvez effectuer une restauration par link:restore-apps.html["restauration de la dernière sauvegarde"] d'abord pour chaque application. Vous pouvez alors restaurer le dernier snapshot (si disponible). Vous pouvez également utiliser la réplication sur un système distant.

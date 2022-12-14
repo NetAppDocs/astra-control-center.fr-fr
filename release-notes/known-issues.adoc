@@ -18,20 +18,20 @@ Les problèmes connus identifient les problèmes susceptibles de vous empêcher 
 Les problèmes connus suivants ont une incidence sur la version actuelle :
 
 .En applications
-*  of an app results in PV size larger than original PV
-*  clones fail using a specific version of PostgreSQL
-*  clones fail when using Service Account level OCP Security Context Constraints (SCC)
-*  clones fail after an application is deployed with a set storage class
-*  backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
+* <<La restauration d'une application entraîne une taille de volume persistant supérieure à celle de l'application initiale>>
+* <<Les clones d'applications échouent à l'aide d'une version spécifique de PostgreSQL>>
+* <<Les clones d'application échouent lors de l'utilisation des contraintes de contexte de sécurité OCP au niveau du compte de service (SCC)>>
+* <<Les clones d'application échouent après le déploiement d'une application avec une classe de stockage définie>>
+* <<Les sauvegardes d'applications et les snapshots échouent si la classe volumesnapshotclass est ajoutée après la gestion d'un cluster>>
 
 
 .Clusters
-*  a cluster with Astra Control Center fails when default kubeconfig file contains more than one context
+* <<La gestion d'un cluster avec Astra Control Center échoue lorsque le fichier kubeconfig par défaut contient plusieurs contextes>>
 
 
 .Autres questions
-*  clusters do not appear in NetApp Cloud Insights when connecting through a proxy
-*  data management operations fail with Internal Service Error (500) when Astra Trident is offline
+* <<Les clusters gérés n'apparaissent pas dans NetApp Cloud Insights lors de la connexion via un proxy>>
+* <<Les opérations de gestion des données d'application échouent avec l'erreur de service interne (500) lorsque Astra Trident est hors ligne>>
 
 
 

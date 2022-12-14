@@ -37,6 +37,7 @@ image:proxy-connect.png["La montre l'option connexion pour activer la connexion 
 . Sélectionnez *connexion*.
 
 
+.Résultat
 Si les informations de proxy que vous avez saisies ont été enregistrées, la section *HTTP Proxy* de la page *Account* > *Connections* indique qu'elle est connectée et affiche le nom du serveur.
 
 image:proxy-new.png["Indique que le serveur proxy a été correctement connecté."]
@@ -81,7 +82,7 @@ Lorsque le centre de contrôle Astra est connecté à Cloud Insights, un pod d'u
 
 NOTE: Après avoir activé la connexion Cloud Insights, vous pouvez afficher les informations de débit sur la page *Backends* et vous connecter à Cloud Insights à partir de là après avoir sélectionné un back-end de stockage. Vous trouverez également des informations sur le *Tableau de bord* dans la section Cluster et vous y connectez également à Cloud Insights.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Un compte Astra Control Center avec *admin*/*propriétaire* privilèges.
 * Licence Astra Control Center valide.
 * Un serveur proxy si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy pour se connecter à Internet.
@@ -196,7 +197,7 @@ image:fluentbit.png["La présente un schéma conceptuel des journaux d'événeme
 
 NOTE: Seuls les journaux d'événements des clusters gérés sont transférés à Fluentd.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Un compte Astra Control Center avec *admin*/*propriétaire* privilèges.
 * Astra Control Center est installé et exécuté sur un cluster Kubernetes.
 
@@ -215,6 +216,7 @@ image:connect-fluentd.png["Affiche l'écran de l'interface utilisateur permettan
 . Sélectionnez *connexion*.
 
 
+.Résultat
 Si les détails que vous avez entrés pour votre serveur Fluentd ont été enregistrés, la section *Fluentd* de la page *compte* > *connexions* indique qu'il est connecté. Vous pouvez maintenant visiter le serveur Fluentd que vous avez connecté et afficher les journaux d'événements.
 
 Si la connexion a échoué pour une raison quelconque, l'état indique *FAILED*. Vous pouvez trouver la raison de l'échec sous *Notifications* en haut à droite de l'interface utilisateur.

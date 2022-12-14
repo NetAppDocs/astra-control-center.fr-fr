@@ -15,11 +15,11 @@ summary: 'Après avoir installé Astra Control Center, connectez-vous à l"inter
 Après avoir installé Astra Control Center, connectez-vous à l'interface utilisateur et modifiez votre mot de passe, vous devez configurer une licence, ajouter des clusters, gérer le stockage et ajouter des compartiments.
 
 .Tâches
-*  a license for Astra Control Center
-*  your environment for cluster management using Astra Control
-*  cluster
-*  a storage backend
-*  a bucket
+* <<Ajoutez une licence pour Astra Control Center>>
+* <<Préparez votre environnement à la gestion des clusters avec Astra Control>>
+* <<Ajouter un cluster>>
+* <<Ajout d'un système back-end>>
+* <<Ajouter un godet>>
 
 
 
@@ -36,7 +36,7 @@ NOTE: Si votre installation dépasse le nombre de processeurs sous licence, Astr
 
 NOTE: Pour mettre à jour une évaluation existante ou une licence complète, reportez-vous à la section link:../use/update-licenses.html["Mettre à jour une licence existante"^].
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Accès à une instance Astra Control Center récemment installée.
 * Autorisations de rôle d'administrateur.
 * A link:../concepts/licensing.html["Fichier de licence NetApp"^] (NLF).
@@ -61,7 +61,7 @@ NOTE: Si vous disposez d'une licence d'évaluation et que vous n'envoyez pas de 
 
 Avant d'ajouter un cluster, assurez-vous que les conditions préalables suivantes sont remplies. Vous devez également effectuer des vérifications d'admissibilité pour vous assurer que votre cluster est prêt à être ajouté au Centre de contrôle Astra et créer des rôles pour la gestion du cluster.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Votre environnement répond au link:../get-started/requirements.html#operational-environment-requirements["de l'environnement opérationnel"^] Pour Astra Trident et Astra Control Center.
 * Une version d'Astra Trident link:../get-started/requirements.html#operational-environment-requirements["Pris en charge par Astra Control Center"^] est installé :
 +
@@ -151,6 +151,7 @@ ontap-gold (default)  csi.trident.netapp.io  Delete         Immediate          t
 
 Vous pouvez éventuellement créer un rôle d'administrateur limité pour Astra Control Center. Il ne s'agit pas d'une procédure requise pour la configuration du centre de contrôle Astra. Cette procédure permet de créer un kubeconfig distinct qui limite les autorisations de contrôle Astra sur les clusters qu'il gère.
 
+.Ce dont vous avez besoin
 Assurez-vous que vous disposez des éléments suivants pour le cluster que vous souhaitez gérer avant d'effectuer la procédure suivante :
 
 * kubectl v1.23 ou version ultérieure installée
@@ -460,7 +461,7 @@ mv kubeconfig-sa YOUR_CLUSTER_NAME_kubeconfig
 
 === Et la suite ?
 
-Maintenant que vous avez vérifié que les conditions préalables sont remplies, vous êtes prêt à  cluster,ajouter un cluster.
+Maintenant que vous avez vérifié que les conditions préalables sont remplies, vous êtes prêt à <<Ajouter un cluster,ajouter un cluster>>.
 
 
 
@@ -471,8 +472,8 @@ Pour commencer à gérer vos applications, ajoutez un cluster Kubernetes et gér
 
 TIP: Nous vous recommandons de gérer le cluster qu'Astra Control Center déploie en premier avant d'ajouter d'autres clusters à Astra Control Center. La gestion du cluster initial est nécessaire pour envoyer les données Kubemetrics et les données associées au cluster pour les mesures et le dépannage.
 
-.Ce dont vous avez besoin, 8217;ll
-* Avant d'ajouter un cluster, vérifiez et effectuez les opérations nécessaires  your environment for cluster management using Astra Control,tâches préalables.
+.Ce dont vous avez besoin
+* Avant d'ajouter un cluster, vérifiez et effectuez les opérations nécessaires <<Préparez votre environnement à la gestion des clusters avec Astra Control,tâches préalables>>.
 
 
 .Étapes
@@ -489,7 +490,7 @@ NOTE: Le `kubeconfig.yaml` le fichier doit inclure *uniquement les informations 
 
 +
 
-IMPORTANT: Si vous créez la vôtre `kubeconfig` fichier, vous ne devez définir que *un* élément de contexte dans celui-ci. Reportez-vous à la section https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Documentation Kubernetes"^] pour plus d'informations sur la création `kubeconfig` fichiers. Si vous avez créé un kubeconfig pour un rôle de cluster limité à l'aide de  a limited cluster role kubeconfig,le processus ci-dessus, assurez-vous de télécharger ou de coller ce kubeconfig dans cette étape.
+IMPORTANT: Si vous créez la vôtre `kubeconfig` fichier, vous ne devez définir que *un* élément de contexte dans celui-ci. Reportez-vous à la section https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Documentation Kubernetes"^] pour plus d'informations sur la création `kubeconfig` fichiers. Si vous avez créé un kubeconfig pour un rôle de cluster limité à l'aide de <<Créez un nombre limité de rôles de cluster kubeconfig,le processus ci-dessus>>, assurez-vous de télécharger ou de coller ce kubeconfig dans cette étape.
 
 . Indiquez un nom d'identification. Par défaut, le nom des identifiants est automatiquement renseigné comme nom du cluster.
 . Sélectionnez *Suivant*.
@@ -501,6 +502,7 @@ NOTE: Vous devez sélectionner une classe de stockage Trident soutenue par le st
 . Passez en revue les informations, et si tout semble bien, sélectionnez *Ajouter*.
 
 
+.Résultat
 Le cluster passe à l'état *découverte*, puis passe à *sain*. Vous gérez maintenant le cluster avec Astra Control Center.
 
 
@@ -531,6 +533,7 @@ NOTE: L'utilisateur dont vous saisissez ici les informations d'identification do
 . Confirmez les détails du back-end et sélectionnez *gérer*.
 
 
+.Résultat
 Le back-end s'affiche dans le `Healthy` état dans la liste avec des informations récapitulatives.
 
 
@@ -544,7 +547,7 @@ Vous pouvez ajouter un compartiment à l'aide de l'interface utilisateur Astra C
 
 Si vous clonez la configuration de vos applications et le stockage persistant vers le même cluster, il n'est pas nécessaire d'utiliser un compartiment dans Astra Control. La fonctionnalité de copie Snapshot des applications ne nécessite pas de compartiment.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Compartiment accessible depuis vos clusters gérés par Astra Control Center.
 * Identifiants pour le compartiment.
 * Un godet des types suivants :

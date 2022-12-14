@@ -44,10 +44,10 @@ Pour plus d'informations sur la gestion des compartiments à l'aide de l'API de 
 Vous pouvez effectuer les tâches suivantes liées à la gestion des compartiments :
 
 * link:../get-started/setup_overview.html#add-a-bucket["Ajouter un godet"]
-*  a bucket
-*  the default bucket
-*  or remove bucket credentials
-*  a bucket
+* <<Modifier un godet>>
+* <<Définir le compartiment par défaut>>
+* <<Faire pivoter ou supprimer les identifiants de compartiment>>
+* <<Déposer un godet>>
 
 
 
@@ -129,7 +129,7 @@ Il est possible de retirer un godet qui n'est plus utilisé ou qui n'est pas en 
 
 NOTE: Vous ne pouvez pas supprimer un compartiment par défaut. Si vous souhaitez retirer ce compartiment, sélectionnez tout d'abord un autre compartiment comme valeur par défaut.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Avant de commencer, assurez-vous qu'aucune sauvegarde n'est en cours d'exécution ou terminée pour ce compartiment.
 * Vérifiez que le godet n'est pas utilisé dans le cadre d'une politique de protection active.
 

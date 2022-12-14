@@ -112,6 +112,7 @@ Les utilisateurs disposant du rôle propriétaire ou administrateur peuvent à t
 . Lorsque vous y êtes invité, confirmez la suppression en saisissant le mot "supprimer", puis sélectionnez *Oui, Supprimer l'utilisateur*.
 
 
+.Résultat
 Astra Control Center supprime l'utilisateur du compte.
 
 
