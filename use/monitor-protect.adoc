@@ -114,7 +114,7 @@ Vous obtenez l'URL du locataire lorsque vous obtenez la licence Cloud Insights. 
 image:cloud-insights-api.png["La présente la page de génération de jeton de l'API Cloud Insights."]
 
 .. Copiez la clé *lecture seule*. Vous devrez la coller dans la fenêtre du centre de contrôle Astra pour activer la connexion Cloud Insights. Pour les autorisations de clé de token d'accès à l'API de lecture, sélectionnez : actifs, alertes, unité d'acquisition et collecte de données.
-.. Copiez la clé *lecture/écriture*. Vous devrez le coller dans la fenêtre Centre de contrôle Astra *connexion Cloud Insights*. Pour les autorisations de clés de token d'accès à l'API Read/Write, sélectionnez : Assets, Data ingestion, gestion des journaux, unité d'acquisition, Et collecte de données.
+.. Copiez la clé *lecture/écriture*. Vous devrez le coller dans la fenêtre Centre de contrôle Astra *connexion Cloud Insights*. Pour les autorisations de clé de token d'accès à l'API Read/Write, sélectionnez : data ingestion, gestion des journaux, unité d'acquisition et collecte de données.
 +
 
 NOTE: Nous vous recommandons de générer une clé *lecture seule* et une clé *lecture/écriture*, et de ne pas utiliser la même clé à ces deux fins. Par défaut, la période d'expiration du token est définie sur un an. Nous vous recommandons de conserver la sélection par défaut pour donner au token la durée maximale avant son expiration. Si votre jeton expire, la télémétrie s'arrête.
