@@ -594,29 +594,6 @@
 
 
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Gérer_les_crochets_d_exécution_de_l_application.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Gérer les crochets d'exécution de l'application
-          </a>
-          
-
-
-        </li>
-      </ul>
-    
-
-  
-
 
         </li>
       </ul>
@@ -1061,20 +1038,11 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les crochets d'exécution de l'application"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/use/execution-hooks.html">
-        <div class="na-navbar-padding"> Gérer les crochets d'exécution de l'application</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exemples de crochet d'exécution"
-      data-li-level="4#" 
+      data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/execution-hook-examples.html">
-        Exemples de crochet d'exécution
-      </a></li></ul></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/execution-hooks.html">
+        Gérer les crochets d'exécution de l'application
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Surveillez l'état des applications et des clusters"
       data-li-level="2" 
@@ -1331,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
+    <time datetime="2022-12-14 17:14:49 +0000">12/14/2022</time>
     
   
 
@@ -1390,7 +1358,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">chaîne</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Obligatoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Valeur par défaut</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Options d&#8217;évolutivité pour les limites de ressources AstrakControlCenter. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Options d&#8217;évolutivité pour les limites de ressources AstrakControlCenter. Voir <a href="#combinaisons-de-configuration-et-incompatibilités">la définition de complexités</a> pour comprendre comment ces paramètres affectent les autres paramètres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AstraVersion</p></td>
@@ -1495,7 +1463,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">chaîne</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Facultatif</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Générique (il s&#8217;agit de la valeur par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Le type de centre de contrôle Astra d&#8217;entrée doit être configuré pour. Les valeurs valides sont <code>Generic</code> et <code>AccTraefik</code>. Voir  combinations and incompatibilities,la définition de complexités pour comprendre comment ces paramètres affectent les autres paramètres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le type de centre de contrôle Astra d&#8217;entrée doit être configuré pour. Les valeurs valides sont <code>Generic</code> et <code>AccTraefik</code>. Voir <a href="#combinaisons-de-configuration-et-incompatibilités">la définition de complexités</a> pour comprendre comment ces paramètres affectent les autres paramètres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nom de famille</p></td>
@@ -1553,6 +1521,7 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Générique (par défaut)</div>
 <p>Quand <code>ingressType</code> est défini sur <code>Generic</code>, Astra Control n&#8217;installe aucune ressource d&#8217;entrée. L&#8217;hypothèse est que l&#8217;utilisateur dispose d&#8217;un moyen commun de sécuriser et de router le trafic via leur réseau vers des applications qui s&#8217;exécutent sur des clusters Kubernetes, et qu&#8217;il souhaite utiliser les mêmes mécanismes ici. Lorsque l&#8217;utilisateur crée une entrée pour acheminer le trafic vers Astra Control, l&#8217;entrée doit pointer vers le service de trafik interne sur le port 80. Voici un exemple de ressource d&#8217;entrée Nginx qui fonctionne avec le paramètre Generic ingressType.</p>
 </div>
 <div class="listingblock">
@@ -1582,6 +1551,7 @@ spec:
 </div>
 </div>
 <div class="paragraph">
+<div class="title">AccTraefik</div>
 <p>Quand <code>ingressType</code> est défini sur <code>AccTraefik</code>, Astra Control Center déploie sa passerelle Traefik en tant que service de type Kubernetes LoadBalancer. Les utilisateurs doivent fournir un équilibreur de charge externe (tel que MetalLB) pour qu&#8217;Astra Control Center puisse obtenir une adresse IP externe.</p>
 </div>
 </div>

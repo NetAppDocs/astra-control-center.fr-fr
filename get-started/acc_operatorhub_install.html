@@ -594,29 +594,6 @@
 
 
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Gérer_les_crochets_d_exécution_de_l_application.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Gérer les crochets d'exécution de l'application
-          </a>
-          
-
-
-        </li>
-      </ul>
-    
-
-  
-
 
         </li>
       </ul>
@@ -1061,20 +1038,11 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les crochets d'exécution de l'application"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/use/execution-hooks.html">
-        <div class="na-navbar-padding"> Gérer les crochets d'exécution de l'application</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exemples de crochet d'exécution"
-      data-li-level="4#" 
+      data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/execution-hook-examples.html">
-        Exemples de crochet d'exécution
-      </a></li></ul></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/execution-hooks.html">
+        Gérer les crochets d'exécution de l'application
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Surveillez l'état des applications et des clusters"
       data-li-level="2" 
@@ -1331,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-22 17:37:55 +0000">11/22/2022</time>
+    <time datetime="2022-12-14 17:14:49 +0000">12/14/2022</time>
     
   
 
@@ -1347,14 +1315,18 @@
 <p>Si vous utilisez Red Hat OpenShift, vous pouvez installer Astra Control Center à l&#8217;aide de l&#8217;opérateur certifié Red Hat. Utiliser cette procédure pour installer le centre de contrôle Astra à partir du <a href="https://catalog.redhat.com/software/operators/explore" target="_blank" rel="noopener">"Catalogue de l&#8217;écosystème Red Hat"</a> Ou utilisez Red Hat OpenShift Container Platform.</p>
 </div>
 <div class="paragraph">
-<p>Une fois cette procédure terminée, vous devez revenir à la procédure d&#8217;installation pour terminer le <a href="../get-started/install_acc.html#verify-system-status">"les étapes restantes"</a> pour vérifier que l&#8217;installation a réussi et ouvrir une session.</p>
+<p>Une fois cette procédure terminée, vous devez revenir à la procédure d&#8217;installation pour terminer le <a href="../get-started/install_acc.html#verify-system-status" target="_blank" rel="noopener">"les étapes restantes"</a> pour vérifier que l&#8217;installation a réussi et ouvrir une session.</p>
 </div>
 <div class="ulist">
-<div class="title">Ce dont vous avez besoin, 8217;ll</div>
+<div class="title">Ce dont vous avez besoin</div>
 <ul>
 <li>
-<p><a href="requirements.html">"Avant de commencer l&#8217;installation, préparez votre environnement pour le déploiement d&#8217;Astra Control Center"</a>.</p>
+<p>* Conditions préalables à l&#8217;environnement remplies* : <a href="requirements.html" target="_blank" rel="noopener">"Avant de commencer l&#8217;installation, préparez votre environnement pour le déploiement d&#8217;Astra Control Center"</a>.</p>
 </li>
+<li>
+<p><strong>Opérateurs de grappe et services API sains</strong> :</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Depuis votre cluster OpenShift, assurez-vous que tous les opérateurs de clusters sont en état sain :</p>
 <div class="listingblock">
@@ -1371,14 +1343,35 @@
 </div>
 </div>
 </li>
-<li>
-<p>Créez une adresse FQDN pour Astra Control Center dans votre centre de données.</p>
+</ul>
+</div>
 </li>
 <li>
-<p>Obtenez les autorisations nécessaires et l&#8217;accès à Red Hat OpenShift Container Platform pour effectuer les étapes d&#8217;installation décrites.</p>
+<p><strong>Adresse FQDN</strong> : obtention d&#8217;une adresse FQDN pour Astra Control Center dans votre centre de données.</p>
 </li>
 <li>
-<p>Si un cert-Manager existe déjà dans le cluster, vous devez en effectuer certaines <a href="../get-started/cert-manager-prereqs.html">"étapes préalables"</a> Pour qu&#8217;Astra Control Center n&#8217;installe pas son propre cert-Manager. Par défaut, Astra Control Center installe son propre cert-Manager lors de l&#8217;installation.</p>
+<p><strong>Autorisations OpenShift</strong> : obtenez les autorisations nécessaires et l&#8217;accès à Red Hat OpenShift Container Platform pour effectuer les étapes d&#8217;installation décrites.</p>
+</li>
+<li>
+<p><strong>Cert-Manager configuré</strong> : si un cert-Manager existe déjà dans le cluster, vous devez en effectuer certaines <a href="../get-started/cert-manager-prereqs.html" target="_blank" rel="noopener">"étapes préalables"</a> Pour qu&#8217;Astra Control Center n&#8217;installe pas son propre cert-Manager. Par défaut, Astra Control Center installe son propre cert-Manager lors de l&#8217;installation.</p>
+</li>
+<li>
+<p><strong>Contrôleur d&#8217;entrée Kubernetes</strong> : si vous disposez d&#8217;un contrôleur d&#8217;entrée Kubernetes qui gère l&#8217;accès externe aux services, comme l&#8217;équilibrage de charge dans un cluster, vous devez le configurer pour l&#8217;utiliser avec Astra Control Center :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Créer l&#8217;espace de noms de l&#8217;opérateur :</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create namespace netapp-acc-operator</pre>
+</div>
+</div>
+</li>
+<li>
+<p><a href="../get-started/install_acc.html#set-up-ingress-for-load-balancing" target="_blank" rel="noopener">"Terminez l&#8217;installation"</a> pour votre type de contrôleur d&#8217;entrée.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
@@ -1386,22 +1379,22 @@
 <div class="title">Étapes</div>
 <ul>
 <li>
-<p>and unpack the Astra Control Center bundle</p>
+<p><a href="#téléchargez-et-déballez-le-pack-astra-control-center">Téléchargez et déballez le pack Astra Control Center</a></p>
 </li>
 <li>
-<p>the NetApp Astra kubectl plugin</p>
+<p><a href="#installez-le-plug-in-netapp-astra-kubectl">Installez le plug-in NetApp Astra kubectl</a></p>
 </li>
 <li>
-<p>the images to your local registry</p>
+<p><a href="#ajoutez-les-images-à-votre-registre-local">Ajoutez les images à votre registre local</a></p>
 </li>
 <li>
-<p>the operator install page</p>
+<p><a href="Recherchez la page d&.html#8217;installation de l&#8217;opérateur">Recherchez la page d&.html</a></p>
 </li>
 <li>
-<p>the operator</p>
+<p><a href="Poser l&.html#8217;opérateur">Poser l&.html</a></p>
 </li>
 <li>
-<p>Astra Control Center</p>
+<p><a href="#poser-le-centre-de-contrôle-astra">Poser le centre de contrôle Astra</a></p>
 </li>
 </ul>
 </div>
@@ -1445,6 +1438,7 @@
 <p>Le plug-in de ligne de commande NetApp Astra kubectl permet de gagner du temps lors de l&#8217;exécution des tâches courantes associées au déploiement et à la mise à niveau d&#8217;Astra Control Center.</p>
 </div>
 <div class="paragraph">
+<div class="title">Ce dont vous avez besoin</div>
 <p>NetApp fournit des binaires de plug-ins pour différentes architectures CPU et systèmes d&#8217;exploitation. Avant d&#8217;effectuer cette tâche, vous devez savoir quelle unité centrale et quel système d&#8217;exploitation vous possédez.</p>
 </div>
 <div class="olist arabic">
@@ -1500,26 +1494,18 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Passez à l' <code>acc</code> répertoire extrait du bundle tar :</p>
+<p>Accédez au répertoire racine du tarball. Vous devriez voir ce fichier et ce répertoire:</p>
 <div class="paragraph">
-<p>Exemple :</p>
+<p><code>acc.manifest.bundle.yaml</code><br>
+<code>acc/</code></p>
 </div>
 </li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cd ../acc</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
-<p><a id="subSTEP_image_local_registry_push"></a>placez les images du paquet dans le répertoire d&#8217;images Astra Control Center dans votre registre local. Exécutez les substitutions suivantes avant d&#8217;exécuter la commande :</p>
+<p><a id="subSTEP_image_local_registry_push"></a>placez les images du paquet dans le répertoire d&#8217;images Astra Control Center dans votre registre local. Effectuez les remplacements suivants avant d&#8217;exécuter le <code>push-images</code> commande :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Remplacez &lt;BUNDLE_FILE&gt; par le nom du fichier bundle Astra Control (<code>acc.manifest.yaml</code>).</p>
+<p>Remplacez &lt;BUNDLE_FILE&gt; par le nom du fichier bundle Astra Control (<code>acc.manifest.bundle.yaml</code>).</p>
 </li>
 <li>
 <p>Remplacer &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL du référentiel Docker, par exemple <a href="https://exampledownloads.jfrog.io/docker-astra-control/v1/" class="bare">https://exampledownloads.jfrog.io/docker-astra-control/v1/</a>.</p>
@@ -1548,6 +1534,13 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>Accédez au répertoire racine du tarball. Vous devriez voir ce fichier et ce répertoire:</p>
+<div class="paragraph">
+<p><code>acc.manifest.bundle.yaml</code><br>
+<code>acc/</code></p>
+</div>
+</li>
+<li>
 <p>Connectez-vous à votre registre :</p>
 <div class="listingblock">
 <div class="content">
@@ -1559,13 +1552,7 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <p>Exécutez le script suivant, en procédant à la substitution &lt;YOUR_REGISTRY&gt; comme indiqué dans les commentaires :</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console"># You need to be at the root of the tarball.
-# You should see these files to confirm correct location:
-#   acc.manifest.yaml
-#   acc/
-
-# Replace &lt;YOUR_REGISTRY&gt; with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
-export REGISTRY=&lt;YOUR_REGISTRY&gt;
+<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;YOUR_REGISTRY&gt;
 export PACKAGENAME=acc
 export PACKAGEVERSION=22.11.0-82
 export DIRECTORYNAME=acc
@@ -1603,7 +1590,7 @@ done</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Depuis la console Web Red Hat OpenShift :<span class="image"><img src="../media/get-started/openshift_operatorhub.png" alt="Page d&#8217;installation du centre de contrôle Astra"></span></p>
+<p>Depuis la console Web Red Hat OpenShift :</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
@@ -1613,20 +1600,20 @@ done</code></pre>
 <p>Dans le menu latéral, sélectionnez <strong>Operators &gt; OperatorHub</strong>.</p>
 </li>
 <li>
-<p>Sélectionnez l&#8217;opérateur du centre de contrôle Astra NetApp.</p>
-</li>
-<li>
-<p>Sélectionnez <strong>installer</strong>.</p>
+<p>Recherchez et sélectionnez l&#8217;opérateur NetApp Astra Control Center.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><span class="image"><img src="../media/get-started/openshift_operatorhub.png" alt="Page d&#8217;installation du centre de contrôle Astra"></span></p>
+</div>
 </li>
 <li>
-<p>À partir du catalogue de l&#8217;écosystème Red Hat :<span class="image"><img src="../media/get-started/red_hat_catalog.png" alt="Présentation d&#8217;Astra Control Center"></span></p>
+<p>À partir du catalogue de l&#8217;écosystème Red Hat :</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>Sélectionnez le centre de contrôle NetApp Astra <a href="https://catalog.redhat.com/software/operators/detail/611fd22aaf489b8bb1d0f274">"opérateur"</a>.</p>
+<p>Sélectionnez le centre de contrôle NetApp Astra <a href="https://catalog.redhat.com/software/operators/detail/611fd22aaf489b8bb1d0f274" target="_blank" rel="noopener">"opérateur"</a>.</p>
 </li>
 <li>
 <p>Sélectionnez <strong>déployer et utiliser</strong>.</p>
@@ -1635,6 +1622,9 @@ done</code></pre>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../media/get-started/red_hat_catalog.png" alt="Présentation d&#8217;Astra Control Center"></span></p>
 </div>
 </li>
 </ol>
@@ -1711,7 +1701,7 @@ Si vous avez sélectionné une stratégie d&#8217;approbation manuelle, vous ser
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Depuis la console dans la vue détaillée du conducteur du centre de contrôle Astra, sélectionnez <code>Create instance</code> Dans la section API fournies.</p>
+<p>Dans la console de l&#8217;onglet <strong>Astra Control Center</strong> de l&#8217;opérateur Astra Control Center, sélectionnez <strong>Create AstrakControlCenter</strong>.<span class="image"><img src="../media/get-started/openshift_acc-operator_details.png" alt="Page de l&#8217;opérateur de l&#8217;Astra Control Center"></span></p>
 </li>
 <li>
 <p>Complétez le <code>Create AstraControlCenter</code> champ de formulaire :</p>
@@ -1721,25 +1711,78 @@ Si vous avez sélectionné une stratégie d&#8217;approbation manuelle, vous ser
 <p>Conservez ou ajustez le nom du centre de contrôle Astra.</p>
 </li>
 <li>
-<p>(Facultatif) Activer ou désactiver Auto support. Il est recommandé de conserver la fonctionnalité Auto support.</p>
+<p>Ajouter des étiquettes pour le centre de contrôle Astra.</p>
 </li>
 <li>
-<p>Entrez l&#8217;adresse du centre de contrôle Astra. N&#8217;entrez pas <code>http://</code> ou <code>https://</code> dans l&#8217;adresse.</p>
+<p>Activez ou désactivez Auto support. Il est recommandé de conserver la fonctionnalité Auto support.</p>
 </li>
 <li>
-<p>Entrez la version Astra Control Center, par exemple 21.12.60.</p>
+<p>Saisissez le nom de domaine complet ou l&#8217;adresse IP d&#8217;Astra Control Center. N&#8217;entrez pas <code>http://</code> ou <code>https://</code> dans le champ d&#8217;adresse.</p>
+</li>
+<li>
+<p>Entrez la version Astra Control Center, par exemple 22.04.1.</p>
 </li>
 <li>
 <p>Entrez un nom de compte, une adresse e-mail et un nom d&#8217;administrateur.</p>
 </li>
 <li>
-<p>Conservez la règle de récupération du volume par défaut.</p>
+<p>Choisir une règle de récupération de volume de <code>Retain</code>, <code>Recycle</code>, ou <code>Delete</code>. La valeur par défaut est <code>Retain</code>.</p>
 </li>
 <li>
-<p>Dans <strong>image Registry</strong>, entrez le chemin d&#8217;accès au registre d&#8217;images du conteneur local. N&#8217;entrez pas <code>http://</code> ou <code>https://</code> dans l&#8217;adresse.</p>
+<p>Sélectionnez le type d&#8217;entrée :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Générique</strong> (<code>ingressType: "Generic"</code>) (Par défaut)</p>
+<div class="paragraph">
+<p>Utilisez cette option si vous avez un autre contrôleur d&#8217;entrée en service ou si vous préférez utiliser votre propre contrôleur d&#8217;entrée. Après le déploiement du centre de contrôle Astra, vous devez configurer le <a href="../get-started/install_acc.html#set-up-ingress-for-load-balancing" target="_blank" rel="noopener">"contrôleur d&#8217;entrée"</a> Pour exposer Astra Control Center avec une URL.</p>
+</div>
 </li>
 <li>
-<p>Si vous utilisez un registre qui nécessite une authentification, saisissez le secret.</p>
+<p><strong>AccTraefik</strong> (<code>ingressType: "AccTraefik"</code>)</p>
+<div class="paragraph">
+<p>Utilisez cette option lorsque vous préférez ne pas configurer de contrôleur d&#8217;entrée. Ceci déploie le centre de contrôle Astra <code>traefik</code> Passerelle en tant que service de type Kubernetes LoadBalancer.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Le centre de contrôle Astra utilise un service de type « équilibreur de charge » (<code>svc/traefik</code> Dans l&#8217;espace de noms du centre de contrôle Astra), et exige qu&#8217;il se voit attribuer une adresse IP externe accessible. Si des équilibreurs de charge sont autorisés dans votre environnement et que vous n&#8217;en avez pas encore configuré, vous pouvez utiliser MetalLB ou un autre équilibreur de charge de service externe pour attribuer une adresse IP externe au service. Dans la configuration du serveur DNS interne, pointez le nom DNS choisi pour Astra Control Center vers l&#8217;adresse IP à équilibrage de charge.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Pour plus de détails sur le type de service « LoadBalancer » et l&#8217;entrée, voir <a href="../get-started/requirements.html" target="_blank" rel="noopener">"De formation"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Dans <strong>image Registry</strong>, entrez le chemin d&#8217;accès au registre d&#8217;images du conteneur local. N&#8217;entrez pas <code>http://</code> ou <code>https://</code> dans le champ d&#8217;adresse.</p>
+</li>
+<li>
+<p>Si vous utilisez un registre d&#8217;images qui nécessite une authentification, saisissez le secret d&#8217;image.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Si vous utilisez un registre qui nécessite une authentification, <a href="#créer-un-secret-de-registre">créez un secret sur le cluster</a>.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Entrez le prénom de l&#8217;administrateur.</p>
@@ -1748,13 +1791,40 @@ Si vous avez sélectionné une stratégie d&#8217;approbation manuelle, vous ser
 <p>Configurer l&#8217;évolutivité des ressources.</p>
 </li>
 <li>
-<p>Conservez la classe de stockage par défaut.</p>
+<p>Indiquez la classe de stockage par défaut.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Si une classe de stockage par défaut est configurée, assurez-vous qu&#8217;elle est la seule classe de stockage qui possède l&#8217;annotation par défaut.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Définissez les préférences de gestion de CRD.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Pour plus d&#8217;informations sur les options CRD, reportez-vous à la section <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/acc_cluster_cr_options.html" target="_blank" rel="noopener">"cette section"</a>.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>Sélectionnez la vue YAML pour vérifier les paramètres sélectionnés.</p>
 </li>
 <li>
 <p>Sélectionnez <code>Create</code>.</p>
@@ -1764,10 +1834,53 @@ Si vous avez sélectionné une stratégie d&#8217;approbation manuelle, vous ser
 </div>
 </div>
 <div class="sect1">
+<h2 id="créer-un-secret-de-registre">Créer un secret de registre</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si vous utilisez un registre qui nécessite une authentification, créez un secret sur le cluster OpenShift et entrez le nom secret dans le <code>Create AstraControlCenter</code> champ de formulaire.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Créez un espace de noms pour l&#8217;opérateur du centre de contrôle Astra :</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create ns [netapp-acc-operator or custom namespace]</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Créez un secret dans ce namespace :</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc create secret docker-registry astra-registry-cred n [netapp-acc-operator or custom namespace] --docker-server=[your_registry_path] --docker username=[username] --docker-password=[token]</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Astra Control prend uniquement en charge les secrets de registre Docker.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Renseignez les champs restants dans <a href="#poser-le-centre-de-contrôle-astra">Le champ de formulaire Create AstrakControlCenter</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="et-la-suite">Et la suite</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Vérifier que le centre de contrôle Astra a été correctement installé et terminer le <a href="../get-started/install_acc.html#verify-system-status">"les étapes restantes"</a> pour vous connecter. De plus, vous terminez le déploiement en effectuant également des opérations <a href="setup_overview.html">"tâches de configuration"</a>.</p>
+<p>Complétez le <a href="../get-started/install_acc.html#verify-system-status" target="_blank" rel="noopener">"les étapes restantes"</a> Pour vérifier que le centre de contrôle Astra est correctement installé, configurez un contrôleur d&#8217;entrée (en option) et connectez-vous à l&#8217;interface utilisateur. De plus, vous devez effectuer cette opération <a href="setup_overview.html" target="_blank" rel="noopener">"tâches de configuration"</a> une fois l&#8217;installation terminée.</p>
 </div>
 </div>
 </div>

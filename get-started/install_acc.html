@@ -592,29 +592,6 @@
 
 
 
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/fr-fr/astra-control-center/pdfs/sidebar/Gérer_les_crochets_d_exécution_de_l_application.pdf" 
-            
-          >
-            <img src="/fr-fr/astra-control-center/images/pdf.png" alt="" width="16" height="16"/>
-            Gérer les crochets d'exécution de l'application
-          </a>
-          
-
-
-        </li>
-      </ul>
-    
-
-  
-
 
         </li>
       </ul>
@@ -1059,20 +1036,11 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gérer les crochets d'exécution de l'application"
-      data-li-level="3" 
-      class="subfolders "
-    ><a href="/fr-fr/astra-control-center/use/execution-hooks.html">
-        <div class="na-navbar-padding"> Gérer les crochets d'exécution de l'application</div>
-      </a>
-      <ul style="display: none;">
-        <li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Exemples de crochet d'exécution"
-      data-li-level="4#" 
+      data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/execution-hook-examples.html">
-        Exemples de crochet d'exécution
-      </a></li></ul></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/fr-fr/astra-control-center/use/execution-hooks.html">
+        Gérer les crochets d'exécution de l'application
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Surveillez l'état des applications et des clusters"
       data-li-level="2" 
@@ -1329,7 +1297,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-30 23:08:11 +0000">11/30/2022</time>
+    <time datetime="2022-12-14 17:14:49 +0000">12/14/2022</time>
     
   
 
@@ -1360,7 +1328,7 @@
 </div>
 </details>
 <div class="ulist">
-<div class="title">Ce dont vous avez besoin, 8217;ll</div>
+<div class="title">Ce dont vous avez besoin</div>
 <ul>
 <li>
 <p><a href="requirements.html">"Avant de commencer l&#8217;installation, préparez votre environnement pour le déploiement d&#8217;Astra Control Center"</a>.</p>
@@ -1385,6 +1353,7 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Le processus d&#8217;installation d&#8217;Astra Control Center vous aide à :</p>
 </div>
 <div class="ulist">
@@ -1419,39 +1388,40 @@ Ne supprimez pas l&#8217;opérateur du centre de contrôle Astra (par exemple, <
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Étapes</div>
 <p>Pour installer le centre de contrôle Astra, procédez comme suit :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>and unpack the Astra Control Center bundle</p>
+<p><a href="#téléchargez-et-déballez-le-pack-astra-control-center">Téléchargez et déballez le pack Astra Control Center</a></p>
 </li>
 <li>
-<p>the NetApp Astra kubectl plugin</p>
+<p><a href="#installez-le-plug-in-netapp-astra-kubectl">Installez le plug-in NetApp Astra kubectl</a></p>
 </li>
 <li>
-<p>the images to your local registry</p>
+<p><a href="#ajoutez-les-images-à-votre-registre-local">Ajoutez les images à votre registre local</a></p>
 </li>
 <li>
-<p>up namespace and secret for registries with auth requirements</p>
+<p><a href="Configurez l&.html#8217;espace de noms et le secret pour les registres avec les exigences d&#8217;authentification">Configurez l&.html</a></p>
 </li>
 <li>
-<p>the Astra Control Center operator</p>
+<p><a href="#poser-le-conducteur-du-centre-de-commande-astra">Poser le conducteur du centre de commande Astra</a></p>
 </li>
 <li>
-<p>Astra Control Center</p>
+<p><a href="#configurer-le-centre-de-contrôle-astra">Configurer le centre de contrôle Astra</a></p>
 </li>
 <li>
-<p>Astra Control Center and operator installation</p>
+<p><a href="#installation-complète-du-centre-de-contrôle-astra-et-du-conducteur">Installation complète du centre de contrôle Astra et du conducteur</a></p>
 </li>
 <li>
-<p>system status</p>
+<p><a href="Vérifiez l&.html#8217;état du système">Vérifiez l&.html</a></p>
 </li>
 <li>
-<p>up ingress for load balancing</p>
+<p><a href="Configurer l&.html#8217;entrée pour l&#8217;équilibrage de charge">Configurer l&.html</a></p>
 </li>
 <li>
-<p>in to the Astra Control Center UI</p>
+<p><a href="Connectez-vous à l&.html#8217;interface utilisateur du centre de contrôle Astra">Connectez-vous à l&.html</a></p>
 </li>
 </ul>
 </div>
@@ -1495,6 +1465,7 @@ Ne supprimez pas l&#8217;opérateur du centre de contrôle Astra (par exemple, <
 <p>Le plug-in de ligne de commande NetApp Astra kubectl permet de gagner du temps lors de l&#8217;exécution des tâches courantes associées au déploiement et à la mise à niveau d&#8217;Astra Control Center.</p>
 </div>
 <div class="paragraph">
+<div class="title">Ce dont vous avez besoin</div>
 <p>NetApp fournit des binaires de plug-ins pour différentes architectures CPU et systèmes d&#8217;exploitation. Avant d&#8217;effectuer cette tâche, vous devez savoir quelle unité centrale et quel système d&#8217;exploitation vous possédez.</p>
 </div>
 <div class="olist arabic">
@@ -1550,26 +1521,18 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Passez à l' <code>acc</code> répertoire extrait du bundle tar :</p>
+<p>Accédez au répertoire racine du tarball. Vous devriez voir ce fichier et ce répertoire:</p>
 <div class="paragraph">
-<p>Exemple :</p>
+<p><code>acc.manifest.bundle.yaml</code><br>
+<code>acc/</code></p>
 </div>
 </li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cd ../acc</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
-<p>Envoyez les images du package dans le répertoire d&#8217;images Astra Control Center vers votre registre local. Exécutez les substitutions suivantes avant d&#8217;exécuter la commande :</p>
+<p>Envoyez les images du package dans le répertoire d&#8217;images Astra Control Center vers votre registre local. Effectuez les remplacements suivants avant d&#8217;exécuter le <code>push-images</code> commande :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Remplacez &lt;BUNDLE_FILE&gt; par le nom du fichier bundle Astra Control (<code>acc.manifest.yaml</code>).</p>
+<p>Remplacez &lt;BUNDLE_FILE&gt; par le nom du fichier bundle Astra Control (<code>acc.manifest.bundle.yaml</code>).</p>
 </li>
 <li>
 <p>Remplacer &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL du référentiel Docker, par exemple <a href="https://exampledownloads.jfrog.io/docker-astra-control/v1/" class="bare">https://exampledownloads.jfrog.io/docker-astra-control/v1/</a>.</p>
@@ -1598,6 +1561,13 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>Accédez au répertoire racine du tarball. Vous devriez voir ce fichier et ce répertoire:</p>
+<div class="paragraph">
+<p><code>acc.manifest.bundle.yaml</code><br>
+<code>acc/</code></p>
+</div>
+</li>
+<li>
 <p>Connectez-vous à votre registre :</p>
 <div class="listingblock">
 <div class="content">
@@ -1609,13 +1579,7 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <p>Exécutez le script suivant, en procédant à la substitution &lt;YOUR_REGISTRY&gt; comme indiqué dans les commentaires :</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console"># You need to be at the root of the tarball.
-# You should see these files to confirm correct location:
-#   acc.manifest.yaml
-#   acc/
-
-# Replace &lt;YOUR_REGISTRY&gt; with your own registry (e.g registry.customer.com or registry.customer.com/testing, etc..)
-export REGISTRY=&lt;YOUR_REGISTRY&gt;
+<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;YOUR_REGISTRY&gt;
 export PACKAGENAME=acc
 export PACKAGEVERSION=22.11.0-82
 export DIRECTORYNAME=acc
@@ -1811,10 +1775,10 @@ Un échantillon annoté YAML suit ces étapes.
 </div>
 </li>
 <li>
-<p>Changer <code>[your_registry_path]</code> pour le <code>kube-rbac-proxy</code> image dans le chemin du registre où vous avez poussé les images dans un  the images to your local registry,étape précédente.</p>
+<p>Changer <code>[your_registry_path]</code> pour le <code>kube-rbac-proxy</code> image dans le chemin du registre où vous avez poussé les images dans un <a href="#ajoutez-les-images-à-votre-registre-local">étape précédente</a>.</p>
 </li>
 <li>
-<p>Changer <code>[your_registry_path]</code> pour le <code>acc-operator-controller-manager</code> image dans le chemin du registre où vous avez poussé les images dans un  the images to your local registry,étape précédente.</p>
+<p>Changer <code>[your_registry_path]</code> pour le <code>acc-operator-controller-manager</code> image dans le chemin du registre où vous avez poussé les images dans un <a href="#ajoutez-les-images-à-votre-registre-local">étape précédente</a>.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code><strong>astra_control_center_operator_deploy.yaml</strong></code></pre>
@@ -1984,7 +1948,7 @@ Un échantillon annoté YAML suit ces étapes.
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Ne pas utiliser <code>http://</code> ou <code>https://</code> dans l&#8217;adresse. Copier ce FQDN pour l&#8217;utiliser dans un  in to the Astra Control Center UI,plus tard.
+Ne pas utiliser <code>http://</code> ou <code>https://</code> dans l&#8217;adresse. Copier ce FQDN pour l&#8217;utiliser dans un <a href="Connectez-vous à l&.html#8217;interface utilisateur du centre de contrôle Astra">plus tard</a>.
 </td>
 </tr>
 </table>
@@ -1994,13 +1958,13 @@ Ne pas utiliser <code>http://</code> ou <code>https://</code> dans l&#8217;adres
 <p><strong>AutoSupport</strong>: Changer <code>enrolled</code> Pour AutoSupport à <code>false</code> pour les sites sans connexion internet ou sans conservation <code>true</code> pour les sites connectés.</p>
 </li>
 <li>
-<p><strong>Email</strong>: Changer <code>email</code> chaîne à l&#8217;adresse d&#8217;administrateur initiale par défaut. Copiez cette adresse e-mail pour l&#8217;utiliser dans un  in to the Astra Control Center UI,plus tard.</p>
+<p><strong>Email</strong>: Changer <code>email</code> chaîne à l&#8217;adresse d&#8217;administrateur initiale par défaut. Copiez cette adresse e-mail pour l&#8217;utiliser dans un <a href="Connectez-vous à l&.html#8217;interface utilisateur du centre de contrôle Astra">plus tard</a>.</p>
 </li>
 <li>
 <p>* (Facultatif) Prénom et Nom* : ajoutez un prénom <code>firstName</code> et nom <code>lastName</code> de l&#8217;utilisateur associé au compte. Vous pouvez effectuer cette étape maintenant ou plus tard dans l&#8217;interface utilisateur.</p>
 </li>
 <li>
-<p><strong>ImageRegistry</strong>: Changement <code>[your_registry_path]</code> vers le chemin du registre où vous avez poussé les images dans le  the Astra Control Center operator,étape précédente.</p>
+<p><strong>ImageRegistry</strong>: Changement <code>[your_registry_path]</code> vers le chemin du registre où vous avez poussé les images dans le <a href="#poser-le-conducteur-du-centre-de-commande-astra">étape précédente</a>.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -2321,7 +2285,7 @@ Copiez la valeur UUID. Le mot de passe est <code>ACC-</code> Suivi de la valeur 
 </ul>
 </div>
 <div class="ulist">
-<div class="title">Ce dont vous avez besoin, 8217;ll</div>
+<div class="title">Ce dont vous avez besoin</div>
 <ul>
 <li>
 <p>Le requis <a href="https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/">"contrôleur d&#8217;entrée"</a> doit déjà être déployé.</p>
@@ -2434,7 +2398,7 @@ spec:
 <p>Vérifier l&#8217;état de l&#8217;entrée :</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">kubectl get ingress -n netapp-acc</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">kubectl get ingress -n [netapp-acc or custom namespace]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2448,7 +2412,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h</pre>
 </div>
 </li>
 <li>
-<p>Astra Control Center,Terminer l&#8217;installation du centre de contrôle Astra.</p>
+<p><a href="#configurer-le-centre-de-contrôle-astra">Terminer l&#8217;installation du centre de contrôle Astra</a>.</p>
 </li>
 </ol>
 </div>
@@ -2537,7 +2501,7 @@ NetApp recommande d&#8217;installer le contrôleur nginx en tant que déploiemen
 <div class="title">Étapes</div>
 <ol class="arabic">
 <li>
-<p>Dans un navigateur, entrez le FQDN (<code><a href="https://&lt;FQDN&gt" class="bare">https://&lt;FQDN&gt</a>;</code>) que vous avez utilisé dans <code>astraAddress</code> dans le <code>astra_control_center.yaml</code> CR quand  Astra Control Center,Vous avez installé Astra Control Center.</p>
+<p>Dans un navigateur, entrez le FQDN (<code><a href="https://&lt;FQDN&gt" class="bare">https://&lt;FQDN&gt</a>;</code>) que vous avez utilisé dans <code>astraAddress</code> dans le <code>astra_control_center.yaml</code> CR quand <a href="#configurer-le-centre-de-contrôle-astra">Vous avez installé Astra Control Center</a>.</p>
 </li>
 <li>
 <p>Acceptez les certificats auto-signés si vous y êtes invité.</p>
@@ -2555,7 +2519,7 @@ Vous pouvez créer un certificat personnalisé après la connexion.
 </div>
 </li>
 <li>
-<p>Dans la page de connexion à Astra Control Center, entrez la valeur que vous avez utilisée <code>email</code> dans <code>astra_control_center.yaml</code> CR quand  Astra Control Center,Vous avez installé Astra Control Center, suivi du mot de passe de configuration initiale (<code>ACC-[UUID]</code>).</p>
+<p>Dans la page de connexion à Astra Control Center, entrez la valeur que vous avez utilisée <code>email</code> dans <code>astra_control_center.yaml</code> CR quand <a href="#configurer-le-centre-de-contrôle-astra">Vous avez installé Astra Control Center</a>, suivi du mot de passe de configuration initiale (<code>ACC-[UUID]</code>).</p>
 <div class="admonitionblock note">
 <table>
 <tr>
