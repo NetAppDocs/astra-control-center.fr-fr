@@ -1299,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-14 17:14:49 +0000">12/14/2022</time>
+    <time datetime="2022-12-15 18:14:59 +0000">12/15/2022</time>
     
   
 
@@ -1384,8 +1384,18 @@
 <img src="/us-en/astra-control-center/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Puisque les crochets d&#8217;exécution réduisent souvent ou désactivent complètement la fonctionnalité de l&#8217;application contre laquelle ils sont en cours d&#8217;exécution, vous devez toujours essayer de réduire le temps d&#8217;exécution de vos crochets d&#8217;exécution personnalisés. Si vous démarrez une opération de sauvegarde ou d&#8217;instantané avec les crochets d&#8217;exécution associés, mais que vous l&#8217;annulez, les crochets sont toujours autorisés à s&#8217;exécuter si l&#8217;opération de sauvegarde ou d&#8217;instantané a déjà commencé. Autrement dit, un crochet d&#8217;exécution post-sauvegarde ne peut pas présumer que la sauvegarde est terminée.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si vous créez un crochet d&#8217;exécution pour une application qui participe à un maillage de service Istio, assurez-vous que le crochet s&#8217;exécute contre le conteneur d&#8217;application d&#8217;origine, et non pas le conteneur de maillage de service. Vous pouvez exclure les conteneurs de maillage de service Istio en appliquant un filtre regex à chaque crochet d&#8217;exécution qui s&#8217;exécute pour les applications qui utilisent un maillage de service Istio.</p>
+</li>
+<li>
+<p>Puisque les crochets d&#8217;exécution réduisent souvent ou désactivent complètement la fonctionnalité de l&#8217;application contre laquelle ils sont en cours d&#8217;exécution, vous devez toujours essayer de réduire le temps d&#8217;exécution de vos crochets d&#8217;exécution personnalisés.</p>
+</li>
+<li>
+<p>Si vous démarrez une opération de sauvegarde ou d&#8217;instantané avec les crochets d&#8217;exécution associés, mais que vous l&#8217;annulez, les crochets sont toujours autorisés à s&#8217;exécuter si l&#8217;opération de sauvegarde ou d&#8217;instantané a déjà commencé. Autrement dit, un crochet d&#8217;exécution post-sauvegarde ne peut pas présumer que la sauvegarde est terminée.</p>
+</li>
+</ul>
 </div>
 </td>
 </tr>
