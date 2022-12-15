@@ -45,7 +45,10 @@ Lors de la planification de crochets d'exécution pour vos applications, tenez c
 
 [NOTE]
 ====
-Puisque les crochets d'exécution réduisent souvent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils sont en cours d'exécution, vous devez toujours essayer de réduire le temps d'exécution de vos crochets d'exécution personnalisés. Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Autrement dit, un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde est terminée.
+* Si vous créez un crochet d'exécution pour une application qui participe à un maillage de service Istio, assurez-vous que le crochet s'exécute contre le conteneur d'application d'origine, et non pas le conteneur de maillage de service. Vous pouvez exclure les conteneurs de maillage de service Istio en appliquant un filtre regex à chaque crochet d'exécution qui s'exécute pour les applications qui utilisent un maillage de service Istio.
+* Puisque les crochets d'exécution réduisent souvent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils sont en cours d'exécution, vous devez toujours essayer de réduire le temps d'exécution de vos crochets d'exécution personnalisés.
+* Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Autrement dit, un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde est terminée.
+
 
 ====
 
