@@ -765,18 +765,6 @@
   <block id="a87da1b8e8afc29470ac85cf788e125c" category="doc">Démarrage rapide pour Astra Control Center</block>
   <block id="15dd8f83e9a999edc6eae56c5aec726e" category="paragraph">Cette page offre un aperçu détaillé des étapes à suivre pour commencer à utiliser le centre de contrôle Astra. Les liens de chaque étape vous mènent à une page qui fournit plus de détails.</block>
   <block id="b777e6ba4555d404b00c2436d03ae649" category="inline-link-macro">informations de licence</block>
-  <block id="0deb5023224ed4d71135e9bae6dff9d4" category="list-text">Les clusters doivent fonctionner correctement, avec au moins trois nœuds de travail en ligne.</block>
-  <block id="afdff0e68ce5b4b3109d398df16872f7" category="inline-link">Page de téléchargements de l'Astra Control Center du site de support NetApp</block>
-  <block id="b6511e86f155fe09cdd3bb8e739ea6b5" category="list-text">Téléchargez Astra Control Center à partir du<block ref="287561c5277beeaf3b39a65b237114c8" category="inline-link-rx"></block>.</block>
-  <block id="276a11727deff1a1f5ebf349b23835fc" category="list-text">Installez Astra Control Center dans votre environnement local.</block>
-  <block id="d0945e630f33dd0475cc6b38cb528ffb" category="inline-link-macro">Installation du centre de contrôle Astra</block>
-  <block id="99bebad9572c9b2d89ca66465539d959" category="list-text">Ajoutez une licence Astra Control et toutes les licences ONTAP compatibles.</block>
-  <block id="87d2ee45afe04a74320927b3cc97c4ef" category="list-text">Ajouter un système back-end de stockage ONTAP.</block>
-  <block id="aacfab881a9e939b2424f0e0b25eb558" category="list-text">Vous pouvez également ajouter un compartiment de magasin d'objets qui stockera les sauvegardes de vos applications.</block>
-  <block id="696638e6fb97f6a54feea5bca820df2e" category="inline-link-macro">processus de configuration initiale</block>
-  <block id="e103cc9d2252c32b1965c1a4aef6e3de" category="paragraph">En savoir plus sur le <block ref="726a2b46b7700f295515291efa038ba2" category="inline-link-macro-rx"></block>.</block>
-  <block id="154eb8ea764a5b550f71c94b510f7a75" category="paragraph">Après avoir terminé la configuration du centre de contrôle Astra, voici ce que vous pourriez faire :</block>
-  <block id="5c3ecd2a6e7743910c01e8a3ede5d0e2" category="paragraph"><block ref="4f53ab095a585e280035de1f6822ef65" category="inline-link-macro-rx"></block>.</block>
   <block id="163d94b9255ea61fa90b17e63847f07e" category="summary">Si un cert-Manager existe déjà dans le cluster, vous devez effectuer certaines étapes préalables pour qu'Astra Control Center n'installe pas son propre cert-Manager.</block>
   <block id="6bdc7c13872089b240b2d2e134bf8244" category="doc">Configurez un cert-Manager externe</block>
   <block id="c5899da221d3a7388cf14e6ab2e7892a" category="paragraph">Si un cert-Manager existe déjà dans votre cluster Kubernetes, vous devez effectuer certaines étapes préalables afin qu'Astra Control Center n'installe pas son propre cert-Manager.</block>
@@ -2060,20 +2048,6 @@
   <block id="adf00e9796352a26290557ccd6ac392f" category="list-text">Entrée du trafic du contrôleur (uniquement si le<block ref="4388d54e87947748fc2ff08932daa51e" prefix=" " category="inline-code"></block> la propriété a été définie dans<block ref="70b058e54d2bda749060070a7f9c4e5c" prefix=" " category="inline-code"></block> Fichier lors de l'installation d'Astra Control Center)</block>
   <block id="34c3595304dbc599de36bbc658dd1b51" category="paragraph">Le remplacement du certificat TLS par défaut remplace le certificat utilisé pour l'authentification pour ces connexions.</block>
   <block id="7153c603856f5a59f075bee1f8b0ddb7" category="section-title">Ajoutez un nouveau certificat à l'aide de la ligne de commande</block>
-  <block id="ce557d427587f90d2feae33dbc9f8dd0" category="paragraph">Essayez-le ! Si vous voulez essayer Astra Control Center, vous pouvez utiliser une licence d'évaluation de 90 jours. Reportez-vous à la section <block ref="3d35b4f40b39e7d8200f90f9d624f8f4" category="inline-link-macro-rx"></block> pour plus d'informations.</block>
-  <block id="7935f1ae6d317830070743debdbb6734" category="list-text">Astra fonctionne avec des clusters Kubernetes qui utilisent une classe de stockage basée sur Trident avec un système back-end de stockage ONTAP.</block>
-  <block id="c3f5e0972aa7ce15473e0d3c0d717de9" category="paragraph">En savoir plus sur <block ref="a41c664e3d2520e4c4deb907d0286272" category="inline-link-macro-rx"></block>.</block>
-  <block id="ada44e3a0bcc72656920268c7fa27139" category="paragraph">Vous pouvez également installer Astra Control Center à l'aide de Red Hat OperatorHub. Installez Astra Control Center sur une plateforme de cloud public prise en charge, comme un système back-end de stockage Cloud Volumes ONTAP.</block>
-  <block id="62a320f0d86064504c0f9157677d278d" category="list-text">Si vous le souhaitez, vous pouvez également compléter la configuration supplémentaire en fonction de votre environnement <block ref="c806b8b1d125a0b458ba20e4c35a2d45" category="inline-link-macro-rx"></block>. En savoir plus sur <block ref="a4c65d6b325e0b0dbae534b5bb678d6c" category="inline-link-macro-rx"></block>.</block>
-  <block id="0a50cc01179d09fc40c479ef784b30b1" category="list-text">Ajouter un cluster Kubernetes.</block>
-  <block id="32c381bffe8fae6425ab0bf2a3a65cad" category="inline-link-macro">comment gérer des applications</block>
-  <block id="4291c8fae6c61e973849b9056a57678a" category="list-text">Gérer une application. En savoir plus sur <block ref="f3313db5111fb1737b87fa3ac4f45bf4" category="inline-link-macro-rx"></block>.</block>
-  <block id="b3846323af04cbbd4ee0706ff4153759" category="inline-link-macro">comment protéger les applications</block>
-  <block id="56b30876565cc7138620d2f615392d26" category="list-text">Protégez les applications en configurant des stratégies de protection pour les applications, en répliquant les applications sur des systèmes distants, en clonant des applications et en migrant les applications. En savoir plus sur <block ref="5bab860454cd2b2aa82f1064f0ed1477" category="inline-link-macro-rx"></block>.</block>
-  <block id="a0158312c63069a86bf2f03a67162bca" category="inline-link-macro">Comment gérer les utilisateurs locaux, les rôles et LDAP</block>
-  <block id="b6d99f223dc3cc8d1ec1e14a71d168f9" category="list-text">Gérez des comptes (utilisateurs, rôles, LDAP pour l'authentification des utilisateurs, informations d'identification, etc.). En savoir plus sur <block ref="cb179cb12d5c5c90a785401835b9f451" category="inline-link-macro-rx"></block>.</block>
-  <block id="30fcebd038ce405084d3b0982ab5c014" category="inline-link-macro">Comment se connecter à Cloud Insights</block>
-  <block id="f91df3b82a6ea2a6d8ddc88580cde9a1" category="list-text">Vous pouvez également vous connecter à NetApp Cloud Insights pour afficher des mesures sur l'état de santé de votre système, la capacité et le débit dans l'interface utilisateur de l'Astra Control Center. En savoir plus sur <block ref="bdebcd33f929c85c525f459c7348ef61" category="inline-link-macro-rx"></block>.</block>
   <block id="3b42d66041607d1a56d962e70158ea6c" category="list-text"><block ref="cf5204afdf6b61205c06db64ae1497b5" category="inline-xref-macro-rx"></block></block>
   <block id="4388f70019f1cba1ecdff6645a60df61" category="paragraph">Vous pouvez ajouter une nouvelle licence à l'aide de l'interface utilisateur Astra Control ou<block ref="3f4eec2c2c841509295f8beef0b157bb" category="inline-link-rx"></block> Pour bénéficier de toutes les fonctionnalités de l'Astra Control Center. Sans licence, votre utilisation d'Astra Control Center se limite à la gestion des utilisateurs et à l'ajout de nouveaux clusters.</block>
   <block id="cba301059d075e3de72580da249d7de2" category="paragraph">Les licences Astra Control Center mesurent les ressources CPU avec des unités de processeur Kubernetes et représentent les ressources de processeur attribuées aux nœuds de travail de tous les clusters Kubernetes gérés. Les licences dépendent de l'utilisation des processeurs virtuels. Pour plus d'informations sur le calcul des licences, reportez-vous à la section <block ref="33517e0e170e068dfb6f5617810a0372" category="inline-link-macro-rx"></block>.</block>
@@ -2553,7 +2527,6 @@
   <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">Quatre</block>
   <block id="9824425bd5418e5e140ee6b8561b8914" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Utilisez Astra Control Center</block>
   <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">Cinq</block>
-  <block id="4e661ed0899ae91f577701320636fabf" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Continuez à partir de ce démarrage rapide</block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="section-title">Et la suite ?</block>
   <block id="9905787058ed1f891f5110340336c6f4" category="section-title">Ce dont vous avez besoin pour AWS</block>
   <block id="60f26f17249a512292a5fb57e3431dea" category="section-title">Éléments requis pour GCP</block>
@@ -2619,4 +2592,52 @@
   <block id="6f0d5941d5a6edfad3a1597fae5c8340" category="list-text">Puisque les crochets d'exécution réduisent souvent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils sont en cours d'exécution, vous devez toujours essayer de réduire le temps d'exécution de vos crochets d'exécution personnalisés.</block>
   <block id="678c0d401fe58fc5c33f7d717ff8c970" category="list-text">Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Autrement dit, un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde est terminée.</block>
   <block id="f83cc958d14f90620b7ffdf9923fe440" category="list-text">Copiez la clé *lecture/écriture*. Vous devrez le coller dans la fenêtre Centre de contrôle Astra *connexion Cloud Insights*. Pour les autorisations de clé de token d'accès à l'API Read/Write, sélectionnez : data ingestion, gestion des journaux, unité d'acquisition et collecte de données.</block>
+  <block id="50eac7a8226d30ab336bd2f68c81d5d7" category="paragraph">Essayez-le ! Si vous voulez essayer Astra Control Center, vous pouvez utiliser une licence d'évaluation de 90 jours. Reportez-vous à la section <block ref="63bc3e673bda1b27140b6b5b88199732" category="inline-link-macro-rx"></block> pour plus d'informations.</block>
+  <block id="a8a5da0c5d62ec5f7225e0ce27261da7" category="paragraph">Assurez-vous que votre environnement répond à ces exigences.</block>
+  <block id="b5233b1e8c04e10566734b9cecfc92b1" category="paragraph">*Cluster Kubernetes*</block>
+  <block id="b3617c5929e3cf6406a5cdcd1eea0a9c" category="inline-link-macro">Assurez-vous que votre environnement répond aux exigences de votre environnement opérationnel</block>
+  <block id="bfecfe81e9be380f98a1b727eff91614" category="list-text"><block ref="bfecfe81e9be380f98a1b727eff91614" category="inline-link-macro-rx"></block></block>
+  <block id="9075e632fc6c099653c3c60ce5f635c5" category="inline-link-macro">Configuration de la détection d'entrée pour l'équilibrage de la charge sur les clusters Kubernetes sur site</block>
+  <block id="737d5c48f1830eb81614b8f6e0e6b6cc" category="list-text"><block ref="737d5c48f1830eb81614b8f6e0e6b6cc" category="inline-link-macro-rx"></block></block>
+  <block id="929a65ed5e1201f9d151e32a0971553d" category="paragraph">*Intégration du stockage*</block>
+  <block id="8ae57878720ba2997fde06ff1c140fe6" category="inline-link-macro">Vérifiez que votre environnement inclut la version prise en charge d'Astra Trident</block>
+  <block id="d7c5adf06c7ad44232a4d1546865825c" category="list-text"><block ref="d7c5adf06c7ad44232a4d1546865825c" category="inline-link-macro-rx"></block></block>
+  <block id="dd678a0b3a73cdc79d52e5a75a29712a" category="inline-link">Configurer le système back-end de stockage Astra Trident</block>
+  <block id="6b836f0beaae8e5e5b3ee7da02492481" category="list-text"><block ref="6b836f0beaae8e5e5b3ee7da02492481" category="inline-link-rx"></block></block>
+  <block id="8fa7c146eed93f49403e27757627c1de" category="inline-link">Configurez des classes de stockage Astra Trident</block>
+  <block id="8f233a56a0bbc57a073461b666b439e1" category="list-text"><block ref="8f233a56a0bbc57a073461b666b439e1" category="inline-link-rx"></block></block>
+  <block id="2d2c9a29bb271a0bf15559829b91147a" category="inline-link">Installation du contrôleur de snapshot de volume Astra Trident et de la classe de snapshot</block>
+  <block id="6c4528e739169720eefd2bff769e1da1" category="list-text"><block ref="6c4528e739169720eefd2bff769e1da1" category="inline-link-rx"></block></block>
+  <block id="527fdd132db746b3b10c377fcc937a6b" category="inline-link">Configurez le contrôleur de snapshot de volume de stockage Astra Trident et la classe de snapshot</block>
+  <block id="d0b095d6aa400765f2fd9213267791a8" category="list-text"><block ref="d0b095d6aa400765f2fd9213267791a8" category="inline-link-rx"></block></block>
+  <block id="ae0a6f81e3ab19bb5bb4cc16ba804b6d" category="paragraph">*Informations d'identification ONTAP*</block>
+  <block id="cff9e873ecc35abb358c9f43ad1d3dcf" category="inline-link-macro">Configurez les identifiants ONTAP</block>
+  <block id="27912e4366edb4ee86aa373395b590f5" category="list-text"><block ref="27912e4366edb4ee86aa373395b590f5" category="inline-link-macro-rx"></block></block>
+  <block id="7ae94f3e29fb1789e466d68ff3b7719d" category="paragraph">Effectuez ces tâches d'installation.</block>
+  <block id="be63ab5309fd82ceb3e549496baad39a" category="inline-link">Téléchargez Astra Control Center sur la page de téléchargement du site de support NetApp</block>
+  <block id="5aa98cd838ea9dade91877a36ab694a8" category="list-text"><block ref="5aa98cd838ea9dade91877a36ab694a8" category="inline-link-rx"></block></block>
+  <block id="81d47d4dec7b1222070eae27bb4310ee" category="inline-link-macro">Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation</block>
+  <block id="1ac362ab549aa84c347d7d5271314ad6" category="list-text"><block ref="1ac362ab549aa84c347d7d5271314ad6" category="inline-link-macro-rx"></block></block>
+  <block id="fbc059a4c4dca73352b8c2d2b522c031" category="inline-link-macro">Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence</block>
+  <block id="d3e8fd495d55bcc11d404a5401147b55" category="list-text"><block ref="d3e8fd495d55bcc11d404a5401147b55" category="inline-link-macro-rx"></block></block>
+  <block id="28d87c90870047c51935e011ce5611a2" category="list-text"><block ref="28d87c90870047c51935e011ce5611a2" category="inline-link-macro-rx"></block></block>
+  <block id="50fd68f173baa5875cfb4c4f956ed966" category="inline-link-macro">Effectuez d'autres étapes de configuration facultatives</block>
+  <block id="8a2d0b5d3ae0c64a9bbd6f907fdd49a9" category="list-text"><block ref="8a2d0b5d3ae0c64a9bbd6f907fdd49a9" category="inline-link-macro-rx"></block></block>
+  <block id="fc902c0e2ec2761be704bc86d6da6195" category="paragraph">Réalisez certaines tâches de base pour démarrer.</block>
+  <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="inline-link-macro">Ajouter une licence</block>
+  <block id="9cd5bd1af078069458de7df94bbb3c5a" category="list-text"><block ref="9cd5bd1af078069458de7df94bbb3c5a" category="inline-link-macro-rx"></block></block>
+  <block id="e615e4db7ab4de24645d9fa039b73e02" category="inline-link-macro">Préparez votre environnement à la gestion du cluster</block>
+  <block id="4733f826edfe75fc0c82d0c803bd1e86" category="list-text"><block ref="4733f826edfe75fc0c82d0c803bd1e86" category="inline-link-macro-rx"></block></block>
+  <block id="013a127f643228c21ab6c9baf558cef5" category="inline-link-macro">Ajouter un cluster</block>
+  <block id="3020dd08728680c8a3e10602b33cd923" category="list-text"><block ref="3020dd08728680c8a3e10602b33cd923" category="inline-link-macro-rx"></block></block>
+  <block id="8316c4ee552ed64f43cc8c5453b6dc90" category="list-text"><block ref="8316c4ee552ed64f43cc8c5453b6dc90" category="inline-link-macro-rx"></block></block>
+  <block id="9e263ce7e6d16d802d4f5fdb961973cb" category="list-text"><block ref="9e263ce7e6d16d802d4f5fdb961973cb" category="inline-link-macro-rx"></block></block>
+  <block id="a06e11c328de2e8797a5126bacc41f4a" category="paragraph">Après avoir terminé la configuration du centre de contrôle Astra, voici ce que vous pourriez faire ensuite. Vous pouvez utiliser l'interface utilisateur Astra Control (UI) ou le<block ref="c076c843349c85837d82b7f2e26fe2bf" category="inline-link-rx"></block>.</block>
+  <block id="6fe79d58f8a8b720433194a3efe0f398" category="list-text"><block ref="6fe79d58f8a8b720433194a3efe0f398" category="inline-link-macro-rx"></block></block>
+  <block id="ea0df431e9a218f5a0629b3821a462af" category="list-text"><block ref="a31feca3886e9400a923ff8b2642373f" category="inline-link-macro-rx"></block>: Configurer des stratégies de protection et répliquer, cloner et migrer des applications.</block>
+  <block id="a17247e8a3b531331724f69e1e71949a" category="list-text"><block ref="442a8ba322bd53d625de068878060461" category="inline-link-macro-rx"></block>: Utilisateurs, rôles, LDAP, informations d'identification, etc</block>
+  <block id="d9379e355ade43c04f76c0b075ef6732" category="inline-link-macro">Vous pouvez également vous connecter à Cloud Insights</block>
+  <block id="cd0049b5789664729fdfe7d5fc0b4f40" category="list-text"><block ref="bf4c77b3020a0bd5cc9fb63a5d3fb351" category="inline-link-macro-rx"></block>: Permet d'afficher des mesures sur l'état de santé de votre système.</block>
+  <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
+  <block id="5cfc5eef68c2a0f98ee2f703248801de" category="list-text"><block ref="5cfc5eef68c2a0f98ee2f703248801de" category="inline-link-rx"></block></block>
 </blocks>
