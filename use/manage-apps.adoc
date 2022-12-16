@@ -140,9 +140,18 @@ La définition d'une application vous offre un contrôle plus granulaire sur les
 
 WARNING: Lors de la définition d'applications, assurez-vous de ne pas inclure de ressource Kubernetes dans plusieurs applications avec des règles de protection. Le chevauchement des règles de protection sur les ressources Kubernetes peut entraîner des conflits de données. <<Exemple : politique de protection distincte pour différentes versions,En savoir plus dans un exemple.>>
 
+[CAUTION]
+====
+L'exécution d'une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus. Toutes les ressources partagées entre les applications sont remplacées lorsqu'une restauration sur place est effectuée sur l'une des applications. Par exemple, le scénario suivant génère une situation indésirable lors de l'utilisation de la réplication NetApp SnapMirror :
 
-CAUTION: L'exécution d'une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus.
+. Vous définissez l'application `app1` utilisation de l'espace de noms `ns1`.
+. Vous configurez une relation de réplication pour `app1`.
+. Vous définissez l'application `app2` (sur le même cluster) utilisant les namespaces `ns1` et `ns2`.
+. Vous configurez une relation de réplication pour `app2`.
+. La réplication est inversée pour `app2`. Ceci provoque le `app1` l'application sur le cluster source à désactiver.
 
+
+====
 .<strong> </strong> a propos de l'ajout de ressources cluster-scoped à vos espaces de noms d'applications.
 [%collapsible]
 ====

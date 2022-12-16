@@ -35,9 +35,18 @@ Astra Control peut restaurer votre application à partir d'un snapshot ou d'une 
 +
 ** *Restaurer les espaces de noms d'origine* : utilisez cette procédure pour restaurer l'app sur place dans le cluster d'origine.
 +
+[CAUTION]
+====
+L'exécution d'une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus. Toutes les ressources partagées entre les applications sont remplacées lorsqu'une restauration sur place est effectuée sur l'une des applications. Par exemple, le scénario suivant génère une situation indésirable lors de l'utilisation de la réplication NetApp SnapMirror :
 
-CAUTION: L'exécution d'une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus.
+... Vous définissez l'application `app1` utilisation de l'espace de noms `ns1`.
+... Vous configurez une relation de réplication pour `app1`.
+... Vous définissez l'application `app2` (sur le même cluster) utilisant les namespaces `ns1` et `ns2`.
+... Vous configurez une relation de réplication pour `app2`.
+... La réplication est inversée pour `app2`. Ceci provoque le `app1` l'application sur le cluster source à désactiver.
 
+
+====
 +
 ... Sélectionnez le snapshot à utiliser pour restaurer l'application sur place, qui restaure l'application vers une version antérieure de lui-même.
 ... Sélectionnez *Suivant*.
