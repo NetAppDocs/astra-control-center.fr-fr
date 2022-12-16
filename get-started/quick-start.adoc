@@ -73,5 +73,6 @@ Après avoir terminé la configuration du centre de contrôle Astra, voici ce qu
 == Pour en savoir plus
 
 * https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^]
-* https://review.docs.netapp.com/us-en/astra-control-center_acc-pi7-review/use/upgrade-acc.html["Mettez à niveau Astra Control Center"^]
+* link:../use/upgrade-acc.html["Mettez à niveau Astra Control Center"^]
+* link:../support/get-help.html["Aidez-vous d'Astra Control"^]
 
