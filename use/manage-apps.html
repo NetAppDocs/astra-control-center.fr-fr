@@ -1299,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-14 17:14:49 +0000">12/14/2022</time>
+    <time datetime="2022-12-16 23:48:10 +0000">12/16/2022</time>
     
   
 
@@ -1564,7 +1564,28 @@ Lors de la définition d&#8217;applications, assurez-vous de ne pas inclure de r
 <img src="/us-en/astra-control-center/images/caution.svg" alt="Avertissement">
 </td>
 <td class="content">
-L&#8217;exécution d&#8217;une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus.
+<div class="paragraph">
+<p>L&#8217;exécution d&#8217;une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus. Toutes les ressources partagées entre les applications sont remplacées lorsqu&#8217;une restauration sur place est effectuée sur l&#8217;une des applications. Par exemple, le scénario suivant génère une situation indésirable lors de l&#8217;utilisation de la réplication NetApp SnapMirror :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Vous définissez l&#8217;application <code>app1</code> utilisation de l&#8217;espace de noms <code>ns1</code>.</p>
+</li>
+<li>
+<p>Vous configurez une relation de réplication pour <code>app1</code>.</p>
+</li>
+<li>
+<p>Vous définissez l&#8217;application <code>app2</code> (sur le même cluster) utilisant les namespaces <code>ns1</code> et <code>ns2</code>.</p>
+</li>
+<li>
+<p>Vous configurez une relation de réplication pour <code>app2</code>.</p>
+</li>
+<li>
+<p>La réplication est inversée pour <code>app2</code>. Ceci provoque le <code>app1</code> l&#8217;application sur le cluster source à désactiver.</p>
+</li>
+</ol>
+</div>
 </td>
 </tr>
 </table>
