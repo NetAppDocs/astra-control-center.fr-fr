@@ -12,9 +12,7 @@ summary: Commencez avec Astra Control en quelques étapes.
 
 
 [role="lead"]
-Cette page offre un aperçu détaillé des étapes à suivre pour commencer à utiliser le centre de contrôle Astra. Les liens de chaque étape vous mènent à une page qui fournit plus de détails.
-
-Essayez-le ! Si vous voulez essayer Astra Control Center, vous pouvez utiliser une licence d'évaluation de 90 jours. Reportez-vous à la section link:../concepts/licensing.html["informations de licence"^] pour plus d'informations.
+Voici un aperçu des étapes à suivre pour commencer à utiliser le centre de contrôle Astra. Les liens de chaque étape vous mènent à une page qui fournit plus de détails.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Vérifiez la configuration des clusters Kubernetes
 Assurez-vous que votre environnement répond à ces exigences.
@@ -31,7 +29,7 @@ Assurez-vous que votre environnement répond à ces exigences.
 * https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["Configurer le système back-end de stockage Astra Trident"^]
 * https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["Configurez des classes de stockage Astra Trident"^]
 * https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installation du contrôleur de snapshot de volume Astra Trident et de la classe de snapshot"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["Configurez le contrôleur de snapshot de volume de stockage Astra Trident et la classe de snapshot"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["Créer une classe de snapshot de volume"^]
 
 
 *Informations d'identification ONTAP*
@@ -43,8 +41,12 @@ Assurez-vous que votre environnement répond à ces exigences.
 Effectuez ces tâches d'installation.
 
 * https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Téléchargez Astra Control Center sur la page de téléchargement du site de support NetApp"^]
-* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation"^]
-* link:../concepts/licensing.html["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence"^]
+* Obtenez le fichier de licence NetApp :
++
+** link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation"^]
+** link:../concepts/licensing.html["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence"^]
+
+
 * link:../get-started/install_overview.html["Poser le centre de contrôle Astra"^]
 * link:../get-started/configure-after-install.html["Effectuez d'autres étapes de configuration facultatives"^]
 

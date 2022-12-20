@@ -14,11 +14,11 @@ summary: 'Découvrez comment les actions que vous pouvez exécuter avec Astra Co
 [role="lead"]
 Astra Control Center requiert l'installation d'une licence qui permet la mise en œuvre de la fonctionnalité complète de gestion des données d'application. Lorsque vous déployez Astra Control Center sans licence, une bannière s'affiche dans l'interface utilisateur Web, vous avertissant que la fonctionnalité du système est limitée.
 
-Vous devez disposer d'une licence pour protéger vos applications et vos données. Se reporter à Astra Control Center link:../concepts/intro.html["caractéristiques"] pour plus d'informations.
+Vous obtenez une licence de l'une des manières suivantes :
 
-Après l'achat du produit, vous recevez un numéro de série et une licence. Vous pouvez générer le fichier de licence NetApp (NLF) à partir du https://mysupport.netapp.com["Site de support NetApp"^].
+* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation"^]. Une licence d'évaluation vous permet d'utiliser Astra Control Center pendant 90 jours à compter de la date de téléchargement de la licence.
+* link:../concepts/licensing.html["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence NetApp (NLF)"^] Sur le site de support NetApp. Après avoir acheté le produit, vous recevez un numéro de série et une licence que vous utilisez sur le site de support.
 
-Vous pouvez également essayer Astra Control Center avec une licence d'évaluation qui vous permet d'utiliser Astra Control Center pendant 90 jours à compter de la date de téléchargement de la licence. Pour plus de détails, reportez-vous à link:../get-started/requirements.html["De formation"].
 
 Pour plus d'informations sur les licences requises pour les systèmes de stockage back-end ONTAP, reportez-vous à la link:../get-started/requirements.html["systèmes back-end de stockage pris en charge"].
 
@@ -37,5 +37,6 @@ Lorsque vous commencez à gérer une application sur un cluster, toutes les unit
 
 == Trouvez plus d'informations
 
+* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["Ajoutez une licence lorsque vous configurez Astra Control Center pour la première fois"]
 * link:../use/update-licenses.html["Mettre à jour une licence existante"]
 
