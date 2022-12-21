@@ -51,7 +51,7 @@ IMPORTANT: Ne supprimez pas l'opérateur du centre de contrôle Astra (par exemp
 .Étapes
 Pour installer le centre de contrôle Astra, procédez comme suit :
 
-* <<Téléchargez et déballez le pack Astra Control Center>>
+* <<Téléchargez et extrayez Astra Control Center>>
 * <<Installez le plug-in NetApp Astra kubectl>>
 * <<Ajoutez les images à votre registre local>>
 * <<Configurez l'espace de noms et le secret pour les registres avec les exigences d'authentification>>
@@ -65,17 +65,21 @@ Pour installer le centre de contrôle Astra, procédez comme suit :
 
 
 
-== Téléchargez et déballez le pack Astra Control Center
+== Téléchargez et extrayez Astra Control Center
 
-. Téléchargez le pack Astra Control Center (`astra-control-center-[version].tar.gz`) du https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Site de support NetApp"^].
-. Téléchargez le code postal des certificats et clés Astra Control Center sur le https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Site de support NetApp"^].
-. (Facultatif) Vérifiez la signature du lot :
+. Accédez au https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Page de téléchargement de l'évaluation Astra Control Center"^] Sur le site de support NetApp.
+. Téléchargez le pack contenant Astra Control Center (`astra-control-center-[version].tar.gz`).
+. (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet :
 +
 [source, console]
 ----
-openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
+tar -vxzf astra-control-center-certs-[version].tar.gz
+openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
-. Extraire les images :
++
+La sortie s'affiche `Verified OK` une fois la vérification terminée.
+
+. Extraire les images du pack Astra Control Center :
 +
 [source, console]
 ----

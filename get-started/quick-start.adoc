@@ -40,7 +40,7 @@ Assurez-vous que votre environnement répond à ces exigences.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Téléchargez et installez Astra Control Center
 Effectuez ces tâches d'installation.
 
-* https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Téléchargez Astra Control Center sur la page de téléchargement du site de support NetApp"^]
+* https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Téléchargez Astra Control Center à partir de la page de téléchargement du site de support NetApp"^]
 * Obtenez le fichier de licence NetApp :
 +
 ** link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation"^]
