@@ -1299,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-21 21:00:27 +0000">12/21/2022</time>
+    <time datetime="2022-12-21 22:36:32 +0000">12/21/2022</time>
     
   
 
@@ -1448,8 +1448,12 @@ Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les plani
 <p>(Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (<code>astra-control-center-certs-[version].tar.gz</code>) pour vérifier la signature du paquet :</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">tar -vxzf astra-control-center-certs-[version].tar.gz
-openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">tar -vxzf astra-control-center-certs-[version].tar.gz</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</code></pre>
 </div>
 </div>
 <div class="paragraph">
