@@ -1299,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-14 17:14:49 +0000">12/14/2022</time>
+    <time datetime="2022-12-21 21:00:27 +0000">12/21/2022</time>
     
   
 
@@ -1391,10 +1391,7 @@ Vous devez effectuer une mise à niveau vers Astra Trident 22.10 * AVANT* pour l
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#téléchargez-le-pack-astra-control-center">Téléchargez le pack Astra Control Center</a></p>
-</li>
-<li>
-<p><a href="#déballez-le-paquet">Déballez le paquet</a></p>
+<p><a href="#téléchargez-et-extrayez-astra-control-center">Téléchargez et extrayez Astra Control Center</a></p>
 </li>
 <li>
 <p><a href="#ajoutez-les-images-à-votre-registre-local">Ajoutez les images à votre registre local</a></p>
@@ -1437,35 +1434,33 @@ Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les plani
 </div>
 </div>
 <div class="sect1">
-<h2 id="téléchargez-le-pack-astra-control-center">Téléchargez le pack Astra Control Center</h2>
+<h2 id="téléchargez-et-extrayez-astra-control-center">Téléchargez et extrayez Astra Control Center</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Téléchargez le pack Astra Control Center à partir du <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">"Site de support NetApp"</a>. Le nom de fichier est similaire à ce qui suit : <code>astra-control-center-[version].tar.gz</code>.</p>
+<p>Accédez au <a href="https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab" target="_blank" rel="noopener">"Page de téléchargement des produits Astra Control Center"</a> Sur le site de support NetApp. Vous pouvez sélectionner la dernière version ou une autre version souhaitée dans le menu déroulant.</p>
 </li>
 <li>
-<p>(Facultatif) Vérifiez la signature du lot :</p>
+<p>Téléchargez le pack contenant Astra Control Center (<code>astra-control-center-[version].tar.gz</code>).</p>
+</li>
+<li>
+<p>(Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (<code>astra-control-center-certs-[version].tar.gz</code>) pour vérifier la signature du paquet :</p>
 <div class="listingblock">
 <div class="content">
-<pre>openssl dgst -sha256 -verify AstraControlCenter-public.pub -signature astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</pre>
+<pre class="highlight"><code class="language-console" data-lang="console">tar -vxzf astra-control-center-certs-[version].tar.gz
+openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>La sortie s&#8217;affiche <code>Verified OK</code> une fois la vérification terminée.</p>
 </div>
 </li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="déballez-le-paquet">Déballez le paquet</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
 <li>
-<p>Extraire les images :</p>
+<p>Extraire les images du pack Astra Control Center :</p>
 <div class="listingblock">
 <div class="content">
-<pre>tar -vxzf astra-control-center-[version].tar.gz</pre>
+<pre class="highlight"><code class="language-console" data-lang="console">tar -vxzf astra-control-center-[version].tar.gz</code></pre>
 </div>
 </div>
 </li>
