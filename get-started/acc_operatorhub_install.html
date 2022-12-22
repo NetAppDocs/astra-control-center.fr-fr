@@ -1299,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-21 22:36:32 +0000">12/21/2022</time>
+    <time datetime="2022-12-22 22:10:54 +0000">12/22/2022</time>
     
   
 
@@ -1509,14 +1509,14 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 </div>
 </li>
 <li>
-<p><a id="subSTEP_image_local_registry_push"></a>placez les images du paquet dans le répertoire d&#8217;images Astra Control Center dans votre registre local. Effectuez les remplacements suivants avant d&#8217;exécuter le <code>push-images</code> commande :</p>
+<p>Envoyez les images du package dans le répertoire d&#8217;images Astra Control Center vers votre registre local. Effectuez les remplacements suivants avant d&#8217;exécuter le <code>push-images</code> commande :</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Remplacez &lt;BUNDLE_FILE&gt; par le nom du fichier bundle Astra Control (<code>acc.manifest.bundle.yaml</code>).</p>
 </li>
 <li>
-<p>Remplacer &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL du référentiel Docker, par exemple <a href="https://exampledownloads.jfrog.io/docker-astra-control/v1/" class="bare">https://exampledownloads.jfrog.io/docker-astra-control/v1/</a>.</p>
+<p>Remplacer &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL du référentiel Docker, par exemple "<a href="https://&lt;docker-registry&gt;"" class="bare">https://&lt;docker-registry&gt;"</a>.</p>
 </li>
 <li>
 <p>Remplacez &lt;MY_REGISTRY_USER&gt; par le nom d&#8217;utilisateur.</p>
@@ -1552,32 +1552,61 @@ La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite d
 <p>Connectez-vous à votre registre :</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">podman login &lt;MY_FULL_REGISTRY_PATH&gt;</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">podman login &lt;YOUR_REGISTRY&gt;</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Exécutez le script suivant, en procédant à la substitution &lt;YOUR_REGISTRY&gt; comme indiqué dans les commentaires :</p>
+<p>Préparez et exécutez l&#8217;un des scripts suivants qui est personnalisé pour la version de Podman que vous utilisez. Remplacez &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL de votre référentiel qui inclut tous les sous-répertoires.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;YOUR_REGISTRY&gt;
+<pre class="highlight"><code><strong>Podman 4</strong></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;MY_FULL_REGISTRY_PATH&gt;
 export PACKAGENAME=acc
 export PACKAGEVERSION=22.11.0-82
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
-  # Load to local cache
-  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image(s): //')
-
-  # Remove path and keep imageName.
-  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
-
-  # Tag with local image repo.
-  podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
-
-  # Push to the local repo.
-  podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
+astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
 done</code></pre>
 </div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code><strong>Podman 3</strong></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;MY_FULL_REGISTRY_PATH&gt;
+export PACKAGENAME=acc
+export PACKAGEVERSION=22.11.0-82
+export DIRECTORYNAME=acc
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image(s): //')
+astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Le chemin d&#8217;accès à l&#8217;image que le script crée doit ressembler aux éléments suivants, selon la configuration de votre registre : <code><a href="https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/22.11.0-82/image:version" class="bare">https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/22.11.0-82/image:version</a></code>
+</td>
+</tr>
+</table>
 </div>
 </li>
 </ol>

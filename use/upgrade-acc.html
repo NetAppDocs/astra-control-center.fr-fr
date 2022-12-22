@@ -1299,7 +1299,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-21 22:36:32 +0000">12/21/2022</time>
+    <time datetime="2022-12-22 22:10:54 +0000">12/22/2022</time>
     
   
 
@@ -1394,6 +1394,9 @@ Vous devez effectuer une mise à niveau vers Astra Trident 22.10 * AVANT* pour l
 <p><a href="#téléchargez-et-extrayez-astra-control-center">Téléchargez et extrayez Astra Control Center</a></p>
 </li>
 <li>
+<p><a href="#retirez-le-plug-in-netapp-astra-kubectl-et-réinstallez-le">Retirez le plug-in NetApp Astra kubectl et réinstallez-le</a></p>
+</li>
+<li>
 <p><a href="#ajoutez-les-images-à-votre-registre-local">Ajoutez les images à votre registre local</a></p>
 </li>
 <li>
@@ -1473,7 +1476,7 @@ Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les plani
 </div>
 </div>
 <div class="sect1">
-<h2 id="vérifiez-que-vous-avez-installé-le-plug-in-netapp-astra-kubectl">Vérifiez que vous avez installé le plug-in NetApp Astra kubectl</h2>
+<h2 id="retirez-le-plug-in-netapp-astra-kubectl-et-réinstallez-le">Retirez le plug-in NetApp Astra kubectl et réinstallez-le</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Le plug-in de ligne de commande NetApp Astra kubectl permet de gagner du temps lors de l&#8217;exécution des tâches courantes associées au déploiement et à la mise à niveau d&#8217;Astra Control Center.</p>
@@ -1481,17 +1484,66 @@ Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les plani
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Utilisez la commande suivante pour déterminer si le plug-in est installé :</p>
+<p>Déterminez si le plug-in est installé :</p>
 <div class="listingblock">
 <div class="content">
 <pre>kubectl astra</pre>
 </div>
 </div>
 </li>
+<li>
+<p>Faites l&#8217;une des actions suivantes :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si le plug-in est installé, la commande doit renvoyer l&#8217;aide du plug-in kubectl. Pour supprimer une version existante de kubectl-astra, exécutez la commande suivante : <code>delete /usr/local/bin/kubectl-astra</code>.</p>
+</li>
+<li>
+<p>Si la commande renvoie une erreur, le plug-in n&#8217;est pas installé et vous pouvez passer à l&#8217;étape suivante pour l&#8217;installer.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Installez le plug-in :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Répertoriez les binaires NetApp Astra kubectl disponibles et notez le nom du fichier dont vous avez besoin pour votre système d&#8217;exploitation et votre architecture de processeur :</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+La bibliothèque de plug-ins kubectl fait partie du bundle tar et est extraite dans le dossier <code>kubectl-astra</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Cette commande doit fournir l&#8217;aide du plug-in kubectl. Si la commande renvoie une erreur, installez le plug-in à l&#8217;aide de ces éléments <a href="../get-started/install_acc.html#install-the-netapp-astra-kubectl-plugin" target="_blank" rel="noopener">"instructions"</a>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">ls kubectl-astra/</code></pre>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Déplacez le bon binaire dans le chemin actuel et renommez-le <code>kubectl-astra</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">cp kubectl-astra/&lt;binary-name&gt; /usr/local/bin/kubectl-astra</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1527,7 +1579,7 @@ Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les plani
 <p>Remplacez &lt;BUNDLE_FILE&gt; par le nom du fichier bundle Astra Control (<code>acc.manifest.bundle.yaml</code>).</p>
 </li>
 <li>
-<p>Remplacer &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL du référentiel Docker, par exemple <a href="https://exampledownloads.jfrog.io/docker-astra-control/v1/" class="bare">https://exampledownloads.jfrog.io/docker-astra-control/v1/</a>.</p>
+<p>Remplacer &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL du référentiel Docker, par exemple "<a href="https://&lt;docker-registry&gt;"" class="bare">https://&lt;docker-registry&gt;"</a>.</p>
 </li>
 <li>
 <p>Remplacez &lt;MY_REGISTRY_USER&gt; par le nom d&#8217;utilisateur.</p>
@@ -1563,32 +1615,61 @@ Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les plani
 <p>Connectez-vous à votre registre :</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">podman login &lt;MY_FULL_REGISTRY_PATH&gt;</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">podman login &lt;YOUR_REGISTRY&gt;</code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Exécutez le script suivant, en procédant à la substitution &lt;YOUR_REGISTRY&gt; comme indiqué dans les commentaires :</p>
+<p>Préparez et exécutez l&#8217;un des scripts suivants qui est personnalisé pour la version de Podman que vous utilisez. Remplacez &lt;MY_FULL_REGISTRY_PATH&gt; par l&#8217;URL de votre référentiel qui inclut tous les sous-répertoires.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;YOUR_REGISTRY&gt;
+<pre class="highlight"><code><strong>Podman 4</strong></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;MY_FULL_REGISTRY_PATH&gt;
 export PACKAGENAME=acc
 export PACKAGEVERSION=22.11.0-82
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
-  # Load to local cache
-  astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image(s): //')
-
-  # Remove path and keep imageName.
-  astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
-
-  # Tag with local image repo.
-  podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
-
-  # Push to the local repo.
-  podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
+astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
 done</code></pre>
 </div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code><strong>Podman 3</strong></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">export REGISTRY=&lt;MY_FULL_REGISTRY_PATH&gt;
+export PACKAGENAME=acc
+export PACKAGEVERSION=22.11.0-82
+export DIRECTORYNAME=acc
+for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
+astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image(s): //')
+astraImageNoPath=$(echo ${astraImage} | sed 's:.*/::')
+podman tag ${astraImage} ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+podman push ${REGISTRY}/netapp/astra/${PACKAGENAME}/${PACKAGEVERSION}/${astraImageNoPath}
+done</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-center/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Le chemin d&#8217;accès à l&#8217;image que le script crée doit ressembler aux éléments suivants, selon la configuration de votre registre : <code><a href="https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/22.11.0-82/image:version" class="bare">https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/22.11.0-82/image:version</a></code>
+</td>
+</tr>
+</table>
 </div>
 </li>
 </ol>
