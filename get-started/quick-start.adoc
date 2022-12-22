@@ -28,7 +28,7 @@ Assurez-vous que votre environnement répond à ces exigences.
 * link:../get-started/requirements.html#operational-environment-requirements["Vérifiez que votre environnement inclut la version prise en charge d'Astra Trident"^]
 * https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["Configurer le système back-end de stockage Astra Trident"^]
 * https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["Configurez des classes de stockage Astra Trident"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installation du contrôleur de snapshot de volume Astra Trident et de la classe de snapshot"^]
+* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installation du contrôleur de snapshot de volume Astra Trident"^]
 * https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["Créer une classe de snapshot de volume"^]
 
 
