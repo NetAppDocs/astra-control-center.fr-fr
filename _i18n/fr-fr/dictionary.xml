@@ -2421,7 +2421,6 @@
   <block id="1160ee39f7820d7d2e76804af2039930" category="paragraph">Si vous avez activé l'authentification LDAP sur votre système Astra Control, vous pouvez rechercher des utilisateurs et des groupes LDAP et les inclure dans les utilisateurs approuvés du système.</block>
   <block id="37bf4a5ff56340f15000d94c368e718e" category="section-title">Ajouter un utilisateur distant</block>
   <block id="2a1541ed344df5fc941cbeff73413063" category="paragraph">Les propriétaires et administrateurs de comptes peuvent ajouter des utilisateurs distants à Astra Control.</block>
-  <block id="d5431c01df37552ba02ffed565c10c15" category="admonition">Vous ne pouvez pas ajouter un utilisateur distant si un utilisateur local avec la même adresse e-mail existe déjà sur le système. Pour ajouter l'utilisateur en tant qu'utilisateur distant, supprimez d'abord l'utilisateur local du système.</block>
   <block id="0458c4dea7d5155829cbeb52eb203f5c" category="list-text">Accédez à la zone *compte*.</block>
   <block id="e61c9783dfaef20ae4845e278eb547a0" category="list-text">Sélectionnez l'onglet *utilisateurs et groupes*.</block>
   <block id="de1aef9870a455f409b14e0fb5c27639" category="list-text">À l'extrême droite de la page, sélectionnez *utilisateurs distants*.</block>
@@ -2650,4 +2649,6 @@
   <block id="d0ff3cbf62dac1b7f8447b852cfe9c4c" category="list-text">Si le plug-in est installé, la commande doit renvoyer l'aide du plug-in kubectl. Pour supprimer une version existante de kubectl-astra, exécutez la commande suivante :<block ref="53504093e13f5f1ec1d1d91d3e1dd05b" prefix=" " category="inline-code"></block>.</block>
   <block id="1b6605c6bf28deef0dc2970f3179c395" category="list-text">Si la commande renvoie une erreur, le plug-in n'est pas installé et vous pouvez passer à l'étape suivante pour l'installer.</block>
   <block id="dab1a9c7ecb95d287fc412736d955975" category="list-text">Installez le plug-in :</block>
+  <block id="51867b2a71ff7c3e5393cf8bb442defc" category="admonition">Vous ne pouvez pas ajouter un utilisateur distant si un utilisateur local avec la même adresse e-mail existe déjà sur le système. Pour ajouter l'utilisateur en tant qu'utilisateur distant, supprimez d'abord l'utilisateur local du système.</block>
+  <block id="e6bc00cd8c52affb4292616facc440da" category="admonition">Astra Control Center utilise l'adresse e-mail de l'attribut LDAP "mail" pour rechercher et garder le suivi des utilisateurs distants. Cet attribut peut être un champ facultatif ou vide dans votre répertoire. Une adresse électronique doit exister dans ce champ pour tous les utilisateurs distants que vous souhaitez afficher dans Astra Control Center. Cette adresse e-mail est utilisée comme nom d'utilisateur dans Astra Control Center pour l'authentification.</block>
 </blocks>

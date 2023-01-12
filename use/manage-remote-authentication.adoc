@@ -17,6 +17,9 @@ LDAP est un protocole standard de l'industrie pour l'accès aux informations d'a
 À un niveau élevé, la configuration implique l'intégration d'Astra avec LDAP et la définition des utilisateurs et des groupes Astra Control correspondant aux définitions LDAP. Vous pouvez utiliser l'API de contrôle Astra ou l'interface utilisateur Web pour configurer l'authentification LDAP et les utilisateurs et groupes LDAP.
 
 
+IMPORTANT: Astra Control Center utilise l'adresse e-mail de l'attribut LDAP "mail" pour rechercher et garder le suivi des utilisateurs distants. Cet attribut peut être un champ facultatif ou vide dans votre répertoire. Une adresse électronique doit exister dans ce champ pour tous les utilisateurs distants que vous souhaitez afficher dans Astra Control Center. Cette adresse e-mail est utilisée comme nom d'utilisateur dans Astra Control Center pour l'authentification.
+
+
 
 == Ajoutez un certificat pour l'authentification LDAPS
 

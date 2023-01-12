@@ -23,6 +23,9 @@ Les propriétaires et administrateurs de comptes peuvent ajouter des utilisateur
 
 NOTE: Vous ne pouvez pas ajouter un utilisateur distant si un utilisateur local avec la même adresse e-mail existe déjà sur le système. Pour ajouter l'utilisateur en tant qu'utilisateur distant, supprimez d'abord l'utilisateur local du système.
 
+
+IMPORTANT: Astra Control Center utilise l'adresse e-mail de l'attribut LDAP "mail" pour rechercher et garder le suivi des utilisateurs distants. Cet attribut peut être un champ facultatif ou vide dans votre répertoire. Une adresse électronique doit exister dans ce champ pour tous les utilisateurs distants que vous souhaitez afficher dans Astra Control Center. Cette adresse e-mail est utilisée comme nom d'utilisateur dans Astra Control Center pour l'authentification.
+
 .Étapes
 . Accédez à la zone *compte*.
 . Sélectionnez l'onglet *utilisateurs et groupes*.
