@@ -86,7 +86,6 @@ NOTE: De telles exigences supposent que Astra Control Center est la seule applic
 ** Assurez-vous que les nœuds workers de votre cluster sont configurés avec les pilotes de stockage appropriés afin que les pods puissent interagir avec le système de stockage back-end. Le centre de contrôle Astra prend en charge les pilotes ONTAP suivants fournis par Astra Trident :
 +
 *** ontap-nas
-*** ontap-nas-flexgroup
 *** ontap-san
 *** ontap-san-économie (non pris en charge pour la réplication d'applications)
 
