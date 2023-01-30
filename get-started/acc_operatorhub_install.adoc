@@ -221,7 +221,7 @@ NOTE: Le chemin d'accès à l'image que le script crée doit ressembler aux él�
 
 
 +
-image:openshift_operatorhub.png["Page d'installation du centre de contrôle Astra"]
+image:openshift_operatorhub.png["Cette image montre la page d'installation d'Astra Control Center depuis l'interface de OpenShift Container Platform"]
 
 ** À partir du catalogue de l'écosystème Red Hat :
 +
@@ -232,7 +232,7 @@ image:openshift_operatorhub.png["Page d'installation du centre de contrôle Astr
 
 
 +
-image:red_hat_catalog.png["Présentation d'Astra Control Center"]
+image:red_hat_catalog.png["Cette image montre la page de présentation d'Astra Control Center disponible dans le catalogue de l'écosystème de RedHat"]
 
 
 
@@ -266,7 +266,7 @@ NOTE: Si vous avez sélectionné une stratégie d'approbation manuelle, vous ser
 
 == Poser le centre de contrôle Astra
 
-. Dans la console de l'onglet *Astra Control Center* de l'opérateur Astra Control Center, sélectionnez *Create AstrakControlCenter*.image:openshift_acc-operator_details.png["Page de l'opérateur de l'Astra Control Center"]
+. Dans la console de l'onglet *Astra Control Center* de l'opérateur Astra Control Center, sélectionnez *Create AstrakControlCenter*.image:openshift_acc-operator_details.png["Cette image montre la page de l'opérateur du centre de contrôle Astra sur laquelle l'onglet du centre de contrôle Astra est sélectionné"]
 . Complétez le `Create AstraControlCenter` champ de formulaire :
 +
 .. Conservez ou ajustez le nom du centre de contrôle Astra.

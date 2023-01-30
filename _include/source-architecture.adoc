@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-image:astra-architecture-diagram-v5.png["Schéma d'architecture et composants d'Astra Control"]
+image:astra-architecture-diagram-v5.png["Image conceptuelle décrivant l'architecture Astra Control et ses composants"]
 
 
 

@@ -170,7 +170,7 @@ NOTE: Le token AWS Elastic Container Registry (ECR) expire au bout de 12 heures 
 
 Voici un exemple de déploiement AWS :
 
-image:acc-cvo-aws2.png["Exemple de déploiement d'Astra Control Center avec Cloud Volumes ONTAP"]
+image:acc-cvo-aws2.png["L'image ci-dessous illustre un exemple de centre de contrôle Astra avec un déploiement de Cloud Volumes ONTAP"]
 
 
 
@@ -652,7 +652,7 @@ Voir https://docs.netapp.com/us-en/occm/task_creating_connectors_azure.html["Cr�
 
 . S'assurer que le connecteur est en marche et basculer vers ce connecteur.
 +
-image:acc-cvo-azure-connectors.png["Connecteurs de commutation dans BlueXP"]
+image:acc-cvo-azure-connectors.png["Cette image montre les connecteurs dans BlueXP"]
 
 . Créez un environnement de travail pour votre environnement cloud.
 +
@@ -661,13 +661,13 @@ image:acc-cvo-azure-connectors.png["Connecteurs de commutation dans BlueXP"]
 
 
 +
-image:acc-cvo-azure-working-environment.png["Création d'un environnement de travail dans BlueXP"]
+image:acc-cvo-azure-working-environment.png["Cette image montre les emplacements des environnements de travail dans BlueXP"]
 
 . Importer le cluster OpenShift Le cluster se connecte à l'environnement de travail que vous venez de créer.
 +
 .. Pour en savoir plus sur le cluster NetApp, sélectionnez *K8s* > *liste des clusters* > *Détails du cluster*.
 +
-image:acc-cvo-azure-connected.png["Cluster importé dans BlueXP"]
+image:acc-cvo-azure-connected.png["Cette image montre un cluster importé dans BlueXP"]
 
 .. Notez la version Trident dans le coin supérieur droit.
 .. Notez les classes de stockage du cluster Cloud Volumes ONTAP indiquant NetApp comme provisionneur.

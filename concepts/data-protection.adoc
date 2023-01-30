@@ -53,8 +53,8 @@ Les images suivantes présentent le processus de sauvegarde et de restauration p
 
 Le processus de sauvegarde copie les données dans des compartiments S3 et les restaure à partir de compartiments S3 :
 
-image:acc-backup_4in.png["Image de sauvegarde et de restauration planifiée"]
+image:acc-backup_4in.png["Cette image montre une sauvegarde et une restauration planifiées entre deux clusters Kubernetes qui utilisent un compartiment S3"]
 
 Par contre, la réplication est effectuée par réplication vers ONTAP, puis un basculement crée les ressources Kubernetes :
 
-image:acc-replication_4in.png["Image réplication et basculement"]
+image:acc-replication_4in.png["Cette image illustre la réplication et le basculement entre deux clusters Kubernetes et deux clusters ONTAP"]
