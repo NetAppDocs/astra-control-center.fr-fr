@@ -36,7 +36,7 @@ oc get apiservices
 
 * *Adresse FQDN* : obtention d'une adresse FQDN pour Astra Control Center dans votre centre de données.
 * *Autorisations OpenShift* : obtenez les autorisations nécessaires et l'accès à Red Hat OpenShift Container Platform pour effectuer les étapes d'installation décrites.
-* *Cert-Manager configuré* : si un cert-Manager existe déjà dans le cluster, vous devez en effectuer certaines link:../get-started/cert-manager-prereqs.html["étapes préalables"^] Pour qu'Astra Control Center n'installe pas son propre cert-Manager. Par défaut, Astra Control Center installe son propre cert-Manager lors de l'installation.
+* *Cert Manager configuré* : si un cert Manager existe déjà dans le cluster, vous devez en effectuer certaines link:../get-started/cert-manager-prereqs.html["étapes préalables"^] Pour qu'Astra Control Center n'installe pas son propre gestionnaire de certificat. Par défaut, Astra Control Center installe son propre gestionnaire de certificats lors de l'installation.
 * *Contrôleur d'entrée Kubernetes* : si vous disposez d'un contrôleur d'entrée Kubernetes qui gère l'accès externe aux services, comme l'équilibrage de charge dans un cluster, vous devez le configurer pour l'utiliser avec Astra Control Center :
 +
 .. Créer l'espace de noms de l'opérateur :
@@ -278,13 +278,13 @@ NOTE: Si vous avez sélectionné une stratégie d'approbation manuelle, vous ser
 .. Choisir une règle de récupération de volume de `Retain`, `Recycle`, ou `Delete`. La valeur par défaut est `Retain`.
 .. Sélectionnez le type d'entrée :
 +
-*** *Générique* (`ingressType: "Generic"`) (Par défaut)
+*** *`Generic`* (`ingressType: "Generic"`) (Par défaut)
 +
 Utilisez cette option si vous avez un autre contrôleur d'entrée en service ou si vous préférez utiliser votre propre contrôleur d'entrée. Après le déploiement du centre de contrôle Astra, vous devez configurer le link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["contrôleur d'entrée"^] Pour exposer Astra Control Center avec une URL.
 
-*** *AccTraefik* (`ingressType: "AccTraefik"`)
+*** *`AccTraefik`* (`ingressType: "AccTraefik"`)
 +
-Utilisez cette option lorsque vous préférez ne pas configurer de contrôleur d'entrée. Ceci déploie le centre de contrôle Astra `traefik` Passerelle en tant que service de type Kubernetes LoadBalancer.
+Utilisez cette option lorsque vous préférez ne pas configurer de contrôleur d'entrée. Ceci déploie le centre de contrôle Astra `traefik` Passerelle en tant que service de type Kubernetes « LoadBalancer ».
 
 +
 Le centre de contrôle Astra utilise un service de type « équilibreur de charge » (`svc/traefik` Dans l'espace de noms du centre de contrôle Astra), et exige qu'il se voit attribuer une adresse IP externe accessible. Si des équilibreurs de charge sont autorisés dans votre environnement et que vous n'en avez pas encore configuré, vous pouvez utiliser MetalLB ou un autre équilibreur de charge de service externe pour attribuer une adresse IP externe au service. Dans la configuration du serveur DNS interne, pointez le nom DNS choisi pour Astra Control Center vers l'adresse IP à équilibrage de charge.

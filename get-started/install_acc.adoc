@@ -32,7 +32,7 @@ Pour installer Astra Control Center, téléchargez le bundle d'installation depu
 kubectl get apiservices
 ----
 * Assurez-vous que le FQDN Astra que vous prévoyez d'utiliser est routable vers ce cluster. Cela signifie que vous avez une entrée DNS dans votre serveur DNS interne ou que vous utilisez une route URL de base déjà enregistrée.
-* Si un cert-Manager existe déjà dans le cluster, vous devez en effectuer certaines link:../get-started/cert-manager-prereqs.html["étapes préalables"] Pour qu'Astra Control Center ne tente pas d'installer son propre cert-Manager. Par défaut, Astra Control Center installe son propre cert-Manager lors de l'installation.
+* Si un cert Manager existe déjà dans le cluster, vous devez en effectuer certaines link:../get-started/cert-manager-prereqs.html["étapes préalables"] Pour qu'Astra Control Center ne tente pas d'installer son propre gestionnaire de certificat. Par défaut, Astra Control Center installe son propre gestionnaire de certificats lors de l'installation.
 
 
 .Description de la tâche
@@ -440,7 +440,7 @@ kubectl get pods -n netapp-acc-operator
 
 == Configurer le centre de contrôle Astra
 
-. Modifiez le fichier de ressources personnalisées (CR) Astra Control Center (`astra_control_center.yaml`) Pour créer des comptes, AutoSupport, registre et autres configurations nécessaires :
+. Modifiez le fichier de ressources personnalisées (CR) Astra Control Center (`astra_control_center.yaml`) pour créer des comptes, un support, un registre et d'autres configurations nécessaires :
 +
 [source, console]
 ----
@@ -452,40 +452,40 @@ NOTE: Un échantillon annoté YAML suit ces étapes.
 
 . Modifiez ou confirmez les paramètres suivants :
 +
-.Nom du compte
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Exemple 
 
 
-| Nom du compte | Modifiez le `accountName` Chaîne du nom que vous souhaitez associer au compte Astra Control Center. Il ne peut y avoir qu'un seul nom de compte. | chaîne | Exemple 
+| `accountName` | Modifiez le `accountName` Chaîne du nom que vous souhaitez associer au compte Astra Control Center. Il ne peut y avoir qu'un seul nom de compte. | chaîne | `Example` 
 |===
 ====
 +
-.AstraVersion
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Exemple 
 
 
-| AstraVersion | La version d'Astra Control Center à déployer. Aucune action n'est nécessaire pour ce paramètre car la valeur sera pré-remplie. | chaîne | 22.11.0-82 
+| `astraVersion` | La version d'Astra Control Center à déployer. Aucune action n'est nécessaire pour ce paramètre car la valeur sera pré-remplie. | chaîne | `22.11.0-82` 
 |===
 ====
 +
-.Adresse postale
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Exemple 
 
 
-| Adresse postale | Modifiez le `astraAddress` Chaîne sur le FQDN (recommandé) ou l'adresse IP que vous souhaitez utiliser dans votre navigateur pour accéder à Astra Control Center. Cette adresse définit la façon dont Astra Control Center se trouve dans votre centre de données et est le même FQDN ou l'adresse IP que vous avez fournie à partir de votre équilibreur de charge une fois que vous avez terminé link:requirements.html["Exigences du centre de contrôle Astra"^]. REMARQUE : ne pas utiliser `http://` ou `https://` dans l'adresse. Copier ce FQDN pour l'utiliser dans un <<Connectez-vous à l'interface utilisateur du centre de contrôle Astra,plus tard>>. | chaîne | astra.example.com 
+| `astraAddress` | Modifiez le `astraAddress` Chaîne sur le FQDN (recommandé) ou l'adresse IP que vous souhaitez utiliser dans votre navigateur pour accéder à Astra Control Center. Cette adresse définit la façon dont Astra Control Center se trouve dans votre centre de données et est le même FQDN ou l'adresse IP que vous avez fournie à partir de votre équilibreur de charge une fois que vous avez terminé link:requirements.html["Exigences du centre de contrôle Astra"^]. REMARQUE : ne pas utiliser `http://` ou `https://` dans l'adresse. Copier ce FQDN pour l'utiliser dans un <<Connectez-vous à l'interface utilisateur du centre de contrôle Astra,plus tard>>. | chaîne | `astra.example.com` 
 |===
 ====
 +
-.AutoSupport
+.<code> </code>
 [%collapsible]
 ====
 Vos sélections dans cette section déterminent si vous allez participer à l'application de support proactif de NetApp, à NetApp Active IQ et à l'endroit où les données seront envoyées. Une connexion Internet est requise (port 442) et toutes les données de support sont anonymisées.
@@ -494,39 +494,47 @@ Vos sélections dans cette section déterminent si vous allez participer à l'ap
 | Réglage | Utiliser | Guidage | Type | Exemple 
 
 
-| Autosupport.enrôlé | Soit `enrolled` ou `url` les champs doivent être sélectionnés | Changer `enrolled` Pour AutoSupport à `false` pour les sites sans connexion internet ou sans conservation `true` pour les sites connectés. Un réglage de `true` Les données anonymes peuvent être envoyées à NetApp pour bénéficier d'un support. La sélection par défaut est `false` Aucune donnée de support n'est envoyée à NetApp. | Booléen | false (valeur par défaut) 
+| `autoSupport.enrolled` | Soit `enrolled` ou `url` les champs doivent être sélectionnés | Changer `enrolled` Pour AutoSupport à `false` pour les sites sans connexion internet ou sans conservation `true` pour les sites connectés. Un réglage de `true` Les données anonymes peuvent être envoyées à NetApp pour bénéficier d'un support. La sélection par défaut est `false` Aucune donnée de support n'est envoyée à NetApp. | Booléen | `false` (cette valeur est la valeur par défaut) 
 
 
-| url AutoSupport | Soit `enrolled` ou `url` les champs doivent être sélectionnés | Cette URL détermine l'emplacement d'envoi des données anonymes. | chaîne | https://support.netapp.com/asupprod/post/1.0/postAsup[] 
+| `autoSupport.url` | Soit `enrolled` ou `url` les champs doivent être sélectionnés | Cette URL détermine l'emplacement d'envoi des données anonymes. | chaîne | `https://support.netapp.com/asupprod/post/1.0/postAsup` 
 |===
 ====
 +
-.e-mail
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Exemple 
 
 
-| e-mail | Modifiez le `email` chaîne à l'adresse d'administrateur initiale par défaut. Copiez cette adresse e-mail pour l'utiliser dans un <<Connectez-vous à l'interface utilisateur du centre de contrôle Astra,plus tard>>. Cette adresse e-mail sera utilisée comme nom d'utilisateur du compte initial pour se connecter à l'interface utilisateur et sera informée des événements dans Astra Control. | chaîne | admin@example.com 
+| `email` | Modifiez le `email` chaîne à l'adresse d'administrateur initiale par défaut. Copiez cette adresse e-mail pour l'utiliser dans un <<Connectez-vous à l'interface utilisateur du centre de contrôle Astra,plus tard>>. Cette adresse e-mail sera utilisée comme nom d'utilisateur du compte initial pour se connecter à l'interface utilisateur et sera informée des événements dans Astra Control. | chaîne | `admin@example.com` 
 |===
 ====
 +
-.Prénom et nom
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Exemple 
 
 
-| Prénom | Prénom de l'administrateur initial par défaut associé au compte Astra. Le nom utilisé ici sera visible dans un en-tête de l'interface utilisateur après votre première connexion. | chaîne | SRE 
-
-
-| Nom de famille | Nom de l'administrateur initial par défaut associé au compte Astra. Le nom utilisé ici sera visible dans un en-tête de l'interface utilisateur après votre première connexion. | chaîne | Admin 
+| `firstName` | Prénom de l'administrateur initial par défaut associé au compte Astra. Le nom utilisé ici sera visible dans un en-tête de l'interface utilisateur après votre première connexion. | chaîne | `SRE` 
 |===
 ====
 +
-.Registre d'imageRegistry
+.<code> </code>
+[%collapsible]
+====
+|===
+| Réglage | Guidage | Type | Exemple 
+
+
+| `lastName` | Nom de l'administrateur initial par défaut associé au compte Astra. Le nom utilisé ici sera visible dans un en-tête de l'interface utilisateur après votre première connexion. | chaîne | `Admin` 
+|===
+====
++
+.<code> de la gamme </code> de la gamme de produits
 [%collapsible]
 ====
 Vos sélections dans cette section définissent le registre d'images du conteneur qui héberge les images d'application Astra, l'opérateur du centre de contrôle Astra et le référentiel Helm d'Astra Control Center.
@@ -535,70 +543,72 @@ Vos sélections dans cette section définissent le registre d'images du conteneu
 | Réglage | Utiliser | Guidage | Type | Exemple 
 
 
-| imageRegistry.name | Obligatoire | Nom du registre d'images dans lequel vous avez poussé les images dans le <<Poser le conducteur du centre de commande Astra,étape précédente>>. Ne pas utiliser `http://` ou `https://` dans le nom du registre. | chaîne | example.registry.com/astra 
+| `imageRegistry.name` | Obligatoire | Nom du registre d'images dans lequel vous avez poussé les images dans le <<Poser le conducteur du centre de commande Astra,étape précédente>>. Ne pas utiliser `http://` ou `https://` dans le nom du registre. | chaîne | `example.registry.com/astra` 
 
 
-| imageRegistry.secret | Obligatoire si vous utilisez imageRegistry qui requiert un secret. IMPORTANT : si vous utilisez un registre qui ne nécessite pas d'autorisation, vous devez le supprimer `secret` ligne comprise entre `imageRegistry` sinon, l'installation échouera. | Nom du secret Kubernetes utilisé pour s'authentifier auprès du registre d'images. | chaîne | registre-astra-cred 
+| `imageRegistry.secret` | Obligatoire si la chaîne que vous avez entrée pour `imageRegistry.name' requires a secret.
+
+IMPORTANT: If you are using a registry that does not require authorization, you must delete this `secret` ligne comprise entre `imageRegistry` sinon, l'installation échouera. | Nom du secret Kubernetes utilisé pour s'authentifier auprès du registre d'images. | chaîne | `astra-registry-cred` 
 |===
 ====
 +
-.Classe de stockage
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Exemple 
 
 
-| Classe de stockage | Modifiez le `storageClass` valeur à partir de `ontap-gold` Sur une autre ressource de stockage Trident, tel que requis par votre installation. Lancer la commande `kubectl get sc` pour déterminer vos classes de stockage configurées existantes. Une des classes de stockage Trident doit être saisie dans le fichier manifeste (astra-Control-Center-<version>.manifest) et sera utilisée pour un volume persistant Astra. Si elle n'est pas définie, la classe de stockage par défaut sera utilisée. REMARQUE : si une classe de stockage par défaut est configurée, assurez-vous qu'elle est la seule classe de stockage à avoir l'annotation par défaut. | chaîne | ontap-gold 
+| `storageClass` | Modifiez le `storageClass` valeur à partir de `ontap-gold` Sur une autre ressource de stockage Trident, tel que requis par votre installation. Lancer la commande `kubectl get sc` pour déterminer vos classes de stockage configurées existantes. L'une des classes de stockage basées sur Trident doit être saisie dans le fichier manifeste (`astra-control-center-<version>.manifest`) Et sera utilisé pour ASTRA PVS. Si elle n'est pas définie, la classe de stockage par défaut sera utilisée. REMARQUE : si une classe de stockage par défaut est configurée, assurez-vous qu'elle est la seule classe de stockage à avoir l'annotation par défaut. | chaîne | `ontap-gold` 
 |===
 ====
 +
-.Volume ReclaimPolicy
+.Technologie <code>, </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Options 
 
 
-| Volume ReclaimPolicy | Cette règle définit la règle de récupération pour les volumes persistants d'Astra. Définition de cette règle sur `Retain` Conserve les volumes persistants après la suppression d'Astra. Définition de cette règle sur `Delete` supprime les volumes persistants après la suppression d'astra. Si cette valeur n'est pas définie, les PV sont conservés. | chaîne  a| 
-** Conserver (il s'agit de la valeur par défaut)
-** Supprimer
+| `volumeReclaimPolicy` | Cette règle définit la règle de récupération pour les volumes persistants d'Astra. Définition de cette règle sur `Retain` Conserve les volumes persistants après la suppression d'Astra. Définition de cette règle sur `Delete` supprime les volumes persistants après la suppression d'astra. Si cette valeur n'est pas définie, les PV sont conservés. | chaîne  a| 
+** `Retain` (Il s'agit de la valeur par défaut)
+** `Delete`
 
 
 |===
 ====
 +
-.Type d'esseType
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Options 
 
 
-| Type d'esseType | Utilisez l'un des types d'entrées suivants : *Générique* (`ingressType: "Generic"`) (Par défaut) utilisez cette option lorsque vous avez un autre contrôleur d'entrée en service ou que vous préférez utiliser votre propre contrôleur d'entrée. Après le déploiement du centre de contrôle Astra, vous devez configurer le link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["contrôleur d'entrée"^] Pour exposer Astra Control Center avec une URL. *AccTraefik* (`ingressType: "AccTraefik"`) Utilisez cette option si vous préférez ne pas configurer un contrôleur d'entrée. Ceci déploie le centre de contrôle Astra `traefik` Passerelle en tant que service de type Kubernetes LoadBalancer. Le centre de contrôle Astra utilise un service de type « équilibreur de charge » (`svc/traefik` Dans l'espace de noms du centre de contrôle Astra), et exige qu'il se voit attribuer une adresse IP externe accessible. Si des équilibreurs de charge sont autorisés dans votre environnement et que vous n'en avez pas encore configuré, vous pouvez utiliser MetalLB ou un autre équilibreur de charge de service externe pour attribuer une adresse IP externe au service. Dans la configuration du serveur DNS interne, pointez le nom DNS choisi pour Astra Control Center vers l'adresse IP à équilibrage de charge. REMARQUE : pour plus de détails sur le type de service « LoadBalancer » et l'entrée, voir link:../get-started/requirements.html["De formation"^]. | chaîne  a| 
-** Générique (il s'agit de la valeur par défaut)
-** AccTraefik
+| `ingressType` | Utilisez l'un des types d'entrées suivants :*`Generic`* (`ingressType: "Generic"`) (Par défaut) utilisez cette option lorsque vous avez un autre contrôleur d'entrée en service ou que vous préférez utiliser votre propre contrôleur d'entrée. Après le déploiement du centre de contrôle Astra, vous devez configurer le link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["contrôleur d'entrée"^] Pour exposer Astra Control Center avec une URL.*`AccTraefik`* (`ingressType: "AccTraefik"`) Utilisez cette option si vous préférez ne pas configurer un contrôleur d'entrée. Ceci déploie le centre de contrôle Astra `traefik` Passerelle en tant que service de type Kubernetes LoadBalancer. Le centre de contrôle Astra utilise un service de type « équilibreur de charge » (`svc/traefik` Dans l'espace de noms du centre de contrôle Astra), et exige qu'il se voit attribuer une adresse IP externe accessible. Si des équilibreurs de charge sont autorisés dans votre environnement et que vous n'en avez pas encore configuré, vous pouvez utiliser MetalLB ou un autre équilibreur de charge de service externe pour attribuer une adresse IP externe au service. Dans la configuration du serveur DNS interne, pointez le nom DNS choisi pour Astra Control Center vers l'adresse IP à équilibrage de charge. REMARQUE : pour plus de détails sur le type de service « LoadBalancer » et l'entrée, voir link:../get-started/requirements.html["De formation"^]. | chaîne  a| 
+** `Generic` (il s'agit de la valeur par défaut)
+** `AccTraefik`
 
 
 |===
 ====
 +
-.AstressourcesScaler
+.<code> </code>
 [%collapsible]
 ====
 |===
 | Réglage | Guidage | Type | Options 
 
 
-| AstressourcesScaler | Options d'évolutivité pour les limites de ressources AstrakControlCenter. Par défaut, Astra Control Center se déploie avec des demandes de ressources définies pour la plupart des composants d'Astra. Avec cette configuration, la pile logicielle Astra Control Center est plus performante dans les environnements soumis à une charge et à une évolutivité accrues des applications. Cependant, dans les scénarios utilisant des grappes de développement ou de test plus petites, le champ CR `astraResourcesScalar` peut être réglé sur `Off`. Cela désactive les demandes de ressources et permet un déploiement sur les clusters plus petits. | chaîne  a| 
-** Par défaut (il s'agit de la valeur par défaut)
-** Éteint
+| `astraResourcesScaler` | Options d'évolutivité pour les limites de ressources AstrakControlCenter. Par défaut, Astra Control Center se déploie avec des demandes de ressources définies pour la plupart des composants d'Astra. Avec cette configuration, la pile logicielle Astra Control Center est plus performante dans les environnements soumis à une charge et à une évolutivité accrues des applications. Cependant, dans les scénarios utilisant des grappes de développement ou de test plus petites, le champ CR `astraResourcesScalar` peut être réglé sur `Off`. Cela désactive les demandes de ressources et permet un déploiement sur les clusters plus petits. | chaîne  a| 
+** `Default` (Il s'agit de la valeur par défaut)
+** `Off`
 
 
 |===
 ====
 +
-.crds
+.<code> </code>
 [%collapsible]
 ====
 Vos sélections dans cette section déterminent comment Astra Control Center doit traiter les CRD.
@@ -607,10 +617,10 @@ Vos sélections dans cette section déterminent comment Astra Control Center doi
 | Réglage | Guidage | Type | Exemple 
 
 
-| crds.externalCertManager | Si vous utilisez un cert-Manager externe, modifiez-le `externalCertManager` à `true`. La valeur par défaut `false` Provoque l'installation d'Astra Control Center de ses propres CRD de cert-Manager lors de l'installation. Les CRDS sont des objets à l'échelle du cluster et leur installation peut avoir un impact sur d'autres parties du cluster. Vous pouvez utiliser cet indicateur pour signaler à Astra Control Center que ces CRD seront installés et gérés par l'administrateur de cluster en dehors du centre de contrôle Astra. | Booléen | FALSE (valeur par défaut) 
+| `crds.externalCertManager` | Si vous utilisez un gestionnaire de certificats externe, modifiez-le `externalCertManager` à `true`. La valeur par défaut `false` Provoque l'installation d'Astra Control Center de ses propres CRD de cert Manager lors de l'installation. Les CRDS sont des objets à l'échelle du cluster et leur installation peut avoir un impact sur d'autres parties du cluster. Vous pouvez utiliser cet indicateur pour signaler à Astra Control Center que ces CRD seront installés et gérés par l'administrateur de cluster en dehors du centre de contrôle Astra. | Booléen | `False` (cette valeur est la valeur par défaut) 
 
 
-| crds.externalTraefik | Par défaut, Astra Control Center installe les CRD Traefik requis. Les CRDS sont des objets à l'échelle du cluster et leur installation peut avoir un impact sur d'autres parties du cluster. Vous pouvez utiliser cet indicateur pour signaler à Astra Control Center que ces CRD seront installés et gérés par l'administrateur de cluster en dehors du centre de contrôle Astra. | Booléen | FALSE (valeur par défaut) 
+| `crds.externalTraefik` | Par défaut, Astra Control Center installe les CRD Traefik requis. Les CRDS sont des objets à l'échelle du cluster et leur installation peut avoir un impact sur d'autres parties du cluster. Vous pouvez utiliser cet indicateur pour signaler à Astra Control Center que ces CRD seront installés et gérés par l'administrateur de cluster en dehors du centre de contrôle Astra. | Booléen | `False` (cette valeur est la valeur par défaut) 
 |===
 ====
 
@@ -956,7 +966,7 @@ kubectl apply -f nginx-Ingress.yaml
 
 
 
-WARNING: NetApp recommande d'installer le contrôleur nginx en tant que déploiement plutôt qu'en tant que demonSet.
+WARNING: NetApp recommande d'installer le contrôleur nginx en tant que déploiement plutôt qu'en tant que `daemonSet`.
 
 .Étapes du contrôleur d'entrée OpenShift
 . Procurez-vous votre certificat et obtenez les fichiers de clé, de certificat et d'autorité de certification prêts à l'emploi par la route OpenShift.

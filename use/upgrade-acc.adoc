@@ -418,7 +418,7 @@ Une fois que vous avez enregistré et quitté l'éditeur de fichiers, les modifi
 ----
 watch kubectl get pods -n [netapp-acc or custom namespace]
 ----
-. Attendez que les conditions d'état de l'Astra indiquent que la mise à niveau est terminée et prête (`True`) :
+. Attendez que les conditions d'état de l'Astra Control indiquent que la mise à niveau est terminée et prête (`True`) :
 +
 [listing]
 ----

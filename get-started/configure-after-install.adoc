@@ -56,7 +56,7 @@ kubectl delete resourcequota  pods-low -n netapp-acc
 ----
 kubectl delete resourcequota  pods-medium -n netapp-acc
 ----
-. Consultez les plages de limite dans l'espace de noms netapp-acc :
+. Obtenez les limites de la `netapp-acc` espace de noms :
 +
 [source, console]
 ----

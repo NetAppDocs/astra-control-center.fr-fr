@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: get-started/cert-manager-prereqs.html 
-keywords: astra control center, prereq, requirement, cert-manager, install 
-summary: 'Si un cert-Manager existe déjà dans le cluster, vous devez effectuer certaines étapes préalables pour qu"Astra Control Center n"installe pas son propre cert-Manager.' 
+keywords: astra control center, prereq, requirement, cert manager, install 
+summary: 'Si un cert Manager existe déjà dans le cluster, vous devez effectuer certaines étapes préalables pour qu"Astra Control Center n"installe pas son propre cert-Manager.' 
 ---
-= Configurez un cert-Manager externe
+= Configurez un gestionnaire de certificats externe
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,10 +12,10 @@ summary: 'Si un cert-Manager existe déjà dans le cluster, vous devez effectuer
 
 
 [role="lead"]
-Si un cert-Manager existe déjà dans votre cluster Kubernetes, vous devez effectuer certaines étapes préalables afin qu'Astra Control Center n'installe pas son propre cert-Manager.
+Si un gestionnaire de certificats existe déjà dans votre cluster Kubernetes, vous devez effectuer certaines étapes préalables afin qu'Astra Control Center n'installe pas son propre gestionnaire de certificats.
 
 .Étapes
-. Vérifiez qu'un cert-Manager est installé :
+. Vérifiez qu'un gestionnaire de certificats est installé :
 +
 [source, console]
 ----
@@ -31,7 +31,7 @@ cert-manager   essential-cert-manager-84446f49d5-sf2zd              1/1     Runn
 cert-manager   essential-cert-manager-cainjector-66dc99cc56-9ldmt   1/1     Running    0     6d5h
 cert-manager   essential-cert-manager-webhook-56b76db9cc-fjqrq      1/1     Running    0     6d5h
 ----
-. Créez une paire de certificats/clés pour le FQDN adresse :
+. Créez une paire de certificats/clés pour le `astraAddress` FQDN :
 +
 [source, console]
 ----
@@ -62,7 +62,7 @@ Exemple de réponse :
 ----
 secret/selfsigned-tls created
 ----
-. Créez un fichier ClusterIssuer qui est *exactement* ce qui suit mais qui comprend l'emplacement d'espace de noms où sont installés vos pods cert-Manager :
+. Créer un `ClusterIssuer` fichier qui est *exactement* le suivant mais qui comprend l'emplacement de l'espace de noms où votre `cert-manager` des pods sont installés :
 +
 [source, yaml]
 ----
@@ -88,7 +88,7 @@ Exemple de réponse :
 ----
 clusterissuer.cert-manager.io/astra-ca-clusterissuer created
 ----
-. Vérifiez que l'émetteur de ClusterIssuer s'est correctement installé. `Ready` doit être de `True` avant de pouvoir continuer :
+. Vérifiez que le `ClusterIssuer` s'est correctement installé. `Ready` doit être de `True` avant de pouvoir continuer :
 +
 [source, console]
 ----
@@ -103,5 +103,5 @@ Exemple de réponse :
 NAME                     READY   AGE
 astra-ca-clusterissuer   True    9s
 ----
-. Complétez le link:../get-started/install_acc.html["Procédure d'installation d'Astra Control Center"]. Il y a un link:../get-started/install_acc.html#configure-astra-control-center["Étape de configuration requise pour le groupe de centre de contrôle Astra YAML"] Dans lequel vous modifiez la valeur CRD pour indiquer que le cert-Manager est installé en externe. Vous devez effectuer cette étape au cours de l'installation pour que le centre de contrôle Astra reconnaisse le cert-Manager externe.
+. Complétez le link:../get-started/install_acc.html["Procédure d'installation d'Astra Control Center"]. Il y a un link:../get-started/install_acc.html#configure-astra-control-center["Étape de configuration requise pour le groupe de centre de contrôle Astra YAML"] Dans lequel vous modifiez la valeur CRD pour indiquer que le gestionnaire de certificats est installé en externe. Vous devez effectuer cette étape pendant l'installation pour que le centre de contrôle Astra reconnaisse le responsable du certificat externe.
 

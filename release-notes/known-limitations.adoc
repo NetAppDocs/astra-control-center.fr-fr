@@ -61,7 +61,7 @@ Si vous tentez d'ajouter un cluster portant le même nom qu'un cluster existant,
 
 Pour résoudre ce problème, procédez comme suit :
 
-. Modifiez votre carte de configuration kubeadm-config :
+. Modifiez votre `kubeadm-config` ConfigMap :
 +
 [listing]
 ----
