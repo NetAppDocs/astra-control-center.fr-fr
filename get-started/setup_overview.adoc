@@ -62,6 +62,7 @@ NOTE: Si vous disposez d'une licence d'évaluation et que vous n'envoyez pas de 
 Avant d'ajouter un cluster, assurez-vous que les conditions préalables suivantes sont remplies. Vous devez également effectuer des vérifications d'admissibilité pour vous assurer que votre cluster est prêt à être ajouté au Centre de contrôle Astra et créer des rôles pour la gestion du cluster.
 
 .Ce dont vous avez besoin
+* Assurez-vous que les nœuds workers de votre cluster sont configurés avec les pilotes de stockage appropriés afin que les pods puissent interagir avec le système de stockage back-end.
 * Votre environnement répond au link:../get-started/requirements.html#operational-environment-requirements["de l'environnement opérationnel"^] Pour Astra Trident et Astra Control Center.
 * Une version d'Astra Trident link:../get-started/requirements.html#operational-environment-requirements["Pris en charge par Astra Control Center"^] est installé :
 +
