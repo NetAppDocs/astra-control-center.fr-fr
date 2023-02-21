@@ -2664,4 +2664,5 @@
   <block id="4409c1c59948e2b1fc006b492343b77d" category="list-text">Pour voir le raclage des échantillons dans le temps, sélectionnez *Graph*.</block>
   <block id="4e86b3f4151280eb07fe543c3b9974f2" category="admonition">Si plusieurs données de cluster ont été collectées, les mesures de chaque cluster apparaissent dans une couleur différente.</block>
   <block id="039788d35f35e7e6b801a37b1b602f56" category="paragraph">Vous pouvez envoyer des journaux (événements Kubernetes) depuis le système surveillé par Astra Control Center vers votre terminal Fluentd. La connexion Fluentd est désactivée par défaut.</block>
+  <block id="2fae9bf7af2c006788415b299aad1207" category="admonition">Lorsque vous effectuez une restauration sur place d'une application qui utilise un stockage NetApp ONTAP, l'espace utilisé par cette application peut doubler. Une fois la restauration sur place effectuée, supprimez les snapshots indésirables de l'application restaurée pour libérer de l'espace de stockage.</block>
 </blocks>
