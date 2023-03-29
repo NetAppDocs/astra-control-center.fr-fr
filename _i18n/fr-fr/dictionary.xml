@@ -43,7 +43,6 @@
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">Amazon FSX pour NetApp ONTAP</block>
   <block id="312f73bc02090ee1ad14be45b359dbe8" category="list-text"><block ref="f04576f201786fec5ebc1080637d02a1" category="inline-link-rx"></block> ou<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> En tant qu'options de stockage back-end pour les clusters EKS.</block>
   <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center utilise les systèmes back-end de stockage suivants :</block>
-  <block id="878d04283184abd2b8ea5f813a053078" category="list-text">ONTAP AFF ET FAS. En tant que plateforme matérielle et logicielle de stockage, ONTAP fournit des services de stockage de base, la prise en charge de plusieurs protocoles d'accès au stockage et des fonctionnalités de gestion du stockage, telles que les snapshots et la mise en miroir.</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">*Cloud Insights* : un outil NetApp de surveillance de l'infrastructure cloud, Cloud Insights vous permet de surveiller les performances et l'utilisation de vos clusters Kubernetes gérés par Astra Control Center. Cloud Insights met en corrélation l'utilisation du stockage avec les charges de travail. Lorsque vous activez la connexion Cloud Insights dans le centre de contrôle Astra, les informations de télémétrie s'affichent dans les pages de l'interface utilisateur du centre de contrôle Astra.</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Interfaces de contrôle Astra</block>
@@ -820,16 +819,11 @@
   <block id="8903edbd1d0463471f5590d10a85b600" category="section-title">10 août 2022 (22.08.0)</block>
   <block id="9ed67fb9a4ad2ebd97ca13fe2eb81541" category="list-title">Nouvelles fonctionnalités et prises en charge</block>
   <block id="cf730d1df7f3b98c75cd949f7b3155ec" category="inline-link-macro">Réplication d'applications à l'aide de la technologie NetApp SnapMirror</block>
-  <block id="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="list-text"><block ref="4ac4f3b37f65d59e010bc2f6ddd50ea2" category="inline-link-macro-rx"></block></block>
   <block id="43a321aa397f8593d184ea33759d7e38" category="inline-link-macro">Workflow de gestion des applications amélioré</block>
   <block id="ced3580ec3e1b083304a574bccfdc820" category="inline-link-macro">Fonctionnalité améliorée de crochets d'exécution</block>
-  <block id="147023a1f5114242635e425ab71c8c27" category="list-text"><block ref="147023a1f5114242635e425ab71c8c27" category="inline-link-macro-rx"></block></block>
   <block id="8c9552895e8b32d168c001c8cb0d41ac" category="inline-link">NetApp Verda</block>
-  <block id="24268535081e43369412e14e6ec8399c" category="admonition">Les crochets d'exécution par défaut avant ou après snapshot de NetApp ont été retirés pour des applications spécifiques dans cette version. Si vous effectuez une mise à niveau vers cette version et que vous ne fournissez pas vos propres crochets d'exécution pour les instantanés, Astra Control ne prendra que des instantanés cohérents avec les collisions. Consultez le<block ref="f2171388afccc712489c737f550e71ed" category="inline-link-rx"></block> Référentiel GitHub pour des exemples de scripts de hook d'exécution que vous pouvez modifier en fonction de votre environnement.</block>
   <block id="05d2305253892d509045e8f0c3497ace" category="inline-link-macro">Prise en charge de VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)</block>
-  <block id="15acda84b4bee1d540fb5708e347db8d" category="list-text"><block ref="15acda84b4bee1d540fb5708e347db8d" category="inline-link-macro-rx"></block></block>
   <block id="c0a85ce872a49b700d02bd247127ab1e" category="inline-link-macro">Prise en charge de Google Anthos</block>
-  <block id="915a3cee1a776b1f598c3e3deb4e5a9e" category="list-text"><block ref="915a3cee1a776b1f598c3e3deb4e5a9e" category="inline-link-macro-rx"></block></block>
   <block id="8614e6ee0f1155b4b418f8b634802110" category="inline-link">Configuration LDAP (via l'API de contrôle Astra)</block>
   <block id="8fcf9eb4bfc0af14b202df6665aa55f3" category="list-text"><block ref="8fcf9eb4bfc0af14b202df6665aa55f3" category="inline-link-rx"></block></block>
   <block id="3a3b7ac2e39541ea05707ccd6eb054d4" category="list-title">Problèmes et limites connus</block>
@@ -839,17 +833,10 @@
   <block id="9ce2124f29dc4cc07281ecd767336d13" category="list-text"><block ref="9ce2124f29dc4cc07281ecd767336d13" category="inline-link-macro-rx"></block></block>
   <block id="636d6f4332398bd5b282d3ece2b35c37" category="section-title">26 avril 2022 (22.04.0)</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="inline-link">Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms</block>
-  <block id="37fd1e0ddfd52219734f429098e6ebf0" category="list-text"><block ref="37fd1e0ddfd52219734f429098e6ebf0" category="inline-link-rx"></block></block>
   <block id="aa702244278ce9224bdf493dbd836fcf" category="inline-link">Prise en charge de Cloud Volumes ONTAP</block>
-  <block id="9ce9ce90dfce9d2f5bb0df40eb94349d" category="list-text"><block ref="9ce9ce90dfce9d2f5bb0df40eb94349d" category="inline-link-rx"></block></block>
   <block id="b2c30cdbb458ef4f85645f614f9a044c" category="inline-link">Activation d'entrée générique pour le centre de contrôle Astra</block>
-  <block id="2c8fbe80bc16c006c85fad43beee1612" category="list-text"><block ref="2c8fbe80bc16c006c85fad43beee1612" category="inline-link-rx"></block></block>
   <block id="ec4f18f5d437fda081d810a9841b26d4" category="inline-link">Dépose du godet de l'Astra Control</block>
-  <block id="6b746d42ae4e596d00b9ff0fd6017cd8" category="list-text"><block ref="6b746d42ae4e596d00b9ff0fd6017cd8" category="inline-link-rx"></block></block>
   <block id="8129213766a460b291fb99be007611f8" category="inline-link">Prise en charge de la gamme VMware Tanzu</block>
-  <block id="208a8fcce82374d11a0e33365f59b4db" category="list-text"><block ref="208a8fcce82374d11a0e33365f59b4db" category="inline-link-rx"></block></block>
-  <block id="9f5cf907f6695509d2835e8159f5934f" category="list-text"><block ref="9f5cf907f6695509d2835e8159f5934f" category="inline-link-rx"></block></block>
-  <block id="fadd2411de2f2a9467c52f3c55c606d9" category="list-text"><block ref="fadd2411de2f2a9467c52f3c55c606d9" category="inline-link-rx"></block></block>
   <block id="a1be4875b5bb7cb5ecf7bdcde9034c85" category="section-title">14 décembre 2021 (21.12)</block>
   <block id="6e872df52a2a558df6e7d3ed6ac75f11" category="inline-link">Restauration des applications</block>
   <block id="a32d618c008b6afc5518ea6d4e48c6e9" category="list-text"><block ref="a32d618c008b6afc5518ea6d4e48c6e9" category="inline-link-rx"></block></block>
@@ -2007,16 +1994,10 @@
   <block id="b7f9d2818b6dfb010868c5dbbf7b1c0d" category="paragraph">Astra Control Center prend en charge jusqu'à 5,000 groupes distants et 10,000 utilisateurs distants.</block>
   <block id="9516594dccbff8a60d49471210c9daaa" category="section-title">22 novembre 2022 (22.11.0)</block>
   <block id="3aed836d77f6857f6adf310ab3a489e9" category="inline-link-macro">Prise en charge des applications réparties sur plusieurs espaces de noms</block>
-  <block id="beafdd3c8105c04043a7b1306a771ea3" category="list-text"><block ref="beafdd3c8105c04043a7b1306a771ea3" category="inline-link-macro-rx"></block></block>
   <block id="71e6b5ca832527695b724cd4030ff69f" category="inline-link-macro">La prise en charge de l'inclusion des ressources de cluster dans une définition d'application</block>
-  <block id="2ea8f512c3c8b62991f5d816247c86ce" category="list-text"><block ref="2ea8f512c3c8b62991f5d816247c86ce" category="inline-link-macro-rx"></block></block>
   <block id="47071b09885a13dddec33f0d1b894a62" category="inline-link-macro">L'authentification LDAP optimisée avec l'intégration du contrôle d'accès basé sur des rôles (RBAC)</block>
-  <block id="f8f0393aba20ac7d5affe6b59abd1e34" category="list-text"><block ref="f8f0393aba20ac7d5affe6b59abd1e34" category="inline-link-macro-rx"></block></block>
   <block id="644efc13d18e1e4fa53fb47ae71333e5" category="inline-link-macro">Ajout de la prise en charge de Kubernetes 1.25 et de Pod Security admission (PSA)</block>
-  <block id="eb44d5bb2b49d4a8ee781f99712c5dc3" category="list-text"><block ref="eb44d5bb2b49d4a8ee781f99712c5dc3" category="inline-link-macro-rx"></block></block>
   <block id="d57729d6a002792bd1640f00b3c60a6d" category="inline-link-macro">Création de rapports d'avancement pour les opérations de sauvegarde, de restauration et de clonage</block>
-  <block id="4214a078883641f7a5f95c671404abe5" category="list-text"><block ref="4214a078883641f7a5f95c671404abe5" category="inline-link-macro-rx"></block></block>
-  <block id="af4b12c6eb6eab66b2727ed6796ce594" category="list-text"><block ref="af4b12c6eb6eab66b2727ed6796ce594" category="inline-link-macro-rx"></block></block>
   <block id="3b500d768644a147d8129c7528d9a59a" category="summary">La documentation relative aux versions précédentes est disponible si vous n'utilisez pas la dernière version.</block>
   <block id="432b09f47d1f21c47c9c27c092f6475a" category="inline-link">Documentation Astra Control Center 22.08</block>
   <block id="ab9b97a549065c3593d2144edfd022af" category="list-text"><block ref="ab9b97a549065c3593d2144edfd022af" category="inline-link-rx"></block></block>
@@ -2671,4 +2652,29 @@
   <block id="2f69a705b60cbc3d6bba3c41c6be8810" category="list-text">NetApp ONTAP Select 9.5 ou version ultérieure</block>
   <block id="8ccf427f70709789c9c7a4f0ffd8f8cc" category="list-text">NetApp ONTAP Select 9.8 ou version ultérieure pour la réplication d'applications basée sur SnapMirror</block>
   <block id="bfd904fc0dcf06a45fdb48323bd3a82d" category="list-text">NetApp Cloud Volumes ONTAP 9.5 ou version ultérieure</block>
+  <block id="4fc529ce4bbbe2ecf321eba6f7365f40" category="list-text">ONTAP AFF, FAS et ASA. En tant que plateforme matérielle et logicielle de stockage, ONTAP fournit des services de stockage de base, la prise en charge de plusieurs protocoles d'accès au stockage et des fonctionnalités de gestion du stockage, telles que les snapshots et la mise en miroir.</block>
+  <block id="d632cd8f340d92fcafd80c6b61a50542" category="list-text"><block ref="d632cd8f340d92fcafd80c6b61a50542" category="inline-link-macro-rx"></block></block>
+  <block id="1ebc31fa7a8849742c47d0f9d885dc8e" category="list-text"><block ref="1ebc31fa7a8849742c47d0f9d885dc8e" category="inline-link-macro-rx"></block></block>
+  <block id="e665a2fb412abd2f1f21a5df837bd65c" category="list-text"><block ref="e665a2fb412abd2f1f21a5df837bd65c" category="inline-link-macro-rx"></block></block>
+  <block id="237b00b48ad0974d50020591d64ae968" category="list-text"><block ref="237b00b48ad0974d50020591d64ae968" category="inline-link-macro-rx"></block></block>
+  <block id="ee1bdf417dbf36493e18d2d62c34fa8d" category="list-text"><block ref="ee1bdf417dbf36493e18d2d62c34fa8d" category="inline-link-macro-rx"></block></block>
+  <block id="d42b75fe19dabf326e6063949f271820" category="list-text"><block ref="d42b75fe19dabf326e6063949f271820" category="inline-link-macro-rx"></block></block>
+  <block id="15f99de9fca4a87464f86c86d87cfca2" category="list-text"><block ref="15f99de9fca4a87464f86c86d87cfca2" category="inline-link-macro-rx"></block></block>
+  <block id="d11334a18414233f19b9828396fe629d" category="list-text"><block ref="d11334a18414233f19b9828396fe629d" category="inline-link-rx"></block></block>
+  <block id="65a61677f210f52793f3f0963b9747d8" category="list-text"><block ref="65a61677f210f52793f3f0963b9747d8" category="inline-link-rx"></block></block>
+  <block id="c7156c6c9f73c50ec5b9713b2c7755d2" category="list-text"><block ref="c7156c6c9f73c50ec5b9713b2c7755d2" category="inline-link-rx"></block></block>
+  <block id="c750edddde6d0843677e2964582afbde" category="admonition">Les crochets d'exécution par défaut avant ou après snapshot de NetApp ont été retirés pour des applications spécifiques dans cette version. Si vous effectuez une mise à niveau vers cette version et que vous ne fournissez pas vos propres crochets d'exécution pour les instantanés, Astra Control ne prendra que des instantanés cohérents avec les collisions. Consultez le<block ref="8d8f78ce9267b0ea41ce2ae52c54a67d" category="inline-link-rx"></block> Référentiel GitHub pour des exemples de scripts de hook d'exécution que vous pouvez modifier en fonction de votre environnement.</block>
+  <block id="807be0fcf177a2c3e73a7d2c04672374" category="list-text"><block ref="807be0fcf177a2c3e73a7d2c04672374" category="inline-link-rx"></block></block>
+  <block id="cf97baf0641b20808954c522eedddfc2" category="list-text"><block ref="cf97baf0641b20808954c522eedddfc2" category="inline-link-rx"></block></block>
+  <block id="1503c30e5cb974dac709e8d577ec5add" category="list-text"><block ref="1503c30e5cb974dac709e8d577ec5add" category="inline-link-rx"></block></block>
+  <block id="4384002b5199e74a5945eb936e639afd" category="list-text"><block ref="4384002b5199e74a5945eb936e639afd" category="inline-link-rx"></block></block>
+  <block id="27d950eea30eca24600cfd1bcb2833e2" category="list-text"><block ref="27d950eea30eca24600cfd1bcb2833e2" category="inline-link-rx"></block></block>
+  <block id="4c1ce6a0645b410762f06ecd0390e1f6" category="list-text"><block ref="4c1ce6a0645b410762f06ecd0390e1f6" category="inline-link-rx"></block></block>
+  <block id="4a34cff2a4b0923d912f0a28c54890b3" category="list-text"><block ref="4a34cff2a4b0923d912f0a28c54890b3" category="inline-link-rx"></block></block>
+  <block id="1aef7ddff9a41af8aebbe7bcb3a2eec5" category="list-text"><block ref="1aef7ddff9a41af8aebbe7bcb3a2eec5" category="inline-link-rx"></block></block>
+  <block id="68f519fc10ea6e456988e2524d156d1a" category="list-text"><block ref="68f519fc10ea6e456988e2524d156d1a" category="inline-link-rx"></block></block>
+  <block id="494f00c4b150eebe7f9548365d575840" category="list-text"><block ref="494f00c4b150eebe7f9548365d575840" category="inline-link-rx"></block></block>
+  <block id="11c38116a632436215a6716507c1a287" category="list-text"><block ref="11c38116a632436215a6716507c1a287" category="inline-link-rx"></block></block>
+  <block id="201e09e85ad81db8a19ef9f20c05d1a5" category="inline-link">vidéo</block>
+  <block id="259f3be9b6c8eefb44e844c2b70333dc" category="paragraph">Pour une démonstration du processus d'installation d'Astra Control Center, reportez-vous à la section<block ref="cbbdec23221803dc148346abe5a297c0" category="inline-link-rx"></block>.</block>
 </blocks>

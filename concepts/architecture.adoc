@@ -33,7 +33,7 @@ image:astra-architecture-diagram-v5.png["Image conceptuelle décrivant l'archite
 
 ** Astra Control Center utilise les systèmes back-end de stockage suivants :
 +
-*** ONTAP AFF ET FAS. En tant que plateforme matérielle et logicielle de stockage, ONTAP fournit des services de stockage de base, la prise en charge de plusieurs protocoles d'accès au stockage et des fonctionnalités de gestion du stockage, telles que les snapshots et la mise en miroir.
+*** ONTAP AFF, FAS et ASA. En tant que plateforme matérielle et logicielle de stockage, ONTAP fournit des services de stockage de base, la prise en charge de plusieurs protocoles d'accès au stockage et des fonctionnalités de gestion du stockage, telles que les snapshots et la mise en miroir.
 *** Cloud Volumes ONTAP
 
 

@@ -22,6 +22,8 @@ Pour installer Astra Control Center, téléchargez le bundle d'installation depu
 
 
 ====
+Pour une démonstration du processus d'installation d'Astra Control Center, reportez-vous à la section https://www.youtube.com/watch?v=eurMV80b0Ks&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["vidéo"^].
+
 .Ce dont vous avez besoin
 * link:requirements.html["Avant de commencer l'installation, préparez votre environnement pour le déploiement d'Astra Control Center"].
 * Si vous avez configuré ou que vous souhaitez configurer des stratégies de sécurité de pod dans votre environnement, familiarisez-vous avec les stratégies de sécurité de pod et leur incidence sur l'installation d'Astra Control Center. Voir link:../concepts/understand-pod-security.html["Comprendre les restrictions de la stratégie de sécurité du pod"].
