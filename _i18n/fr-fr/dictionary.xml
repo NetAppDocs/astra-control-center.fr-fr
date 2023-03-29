@@ -214,9 +214,6 @@
   <block id="8763b5c0837ac6cf7ff31e202742432c" category="inline-link-macro">Configurer le centre de contrôle Astra</block>
   <block id="783d1a3e740eff9085416ec3f709793f" category="section-title">Systèmes back-end de stockage pris en charge</block>
   <block id="160a276b6627d6a6aa9859d6c2835948" category="paragraph">Astra Control Center prend en charge les systèmes back-end de stockage suivants.</block>
-  <block id="dfac4790f1edf6101275f3ef6bff1bf3" category="list-text">NetApp ONTAP 9.5 ou versions ultérieures, AFF et FAS</block>
-  <block id="419590ef59b29bd36215f285b4098a7c" category="list-text">NetApp ONTAP 9.8 ou versions ultérieures AFF et FAS pour la réplication d'applications basée sur SnapMirror</block>
-  <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="list-text">NetApp Cloud Volumes ONTAP</block>
   <block id="1a8fab43fd54631009166886f3f59682" category="paragraph">Pour utiliser Astra Control Center, vérifiez que vous disposez des licences ONTAP suivantes, en fonction de ce que vous devez accomplir :</block>
   <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
   <block id="93ec3a6d617fbea35565aff959939259" category="inline-link">Informations sur la licence SnapMirror</block>
@@ -2669,4 +2666,9 @@
   <block id="d3472e0a53fc9484c0dd7ec15e76da1d" category="paragraph">Une _sauvegarde_ est basée sur un snapshot. Il est stocké dans le magasin d'objets externe et, par conséquent, peut être plus lent à prendre par rapport aux snapshots locaux. Vous pouvez restaurer une sauvegarde d'application sur le même cluster ou migrer une application en restaurant sa sauvegarde sur un autre cluster. Vous pouvez également choisir une période de conservation plus longue pour les sauvegardes. Les sauvegardes étant stockées dans un référentiel de stockage objet externe, il est généralement plus efficace que les copies Snapshot en cas de panne serveur ou de perte de données.</block>
   <block id="5becefddd70e438fb63cc4c816b5f6cc" category="paragraph">Une _stratégie de protection_ est un moyen de protéger une application en créant automatiquement des snapshots, des sauvegardes ou les deux en fonction d'un planning que vous définissez pour cette application. Une règle de protection vous permet également de choisir le nombre de snapshots et de sauvegardes à conserver dans la planification, et de définir différents niveaux de granularité de planification. L'automatisation de vos sauvegardes et de vos snapshots à l'aide d'une règle de protection est la meilleure façon de garantir que chaque application est protégée en fonction des besoins de votre organisation et des exigences de votre contrat de niveau de service.</block>
   <block id="5d18a3d426ac931bca06d705d79d80cf" category="paragraph">Un _clone_ est un doublon exact d'une application, de sa configuration et de ses volumes de données persistants. Vous pouvez créer manuellement un clone sur le même cluster Kubernetes ou sur un autre cluster. Le clonage d'une application peut être utile pour déplacer des applications et du stockage d'un cluster Kubernetes vers un autre.</block>
+  <block id="f4830a7c07883165a7a5c8d341286873" category="list-text">NetApp ONTAP 9.5 ou version ultérieure des systèmes AFF, FAS et ASA</block>
+  <block id="a6c8aa58cced8f18c41300f47bec2c86" category="list-text">Systèmes NetApp ONTAP 9.8 ou plus récents AFF, FAS et ASA pour la réplication d'applications basée sur SnapMirror</block>
+  <block id="2f69a705b60cbc3d6bba3c41c6be8810" category="list-text">NetApp ONTAP Select 9.5 ou version ultérieure</block>
+  <block id="8ccf427f70709789c9c7a4f0ffd8f8cc" category="list-text">NetApp ONTAP Select 9.8 ou version ultérieure pour la réplication d'applications basée sur SnapMirror</block>
+  <block id="bfd904fc0dcf06a45fdb48323bd3a82d" category="list-text">NetApp Cloud Volumes ONTAP 9.5 ou version ultérieure</block>
 </blocks>
