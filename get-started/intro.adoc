@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/intro.html 
-keywords: how astra control works, what is astra, kubernetes cluster, what is astra control center 
+keywords: how astra control works, what is astra, kubernetes cluster, what is astra control center, astra control service 
 summary: 'Astra Control est un service de gestion du cycle de vie des données applicatives Kubernetes qui simplifie les opérations des applications avec état. Protégez, sauvegardez et migrez facilement les workloads Kubernetes, et créez instantanément des clones d"applications de travail.' 
 ---
 = Découvrez Astra Control
@@ -23,9 +23,9 @@ Astra Control offre des fonctionnalités stratégiques pour la gestion du cycle 
 * Gérez automatiquement le stockage persistant
 * Création de copies Snapshot et de sauvegardes à la demande intégrant la cohérence applicative
 * Automatisation des opérations de sauvegarde et de snapshots basées sur des règles
-* Réplication d'applications sur un système distant grâce à la technologie NetApp SnapMirror
 * Migrez des applications et des données d'un cluster Kubernetes vers un autre
-* Cloner facilement une application de la phase intermédiaire à la production
+* Réplication d'applications sur un système distant à l'aide de la technologie NetApp SnapMirror (Astra Control Center)
+* Clonage d'applications de la phase de transfert à la production
 * Visualiser l'état de santé et de protection des applications
 * Implémentation de vos workflows de sauvegarde et de migration à l'aide d'une interface utilisateur web ou d'une API
 
@@ -65,6 +65,7 @@ Vous gérez toutes les mises à jour
 +
 ** Amazon EBS
 ** Amazon FSX pour NetApp ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
 
 
 * Google Cloud :
@@ -83,7 +84,9 @@ Vous gérez toutes les mises à jour
 
 * Clusters autogérés :
 +
-** Systèmes NetApp ONTAP AFF et FAS
+** Amazon EBS
+** Disque persistant Google
+** Disques gérés Azure
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
@@ -132,7 +135,7 @@ Le plan gratuit d'Astra Control vous permet de gérer jusqu'à 10 espaces de nom
 
 Astra Control Center fonctionne localement dans votre propre cloud privé.
 
-Astra Control Center prend en charge les clusters Kubernetes avec un système de stockage basé sur Trident avec un système ONTAP 9.5 et supérieur.
+ASTRA Control Center prend en charge les clusters Kubernetes avec un système de stockage basé sur Trident avec un système back-end de stockage ONTAP 9.5 et versions ultérieures.
 
 Dans un environnement connecté au cloud, Astra Control Center utilise Cloud Insights pour fournir des fonctionnalités avancées de surveillance et de télémétrie. En l'absence de connexion Cloud Insights, un monitoring et une télémétrie limités (7 jours de metrics) sont disponibles dans Astra Control Center, mais aussi exportés vers les outils de surveillance natifs de Kubernetes (comme Prometheus et Grafana) via des points de terminaison ouverts.
 
