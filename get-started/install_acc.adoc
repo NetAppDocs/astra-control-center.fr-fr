@@ -892,10 +892,10 @@ spec:
   ingressClassName: istio
   tls:
   - hosts:
-    - <ACC addess>
+    - <ACC address>
     secretName: [tls secret name]
   rules:
-  - host: [ACC addess]
+  - host: [ACC address]
     http:
       paths:
       - path: /
@@ -948,7 +948,7 @@ spec:
     - <ACC address>
     secretName: [tls secret name]
   rules:
-  - host: <ACC addess>
+  - host: <ACC address>
     http:
       paths:
         - path:
@@ -987,7 +987,7 @@ oc create route edge --service=traefik --port=web -n [netapp-acc or custom names
 Après avoir installé Astra Control Center, vous modifierez le mot de passe de l'administrateur par défaut et vous connecterez au tableau de bord de l'interface utilisateur de Astra Control Center.
 
 .Étapes
-. Dans un navigateur, entrez le FQDN (`https://<FQDN>`) que vous avez utilisé dans `astraAddress` dans le `astra_control_center.yaml` CR quand <<Configurer le centre de contrôle Astra,Vous avez installé Astra Control Center>>.
+. Dans un navigateur, entrez le FQDN (`https://[FQDN]`) que vous avez utilisé dans `astraAddress` dans le `astra_control_center.yaml` CR quand <<Configurer le centre de contrôle Astra,Vous avez installé Astra Control Center>>.
 . Acceptez les certificats auto-signés si vous y êtes invité.
 +
 
