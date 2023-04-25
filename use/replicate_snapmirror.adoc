@@ -60,7 +60,7 @@ NOTE: Vous pouvez répliquer simultanément une autre application (exécutée su
 * *Configuration de l'Astra Trident / ONTAP* : le Centre de contrôle Astra requiert la création et la définition d'une classe de stockage comme classe de stockage par défaut. Astra Control Center prend en charge les pilotes ONTAP suivants fournis par Astra Trident pour la réplication :
 +
 ** ontap-nas
-** ontap-nas-flexgroup
+** Économie ontap-nas (la fonctionnalité de réplication SnapMirror avec Astra Control n'est pas disponible pour cette classe de stockage)
 ** ontap-san
 
 
@@ -87,11 +87,15 @@ La configuration d'une relation de réplication implique les éléments suivants
 +
 ** *Grappe de destination* : saisissez un cluster de destination différent de la source.
 ** *Classe de stockage de destination* : sélectionnez ou entrez la classe de stockage qui utilise le SVM apparié sur le cluster ONTAP de destination.
-** *Type de réplication*: "Asynchrone" est actuellement le seul type de réplication disponible. 
+** *Type de réplication*: "Asynchrone" est actuellement le seul type de réplication disponible.
 ** *Espace de noms de destination* : saisissez des espaces de noms de destination nouveaux ou existants pour le cluster de destination.
 ** (Facultatif) Ajouter des espaces de noms supplémentaires en sélectionnant *Ajouter espace de noms* et en choisissant l'espace de noms dans la liste déroulante.
 ** *Fréquence de réplication*: Définissez la fréquence à laquelle vous souhaitez qu'Astra Control prenne un instantané et le réplique à sa destination.
-** *Décalage*: Définissez le nombre de minutes à partir du haut de l'heure que vous voulez que le contrôle Astra prenne un instantané. Vous pouvez utiliser un décalage afin qu'il ne coïncide pas avec d'autres opérations planifiées. Par exemple, si vous voulez prendre l'instantané toutes les 5 minutes à partir de 10:02, entrez "02" comme minutes de décalage. Le résultat serait 10:02, 10:07, 10:12, etc
+** *Décalage*: Définissez le nombre de minutes à partir du haut de l'heure que vous voulez que le contrôle Astra prenne un instantané. Vous pouvez utiliser un décalage afin qu'il ne coïncide pas avec d'autres opérations planifiées.
++
+
+TIP: Décaler les plannings de sauvegarde et de réplication pour éviter les chevauchements de planification. Par exemple, effectuez des sauvegardes en haut de l'heure toutes les heures et planifiez la réplication pour qu'elle commence avec un décalage de 5 minutes et un intervalle de 10 minutes.
+
 
 
 . Sélectionnez *Suivant*, examinez le résumé et sélectionnez *Enregistrer*.
@@ -145,6 +149,7 @@ Les actions suivantes se produisent suite à la procédure de basculement :
 * Le cluster source et l'app (si opérationnel) ne sont pas arrêtés et continuent à fonctionner.
 * L'état de réplication passe à « basculement » puis à « basculement » une fois terminé.
 * La stratégie de protection de l'application source est copiée vers l'application de destination en fonction des planifications présentes sur l'application source au moment du basculement.
+* Si un ou plusieurs crochets d'exécution post-restauration sont activés dans l'application source, ces crochets d'exécution sont exécutés pour l'application de destination.
 * Astra Control affiche l'application sur les clusters source et de destination et son état de santé respectif.
 
 

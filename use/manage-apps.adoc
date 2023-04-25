@@ -20,7 +20,7 @@ Après vous link:../get-started/setup_overview.html#add-cluster["Ajoutez un clus
 
 Astra Control présente les exigences de gestion des applications suivantes :
 
-* *Licence* : pour gérer des applications à l'aide d'Astra Control Center, vous devez disposer d'une licence Astra Control Center.
+* *Licence* : pour gérer des applications à l'aide d'Astra Control Center, vous avez besoin soit de la licence d'évaluation Astra Control Center intégrée, soit d'une licence complète.
 * *Espaces de noms* : les applications peuvent être définies au sein d'un ou plusieurs espaces de noms spécifiés sur un même cluster à l'aide d'Astra Control. Une application peut contenir des ressources couvrant plusieurs espaces de noms au sein d'un même cluster. Astra Control ne prend pas en charge la possibilité de définir des applications entre plusieurs clusters.
 * *Classe de stockage* : si vous installez une application avec une classe de stockage définie explicitement et que vous devez cloner l'application, le cluster cible pour l'opération de clonage doit avoir la classe de stockage spécifiée à l'origine. Le clonage d'une application avec une classe de stockage définie explicitement dans un cluster ne disposant pas de la même classe de stockage échouera.
 * *Ressources Kubernetes* : les applications qui utilisent des ressources Kubernetes non collectées par Astra Control peuvent ne pas disposer de fonctionnalités complètes de gestion des données d'application. Astra Control collecte les ressources Kubernetes suivantes :
@@ -106,10 +106,9 @@ Bien qu'Astra Control vous permet de gérer séparément les deux niveaux de la 
 
 TIP: Par exemple, vous pouvez définir une stratégie de sauvegarde pour « maria » avec une fréquence hebdomadaire, mais vous devrez peut-être sauvegarder « mariadb » (qui se trouve dans le même espace de noms) plus fréquemment que cela. En fonction de ces besoins, vous devrez gérer les applications séparément et non sous la forme d'une application à espace de noms unique.
 
-.Ce dont vous avez besoin
+.Avant de commencer
 * Un cluster Kubernetes ajouté à Astra Control.
 * Une ou plusieurs applications installées sur le cluster. <<Méthodes d'installation d'applications prises en charge,En savoir plus sur les méthodes d'installation d'applications prises en charge>>.
-* Un ou plusieurs pods actifs.
 * Espaces de noms existants sur le cluster Kubernetes que vous avez ajouté à Astra Control.
 * (Facultatif) Etiquette Kubernetes de toute link:../use/manage-apps.html#app-management-requirements["Ressources Kubernetes prises en charge"].
 +
@@ -140,19 +139,7 @@ La définition d'une application vous offre un contrôle plus granulaire sur les
 
 WARNING: Lors de la définition d'applications, assurez-vous de ne pas inclure de ressource Kubernetes dans plusieurs applications avec des règles de protection. Le chevauchement des règles de protection sur les ressources Kubernetes peut entraîner des conflits de données. <<Exemple : politique de protection distincte pour différentes versions,En savoir plus dans un exemple.>>
 
-[CAUTION]
-====
-L'exécution d'une opération de restauration sur place sur une application qui partage des ressources avec une autre application peut avoir des résultats inattendus. Toutes les ressources partagées entre les applications sont remplacées lorsqu'une restauration sur place est effectuée sur l'une des applications. Par exemple, le scénario suivant génère une situation indésirable lors de l'utilisation de la réplication NetApp SnapMirror :
-
-. Vous définissez l'application `app1` utilisation de l'espace de noms `ns1`.
-. Vous configurez une relation de réplication pour `app1`.
-. Vous définissez l'application `app2` (sur le même cluster) utilisant les namespaces `ns1` et `ns2`.
-. Vous configurez une relation de réplication pour `app2`.
-. La réplication est inversée pour `app2`. Ceci provoque le `app1` l'application sur le cluster source à désactiver.
-
-
-====
-.<strong> </strong> a propos de l'ajout de ressources cluster-scoped à vos espaces de noms d'applications.
+.En savoir plus sur l'ajout de ressources cluster-scoped à vos espaces de noms d'applications.
 [%collapsible]
 ====
 Vous pouvez importer des ressources de cluster associées aux ressources d'espace de noms en plus de celles incluses automatiquement dans Astra Control. Vous pouvez ajouter une règle qui inclura des ressources d'un groupe, un type, une version et, éventuellement, une étiquette. Vous voudrez peut-être le faire si certaines ressources qu'Astra Control n'incluent pas automatiquement.

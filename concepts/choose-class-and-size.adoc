@@ -20,11 +20,11 @@ Astra Control Center prend en charge ONTAP en tant que système de stockage back
 
 Le centre de contrôle Astra est compatible avec les éléments suivants :
 
-* *Classes de stockage Trident soutenues par ONTAP Storage* : si vous utilisez un back-end ONTAP, Astra Control Center permet d'importer le back-end ONTAP pour signaler diverses informations de surveillance.
+* *Classes de stockage Astra Trident reposant sur le stockage ONTAP* : si vous utilisez un système back-end ONTAP, Astra Control Center offre la possibilité d'importer le système back-end ONTAP pour générer des rapports sur diverses informations de surveillance.
 
 
 
-NOTE: Les classes de stockage Trident doivent être préconfigurées en dehors du centre de contrôle Astra.
+NOTE: Les classes de stockage Astra Trident doivent être préconfigurées en dehors d'Astra Control Center.
 
 
 

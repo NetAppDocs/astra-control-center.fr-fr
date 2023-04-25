@@ -12,7 +12,7 @@ summary: 'Un crochet d"exécution est un script personnalisé que vous pouvez ex
 
 
 [role="lead"]
-Un crochet d'exécution est une action personnalisée que vous pouvez configurer pour s'exécuter conjointement avec une opération de protection des données d'une application gérée. Par exemple, si vous disposez d'une application de base de données, vous pouvez utiliser des crochets d'exécution pour interrompre toutes les transactions de base de données avant un instantané et reprendre les transactions une fois l'instantané terminé. Les snapshots sont ainsi cohérents au niveau des applications.
+Un crochet d'exécution est une action personnalisée que vous pouvez configurer pour s'exécuter conjointement avec une opération de protection des données d'une application gérée. Par exemple, si vous disposez d'une application de base de données, vous pouvez utiliser un crochet d'exécution pour suspendre toutes les transactions de base de données avant un instantané et reprendre les transactions une fois l'instantané terminé. Les snapshots sont ainsi cohérents au niveau des applications.
 
 
 
@@ -29,10 +29,28 @@ Astra Control prend en charge les types de crochets d'exécution suivants, en fo
 
 
 
+== Filtres de crochet d'exécution
+
+Lorsque vous ajoutez ou modifiez un crochet d'exécution à une application, vous pouvez ajouter des filtres à un crochet d'exécution pour gérer les conteneurs auxquels le crochet correspond. Les filtres sont utiles pour les applications qui utilisent la même image de conteneur sur tous les conteneurs, mais ils peuvent utiliser chaque image à des fins différentes (comme Elasticsearch). Les filtres vous permettent de créer des scénarios dans lesquels des crochets d'exécution s'exécuteront sur certains de ces conteneurs identiques, mais pas nécessairement tous. Si vous créez plusieurs filtres pour un seul crochet d'exécution, ils sont combinés avec un opérateur ET logique. Vous pouvez avoir jusqu'à 10 filtres actifs par crochet d'exécution.
+
+Chaque filtre que vous ajoutez à un crochet d'exécution utilise une expression régulière pour faire correspondre les conteneurs de votre cluster. Lorsqu'un crochet correspond à un conteneur, le crochet exécute son script associé sur ce conteneur.
+
+
+NOTE: Les expressions régulières pour les filtres utilisent la syntaxe de l'expression régulière 2 (RE2), qui ne prend pas en charge la création d'un filtre qui exclut les conteneurs de la liste des correspondances.
+
+Pour plus d'informations sur la syntaxe prise en charge par Astra Control pour les expressions régulières dans les filtres de crochet d'exécution, voir https://github.com/google/re2/wiki/Syntax["Prise en charge de la syntaxe de l'expression régulière 2 (RE2)"^].
+
+
+
 == Remarques importantes sur les crochets d'exécution personnalisés
 
 Lors de la planification de crochets d'exécution pour vos applications, tenez compte des points suivants.
 
+[NOTE]
+====
+Puisque les crochets d'exécution réduisent souvent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils sont en cours d'exécution, vous devez toujours essayer de réduire le temps d'exécution de vos crochets d'exécution personnalisés. Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Cela signifie que la logique utilisée dans un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde a été effectuée.
+
+====
 * Un crochet d'exécution doit utiliser un script pour effectuer des actions. De nombreux crochets d'exécution peuvent référencer le même script.
 * Astra Control exige que les scripts utilisés par les crochets d'exécution soient écrits au format de scripts shell exécutables.
 * La taille du script est limitée à 96 Ko.
@@ -41,16 +59,10 @@ Lors de la planification de crochets d'exécution pour vos applications, tenez c
 * Pour créer, modifier ou supprimer des crochets d'exécution, vous devez être un utilisateur disposant des autorisations propriétaire, administrateur ou membre.
 * Si l'exécution d'un crochet d'exécution prend plus de 25 minutes, le crochet échoue, créant une entrée de journal d'événements avec un code retour « N/A ». Tout instantané affecté expire et sera marqué comme ayant échoué, avec une entrée du journal des événements qui en résulte indiquant le délai d'attente.
 * Pour les opérations de protection de données ad hoc, tous les événements hook sont générés et enregistrés dans le journal des événements de la page *Activity*. Cependant, pour les opérations planifiées de protection des données, seuls les événements de défaillance de type « hook » sont enregistrés dans le journal des événements (les événements générés par les opérations de protection des données planifiées sont toujours enregistrés).
+* Si Astra Control Center bascule une application source répliquée vers l'application de destination, tous les crochets d'exécution post-restauration activés pour l'application source sont exécutés pour l'application de destination une fois le basculement terminé.
+* Si vous ajoutez un filtre d'espace de noms à un crochet d'exécution qui s'exécute après une opération de restauration ou de clonage et que la source et la destination de restauration ou de clonage sont dans des espaces de noms différents, le filtre d'espace de noms est appliqué uniquement à l'espace de noms de destination.
 
 
-[NOTE]
-====
-* Si vous créez un crochet d'exécution pour une application qui participe à un maillage de service Istio, assurez-vous que le crochet s'exécute contre le conteneur d'application d'origine, et non pas le conteneur de maillage de service. Vous pouvez exclure les conteneurs de maillage de service Istio en appliquant un filtre regex à chaque crochet d'exécution qui s'exécute pour les applications qui utilisent un maillage de service Istio.
-* Puisque les crochets d'exécution réduisent souvent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils sont en cours d'exécution, vous devez toujours essayer de réduire le temps d'exécution de vos crochets d'exécution personnalisés.
-* Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Autrement dit, un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde est terminée.
-
-
-====
 
 
 === Ordre d'exécution
@@ -112,7 +124,7 @@ Si vous démarrez mais annulez ensuite une sauvegarde qui inclut un instantané 
 | 4 | Cloner ou restaurer | N | Y | Nouveau | Identique | N | N | Y 
 
 
-| 5 | Cloner ou restaurer | Y | N | Nouveau | Différente | N | Y | Y 
+| 5 | Cloner ou restaurer | Y | N | Nouveau | Différente | N | N | Y 
 
 
 | 6 | Cloner ou restaurer | N | Y | Nouveau | Différente | N | N | Y 
@@ -130,7 +142,7 @@ Si vous démarrez mais annulez ensuite une sauvegarde qui inclut un instantané 
 | 10 | Sauvegarde | N | S/O | S/O | S/O | Y | Y | S/O 
 
 
-| 11 | Sauvegarde | Y | S/O | S/O | S/O | N | Y | S/O 
+| 11 | Sauvegarde | Y | S/O | S/O | S/O | N | N | S/O 
 |===
 
 
@@ -148,7 +160,7 @@ Vous pouvez afficher les crochets d'exécution personnalisés existants pour une
 . Accédez à *applications*, puis sélectionnez le nom d'une application gérée.
 . Sélectionnez l'onglet *crochets d'exécution*.
 +
-Vous pouvez afficher tous les crochets d'exécution activés ou désactivés dans la liste résultante. Vous pouvez voir l'état d'un crochet, sa source et le moment où il est exécuté (pré ou post-opération). Pour afficher les journaux d'événements entourant les crochets d'exécution, accédez à la page *activité* dans la zone de navigation de gauche.
+Vous pouvez afficher tous les crochets d'exécution activés ou désactivés dans la liste résultante. Vous pouvez voir l'état d'un crochet, le nombre de conteneurs correspondant, le temps de création et le moment où il s'exécute (pré ou post-opération). Vous pouvez sélectionner le `+` icône en regard du nom du crochet pour développer la liste des conteneurs sur lequel il sera exécuté. Pour afficher les journaux d'événements entourant les crochets d'exécution de cette application, accédez à l'onglet *activité*.
 
 
 
@@ -170,7 +182,7 @@ Cette page affiche la liste des scripts chargés existants. La colonne *utilisé
 
 == Ajouter un script
 
-Vous pouvez ajouter un ou plusieurs scripts que les crochets d'exécution peuvent référencer. De nombreux crochets d'exécution peuvent référencer le même script ; cela vous permet de mettre à jour de nombreux crochets d'exécution en ne changeant qu'un seul script.
+Chaque crochet d'exécution doit utiliser un script pour effectuer des actions. Vous pouvez ajouter un ou plusieurs scripts que les crochets d'exécution peuvent référencer. De nombreux crochets d'exécution peuvent référencer le même script ; cela vous permet de mettre à jour de nombreux crochets d'exécution en ne changeant qu'un seul script.
 
 .Étapes
 . Accédez à *compte*.
@@ -223,7 +235,7 @@ NOTE: Si le script est associé à un ou plusieurs crochets d'exécution, l'acti
 
 == Créer un crochet d'exécution personnalisé
 
-Vous pouvez créer un crochet d'exécution personnalisé pour une application. Voir <<Exemples de crochet d'exécution>> pour des exemples de crochet. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour créer des crochets d'exécution.
+Vous pouvez créer un crochet d'exécution personnalisé pour une application. Reportez-vous à la section <<Exemples de crochet d'exécution>> pour des exemples de crochet. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour créer des crochets d'exécution.
 
 
 NOTE: Lorsque vous créez un script de shell personnalisé à utiliser comme crochet d'exécution, n'oubliez pas de spécifier le shell approprié au début du fichier, sauf si vous exécutez des commandes spécifiques ou fournissez le chemin complet à un exécutable.
@@ -232,10 +244,30 @@ NOTE: Lorsque vous créez un script de shell personnalisé à utiliser comme cro
 . Sélectionnez *applications*, puis le nom d'une application gérée.
 . Sélectionnez l'onglet *crochets d'exécution*.
 . Sélectionnez *Ajouter*.
-. Dans la zone *Détails du crochet*, déterminez quand le crochet doit fonctionner en sélectionnant un type d'opération dans le menu déroulant *opération*.
-. Saisissez un nom unique pour le crochet.
-. (Facultatif) saisissez les arguments à transmettre au crochet pendant l'exécution, en appuyant sur la touche entrée après chaque argument que vous entrez pour enregistrer chacun.
-. Dans la zone *Images conteneur*, si le crochet doit être exécuté sur toutes les images de conteneur contenues dans l'application, activez la case à cocher *appliquer à toutes les images de conteneur*. Si, à la place, le crochet ne doit agir que sur une ou plusieurs images de conteneur spécifiées, entrez les noms d'image de conteneur dans le champ *noms d'image de conteneur à associer*.
+. Dans la zone *Détails du crochet* :
++
+.. Déterminez quand le crochet doit fonctionner en sélectionnant un type d'opération dans le menu déroulant *opération*.
+.. Saisissez un nom unique pour le crochet.
+.. (Facultatif) saisissez les arguments à transmettre au crochet pendant l'exécution, en appuyant sur la touche entrée après chaque argument que vous entrez pour enregistrer chacun.
+
+
+. (Facultatif) dans la zone *Détails du filtre de crochet*, vous pouvez ajouter des filtres pour contrôler les conteneurs sur lesquels le crochet d'exécution s'exécute :
++
+.. Sélectionnez *Ajouter filtre*.
+.. Dans la colonne Type de filtre *Hook*, choisissez un attribut sur lequel filtrer dans le menu déroulant.
+.. Dans la colonne *Regex*, entrez une expression régulière à utiliser comme filtre. Astra Control utilise le https://github.com/google/re2/wiki/Syntax["Expression régulière 2 (RE2) syntaxe regex"^].
++
+
+NOTE: Si vous filtrez le nom exact d'un attribut (comme un nom de pod) sans autre texte dans le champ expression régulière, une correspondance de sous-chaîne est effectuée. Pour faire correspondre un nom exact et ce nom uniquement, utilisez la syntaxe de correspondance de chaîne exacte (par exemple, `^exact_podname$`).
+
+.. Pour ajouter d'autres filtres, sélectionnez *Ajouter filtre*.
++
+
+NOTE: Plusieurs filtres pour un crochet d'exécution sont combinés à un opérateur ET logique. Vous pouvez avoir jusqu'à 10 filtres actifs par crochet d'exécution.
+
+
+
+. Lorsque vous avez terminé, sélectionnez *Suivant*.
 . Dans la zone *script*, effectuez l'une des opérations suivantes :
 +
 ** Ajouter un nouveau script.
@@ -270,7 +302,9 @@ Cela indique au crochet d'exécution d'utiliser ce script.
 
 
 
-. Sélectionnez *Ajouter crochet*.
+. Sélectionnez *Suivant*.
+. Vérifiez la configuration du crochet d'exécution.
+. Sélectionnez *Ajouter*.
 
 
 
@@ -308,6 +342,21 @@ Une liste plus détaillée s'affiche, avec les noms des crochets qui utilisent l
 
 
 
+== Modifier un crochet d'exécution
+
+Vous pouvez modifier un crochet d'exécution si vous souhaitez modifier ses attributs, filtres ou le script qu'il utilise. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour modifier les crochets d'exécution.
+
+.Étapes
+. Sélectionnez *applications*, puis le nom d'une application gérée.
+. Sélectionnez l'onglet *crochets d'exécution*.
+. Sélectionnez le menu Options dans la colonne *actions* pour un crochet que vous souhaitez modifier.
+. Sélectionnez *Modifier*.
+. Apportez les modifications nécessaires en sélectionnant *Suivant* après avoir terminé chaque section.
+. Sélectionnez *Enregistrer*.
+
+
+
+
 == Désactivez un crochet d'exécution
 
 Vous pouvez désactiver un crochet d'exécution si vous souhaitez l'empêcher temporairement de s'exécuter avant ou après un instantané d'une application. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour désactiver les crochets d'exécution.
@@ -330,6 +379,8 @@ Vous pouvez supprimer entièrement un crochet d'exécution si vous n'en avez plu
 . Sélectionnez l'onglet *crochets d'exécution*.
 . Sélectionnez le menu Options dans la colonne *actions* pour un crochet que vous souhaitez supprimer.
 . Sélectionnez *Supprimer*.
+. Dans la boîte de dialogue qui s'affiche, tapez « Supprimer » pour confirmer.
+. Sélectionnez *Oui, supprimez le crochet d'exécution*.
 
 
 

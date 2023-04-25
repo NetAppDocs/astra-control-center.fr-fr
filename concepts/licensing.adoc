@@ -12,18 +12,38 @@ summary: 'Découvrez comment les actions que vous pouvez exécuter avec Astra Co
 
 
 [role="lead"]
-Astra Control Center requiert l'installation d'une licence qui permet la mise en œuvre de la fonctionnalité complète de gestion des données d'application. Lorsque vous déployez Astra Control Center sans licence, une bannière s'affiche dans l'interface utilisateur Web, vous avertissant que la fonctionnalité du système est limitée.
+Lorsque vous déployez Astra Control Center, il est installé avec une licence d'évaluation intégrée de 90 jours pour 4,800 unités centrales. Si vous avez besoin de plus de capacité ou d'une période d'évaluation plus longue, ou si vous souhaitez effectuer une mise à niveau vers une licence complète, vous pouvez obtenir une autre licence d'évaluation ou une licence complète auprès de NetApp.
 
 Vous obtenez une licence de l'une des manières suivantes :
 
-* link:https://mysupport.netapp.com/site/downloads/evaluation/astra-control-center["Si vous évaluez Astra Control Center, téléchargez le fichier de licence d'évaluation"^]. Une licence d'évaluation vous permet d'utiliser Astra Control Center pendant 90 jours à compter de la date de téléchargement de la licence.
+* Si vous évaluez Astra Control Center et que vous avez besoin de termes d'évaluation différents de ceux inclus dans la licence d'évaluation intégrée, contactez NetApp pour demander un fichier de licence d'évaluation différent.
 * link:https://mysupport.netapp.com/site/["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence NetApp (NLF)"^] Sur le site de support NetApp. Après avoir acheté le produit, vous recevez un numéro de série et une licence que vous utilisez sur le site de support.
 
 
 Pour plus d'informations sur les licences requises pour les systèmes de stockage back-end ONTAP, reportez-vous à la link:../get-started/requirements.html["systèmes back-end de stockage pris en charge"].
 
 
-NOTE: Il est possible d'ajouter un cluster, d'ajouter un compartiment et de gérer un système back-end sans licence.
+NOTE: Assurez-vous que votre licence active au moins autant d'UC que nécessaire. Si le nombre d'UC actuellement gérées par Astra Control Center dépasse les UC disponibles dans la nouvelle licence en cours d'application, vous ne pourrez pas appliquer la nouvelle licence.
+
+
+
+== Licences d'évaluation et licences complètes
+
+Une licence d'évaluation intégrée est fournie avec une nouvelle installation d'Astra Control Center. Une licence d'évaluation offre les mêmes fonctionnalités qu'une licence complète pour une période limitée (90 jours). Après la période d'évaluation, une licence complète est requise pour continuer à bénéficier de toutes les fonctionnalités.
+
+
+
+== Expiration de la licence
+
+Si la licence Astra Control Center active expire, l'interface utilisateur et les fonctionnalités d'API des fonctionnalités suivantes ne sont pas disponibles :
+
+* Snapshots et sauvegardes locaux manuels
+* Snapshots et sauvegardes locaux programmés
+* Restauration à partir d'un snapshot ou d'une sauvegarde
+* Clonage à partir d'un snapshot ou état actuel
+* Gestion de nouvelles applications
+* Configuration des règles de réplication
+
 
 
 
@@ -31,7 +51,10 @@ NOTE: Il est possible d'ajouter un cluster, d'ajouter un compartiment et de gér
 
 Lorsque vous ajoutez un nouveau cluster à Astra Control Center, il ne prend pas en compte les licences consommées tant qu'au moins une application exécutée sur le cluster est gérée par Astra Control Center.
 
-Lorsque vous commencez à gérer une application sur un cluster, toutes les unités CPU de ce cluster sont incluses dans la consommation de licence Astra Control Center.
+Lorsque vous commencez à gérer une application sur un cluster, toutes les unités de processeur de ce cluster sont incluses dans la consommation de licence Astra Control Center, à l'exception des unités de processeur de nœud de cluster Red Hat OpenShift signalées par un à l'aide du libellé `node-role.kubernetes.io/infra: ""`.
+
+
+NOTE: Les nœuds d'infrastructure Red Hat OpenShift ne consomment pas de licences dans Astra Control Center. Pour marquer un nœud en tant que nœud d'infrastructure, appliquez le libellé `node-role.kubernetes.io/infra: ""` au nœud.
 
 
 

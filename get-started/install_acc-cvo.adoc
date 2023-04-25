@@ -197,10 +197,10 @@ Suivez la documentation BlueXP pour effectuer les étapes suivantes. Voir les é
 . Importer le cluster OpenShift Le cluster se connecte à l'environnement de travail que vous venez de créer.
 +
 .. Pour en savoir plus sur le cluster NetApp, sélectionnez *K8s* > *liste des clusters* > *Détails du cluster*.
-.. Notez la version Trident dans le coin supérieur droit.
+.. Dans le coin supérieur droit, notez la version d'Astra Trident.
 .. Notez les classes de stockage du cluster Cloud Volumes ONTAP indiquant NetApp comme provisionneur.
 +
-Cela importe votre cluster Red Hat OpenShift et lui attribue une classe de stockage par défaut. Vous sélectionnez la classe de stockage. Trident est automatiquement installé dans le cadre du processus d'importation et de détection.
+Cela importe votre cluster Red Hat OpenShift et lui attribue une classe de stockage par défaut. Vous sélectionnez la classe de stockage. ASTRA Trident est automatiquement installé dans le cadre du processus d'importation et de découverte.
 
 
 
@@ -403,7 +403,7 @@ done < astra-control-center-22.04.41.manifest
 
 Suivez la documentation BlueXP pour effectuer les étapes suivantes. Voir https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html["Mise en route de Cloud Volumes ONTAP dans GCP"^].
 
-.Ce dont vous avez besoin
+.Avant de commencer
 * Accès au compte de services GCP avec les autorisations IAM et les rôles requis
 
 
@@ -428,7 +428,7 @@ Suivez la documentation BlueXP pour effectuer les étapes suivantes. Voir https:
 .. Notez la version Trident dans le coin supérieur droit.
 .. Notez les classes de stockage du cluster Cloud Volumes ONTAP indiquant « NetApp » comme provisionneur.
 +
-Cela importe votre cluster Red Hat OpenShift et lui attribue une classe de stockage par défaut. Vous sélectionnez la classe de stockage. Trident est automatiquement installé dans le cadre du processus d'importation et de détection.
+Cela importe votre cluster Red Hat OpenShift et lui attribue une classe de stockage par défaut. Vous sélectionnez la classe de stockage. ASTRA Trident est automatiquement installé dans le cadre du processus d'importation et de découverte.
 
 
 
@@ -483,7 +483,7 @@ Assurez-vous que l'environnement d'exploitation que vous choisissez d'héberger 
 
 Outre les exigences de l'environnement en matière de ressources, Astra Control Center requiert les ressources suivantes :
 
-Voir link:../get-started/requirements.html#operational-environment-requirements["Exigences relatives à l'environnement opérationnel d'Astra Control Center"].
+Voir link:../get-started/requirements.html["Exigences relatives à l'environnement opérationnel d'Astra Control Center"].
 
 [cols="1h,2a"]
 |===
@@ -636,7 +636,7 @@ done < astra-control-center-22.04.41.manifest
 
 Suivez la documentation BlueXP pour effectuer les étapes suivantes. Voir https://docs.netapp.com/us-en/occm/task_getting_started_azure.html["Mise en route de BlueXP dans Azure"^].
 
-.Ce dont vous avez besoin
+.Avant de commencer
 Accès au compte Azure avec les autorisations IAM et les rôles requis
 
 .Étapes
@@ -669,12 +669,12 @@ image:acc-cvo-azure-working-environment.png["Cette image montre les emplacements
 +
 image:acc-cvo-azure-connected.png["Cette image montre un cluster importé dans BlueXP"]
 
-.. Notez la version Trident dans le coin supérieur droit.
+.. Dans le coin supérieur droit, notez la version d'Astra Trident.
 .. Notez les classes de stockage du cluster Cloud Volumes ONTAP indiquant NetApp comme provisionneur.
 
 
 +
-Cela importe votre cluster Red Hat OpenShift et attribue une classe de stockage par défaut. Vous sélectionnez la classe de stockage. Trident est automatiquement installé dans le cadre du processus d'importation et de détection.
+Cela importe votre cluster Red Hat OpenShift et attribue une classe de stockage par défaut. Vous sélectionnez la classe de stockage. ASTRA Trident est automatiquement installé dans le cadre du processus d'importation et de découverte.
 
 . Noter tous les volumes et volumes persistants sur ce déploiement Cloud Volumes ONTAP
 . Cloud Volumes ONTAP peut fonctionner comme un seul nœud ou en mode haute disponibilité. Si la HA est activée, noter l'état de la HA et l'état du déploiement du nœud en cours d'exécution dans Azure.

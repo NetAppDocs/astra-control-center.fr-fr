@@ -108,7 +108,7 @@ Dans Azure, Astra Control Service crée également un groupe de ressources, un c
 
 ** Crée un nouveau rôle d'administrateur et un compte de service Kubernetes sur le cluster.
 ** Utilise ce nouveau rôle d'administrateur pour l'installation https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] sur le cluster et pour créer une ou plusieurs classes de stockage.
-** Si vous utilisez une offre de stockage de service cloud NetApp comme système back-end de stockage, Astra Control Service utilise Astra Trident pour provisionner des volumes persistants pour vos applications. Si vous utilisez des disques gérés Amazon EBS ou Azure comme système de stockage principal, vous devez installer un pilote CSI spécifique au fournisseur. Les instructions d'installation sont fournies dans le link:set-up-amazon-web-services.html["Configurer Amazon Web Services"^] et link:set-up-microsoft-azure-with-amd.html["Configuration de Microsoft Azure avec des disques gérés Azure"^].
+** Si vous utilisez une offre de stockage de service cloud NetApp comme système back-end de stockage, Astra Control Service utilise Astra Trident pour provisionner des volumes persistants pour vos applications. Si vous utilisez des disques gérés Amazon EBS ou Azure comme système de stockage principal, vous devez installer un pilote CSI spécifique au fournisseur. Les instructions d'installation sont fournies dans le https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-amazon-web-services.html["Configurer Amazon Web Services"^] et https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["Configuration de Microsoft Azure avec des disques gérés Azure"^].
 
 
 * À ce stade, vous pouvez ajouter des applications à votre cluster. Les volumes persistants seront provisionnés sur la nouvelle classe de stockage par défaut.
@@ -123,19 +123,19 @@ Le plan gratuit d'Astra Control vous permet de gérer jusqu'à 10 espaces de nom
 
 Astra Control Center fonctionne localement dans votre propre cloud privé.
 
-ASTRA Control Center prend en charge les clusters Kubernetes avec un système de stockage basé sur Trident avec un système back-end de stockage ONTAP 9.5 et versions ultérieures.
+ASTRA Control Center prend en charge des clusters Kubernetes avec une classe de stockage basée sur Astra Trident avec un système back-end de stockage ONTAP 9.5 et versions ultérieures.
 
 Dans un environnement connecté au cloud, Astra Control Center utilise Cloud Insights pour fournir des fonctionnalités avancées de surveillance et de télémétrie. En l'absence de connexion Cloud Insights, un monitoring et une télémétrie limités (7 jours de metrics) sont disponibles dans Astra Control Center, mais aussi exportés vers les outils de surveillance natifs de Kubernetes (comme Prometheus et Grafana) via des points de terminaison ouverts.
 
 Astra Control Center est entièrement intégré à l'écosystème AutoSupport et Active IQ. Il fournit aux utilisateurs et au support NetApp des informations relatives à la résolution de problèmes et à l'utilisation.
 
-Vous pouvez essayer Astra Control Center avec une licence d'évaluation de 90 jours. La version d'évaluation est prise en charge par courrier électronique et par les options de communauté. Vous avez également accès aux articles et à la documentation de la base de connaissances à partir du tableau de bord de support des produits.
+Vous pouvez essayer Astra Control Center avec une licence d'évaluation intégrée de 90 jours. Pendant que vous évaluez Astra Control Center, vous pouvez obtenir de l'aide par e-mail et via des options communautaires. Vous avez également accès aux articles et à la documentation de la base de connaissances à partir du tableau de bord de support des produits.
 
-Pour installer et utiliser Astra Control Center, vous devez vous en assurer https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["de formation"].
+Pour installer et utiliser Astra Control Center, vous devez vous en assurer https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["de formation"^].
 
 À un niveau élevé, le centre de contrôle Astra ressemble à ce qui suit :
 
-* Vous installez Astra Control Center dans votre environnement local. En savoir plus https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html["Poser le centre de contrôle Astra"].
+* Vous installez Astra Control Center dans votre environnement local. En savoir plus https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html["Poser le centre de contrôle Astra"^].
 * Vous avez effectué certaines tâches de configuration, telles que :
 +
 ** Configuration des licences.
@@ -146,7 +146,7 @@ Pour installer et utiliser Astra Control Center, vous devez vous en assurer http
 
 
 
-En savoir plus https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["Configurer le centre de contrôle Astra"].
+En savoir plus https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["Configurer le centre de contrôle Astra"^].
 
 Vous pouvez ajouter des applications à votre cluster. Si certaines applications sont déjà gérées dans le cluster, vous pouvez aussi utiliser Astra Control Center pour les gérer. Utilisez ensuite Astra Control Center pour créer des copies Snapshot, des sauvegardes, des clones et des relations de réplication.
 

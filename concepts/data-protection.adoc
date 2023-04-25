@@ -65,3 +65,9 @@ image:acc-backup_4in.png["Cette image montre une sauvegarde et une restauration 
 Par contre, la réplication est effectuée par réplication vers ONTAP, puis un basculement crée les ressources Kubernetes :
 
 image:acc-replication_4in.png["Cette image illustre la réplication et le basculement entre deux clusters Kubernetes et deux clusters ONTAP"]
+
+
+
+== Sauvegardes, snapshots et clones avec une licence expirée
+
+Si votre licence expire, vous pouvez ajouter une nouvelle application ou effectuer des opérations de protection des applications (telles que les copies Snapshot, les sauvegardes, les clones et les opérations de restauration) uniquement si l'application que vous ajoutez ou protégez est une autre instance d'Astra Control Center.

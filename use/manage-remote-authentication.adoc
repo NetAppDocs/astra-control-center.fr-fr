@@ -40,7 +40,7 @@ Ajoutez le certificat TLS privé pour le serveur LDAP afin que Astra Control Cen
 
 Vous pouvez activer l'authentification LDAP et configurer la connexion entre Astra Control et le serveur LDAP distant.
 
-.Ce dont vous avez besoin
+.Avant de commencer
 Si vous prévoyez d'utiliser LDAPS, assurez-vous que le certificat TLS privé pour le serveur LDAP est installé dans Astra Control Center afin que le centre de contrôle Astra puisse s'authentifier auprès du serveur LDAP. Voir <<Ajoutez un certificat pour l'authentification LDAPS>> pour obtenir des instructions.
 
 .Étapes

@@ -16,19 +16,32 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 
 
 
+== 25 avril 2023 (23.04.0)
+
+.Nouvelles fonctionnalités et prises en charge
+* link:../concepts/licensing.html["Licence d'évaluation de 90 jours activée par défaut pour les nouvelles installations d'Astra Control Center"^]
+* link:../use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution avec options de filtrage supplémentaires"^]
+* link:../use/execution-hooks.html["Les crochets d'exécution peuvent maintenant être exécutés après le basculement de la réplication avec Astra Control Center"^]
+* link:../get-started/requirements.html["Prise en charge de l'économie NAS en tant que type de classe de stockage"^]
+* link:../use/restore-apps.html#filter-resources-during-an-application-restore["Prise en charge de l'inclusion ou de l'exclusion des ressources applicatives pendant les opérations de restauration"^]
+* link:../use/manage-apps.html["Prise en charge de la gestion des applications données uniquement"]
+
+
+
+
 == 22 novembre 2022 (22.11.0)
 
 .Nouvelles fonctionnalités et prises en charge
-* link:../use/manage-apps.html#define-apps["Prise en charge des applications réparties sur plusieurs espaces de noms"^]
-* link:../use/manage-apps.html#define-apps["La prise en charge de l'inclusion des ressources de cluster dans une définition d'application"^]
-* link:../use/manage-remote-authentication.html["L'authentification LDAP optimisée avec l'intégration du contrôle d'accès basé sur des rôles (RBAC)"^]
-* link:../get-started/requirements.html["Ajout de la prise en charge de Kubernetes 1.25 et de Pod Security admission (PSA)"^]
-* link:../use/monitor-running-tasks.html["Création de rapports d'avancement pour les opérations de sauvegarde, de restauration et de clonage"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["Prise en charge des applications réparties sur plusieurs espaces de noms"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["La prise en charge de l'inclusion des ressources de cluster dans une définition d'application"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-remote-authentication.html["L'authentification LDAP optimisée avec l'intégration du contrôle d'accès basé sur des rôles (RBAC)"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/get-started/requirements.html["Ajout de la prise en charge de Kubernetes 1.25 et de Pod Security admission (PSA)"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/monitor-running-tasks.html["Création de rapports d'avancement pour les opérations de sauvegarde, de restauration et de clonage"^]
 
 
 .Problèmes et limites connus
-* link:../release-notes/known-issues.html["Problèmes connus pour cette version"^]
-* link:../release-notes/known-limitations.html["Restrictions connues pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
 
@@ -54,7 +67,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 * https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html["Prise en charge de VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)"^]
 * https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html#operational-environment-requirements["Prise en charge de Google Anthos"^]
-* https://docs.netapp.com/us-en/astra-automation/workflows_infra/ldap_prepare.html["Configuration LDAP (via l'API de contrôle Astra)"^]
+* https://docs.netapp.com/us-en/astra-automation-2208/workflows_infra/ldap_prepare.html["Configuration LDAP (via l'API de contrôle Astra)"^]
 
 
 .Problèmes et limites connus

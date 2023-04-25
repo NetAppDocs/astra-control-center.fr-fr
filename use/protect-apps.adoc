@@ -43,6 +43,12 @@ Une règle de protection protège une application en créant des snapshots, des 
 
 Si vous avez besoin de sauvegardes ou de snapshots pour qu'ils s'exécutent plus fréquemment qu'une fois par heure, vous pouvez https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Utilisez l'API REST Astra Control pour créer des snapshots et des sauvegardes"^].
 
+
+TIP: Décaler les plannings de sauvegarde et de réplication pour éviter les chevauchements de planification. Par exemple, effectuez des sauvegardes en haut de l'heure toutes les heures et planifiez la réplication pour qu'elle commence avec un décalage de 5 minutes et un intervalle de 10 minutes.
+
+
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` conducteur, les politiques de protection ne peuvent pas être utilisées. Utilisez une autre classe de stockage si vous souhaitez une règle de protection.
+
 .Étapes
 . Sélectionnez *applications*, puis le nom d'une application.
 . Sélectionnez *protection des données*.
@@ -73,6 +79,9 @@ Astra Control implémente la règle de protection des données en créant et en 
 
 Vous pouvez créer un snapshot à la demande à tout moment.
 
+
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, les instantanés ne peuvent pas être utilisés. Utilisez une autre classe de stockage pour les snapshots.
+
 .Étapes
 . Sélectionnez *applications*.
 . Dans le menu Options de la colonne *actions* de l'application souhaitée, sélectionnez *instantané*.
@@ -91,6 +100,9 @@ Vous pouvez également sauvegarder une application à tout moment.
 
 
 NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible. Avant de sauvegarder ou de cloner des applications gérées par Astra Control Center, vérifiez les informations de compartiment dans le système de gestion ONTAP ou StorageGRID.
+
+
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, les sauvegardes sont perturbatrices et l'application sera indisponible jusqu'à la fin de l'opération de sauvegarde.
 
 .Étapes
 . Sélectionnez *applications*.

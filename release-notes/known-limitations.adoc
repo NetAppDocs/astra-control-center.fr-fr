@@ -39,6 +39,7 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 * <<Les connexions existantes à un pod Postgres provoquent des défaillances>>
 * <<Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center>>
 * <<Limitations de l'utilisateur et du groupe LDAP>>
+* <<La page activité affiche jusqu'à 100000 événements>>
 
 
 
@@ -180,6 +181,12 @@ Si vous disposez d'une licence d'évaluation, veillez à stocker votre identifia
 == Limitations de l'utilisateur et du groupe LDAP
 
 Astra Control Center prend en charge jusqu'à 5,000 groupes distants et 10,000 utilisateurs distants.
+
+
+
+== La page activité affiche jusqu'à 100000 événements
+
+La page activité Astra Control peut afficher jusqu'à 100,000 événements. Pour afficher tous les événements consignés, récupérez-les à l'aide du link:../rest-api/api-intro.html["API REST Astra Control"^].
 
 
 
