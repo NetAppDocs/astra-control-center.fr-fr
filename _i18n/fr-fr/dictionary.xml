@@ -1644,7 +1644,6 @@
   <block id="1eda8b1f4dfa35b119f2a579170d4546" category="sidebar">Gérer les identifiants</block>
   <block id="0adc618a9ad28f57db9328d47cf45165" category="sidebar">Contrôle de l'infrastructure avec Cloud Insights et Fluentd</block>
   <block id="6db4db93a9c2608b2abfc46bb675e283" category="paragraph">Pour configurer et gérer vos applications Kubernetes, vous pouvez utiliser l'interface utilisateur Astra Control Center ou l'API Astra Control.</block>
-  <block id="c39526014b70f5854cf3c59ceb0b89d3" category="list-text"><block ref="c39526014b70f5854cf3c59ceb0b89d3" category="inline-link-macro-rx"></block></block>
   <block id="996ae349b503c8bd355d8986597a6d49" category="paragraph">Pour l'URL, dans un navigateur, entrez le nom de domaine complet (FQDN) que vous avez défini dans le champ spec.astraAddress du fichier de ressource personnalisée astra_control_Center.yaml lorsque vous avez installé Astra Control Center. L'e-mail est la valeur que vous avez définie dans le champ spec.email de l'astra_Control_Center.yaml CR.</block>
   <block id="bda0a7ba5f9ad395d8fbd5eadadb95db" category="paragraph">*Mon application utilise plusieurs PVS. ASTRA Control prendra-t-il des snapshots et des sauvegardes de ces volumes persistants ?*</block>
   <block id="f8f1ef03f08e7d1c3e62dd87dde91f57" category="paragraph">Oui. Une opération d'instantané sur une application par Astra Control inclut un instantané de tous les volumes persistants liés aux demandes de volume persistant de l'application.</block>
@@ -2870,4 +2869,7 @@
   <block id="4b81f371a950b4164e976fd95ff29363" category="admonition">Si votre application utilise une classe de stockage soutenue par<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> conducteur, les politiques de protection ne peuvent pas être utilisées. Utilisez une autre classe de stockage si vous souhaitez une règle de protection.</block>
   <block id="c1a51552670bd89a555dfc498d58f040" category="admonition">Si votre application utilise une classe de stockage soutenue par<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> pilote, les instantanés ne peuvent pas être utilisés. Utilisez une autre classe de stockage pour les snapshots.</block>
   <block id="d340b669a21181fdcdf79c308ba61ea9" category="admonition">Si votre application utilise une classe de stockage soutenue par<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> pilote, les sauvegardes sont perturbatrices et l'application sera indisponible jusqu'à la fin de l'opération de sauvegarde.</block>
+  <block id="070b3d3a153094a5ee57ed5e75530780" category="inline-link">Documentation Astra Control Center 22.11</block>
+  <block id="58f23be5f86622d0993f8478be889f05" category="list-text"><block ref="58f23be5f86622d0993f8478be889f05" category="inline-link-rx"></block></block>
+  <block id="f4431fb507c16341e3a99f8f031779bc" category="list-text"><block ref="f4431fb507c16341e3a99f8f031779bc" category="inline-link-macro-rx"></block></block>
 </blocks>
