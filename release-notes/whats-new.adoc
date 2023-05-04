@@ -22,7 +22,7 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 * link:../concepts/licensing.html["Licence d'évaluation de 90 jours activée par défaut pour les nouvelles installations d'Astra Control Center"^]
 * link:../use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution avec options de filtrage supplémentaires"^]
 * link:../use/execution-hooks.html["Les crochets d'exécution peuvent maintenant être exécutés après le basculement de la réplication avec Astra Control Center"^]
-* link:../get-started/requirements.html["Prise en charge de l'économie NAS en tant que type de classe de stockage"^]
+* 
 * link:../use/restore-apps.html#filter-resources-during-an-application-restore["Prise en charge de l'inclusion ou de l'exclusion des ressources applicatives pendant les opérations de restauration"^]
 * link:../use/manage-apps.html["Prise en charge de la gestion des applications données uniquement"]
 
