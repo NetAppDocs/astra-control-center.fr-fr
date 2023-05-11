@@ -22,7 +22,7 @@ Pour installer Astra Control Center, téléchargez le bundle d'installation depu
 
 
 ====
-Pour une démonstration du processus d'installation d'Astra Control Center, reportez-vous à la section https://www.youtube.com/watch?v=eurMV80b0Ks&list=PLdXI3bZJEw7mJz13z7YdiGCS6gNQgV_aN&index=5["vidéo"^].
+Pour une démonstration du processus d'installation d'Astra Control Center, reportez-vous à la section https://["vidéo"^].
 
 .Avant de commencer
 * link:requirements.html["Avant de commencer l'installation, préparez votre environnement pour le déploiement d'Astra Control Center"].
@@ -69,7 +69,7 @@ Pour installer le centre de contrôle Astra, procédez comme suit :
 
 == Téléchargez et extrayez Astra Control Center
 
-. Accédez au https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Page de téléchargements d'Astra Control Center"^] Sur le site de support NetApp.
+. Accédez au https://["Page de téléchargements d'Astra Control Center"^] Sur le site de support NetApp.
 . Téléchargez le pack contenant Astra Control Center (`astra-control-center-[version].tar.gz`).
 . (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet :
 +
@@ -142,7 +142,7 @@ cp kubectl-astra/<binary-name> /usr/local/bin/kubectl-astra
 . Envoyez les images du package dans le répertoire d'images Astra Control Center vers votre registre local. Effectuez les remplacements suivants avant d'exécuter le `push-images` commande :
 +
 ** Remplacez <BUNDLE_FILE> par le nom du fichier bundle Astra Control (`acc.manifest.bundle.yaml`).
-** Remplacer <MY_FULL_REGISTRY_PATH> par l'URL du référentiel Docker, par exemple "https://<docker-registry>"[].
+** Remplacer <MY_FULL_REGISTRY_PATH> par l'URL du référentiel Docker, par exemple "https://[].
 ** Remplacez <MY_REGISTRY_USER> par le nom d'utilisateur.
 ** Remplacez <MY_REGISTRY_TOKEN> par un jeton autorisé pour le registre.
 +
@@ -917,8 +917,8 @@ Les étapes de configuration varient en fonction du type de contrôleur d'entré
 
 
 .Avant de commencer
-* Le requis https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/["contrôleur d'entrée"] doit déjà être déployé.
-* Le https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class["classe d'entrée"] correspondant au contrôleur d'entrée doit déjà être créé.
+* Le requis https://["contrôleur d'entrée"] doit déjà être déployé.
+* Le https://["classe d'entrée"] correspondant au contrôleur d'entrée doit déjà être créé.
 
 
 .Étapes pour l'entrée Istio
@@ -1011,7 +1011,7 @@ ingress istio astra.example.com 172.16.103.248  80, 443 1h
 
 
 .Étapes du contrôleur d'entrée Nginx
-. Créer un secret de type `kubernetes.io/tls` Pour une clé privée TLS et un certificat dans `netapp-acc` (ou espace de noms personnalisé) comme décrit dans https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets["Secrets TLS"].
+. Créer un secret de type `kubernetes.io/tls` Pour une clé privée TLS et un certificat dans `netapp-acc` (ou espace de noms personnalisé) comme décrit dans https://["Secrets TLS"].
 . Déployez une ressource entrée dans `netapp-acc` (ou nom personnalisé) de l'espace de noms utilisant le type de ressource v1 pour un schéma (`nginx-Ingress.yaml` est utilisé dans cet exemple) :
 +
 [source, yaml]
@@ -1082,7 +1082,7 @@ NOTE: Si vous saisissez trois fois un mot de passe incorrect, le compte admin es
 . Modifiez le mot de passe lorsque vous y êtes invité.
 +
 
-NOTE: S'il s'agit de votre première connexion et que vous oubliez le mot de passe et qu'aucun autre compte d'utilisateur administratif n'a encore été créé, contactez https://mysupport.netapp.com/site/["Support NetApp"] pour obtenir de l'aide sur la récupération des mots de
+NOTE: S'il s'agit de votre première connexion et que vous oubliez le mot de passe et qu'aucun autre compte d'utilisateur administratif n'a encore été créé, contactez https://["Support NetApp"] pour obtenir de l'aide sur la récupération des mots de
 
 . (Facultatif) supprimez le certificat TLS auto-signé existant et remplacez-le par un link:../get-started/configure-after-install.html#add-a-custom-tls-certificate["Certificat TLS personnalisé signé par une autorité de certification"^].
 

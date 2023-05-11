@@ -26,11 +26,11 @@ Assurez-vous que votre environnement répond à ces exigences.
 *Intégration du stockage*
 
 * link:../get-started/requirements.html#astra-trident-requirements["Vérifiez que votre environnement inclut la version prise en charge d'Astra Trident"^]
-* https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html["Préparez les nœuds worker"^]
-* https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["Configurer le système back-end de stockage Astra Trident"^]
-* https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["Configurez des classes de stockage Astra Trident"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installation du contrôleur de snapshot de volume Astra Trident"^]
-* https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["Créer une classe de snapshot de volume"^]
+* https://["Préparez les nœuds worker"^]
+* https://["Configurer le système back-end de stockage Astra Trident"^]
+* https://["Configurez des classes de stockage Astra Trident"^]
+* https://["Installation du contrôleur de snapshot de volume Astra Trident"^]
+* https://["Créer une classe de snapshot de volume"^]
 
 
 *Informations d'identification ONTAP*
@@ -41,7 +41,7 @@ Assurez-vous que votre environnement répond à ces exigences.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Téléchargez et installez Astra Control Center
 Effectuez ces tâches d'installation.
 
-* https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Téléchargez Astra Control Center à partir de la page de téléchargements du site de support NetApp"^]
+* https://["Téléchargez Astra Control Center à partir de la page de téléchargements du site de support NetApp"^]
 * Obtenez le fichier de licence NetApp :
 +
 ** Si vous évaluez Astra Control Center, une licence d'évaluation intégrée est déjà incluse.
@@ -63,7 +63,7 @@ Réalisez certaines tâches de base pour démarrer.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Utilisez Astra Control Center
-Après avoir terminé la configuration du centre de contrôle Astra, voici ce que vous pourriez faire ensuite. Vous pouvez utiliser l'interface utilisateur Astra Control (UI) ou le https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^].
+Après avoir terminé la configuration du centre de contrôle Astra, voici ce que vous pourriez faire ensuite. Vous pouvez utiliser l'interface utilisateur Astra Control (UI) ou le https://["API de contrôle Astra"^].
 
 * link:../use/manage-apps.html["Gérer des applications"^]
 * link:../use/protection-overview.html["Protégez vos applications"^]: Configurer des stratégies de protection et répliquer, cloner et migrer des applications.
@@ -75,7 +75,7 @@ Après avoir terminé la configuration du centre de contrôle Astra, voici ce qu
 
 == Pour en savoir plus
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^]
+* https://["API de contrôle Astra"^]
 * link:../use/upgrade-acc.html["Mettez à niveau Astra Control Center"^]
 * link:../support/get-help.html["Aidez-vous d'Astra Control"^]
 

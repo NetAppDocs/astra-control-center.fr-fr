@@ -21,7 +21,7 @@
 . Envoyez les images du package dans le répertoire d'images Astra Control Center vers votre registre local. Effectuez les remplacements suivants avant d'exécuter le `push-images` commande :
 +
 ** Remplacez <BUNDLE_FILE> par le nom du fichier bundle Astra Control (`acc.manifest.bundle.yaml`).
-** Remplacer <MY_FULL_REGISTRY_PATH> par l'URL du référentiel Docker, par exemple "https://<docker-registry>"[].
+** Remplacer <MY_FULL_REGISTRY_PATH> par l'URL du référentiel Docker, par exemple "https://[].
 ** Remplacez <MY_REGISTRY_USER> par le nom d'utilisateur.
 ** Remplacez <MY_REGISTRY_TOKEN> par un jeton autorisé pour le registre.
 +

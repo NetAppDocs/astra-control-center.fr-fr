@@ -14,11 +14,11 @@ summary: 'NetApp prend en charge Astra Control de plusieurs façons. De nombreus
 [role="lead"]
 Apprenez à contourner certains problèmes courants que vous pourriez rencontrer.
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["Base de connaissances NetApp pour Astra"^]
+https://["Base de connaissances NetApp pour Astra"^]
 
 [discrete]
 == Trouvez plus d'informations
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["Comment télécharger un fichier vers NetApp (connexion requise)"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_manually_upload_AutoSupport_messages_to_NetApp_in_ONTAP_9["Comment télécharger manuellement un fichier vers NetApp (connexion requise)"^]
+* https://["Comment télécharger un fichier vers NetApp (connexion requise)"^]
+* https://["Comment télécharger manuellement un fichier vers NetApp (connexion requise)"^]
 

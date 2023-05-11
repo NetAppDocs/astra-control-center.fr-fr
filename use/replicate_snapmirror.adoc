@@ -47,11 +47,11 @@ La réplication de l'application Astra Control exige que les conditions préalab
 
 * Pour assurer une reprise après incident transparente, nous vous recommandons de déployer Astra Control Center dans un troisième domaine de pannes ou un troisième site secondaire.
 * Le cluster Kubernetes hôte de l'application et un cluster Kubernetes de destination doivent être gérés avec leurs clusters ONTAP, dans l'idéal dans différents domaines ou sites de défaillance.
-* Les clusters ONTAP et le SVM hôte doivent être associés. Voir https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["Présentation du cluster et de SVM peering"^].
+* Les clusters ONTAP et le SVM hôte doivent être associés. Voir https://["Présentation du cluster et de SVM peering"^].
 * Le SVM distant couplé doit être disponible avec Astra Trident sur le cluster de destination.
 * La version 22.07 ou ultérieure d'Astra Trident doit exister sur les clusters ONTAP source et de destination.
-* Les licences asynchrones ONTAP SnapMirror via le bundle protection des données doivent être activées sur les clusters ONTAP source et cible. Voir https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["Présentation des licences SnapMirror dans ONTAP"^].
-* Lorsque vous ajoutez un système de stockage back-end ONTAP à Astra Control Center, appliquez les identifiants de l'utilisateur avec le rôle « admin » qui possède des méthodes d'accès `http` et `ontapi` Activation sur les clusters ONTAP source et de destination Voir https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["Gérer les comptes utilisateur dans la documentation ONTAP"^] pour en savoir plus.
+* Les licences asynchrones ONTAP SnapMirror via le bundle protection des données doivent être activées sur les clusters ONTAP source et cible. Voir https://["Présentation des licences SnapMirror dans ONTAP"^].
+* Lorsque vous ajoutez un système de stockage back-end ONTAP à Astra Control Center, appliquez les identifiants de l'utilisateur avec le rôle « admin » qui possède des méthodes d'accès `http` et `ontapi` Activation sur les clusters ONTAP source et de destination Voir https://["Gérer les comptes utilisateur dans la documentation ONTAP"^] pour en savoir plus.
 * Les clusters Kubernetes source et destination et les clusters ONTAP doivent être gérés par Astra Control.
 +
 
