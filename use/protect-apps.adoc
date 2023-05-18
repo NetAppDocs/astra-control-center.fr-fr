@@ -102,7 +102,7 @@ Vous pouvez également sauvegarder une application à tout moment.
 NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible. Avant de sauvegarder ou de cloner des applications gérées par Astra Control Center, vérifiez les informations de compartiment dans le système de gestion ONTAP ou StorageGRID.
 
 
-IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, les sauvegardes sont perturbatrices et l'application sera indisponible jusqu'à la fin de l'opération de sauvegarde.
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` vérifiez que vous avez défini un `backendType` dans votre https://["Objet de stockage Kubernetes"^] avec une valeur de `ontap-nas-economy` avant d'effectuer toute opération de protection. Sauvegardes des applications sauvegardées par `ontap-nas-economy` sont perturbateurs et l'application sera indisponible jusqu'à la fin de l'opération de sauvegarde.
 
 .Étapes
 . Sélectionnez *applications*.
