@@ -28,6 +28,7 @@ Les problèmes connus suivants ont une incidence sur la version actuelle :
 .Clusters
 * <<La gestion d'un cluster avec Astra Control Center échoue lorsque le fichier kubeconfig par défaut contient plusieurs contextes>>
 * <<Certains pods ne parviennent pas à démarrer après la mise à niveau vers Astra Control Center 23.04>>
+* <<Un pod de surveillance peut se bloquer dans les environnements Istio>>
 
 
 .Autres questions
@@ -96,6 +97,58 @@ pcloud-astra-control-center-au-pod-0 0/1 CreateContainerConfigError 0 13s
 [listing]
 ----
 kubectl delete pod pcloud-astra-control-center-au-pod-0 -n <namespace>
+----
+
+
+
+
+== Un pod de surveillance peut se bloquer dans les environnements Istio
+
+Si vous couplez Astra Control Center avec Cloud Insights dans un environnement Istio, le `telegraf-rs` le pod peut se bloquer. Pour résoudre ce problème, procédez comme suit :
+
+. Trouvez le pod qui s'est écrasé :
++
+[listing]
+----
+kubectl -n netapp-monitoring get pod | grep Error
+----
++
+Vous devez voir les résultats similaires à ce qui suit :
+
++
+[listing]
+----
+NAME READY STATUS RESTARTS AGE
+telegraf-rs-fhhrh 1/2 Error 2 (26s ago) 32s
+----
+. Redémarrez le module en panne, en le remplaçant `<pod_name_from_output>` avec le nom du pod affecté :
++
+[listing]
+----
+kubectl -n netapp-monitoring delete pod <pod_name_from_output>
+----
++
+Vous devez voir les résultats similaires à ce qui suit :
+
++
+[listing]
+----
+pod "telegraf-rs-fhhrh" deleted
+----
+. Vérifiez que le pod a redémarré et qu'il n'est pas dans un état d'erreur :
++
+[listing]
+----
+kubectl -n netapp-monitoring get pod
+----
++
+Vous devez voir les résultats similaires à ce qui suit :
+
++
+[listing]
+----
+NAME READY STATUS RESTARTS AGE
+telegraf-rs-rrnsb 2/2 Running 0 11s
 ----
 
 
