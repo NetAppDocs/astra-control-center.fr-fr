@@ -32,16 +32,16 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 == 22 novembre 2022 (22.11.0)
 
 .Nouvelles fonctionnalités et prises en charge
-* https://["Prise en charge des applications réparties sur plusieurs espaces de noms"^]
-* https://["La prise en charge de l'inclusion des ressources de cluster dans une définition d'application"^]
-* https://["L'authentification LDAP optimisée avec l'intégration du contrôle d'accès basé sur des rôles (RBAC)"^]
-* https://["Ajout de la prise en charge de Kubernetes 1.25 et de Pod Security admission (PSA)"^]
-* https://["Création de rapports d'avancement pour les opérations de sauvegarde, de restauration et de clonage"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["Prise en charge des applications réparties sur plusieurs espaces de noms"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["La prise en charge de l'inclusion des ressources de cluster dans une définition d'application"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-remote-authentication.html["L'authentification LDAP optimisée avec l'intégration du contrôle d'accès basé sur des rôles (RBAC)"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/get-started/requirements.html["Ajout de la prise en charge de Kubernetes 1.25 et de Pod Security admission (PSA)"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/use/monitor-running-tasks.html["Création de rapports d'avancement pour les opérations de sauvegarde, de restauration et de clonage"^]
 
 
 .Problèmes et limites connus
-* https://["Problèmes connus pour cette version"^]
-* https://["Restrictions connues pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
 
@@ -58,21 +58,21 @@ Cette version (22.08.1) pour Astra Control Center (22.08.0) corrige les bugs min
 [%collapsible]
 ====
 .Nouvelles fonctionnalités et prises en charge
-* https://["Réplication d'applications à l'aide de la technologie NetApp SnapMirror"^]
-* https://["Workflow de gestion des applications amélioré"^]
-* https://["Fonctionnalité améliorée de crochets d'exécution"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/use/replicate_snapmirror.html["Réplication d'applications à l'aide de la technologie NetApp SnapMirror"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/use/manage-apps.html#define-apps["Workflow de gestion des applications amélioré"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution"^]
 +
 
-NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp ont été retirés pour des applications spécifiques dans cette version. Si vous effectuez une mise à niveau vers cette version et que vous ne fournissez pas vos propres crochets d'exécution pour les instantanés, Astra Control ne prendra que des instantanés cohérents avec les collisions. Consultez le https://["NetApp Verda"^] Référentiel GitHub pour des exemples de scripts de hook d'exécution que vous pouvez modifier en fonction de votre environnement.
+NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp ont été retirés pour des applications spécifiques dans cette version. Si vous effectuez une mise à niveau vers cette version et que vous ne fournissez pas vos propres crochets d'exécution pour les instantanés, Astra Control ne prendra que des instantanés cohérents avec les collisions. Consultez le https://github.com/NetApp/Verda["NetApp Verda"^] Référentiel GitHub pour des exemples de scripts de hook d'exécution que vous pouvez modifier en fonction de votre environnement.
 
-* https://["Prise en charge de VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)"^]
-* https://["Prise en charge de Google Anthos"^]
-* https://["Configuration LDAP (via l'API de contrôle Astra)"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html["Prise en charge de VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/get-started/requirements.html#operational-environment-requirements["Prise en charge de Google Anthos"^]
+* https://docs.netapp.com/us-en/astra-automation-2208/workflows_infra/ldap_prepare.html["Configuration LDAP (via l'API de contrôle Astra)"^]
 
 
 .Problèmes et limites connus
-* https://["Problèmes connus pour cette version"^]
-* https://["Restrictions connues pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
 ====
@@ -84,16 +84,16 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 [%collapsible]
 ====
 .Nouvelles fonctionnalités et prises en charge
-* https://["Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms"^]
-* https://["Prise en charge de Cloud Volumes ONTAP"^]
-* https://["Activation d'entrée générique pour le centre de contrôle Astra"^]
-* https://["Dépose du godet de l'Astra Control"^]
-* https://["Prise en charge de la gamme VMware Tanzu"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["Prise en charge de Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#ingress-for-on-premises-kubernetes-clusters["Activation d'entrée générique pour le centre de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/use/manage-buckets.html#remove-a-bucket["Dépose du godet de l'Astra Control"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/get-started/requirements.html#tanzu-kubernetes-grid-cluster-requirements["Prise en charge de la gamme VMware Tanzu"^]
 
 
 .Problèmes et limites connus
-* https://["Problèmes connus pour cette version"^]
-* https://["Restrictions connues pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
 ====
@@ -105,21 +105,21 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 [%collapsible]
 ====
 .Nouvelles fonctionnalités et prises en charge
-* https://["Restauration des applications"^]
-* https://["Crochets d'exécution"^]
-* https://["Prise en charge des applications déployées avec des opérateurs du système namespace"^]
-* https://["Prise en charge supplémentaire de Kubernetes et Rancher en amont"^]
-* https://["Mises à niveau d'Astra Control Center"^]
-* https://["Option Red Hat OperatorHub pour l'installation"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["Restauration des applications"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["Crochets d'exécution"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html#supported-app-installation-methods["Prise en charge des applications déployées avec des opérateurs du système namespace"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/requirements.html["Prise en charge supplémentaire de Kubernetes et Rancher en amont"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/use/upgrade-acc.html["Mises à niveau d'Astra Control Center"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/get-started/acc_operatorhub_install.html["Option Red Hat OperatorHub pour l'installation"^]
 
 
 .Résolution des problèmes
-* https://["Problèmes résolus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/resolved-issues.html["Problèmes résolus pour cette version"^]
 
 
 .Problèmes et limites connus
-* https://["Problèmes connus pour cette version"^]
-* https://["Restrictions connues pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
 ====
@@ -132,14 +132,14 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 ====
 Lancement initial du centre de contrôle Astra.
 
-* https://["Ce qu'il est"^]
-* https://["Analysez l'architecture et les composants"^]
-* https://["Commencez dès maintenant"^]
-* https://["Installer"^] et https://["configuration"^]
-* https://["Gérez"^] et https://["protéger"^] en applications
-* https://["Gestion des compartiments"^] et https://["systèmes back-end"^]
-* https://["Gestion des comptes"^]
-* https://["Automatisez votre système avec des API"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/concepts/intro.html["Ce qu'il est"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/concepts/architecture.html["Analysez l'architecture et les composants"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/get-started/requirements.html["Commencez dès maintenant"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/get-started/install_acc.html["Installer"^] et https://docs.netapp.com/us-en/astra-control-center-2108/get-started/setup_overview.html["configuration"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-apps.html["Gérez"^] et https://docs.netapp.com/us-en/astra-control-center-2108/use/protect-apps.html["protéger"^] en applications
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-buckets.html["Gestion des compartiments"^] et https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-backend.html["systèmes back-end"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/use/manage-users.html["Gestion des comptes"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/rest-api/api-intro.html["Automatisez votre système avec des API"^]
 
 
 ====

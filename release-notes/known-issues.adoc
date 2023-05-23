@@ -52,7 +52,7 @@ Les clones d'applications au sein du même cluster échouent systématiquement a
 
 == Les clones d'application échouent lors de l'utilisation des contraintes de contexte de sécurité OCP au niveau du compte de service (SCC)
 
-Un clone d'application peut échouer si les contraintes de contexte de sécurité d'origine sont configurées au niveau du compte de service dans l'espace de noms du cluster OpenShift Container Platform. Lorsque le clone de l'application échoue, il apparaît dans la zone applications gérées du Centre de contrôle Astra avec l'état `Removed`. Voir la https://["article de la base de connaissances"^] pour en savoir plus.
+Un clone d'application peut échouer si les contraintes de contexte de sécurité d'origine sont configurées au niveau du compte de service dans l'espace de noms du cluster OpenShift Container Platform. Lorsque le clone de l'application échoue, il apparaît dans la zone applications gérées du Centre de contrôle Astra avec l'état `Removed`. Voir la https://kb.netapp.com/Cloud/Astra/Control/Application_clone_is_failing_for_an_application_in_Astra_Control_Center["article de la base de connaissances"^] pour en savoir plus.
 
 
 

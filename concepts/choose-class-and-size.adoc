@@ -36,5 +36,5 @@ Lorsque vous ajoutez un cluster à Astra Control Center, vous êtes invité à s
 
 == Pour en savoir plus
 
-* https://["Documentation Astra Trident"^]
+* https://docs.netapp.com/us-en/trident/index.html["Documentation Astra Trident"^]
 

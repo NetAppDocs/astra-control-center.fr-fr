@@ -116,7 +116,7 @@ Le retrait des identifiants de compartiment est uniquement possible si de nouvel
 TIP: Le premier ensemble d'informations d'identification que vous ajoutez à Astra Control est toujours utilisé car Astra Control utilise les informations d'identification pour authentifier le compartiment de secours. Ne pas supprimer ces identifiants si le compartiment est en cours d'utilisation, car cela entraînera des défaillances de sauvegarde et des problèmes d'indisponibilité des sauvegardes.
 
 
-NOTE: Si vous supprimez les identifiants de compartiment actifs, reportez-vous à la section https://["dépannage de la dépose des informations d'identification du godet"].
+NOTE: Si vous supprimez les identifiants de compartiment actifs, reportez-vous à la section https://kb.netapp.com/Cloud/Astra/Control/Deleting_active_S3_bucket_credentials_leads_to_spurious_500_errors_reported_in_the_UI["dépannage de la dépose des informations d'identification du godet"].
 
 Pour obtenir des instructions sur la suppression des informations d'identification S3 à l'aide de l'API de contrôle Astra, reportez-vous au link:https://docs.netapp.com/us-en/astra-automation/["Informations sur l'automatisation et les API d'Astra"^].
 
@@ -151,5 +151,5 @@ NOTE: Astra Control veille à l'absence de règles de planification qui utilise 
 
 == Trouvez plus d'informations
 
-* https://["Utilisez l'API de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
 

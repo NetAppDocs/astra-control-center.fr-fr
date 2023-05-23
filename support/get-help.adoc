@@ -27,9 +27,9 @@ Vous pouvez accéder aux options de support à partir de l'interface utilisateur
 
 Ces options sont disponibles gratuitement, 24h/24, 7j/7 :
 
-* https://["*Base de connaissances* (connexion requise)"^]: Recherchez des articles, des FAQ, ou des renseignements sur les réparations en rapport avec Astra Control.
+* https://kb.netapp.com/Cloud/Astra/Control["*Base de connaissances* (connexion requise)"^]: Recherchez des articles, des FAQ, ou des renseignements sur les réparations en rapport avec Astra Control.
 * *Centre de documentation*: C'est le site de documentation que vous consultez actuellement.
-* https://["*Obtenir de l'aide par discorde*"^]: Allez à Astra dans la catégorie Pub pour communiquer avec des pairs et des experts.
+* https://discord.gg/NetApp["*Obtenir de l'aide par discorde*"^]: Allez à Astra dans la catégorie Pub pour communiquer avec des pairs et des experts.
 * *Créer un dossier de demande de support* : générer des packs de support pour le support NetApp à des fins de résolution de problèmes.
 * *Faites-nous part de vos commentaires sur Astra Control*: Envoyez un courriel à astra.feedback@netapp.com pour nous faire part de vos pensées, idées ou préoccupations.
 
@@ -38,7 +38,7 @@ Ces options sont disponibles gratuitement, 24h/24, 7j/7 :
 
 == Activer le téléchargement quotidien de bundle de support planifié vers le support NetApp
 
-Au cours de l'installation d'Astra Control Center, si vous spécifiez `enrolled: true` pour `autoSupport` Dans le fichier de ressources personnalisées (CR) Astra Control Center (`astra_control_center.yaml`), les offres de support quotidien sont automatiquement téléchargées sur le https://["Site de support NetApp"^].
+Au cours de l'installation d'Astra Control Center, si vous spécifiez `enrolled: true` pour `autoSupport` Dans le fichier de ressources personnalisées (CR) Astra Control Center (`astra_control_center.yaml`), les offres de support quotidien sont automatiquement téléchargées sur le https://mysupport.netapp.com/site/["Site de support NetApp"^].
 
 
 
@@ -98,7 +98,7 @@ Si vous disposez d'une installation pneumatique, effectuez les opérations suiva
 Pour ce faire, vous pouvez utiliser l'une des méthodes suivantes :
 
 +
-** Utiliser https://["Téléchargement de fichiers authentifiés NetApp (connexion requise)"^].
+** Utiliser https://upload.netapp.com/sg["Téléchargement de fichiers authentifiés NetApp (connexion requise)"^].
 ** Joignez le pack au dossier directement sur NSS.
 ** Faites confiance à NetApp Active IQ.
 
@@ -108,6 +108,6 @@ Pour ce faire, vous pouvez utiliser l'une des méthodes suivantes :
 [discrete]
 == Trouvez plus d'informations
 
-* https://["Comment télécharger un fichier vers NetApp (connexion requise)"^]
-* https://["Comment télécharger manuellement un fichier vers NetApp (connexion requise)"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["Comment télécharger un fichier vers NetApp (connexion requise)"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_manually_upload_AutoSupport_messages_to_NetApp_in_ONTAP_9["Comment télécharger manuellement un fichier vers NetApp (connexion requise)"^]
 

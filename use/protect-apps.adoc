@@ -12,7 +12,7 @@ summary: 'Protégez vos applications en effectuant des copies Snapshot et des sa
 
 
 [role="lead"]
-Protégez toutes les applications en effectuant des copies Snapshot et des sauvegardes à l'aide d'une stratégie de protection automatisée ou ad hoc. Vous pouvez utiliser l'interface utilisateur du centre de contrôle Astra ou https://["API de contrôle Astra"^] pour protéger les applications.
+Protégez toutes les applications en effectuant des copies Snapshot et des sauvegardes à l'aide d'une stratégie de protection automatisée ou ad hoc. Vous pouvez utiliser l'interface utilisateur du centre de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour protéger les applications.
 
 .Description de la tâche
 * *Helm Deployed apps* : si vous utilisez Helm pour déployer des applications, Astra Control Center nécessite Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Les applications déployées avec Helm 2 ne sont pas prises en charge.
@@ -41,7 +41,7 @@ Vous pouvez effectuer les tâches suivantes liées à la protection de vos donn�
 
 Une règle de protection protège une application en créant des snapshots, des sauvegardes ou les deux à un calendrier défini. Vous pouvez choisir de créer des snapshots et des sauvegardes toutes les heures, tous les jours, toutes les semaines et tous les mois, et vous pouvez spécifier le nombre de copies à conserver.
 
-Si vous avez besoin de sauvegardes ou de snapshots pour qu'ils s'exécutent plus fréquemment qu'une fois par heure, vous pouvez https://["Utilisez l'API REST Astra Control pour créer des snapshots et des sauvegardes"^].
+Si vous avez besoin de sauvegardes ou de snapshots pour qu'ils s'exécutent plus fréquemment qu'une fois par heure, vous pouvez https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Utilisez l'API REST Astra Control pour créer des snapshots et des sauvegardes"^].
 
 
 TIP: Décaler les plannings de sauvegarde et de réplication pour éviter les chevauchements de planification. Par exemple, effectuez des sauvegardes en haut de l'heure toutes les heures et planifiez la réplication pour qu'elle commence avec un décalage de 5 minutes et un intervalle de 10 minutes.
@@ -102,7 +102,7 @@ Vous pouvez également sauvegarder une application à tout moment.
 NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible. Avant de sauvegarder ou de cloner des applications gérées par Astra Control Center, vérifiez les informations de compartiment dans le système de gestion ONTAP ou StorageGRID.
 
 
-IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` vérifiez que vous avez défini un `backendType` dans votre https://["Objet de stockage Kubernetes"^] avec une valeur de `ontap-nas-economy` avant d'effectuer toute opération de protection. Sauvegardes des applications sauvegardées par `ontap-nas-economy` sont perturbateurs et l'application sera indisponible jusqu'à la fin de l'opération de sauvegarde.
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` vérifiez que vous avez défini un `backendType` dans votre https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects["Objet de stockage Kubernetes"^] avec une valeur de `ontap-nas-economy` avant d'effectuer toute opération de protection. Sauvegardes des applications sauvegardées par `ontap-nas-economy` sont perturbateurs et l'application sera indisponible jusqu'à la fin de l'opération de sauvegarde.
 
 .Étapes
 . Sélectionnez *applications*.

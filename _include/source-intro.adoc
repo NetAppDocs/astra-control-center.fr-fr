@@ -53,21 +53,21 @@ Vous gérez toutes les mises à jour
 +
 ** Amazon EBS
 ** Amazon FSX pour NetApp ONTAP
-** https://["Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
 
 
 * Google Cloud :
 +
 ** Disque persistant Google
 ** NetApp Cloud Volumes Service
-** https://["Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
 
 
 * Microsoft Azure :
 +
 ** Disques gérés Azure
 ** Azure NetApp Files
-** https://["Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Cloud Volumes ONTAP"^]
 
 
 * Clusters autogérés :
@@ -75,13 +75,13 @@ Vous gérez toutes les mises à jour
 ** Amazon EBS
 ** Disque persistant Google
 ** Disques gérés Azure
-** https://["Cloud Volumes ONTAP"^]
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
 
  a| 
 * Systèmes NetApp ONTAP AFF et FAS
-* https://["Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
 |===
@@ -95,9 +95,9 @@ Astra Control Service est un service cloud géré par NetApp qui est constamment
 
 * Commencez avec le service Astra Control en configurant votre fournisseur de services cloud et en vous inscrivant à un compte Astra.
 +
-** Pour les clusters GKE, Astra Control Service utilise https://["NetApp Cloud Volumes Service pour Google Cloud"^] Ou des disques persistants Google en tant que système de stockage back-end pour vos volumes persistants.
-** Pour les clusters AKS, Astra Control Service utilise https://["Azure NetApp Files"^] Ou des disques gérés Azure en tant que backend de stockage pour les volumes persistants.
-** Pour les clusters Amazon EKS, Astra Control Service utilise https://["Amazon Elastic Block Store"^] ou https://["Amazon FSX pour NetApp ONTAP"^] en tant que système back-end de stockage pour vos volumes persistants.
+** Pour les clusters GKE, Astra Control Service utilise https://cloud.netapp.com/cloud-volumes-service-for-gcp["NetApp Cloud Volumes Service pour Google Cloud"^] Ou des disques persistants Google en tant que système de stockage back-end pour vos volumes persistants.
+** Pour les clusters AKS, Astra Control Service utilise https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] Ou des disques gérés Azure en tant que backend de stockage pour les volumes persistants.
+** Pour les clusters Amazon EKS, Astra Control Service utilise https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] ou https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSX pour NetApp ONTAP"^] en tant que système back-end de stockage pour vos volumes persistants.
 
 
 * Vous ajoutez votre première solution de calcul Kubernetes à Astra Control Service. Le service de contrôle d'Astra procède ensuite aux opérations suivantes :
@@ -107,8 +107,8 @@ Astra Control Service est un service cloud géré par NetApp qui est constamment
 Dans Azure, Astra Control Service crée également un groupe de ressources, un compte de stockage et des clés pour le conteneur Blob.
 
 ** Crée un nouveau rôle d'administrateur et un compte de service Kubernetes sur le cluster.
-** Utilise ce nouveau rôle d'administrateur pour l'installation https://["Astra Trident"^] sur le cluster et pour créer une ou plusieurs classes de stockage.
-** Si vous utilisez une offre de stockage de service cloud NetApp comme système back-end de stockage, Astra Control Service utilise Astra Trident pour provisionner des volumes persistants pour vos applications. Si vous utilisez des disques gérés Amazon EBS ou Azure comme système de stockage principal, vous devez installer un pilote CSI spécifique au fournisseur. Les instructions d'installation sont fournies dans le https://["Configurer Amazon Web Services"^] et https://["Configuration de Microsoft Azure avec des disques gérés Azure"^].
+** Utilise ce nouveau rôle d'administrateur pour l'installation https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] sur le cluster et pour créer une ou plusieurs classes de stockage.
+** Si vous utilisez une offre de stockage de service cloud NetApp comme système back-end de stockage, Astra Control Service utilise Astra Trident pour provisionner des volumes persistants pour vos applications. Si vous utilisez des disques gérés Amazon EBS ou Azure comme système de stockage principal, vous devez installer un pilote CSI spécifique au fournisseur. Les instructions d'installation sont fournies dans le https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-amazon-web-services.html["Configurer Amazon Web Services"^] et https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["Configuration de Microsoft Azure avec des disques gérés Azure"^].
 
 
 * À ce stade, vous pouvez ajouter des applications à votre cluster. Les volumes persistants seront provisionnés sur la nouvelle classe de stockage par défaut.
@@ -131,11 +131,11 @@ Astra Control Center est entièrement intégré à l'écosystème AutoSupport et
 
 Vous pouvez essayer Astra Control Center avec une licence d'évaluation intégrée de 90 jours. Pendant que vous évaluez Astra Control Center, vous pouvez obtenir de l'aide par e-mail et via des options communautaires. Vous avez également accès aux articles et à la documentation de la base de connaissances à partir du tableau de bord de support des produits.
 
-Pour installer et utiliser Astra Control Center, vous devez vous en assurer https://["de formation"^].
+Pour installer et utiliser Astra Control Center, vous devez vous en assurer https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["de formation"^].
 
 À un niveau élevé, le centre de contrôle Astra ressemble à ce qui suit :
 
-* Vous installez Astra Control Center dans votre environnement local. En savoir plus https://["Poser le centre de contrôle Astra"^].
+* Vous installez Astra Control Center dans votre environnement local. En savoir plus https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html["Poser le centre de contrôle Astra"^].
 * Vous avez effectué certaines tâches de configuration, telles que :
 +
 ** Configuration des licences.
@@ -146,7 +146,7 @@ Pour installer et utiliser Astra Control Center, vous devez vous en assurer http
 
 
 
-En savoir plus https://["Configurer le centre de contrôle Astra"^].
+En savoir plus https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["Configurer le centre de contrôle Astra"^].
 
 Vous pouvez ajouter des applications à votre cluster. Si certaines applications sont déjà gérées dans le cluster, vous pouvez aussi utiliser Astra Control Center pour les gérer. Utilisez ensuite Astra Control Center pour créer des copies Snapshot, des sauvegardes, des clones et des relations de réplication.
 
@@ -154,10 +154,10 @@ Vous pouvez ajouter des applications à votre cluster. Si certaines applications
 
 == Pour en savoir plus
 
-* https://["Documentation relative au service après-vente Astra Control"^]
-* https://["Documentation Astra Control Center"^]
-* https://["Documentation Astra Trident"^]
-* https://["Utilisez l'API de contrôle Astra"^]
-* https://["Documentation Cloud Insights"^]
-* https://["Documentation ONTAP"^]
+* https://docs.netapp.com/us-en/astra/index.html["Documentation relative au service après-vente Astra Control"^]
+* https://docs.netapp.com/us-en/astra-control-center/index.html["Documentation Astra Control Center"^]
+* https://docs.netapp.com/us-en/trident/index.html["Documentation Astra Trident"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
+* https://docs.netapp.com/us-en/cloudinsights/["Documentation Cloud Insights"^]
+* https://docs.netapp.com/us-en/ontap/index.html["Documentation ONTAP"^]
 

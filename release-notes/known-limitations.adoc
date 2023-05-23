@@ -120,13 +120,13 @@ Astra Control n'attribue pas automatiquement de compartiment par défaut à une 
 
 Astra Control prend en charge les applications installées avec des opérateurs à espace de noms. Ces opérateurs sont généralement conçus avec une architecture « pass-by-value » plutôt qu'une architecture « pass-by-Reference ». Voici quelques applications opérateur qui suivent ces modèles :
 
-* https://["Apache K8ssandra"^]
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
 +
 
 NOTE: Pour K8ssandra, les opérations de restauration sur place sont prises en charge. Pour effectuer une opération de restauration vers un nouvel espace de noms ou un cluster, l'instance d'origine de l'application doit être arrêté. Cela permet de s'assurer que les informations du groupe de pairs transmises ne conduisent pas à une communication entre les instances. Le clonage de l'application n'est pas pris en charge.
 
-* https://["IC Jenkins"^]
-* https://["Cluster Percona XtraDB"^]
+* https://github.com/jenkinsci/kubernetes-operator["IC Jenkins"^]
+* https://github.com/percona/percona-xtradb-cluster-operator["Cluster Percona XtraDB"^]
 
 
 Astra Control peut ne pas être en mesure de cloner un opérateur conçu avec une architecture « pass-by-Reference » (par exemple, l'opérateur CockroachDB). Lors de ces types d'opérations de clonage, l'opérateur cloné tente de référencer les secrets de Kubernetes de l'opérateur source malgré avoir son propre nouveau secret dans le cadre du processus de clonage. Il est possible que le clonage échoue, car Astra Control ne connaît pas les secrets de Kubernetes qui sont présents dans l'opérateur source.

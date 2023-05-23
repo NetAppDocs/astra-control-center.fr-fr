@@ -14,9 +14,9 @@ summary: 'La documentation relative aux versions précédentes est disponible si
 [role="lead"]
 La documentation relative aux versions précédentes est disponible.
 
-* https://["Documentation Astra Control Center 22.11"^]
-* https://["Documentation Astra Control Center 22.08"^]
-* https://["Documentation Astra Control Center 22.04"^]
-* https://["Documentation Astra Control Center 21.12"^]
-* https://["Documentation Astra Control Center 21.08"^]
+* https://docs.netapp.com/us-en/astra-control-center-2211/index.html["Documentation Astra Control Center 22.11"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/index.html["Documentation Astra Control Center 22.08"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/index.html["Documentation Astra Control Center 22.04"^]
+* https://docs.netapp.com/us-en/astra-control-center-2112/index.html["Documentation Astra Control Center 21.12"^]
+* https://docs.netapp.com/us-en/astra-control-center-2108/index.html["Documentation Astra Control Center 21.08"^]
 

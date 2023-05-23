@@ -200,12 +200,12 @@ Vous pouvez désactiver la connexion Cloud Insights pour un cluster Kubernetes g
 
 Vous pouvez surveiller les données du centre de contrôle Astra avec Prometheus. Vous pouvez configurer Prometheus pour collecter des metrics à partir du terminal de metrics du cluster Kubernetes. Par ailleurs, vous pouvez utiliser Prometheus pour visualiser les données.
 
-Pour plus d'informations sur l'utilisation de Prometheus, consultez leur documentation à l'adresse https://["Mise en route de Prometheus"].
+Pour plus d'informations sur l'utilisation de Prometheus, consultez leur documentation à l'adresse https://prometheus.io/docs/prometheus/latest/getting_started/["Mise en route de Prometheus"].
 
 .Ce dont vous aurez besoin
 Assurez-vous que vous avez téléchargé et installé le package Prometheus sur le cluster Astra Control Center ou sur un autre cluster pouvant communiquer avec le cluster Astra Control Center.
 
-Suivez les instructions de la documentation officielle à https://["Installez Prometheus"].
+Suivez les instructions de la documentation officielle à https://prometheus.io/docs/prometheus/latest/installation/["Installez Prometheus"].
 
 Prometheus doit pouvoir communiquer avec le cluster Kubernetes Astra Control Center. Si Prometheus n'est pas installé sur le cluster Astra Control Center, vous devez vous assurer qu'ils peuvent communiquer avec le service de metrics exécuté sur le cluster Astra Control Center.
 

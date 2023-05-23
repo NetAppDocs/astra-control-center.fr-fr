@@ -53,7 +53,7 @@ Vous pouvez afficher les informations de stockage back-end à partir du tableau 
 
 Affichez des informations sur l'état du système back-end, la capacité et les performances (débit et/ou latence des IOPS).
 
-Vous pouvez voir les volumes utilisés par les applications Kubernetes, qui sont stockés sur un back-end de stockage sélectionné. Avec Cloud Insights, des informations supplémentaires s'affichent. Voir https://["Documentation Cloud Insights"^].
+Vous pouvez voir les volumes utilisés par les applications Kubernetes, qui sont stockés sur un back-end de stockage sélectionné. Avec Cloud Insights, des informations supplémentaires s'affichent. Voir https://docs.netapp.com/us-en/cloudinsights/["Documentation Cloud Insights"^].
 
 .Étapes
 . Dans la zone de navigation de gauche, sélectionnez *Backends*.
@@ -91,7 +91,7 @@ Pour plus d'informations sur l'activation de l'authentification basée sur un ce
 ** *Utiliser les informations d'identification de l'administrateur* : saisissez l'adresse IP de gestion du cluster ONTAP et les informations d'identification de l'administrateur. Les identifiants doivent être identifiants au niveau du cluster.
 +
 
-NOTE: L'utilisateur dont vous saisissez ici les informations d'identification doit disposer du `ontapi` Méthode d'accès de connexion utilisateur activée dans ONTAP System Manager sur le cluster ONTAP. Si vous prévoyez d'utiliser la réplication SnapMirror, appliquez les identifiants de l'utilisateur au rôle « admin », qui dispose des méthodes d'accès `ontapi` et `http`, Sur les clusters ONTAP source et destination. Reportez-vous à la section https://["Gérer les comptes utilisateur dans la documentation ONTAP"^] pour en savoir plus.
+NOTE: L'utilisateur dont vous saisissez ici les informations d'identification doit disposer du `ontapi` Méthode d'accès de connexion utilisateur activée dans ONTAP System Manager sur le cluster ONTAP. Si vous prévoyez d'utiliser la réplication SnapMirror, appliquez les identifiants de l'utilisateur au rôle « admin », qui dispose des méthodes d'accès `ontapi` et `http`, Sur les clusters ONTAP source et destination. Reportez-vous à la section https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["Gérer les comptes utilisateur dans la documentation ONTAP"^] pour en savoir plus.
 
 ** *Utiliser un certificat*: Télécharger le certificat `.pem` fichier, la clé de certificat `.key` et éventuellement le fichier de l'autorité de certification.
 
@@ -164,5 +164,5 @@ Vous pouvez supprimer un système back-end de stockage qui n'est plus utilisé. 
 
 == Trouvez plus d'informations
 
-* https://["Utilisez l'API de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
 

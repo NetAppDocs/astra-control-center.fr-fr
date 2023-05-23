@@ -71,7 +71,7 @@ La suppression d'un cluster d'Astra Control ne modifie pas la configuration du c
 
 WARNING: Retirez toujours un cluster d'Astra Control avant de le supprimer par d'autres méthodes. La suppression d'un cluster à l'aide d'un autre outil alors qu'il est toujours géré par Astra Control peut causer des problèmes pour votre compte Astra Control.
 
-*NetApp Astra Trident est-il automatiquement désinstallé d'un cluster lorsque je le dégère ?* lorsque vous dégérez un cluster depuis Astra Control Center, Astra Trident n'est pas automatiquement désinstallé du cluster. Pour désinstaller Astra Trident, vous devez https://["Suivez ces étapes dans la documentation d'Astra Trident"^].
+*NetApp Astra Trident est-il automatiquement désinstallé d'un cluster lorsque je le dégère ?* lorsque vous dégérez un cluster depuis Astra Control Center, Astra Trident n'est pas automatiquement désinstallé du cluster. Pour désinstaller Astra Trident, vous devez https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Suivez ces étapes dans la documentation d'Astra Trident"^].
 
 
 
