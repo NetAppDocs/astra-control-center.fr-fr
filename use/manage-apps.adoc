@@ -119,7 +119,7 @@ TIP: Une étiquette est une paire clé/valeur que vous pouvez attribuer aux obje
 
 .Description de la tâche
 * Avant de commencer, vous devez également comprendre link:../use/manage-apps.html#what-about-system-namespaces["gestion des espaces de noms standard et système"].
-* Si vous prévoyez d'utiliser plusieurs espaces de noms avec vos applications dans Astra Control, link:../use/manage-roles.html#add-a-namespace-constraint-to-a-role["modifier les rôles utilisateur avec des contraintes d'espace de noms"] Après la mise à niveau vers une version Astra Control Center avec prise en charge de plusieurs espaces de noms.
+* Si vous prévoyez d'utiliser plusieurs espaces de noms avec vos applications dans Astra Control, link:../use/manage-local-users-and-roles.html#add-a-namespace-constraint-to-a-role["modifier les rôles utilisateur avec des contraintes d'espace de noms"] Après la mise à niveau vers une version Astra Control Center avec prise en charge de plusieurs espaces de noms.
 * Pour obtenir des instructions sur la gestion des applications à l'aide de l'API Astra Control, reportez-vous au link:https://docs.netapp.com/us-en/astra-automation/["Informations sur l'automatisation et les API d'Astra"^].
 
 
@@ -132,7 +132,7 @@ TIP: Une étiquette est une paire clé/valeur que vous pouvez attribuer aux obje
 
 === Définissez les ressources à gérer en tant qu'application
 
-Vous pouvez spécifier le link:../learn/app-management.html["Ressources Kubernetes qui constituent une application"] Que vous voulez gérer avec Astra Control. La définition d'une application vous permet de regrouper des éléments de votre cluster Kubernetes dans une seule application. Cette collection de ressources Kubernetes est organisée par critères d'espace de noms et de sélecteur d'étiquettes.
+Vous pouvez spécifier le link:../concepts/app-management.html["Ressources Kubernetes qui constituent une application"] Que vous voulez gérer avec Astra Control. La définition d'une application vous permet de regrouper des éléments de votre cluster Kubernetes dans une seule application. Cette collection de ressources Kubernetes est organisée par critères d'espace de noms et de sélecteur d'étiquettes.
 
 La définition d'une application vous offre un contrôle plus granulaire sur les éléments à inclure dans une opération Astra Control, notamment le clonage, les snapshots et les sauvegardes.
 

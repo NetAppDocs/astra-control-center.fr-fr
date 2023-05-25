@@ -80,6 +80,10 @@ NOTE: Astra Control crée de nouveaux espaces de noms de destination dans le cad
 ** Choisissez de conserver la classe de stockage d'origine associée à l'application ou de sélectionner une autre classe de stockage.
 +
 
+NOTE: Vous pouvez migrer la classe de stockage d'une application vers une classe de stockage native du fournisseur cloud ou vers une autre classe de stockage prise en charge.  à une classe de stockage soutenue par `ontap-nas` sur le même cluster, ou copiez l'application vers un autre cluster dont la classe de stockage est prise en charge par `ontap-nas-economy` conducteur.
+
++
+
 NOTE: Si vous sélectionnez une classe de stockage différente et que cette classe de stockage n'existe pas au moment de la restauration, une erreur est renvoyée.
 
 

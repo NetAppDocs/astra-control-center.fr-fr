@@ -171,7 +171,7 @@ TIP: Vous pouvez créer autant de règles d'inclusion et d'exclusion de ressourc
 
 == Migrez du stockage ontap-nas-Economy vers le stockage ontap-nas
 
-Vous pouvez utiliser un système Astra Control link:../use/restore-apps.html["restauration des applications"] opération de migration des volumes d'application à partir d'une classe de stockage soutenue par `ontap-nas-economy`, qui autorise des options limitées de protection des applications, à une classe de stockage soutenue par `ontap-nas` Grâce à sa gamme complète d'options de protection Astra Control. L'opération de restauration migre les volumes basés sur Qtree qui utilisent un `ontap-nas-economy` back-end aux volumes standard sauvegardés par `ontap-nas`. Des volumes, qu'ils soient `ontap-nas-economy` sauvegardé uniquement ou mixte, sera migré vers la classe de stockage cible. Une fois la migration terminée, les options de protection ne sont plus limitées.
+Vous pouvez utiliser un système Astra Control link:../use/restore-apps.html["restauration des applications"] ou link:../use/clone-apps.html["clone de l'application"^] opération de migration des volumes d'application à partir d'une classe de stockage soutenue par `ontap-nas-economy`, qui autorise des options limitées de protection des applications, à une classe de stockage soutenue par `ontap-nas` Grâce à sa gamme complète d'options de protection Astra Control. L'opération de clonage ou de restauration migre les volumes basés sur Qtree qui utilisent un `ontap-nas-economy` back-end aux volumes standard sauvegardés par `ontap-nas`. Des volumes, qu'ils soient `ontap-nas-economy` sauvegardé uniquement ou mixte, sera migré vers la classe de stockage cible. Une fois la migration terminée, les options de protection ne sont plus limitées.
 
 
 

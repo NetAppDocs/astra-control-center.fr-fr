@@ -47,7 +47,7 @@ Si vous avez besoin de sauvegardes ou de snapshots pour qu'ils s'exécutent plus
 TIP: Décaler les plannings de sauvegarde et de réplication pour éviter les chevauchements de planification. Par exemple, effectuez des sauvegardes en haut de l'heure toutes les heures et planifiez la réplication pour qu'elle commence avec un décalage de 5 minutes et un intervalle de 10 minutes.
 
 
-IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` conducteur, les politiques de protection ne peuvent pas être utilisées. Utilisez une autre classe de stockage si vous souhaitez une règle de protection.
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` conducteur, les politiques de protection ne peuvent pas être utilisées. Migrez vers une classe de stockage prise en charge par Astra Control si vous souhaitez planifier des sauvegardes et des snapshots.
 
 .Étapes
 . Sélectionnez *applications*, puis le nom d'une application.
@@ -80,7 +80,7 @@ Astra Control implémente la règle de protection des données en créant et en 
 Vous pouvez créer un snapshot à la demande à tout moment.
 
 
-IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, les instantanés ne peuvent pas être utilisés. Utilisez une autre classe de stockage pour les snapshots.
+IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, les snapshots ne peuvent pas être créés. Utilisez une autre classe de stockage pour les snapshots.
 
 .Étapes
 . Sélectionnez *applications*.
