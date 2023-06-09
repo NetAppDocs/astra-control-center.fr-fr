@@ -32,7 +32,7 @@ Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https
 * link:../concepts/licensing.html["Licence d'évaluation de 90 jours activée par défaut pour les nouvelles installations d'Astra Control Center"^]
 * link:../use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution avec options de filtrage supplémentaires"^]
 * link:../use/execution-hooks.html["Les crochets d'exécution peuvent maintenant être exécutés après le basculement de la réplication avec Astra Control Center"^]
-* 
+* link:../use/restore-apps.html#migrate-from-ontap-nas-economy-storage-to-ontap-nas-storage["Prise en charge de la migration des volumes de la classe de stockage « ONTAP-nas-Economy » vers la classe de stockage « ontap-nas »"^]
 * link:../use/restore-apps.html#filter-resources-during-an-application-restore["Prise en charge de l'inclusion ou de l'exclusion des ressources applicatives pendant les opérations de restauration"^]
 * link:../use/manage-apps.html["Prise en charge de la gestion des applications données uniquement"]
 

@@ -193,13 +193,13 @@ Vous pouvez choisir le type d'entrée de réseau utilisé par le centre de contr
 
 NOTE: L'équilibreur de charge doit utiliser une adresse IP située dans le même sous-réseau que les adresses IP du nœud de travail de l'Astra Control Center.
 
-Pour plus d'informations, voir link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["Configurer l'entrée pour l'équilibrage de charge"^].
+Pour plus d'informations, reportez-vous à la section link:../get-started/install_acc.html#set-up-ingress-for-load-balancing["Configurer l'entrée pour l'équilibrage de charge"^].
 
 
 
 === Exigences d'entrée de Google Anthos
 
-Lorsque vous hébergez Astra Control Center sur un cluster Google Anthos, notez que Google Anthos inclut par défaut l'équilibreur de charge MetalLB et le service d'entrée Istio, ce qui vous permet d'utiliser simplement les fonctionnalités d'entrée génériques d'Astra Control Center lors de l'installation. Voir link:install_acc.html#configure-astra-control-center["Configurer le centre de contrôle Astra"^] pour plus d'informations.
+Lorsque vous hébergez Astra Control Center sur un cluster Google Anthos, notez que Google Anthos inclut par défaut l'équilibreur de charge MetalLB et le service d'entrée Istio, ce qui vous permet d'utiliser simplement les fonctionnalités d'entrée génériques d'Astra Control Center lors de l'installation. Reportez-vous à la section link:install_acc.html#configure-astra-control-center["Configurer le centre de contrôle Astra"^] pour plus d'informations.
 
 
 

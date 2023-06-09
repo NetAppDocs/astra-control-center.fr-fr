@@ -50,11 +50,11 @@ Astra Control réplique de façon asynchrone les copies Snapshot d'application v
 
 La réplication d'application est différente de la sauvegarde et de la restauration de l'application de la manière suivante :
 
-* *Réplication d'application* : Astra Control requiert la disponibilité et la gestion des clusters Kubernetes source et de destination avec leur système back-end de stockage ONTAP respectif configuré pour activer NetApp SnapMirror. Astra Control transfère la copie Snapshot de l'application pilotée par des règles vers le cluster distant. La technologie NetApp SnapMirror est utilisée pour répliquer les données de volume persistant. Pour basculer, Astra Control peut rendre l'application répliquée en ligne en recréant les objets d'application sur le cluster Kubernetes de destination avec les volumes répliqués sur le cluster ONTAP de destination. Comme les données de volume persistant sont déjà présentes sur le cluster ONTAP de destination, Astra Control peut bénéficier d'un temps de récupération rapide pour le basculement.
+* *Réplication d'applications* : avec Astra Control, les clusters Kubernetes source et de destination doivent être disponibles et gérés avec leurs systèmes back-end de stockage ONTAP respectifs configurés pour activer NetApp SnapMirror. ASTRA Control utilise la copie Snapshot de l'application pilotée par des règles et la réplique sur le cluster distant. La technologie SnapMirror de NetApp est utilisée pour répliquer les données de volume persistant. Pour basculer, Astra Control peut rendre l'application répliquée en ligne en recréant les objets d'application sur le cluster Kubernetes de destination avec les volumes répliqués sur le cluster ONTAP de destination. Les données du volume persistant étant déjà présentes sur le cluster ONTAP de destination, Astra Control peut offrir des délais de restauration rapides pour le basculement.
 * *Sauvegarde et restauration d'applications* : lors de la sauvegarde d'applications, Astra Control crée un instantané des données d'application et le stocke dans un compartiment de stockage objet. Lorsqu'une restauration est nécessaire, les données du compartiment doivent être copiées sur un volume persistant du cluster ONTAP. Pour réaliser l'opération de sauvegarde et de restauration, le cluster Kubernetes/ONTAP secondaire ne doit pas être disponible et géré, mais la copie de données supplémentaire peut générer des délais de restauration plus longs.
 
 
-Pour savoir comment répliquer des applications, voir link:../use/replicate_snapmirror.html["Répliquez vos applications sur un système distant grâce à la technologie SnapMirror"].
+Pour savoir comment répliquer des applications, reportez-vous à la section link:../use/replicate_snapmirror.html["Répliquez vos applications sur un système distant grâce à la technologie SnapMirror"].
 
 Les images suivantes présentent le processus de sauvegarde et de restauration planifié par rapport au processus de réplication.
 
@@ -62,7 +62,7 @@ Le processus de sauvegarde copie les données dans des compartiments S3 et les r
 
 image:acc-backup_4in.png["Cette image montre une sauvegarde et une restauration planifiées entre deux clusters Kubernetes qui utilisent un compartiment S3"]
 
-Par contre, la réplication est effectuée par réplication vers ONTAP, puis un basculement crée les ressources Kubernetes :
+Par contre, la réplication s'effectue via la réplication vers ONTAP, puis un basculement crée les ressources Kubernetes :
 
 image:acc-replication_4in.png["Cette image illustre la réplication et le basculement entre deux clusters Kubernetes et deux clusters ONTAP"]
 

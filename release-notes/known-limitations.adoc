@@ -26,6 +26,7 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 
 .Limites de gestion des applications
 * <<De même, vous ne pouvez pas restaurer collectivement plusieurs applications dans un autre espace de noms>>
+* <<ASTRA Control ne prend pas en charge les applications qui utilisent plusieurs classes de stockage par espace de noms>>
 * <<Astra Control n'attribue pas automatiquement de compartiments par défaut pour les instances de cloud>>
 * <<Les clones des applications installées à l'aide d'opérateurs pass-by-Reference peuvent échouer>>
 * <<Les opérations de restauration sur place des applications qui utilisent un gestionnaire de certificats ne sont pas prises en charge>>
@@ -111,6 +112,12 @@ Si vous gérez plusieurs applications dans un seul espace de noms (en créant pl
 
 
 
+== ASTRA Control ne prend pas en charge les applications qui utilisent plusieurs classes de stockage par espace de noms
+
+ASTRA Control prend en charge les applications qui utilisent une seule classe de stockage par espace de nom. Lorsque vous ajoutez une application à un espace de noms, assurez-vous que cette application possède la même classe de stockage que les autres applications de l'espace de noms.
+
+
+
 == Astra Control n'attribue pas automatiquement de compartiments par défaut pour les instances de cloud
 
 Astra Control n'attribue pas automatiquement de compartiment par défaut à une instance de cloud. Vous devez définir manuellement un compartiment par défaut pour une instance de cloud. Si un compartiment par défaut n'est pas défini, vous ne pourrez pas effectuer les opérations de clonage d'applications entre les deux clusters.
@@ -151,7 +158,7 @@ Astra Control Center ne prend pas en charge les activités de gestion d'applicat
 
 == Les applications déployées avec Helm 2 ne sont pas prises en charge
 
-Si vous utilisez Helm pour déployer des applications, Astra Control Center requiert Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Pour plus d'informations, voir link:../get-started/requirements.html["Exigences du centre de contrôle Astra"].
+Si vous utilisez Helm pour déployer des applications, Astra Control Center requiert Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Pour plus d'informations, reportez-vous à la section link:../get-started/requirements.html["Exigences du centre de contrôle Astra"].
 
 
 

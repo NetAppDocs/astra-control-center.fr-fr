@@ -301,7 +301,7 @@ Le centre de contrôle Astra utilise un service de type « équilibreur de charg
 
 +
 
-NOTE: Pour plus de détails sur le type de service « LoadBalancer » et l'entrée, voir link:../get-started/requirements.html["De formation"^].
+NOTE: Pour plus de détails sur le type de service « LoadBalancer » et Ingress, reportez-vous à la section link:../get-started/requirements.html["De formation"^].
 
 
 
