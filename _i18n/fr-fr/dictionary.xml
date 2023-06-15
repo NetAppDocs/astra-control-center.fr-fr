@@ -1107,8 +1107,6 @@
   <block id="721ed1f27b3163d26010e9d99872bd47" category="summary">Une fois que vous avez ajouté des clusters Kubernetes à Astra Control, vous pouvez installer des applications sur ce cluster (en dehors d'Astra Control), puis accéder à la page applications d'Astra Control pour commencer à gérer les applications.</block>
   <block id="1cf97dd1e6f6c8888d8fa6dcede7fac9" category="inline-link-macro">Ajoutez un cluster à la gestion Astra Control</block>
   <block id="b8f3bc1c4097cf013ff9bb82ec30af2e" category="section-title">Méthodes d'installation d'applications prises en charge</block>
-  <block id="a117e5ae155bb69285242a4c89875dd6" category="list-text">*Helm 3* : si vous utilisez Helm pour installer des applications, Astra Control nécessite Helm version 3. La gestion et le clonage des applications installées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. La gestion des applications installées avec Helm 2 n'est pas prise en charge.</block>
-  <block id="456907dc64f076d8c8ed113ea6a4ac8f" category="list-text">*Applications déployées par l'opérateur* : Astra Control prend en charge les applications installées avec des opérateurs situés à l'étendue de l'espace de noms qui sont, en général, conçus avec une architecture « valeur par passe » plutôt que « par référence ». Un opérateur et l'application qu'il installe doivent utiliser le même espace de noms ; vous devrez peut-être modifier le fichier .yaml de déploiement pour que l'opérateur s'assure que c'est le cas.</block>
   <block id="be4629edbb6c58ee13cd278ee7ec5a4f" category="paragraph">Voici quelques applications opérateur qui suivent ces modèles :</block>
   <block id="262c2c7b16c416e39567678b2dfa52c1" category="section-title">Installez les applications sur votre cluster</block>
   <block id="8cff84c3972d27d6ae049edd6c88a417" category="inline-link-macro">a ajouté votre cluster</block>
@@ -2134,7 +2132,6 @@
   <block id="9ad3989601b59e755170866a5329554c" category="list-text"><block ref="9ad3989601b59e755170866a5329554c" category="inline-link-rx"></block></block>
   <block id="53c5fac0ba78b08ca3f0a270b746c5d2" category="section-title">Réinitialiser le mot de passe d'un autre utilisateur</block>
   <block id="f83cc958d14f90620b7ffdf9923fe440" category="list-text">Copiez la clé *lecture/écriture*. Vous devrez le coller dans la fenêtre Centre de contrôle Astra *connexion Cloud Insights*. Pour les autorisations de clé de token d'accès à l'API Read/Write, sélectionnez : data ingestion, gestion des journaux, unité d'acquisition et collecte de données.</block>
-  <block id="a8a5da0c5d62ec5f7225e0ce27261da7" category="paragraph">Assurez-vous que votre environnement répond à ces exigences.</block>
   <block id="b5233b1e8c04e10566734b9cecfc92b1" category="paragraph">*Cluster Kubernetes*</block>
   <block id="9075e632fc6c099653c3c60ce5f635c5" category="inline-link-macro">Configuration de la détection d'entrée pour l'équilibrage de la charge sur les clusters Kubernetes sur site</block>
   <block id="737d5c48f1830eb81614b8f6e0e6b6cc" category="list-text"><block ref="737d5c48f1830eb81614b8f6e0e6b6cc" category="inline-link-macro-rx"></block></block>
@@ -2147,13 +2144,11 @@
   <block id="ae0a6f81e3ab19bb5bb4cc16ba804b6d" category="paragraph">*Informations d'identification ONTAP*</block>
   <block id="cff9e873ecc35abb358c9f43ad1d3dcf" category="inline-link-macro">Configurez les identifiants ONTAP</block>
   <block id="27912e4366edb4ee86aa373395b590f5" category="list-text"><block ref="27912e4366edb4ee86aa373395b590f5" category="inline-link-macro-rx"></block></block>
-  <block id="7ae94f3e29fb1789e466d68ff3b7719d" category="paragraph">Effectuez ces tâches d'installation.</block>
   <block id="fbc059a4c4dca73352b8c2d2b522c031" category="inline-link-macro">Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence</block>
   <block id="d3e8fd495d55bcc11d404a5401147b55" category="list-text"><block ref="d3e8fd495d55bcc11d404a5401147b55" category="inline-link-macro-rx"></block></block>
   <block id="28d87c90870047c51935e011ce5611a2" category="list-text"><block ref="28d87c90870047c51935e011ce5611a2" category="inline-link-macro-rx"></block></block>
   <block id="50fd68f173baa5875cfb4c4f956ed966" category="inline-link-macro">Effectuez d'autres étapes de configuration facultatives</block>
   <block id="8a2d0b5d3ae0c64a9bbd6f907fdd49a9" category="list-text"><block ref="8a2d0b5d3ae0c64a9bbd6f907fdd49a9" category="inline-link-macro-rx"></block></block>
-  <block id="fc902c0e2ec2761be704bc86d6da6195" category="paragraph">Réalisez certaines tâches de base pour démarrer.</block>
   <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="inline-link-macro">Ajouter une licence</block>
   <block id="9cd5bd1af078069458de7df94bbb3c5a" category="list-text"><block ref="9cd5bd1af078069458de7df94bbb3c5a" category="inline-link-macro-rx"></block></block>
   <block id="e615e4db7ab4de24645d9fa039b73e02" category="inline-link-macro">Préparez votre environnement à la gestion du cluster</block>
@@ -2162,10 +2157,7 @@
   <block id="3020dd08728680c8a3e10602b33cd923" category="list-text"><block ref="3020dd08728680c8a3e10602b33cd923" category="inline-link-macro-rx"></block></block>
   <block id="8316c4ee552ed64f43cc8c5453b6dc90" category="list-text"><block ref="8316c4ee552ed64f43cc8c5453b6dc90" category="inline-link-macro-rx"></block></block>
   <block id="9e263ce7e6d16d802d4f5fdb961973cb" category="list-text"><block ref="9e263ce7e6d16d802d4f5fdb961973cb" category="inline-link-macro-rx"></block></block>
-  <block id="a06e11c328de2e8797a5126bacc41f4a" category="paragraph">Après avoir terminé la configuration du centre de contrôle Astra, voici ce que vous pourriez faire ensuite. Vous pouvez utiliser l'interface utilisateur Astra Control (UI) ou le<block ref="c076c843349c85837d82b7f2e26fe2bf" category="inline-link-rx"></block>.</block>
-  <block id="6fe79d58f8a8b720433194a3efe0f398" category="list-text"><block ref="6fe79d58f8a8b720433194a3efe0f398" category="inline-link-macro-rx"></block></block>
   <block id="ea0df431e9a218f5a0629b3821a462af" category="list-text"><block ref="a31feca3886e9400a923ff8b2642373f" category="inline-link-macro-rx"></block>: Configurer des stratégies de protection et répliquer, cloner et migrer des applications.</block>
-  <block id="a17247e8a3b531331724f69e1e71949a" category="list-text"><block ref="442a8ba322bd53d625de068878060461" category="inline-link-macro-rx"></block>: Utilisateurs, rôles, LDAP, informations d'identification, etc</block>
   <block id="d9379e355ade43c04f76c0b075ef6732" category="inline-link-macro">Vous pouvez également vous connecter à Cloud Insights</block>
   <block id="cd0049b5789664729fdfe7d5fc0b4f40" category="list-text"><block ref="bf4c77b3020a0bd5cc9fb63a5d3fb351" category="inline-link-macro-rx"></block>: Permet d'afficher des mesures sur l'état de santé de votre système.</block>
   <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
@@ -2566,7 +2558,6 @@
   <block id="3881c3bffcc8a7541f238ffd9bd110e8" category="list-text"><block ref="3881c3bffcc8a7541f238ffd9bd110e8" category="inline-link-macro-rx"></block></block>
   <block id="f79c72229ccb3aeca03756bbe7324c9e" category="inline-link">Téléchargez Astra Control Center à partir de la page de téléchargements du site de support NetApp</block>
   <block id="15dc068a0743eecccf27c4a805c80f21" category="list-text"><block ref="15dc068a0743eecccf27c4a805c80f21" category="inline-link-rx"></block></block>
-  <block id="b73cdf72d6d55064ddff88092ae6133b" category="list-text">Si vous évaluez Astra Control Center, une licence d'évaluation intégrée est déjà incluse.</block>
   <block id="b076c1f761d0b92929621e81c3c931c3" category="summary">Une fois Astra Control Center installé, connectez-vous à l'interface utilisateur et modifiez votre mot de passe, vous pouvez configurer une licence, ajouter des clusters, activer l'authentification, gérer le stockage et ajouter des compartiments.</block>
   <block id="9dff1d917a2ab55f9b011693f3edb2e6" category="list-text"><block ref="57bfe64ccef32c62c91778f81d22de6e" category="inline-xref-macro-rx"></block></block>
   <block id="9b9a4bad5c62667ce507fae6527af6a1" category="paragraph">Lorsque vous installez Astra Control Center, une licence d'évaluation intégrée est déjà installée. Si vous évaluez Astra Control Center, vous pouvez ignorer cette étape.</block>
@@ -2924,4 +2915,13 @@ REMARQUE : pour plus de détails sur le type de service « LoadBalancer » et In
   <block id="ef13295b074595a0d0b8611526c15d76" category="list-text">Si le type d'instance ne correspond pas déjà aux exigences de ressources minimales Astra pour les nœuds maîtres et workers, modifiez le type d'instance dans Azure afin qu'il réponde aux exigences de l'Astra.  Reportez-vous à la section <block ref="09f78935ac7c88e2178fe1d6a911634a" category="inline-link-macro-rx"></block>.</block>
   <block id="e8322268b8f0ad7381af9899d339e2ff" category="paragraph">Avec Astra Control Center, ajoutez un compartiment Azure. Reportez-vous à la section <block ref="89e4f3ed5a430daa461d5b5082fe9398" category="inline-link-macro-rx"></block>.</block>
   <block id="94c24f2fdb5fcc8ac662287d8f22040b" category="admonition">Pour plus de détails sur le type de service « LoadBalancer » et Ingress, reportez-vous à la section <block ref="f326683052260ae8ea69adae62a4336c" category="inline-link-macro-rx"></block>.</block>
+  <block id="d029da9201b0669cba4f3b93daf90afe" category="list-text">*Helm 3* : si vous utilisez Helm pour installer des applications, Astra Control nécessite Helm version 3. La gestion et le clonage des applications installées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. La gestion des applications installées avec Helm 2 n'est pas prise en charge.</block>
+  <block id="fda2313c80662faccdf8a7b0c8a9d3a5" category="list-text">*Applications déployées par l'opérateur* : Astra Control prend en charge les applications installées avec des opérateurs avec espace de noms qui sont, en général, conçues avec une architecture « pass-by-value » plutôt que « pass-by-Reference ». Un opérateur et l'application qu'il installe doivent utiliser le même espace de noms ; vous devrez peut-être modifier le fichier YAML de déploiement pour que l'opérateur s'assure que c'est le cas.</block>
+  <block id="ebe354daa850c07255922b36c38442da" category="paragraph">Assurez-vous que votre environnement répond aux exigences suivantes :</block>
+  <block id="48b5d328b123f4e05f5a4f65f897189d" category="paragraph">Effectuez les tâches d'installation suivantes :</block>
+  <block id="838fcb8e71dcfbd66a61fc27b2cfb4cc" category="list-text">Si vous évaluez Astra Control Center, une licence d'évaluation intégrée est déjà incluse</block>
+  <block id="2c6dff9a92bbcef6a5083cd35891c541" category="paragraph">Effectuez quelques tâches de base pour commencer :</block>
+  <block id="0c39f9a137a0a9c47a6f520e25815ae4" category="paragraph">Une fois la configuration d'Astra Control Center terminée, utilisez l'interface utilisateur d'Astra Control ou le<block ref="c076c843349c85837d82b7f2e26fe2bf" category="inline-link-rx"></block> pour commencer à gérer et à protéger les applications :</block>
+  <block id="a104969737461afdb4fd0f2b1121cbf5" category="list-text"><block ref="6fe79d58f8a8b720433194a3efe0f398" category="inline-link-macro-rx"></block>: Définissez les ressources à gérer.</block>
+  <block id="caffc5ba1163dd0a5508fd1eae34a69c" category="list-text"><block ref="442a8ba322bd53d625de068878060461" category="inline-link-macro-rx"></block>: Utilisateurs, rôles, LDAP, informations d'identification, etc.</block>
 </blocks>
