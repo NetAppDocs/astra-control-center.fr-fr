@@ -12,10 +12,7 @@ summary: 'Astra permet de restaurer la configuration de vos applications et le s
 
 
 [role="lead"]
-Astra Control peut restaurer votre application à partir d'un snapshot ou d'une sauvegarde. La restauration d'un snapshot existant est plus rapide lors de la restauration d'une application sur le même cluster. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^] pour restaurer des applications.
-
-
-NOTE: Si vous ajoutez un filtre d'espace de noms à un crochet d'exécution qui s'exécute après une opération de restauration ou de clonage et que la source et la destination de restauration ou de clonage sont dans des espaces de noms différents, le filtre d'espace de noms est appliqué uniquement à l'espace de noms de destination.
+Astra Control peut restaurer votre application à partir d'un snapshot ou d'une sauvegarde. La restauration d'un snapshot existant est plus rapide lors de la restauration d'une application sur le même cluster. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation["API de contrôle Astra"^] pour restaurer des applications.
 
 .Description de la tâche
 * *Protéger vos applications en premier* : il est fortement recommandé de prendre un instantané ou une sauvegarde de votre application avant de la restaurer. Cela vous permettra de cloner à partir du snapshot ou de la sauvegarde en cas d'échec de la restauration.
@@ -115,7 +112,7 @@ IMPORTANT: Tout utilisateur membre aux contraintes de namespace par nom/ID d'esp
 
 Vous pouvez ajouter une règle de filtre à un link:../use/restore-apps.html["restaurer"] opération qui spécifie les ressources d'application existantes à inclure ou à exclure de l'application restaurée. Vous pouvez inclure ou exclure des ressources en fonction d'un espace de noms, d'un libellé ou d'un GVK (GroupVersionKind) spécifié.
 
-.En savoir plus sur les scénarios d'inclusion et d'exclusion
+.Développez pour plus d'informations sur les scénarios d'inclusion et d'exclusion
 [%collapsible]
 ====
 * *Vous sélectionnez une règle d'inclusion avec des espaces de noms d'origine (restauration sur place)* : les ressources d'application existantes que vous définissez dans la règle seront supprimées et remplacées par celles de l'instantané ou de la sauvegarde sélectionné que vous utilisez pour la restauration. Toutes les ressources que vous ne spécifiez pas dans la règle inclure resteront inchangées.

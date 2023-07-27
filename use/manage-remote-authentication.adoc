@@ -17,7 +17,7 @@ LDAP est un protocole standard de l'industrie pour l'accès aux informations d'a
 À un niveau élevé, la configuration implique l'intégration d'Astra avec LDAP et la définition des utilisateurs et des groupes Astra Control correspondant aux définitions LDAP. Vous pouvez utiliser l'API de contrôle Astra ou l'interface utilisateur Web pour configurer l'authentification LDAP et les utilisateurs et groupes LDAP.
 
 
-IMPORTANT: Astra Control Center utilise l'adresse e-mail de l'attribut LDAP "mail" pour rechercher et garder le suivi des utilisateurs distants. Cet attribut peut être un champ facultatif ou vide dans votre répertoire. Une adresse électronique doit exister dans ce champ pour tous les utilisateurs distants que vous souhaitez afficher dans Astra Control Center. Cette adresse e-mail est utilisée comme nom d'utilisateur dans Astra Control Center pour l'authentification.
+IMPORTANT: ASTRA Control Center utilise l'attribut de connexion utilisateur, configuré lorsque l'authentification à distance est activée, pour rechercher et garder le suivi des utilisateurs distants. Un attribut d'adresse e-mail (« mail ») ou de nom principal d'utilisateur (« userPrincipalName ») doit exister dans ce champ pour tout utilisateur distant que vous souhaitez voir apparaître dans Astra Control Center. Cet attribut est utilisé comme nom d'utilisateur dans Astra Control Center pour l'authentification et pour les recherches d'utilisateurs distants.
 
 
 
@@ -53,7 +53,12 @@ Si vous prévoyez d'utiliser LDAPS, assurez-vous que le certificat TLS privé po
 NOTE: Il est recommandé d'utiliser LDAPS lors de la connexion au serveur LDAP. Vous devez installer le certificat TLS privé du serveur LDAP dans Astra Control Center avant de vous connecter avec LDAPS.
 
 . Saisissez les informations d'identification du compte de service au format e-mail (administrator@example.com). Astra Control utilisera ces informations d'identification lors de la connexion au serveur LDAP.
-. Dans la section *User Match*, entrez le nom unique de base et un filtre de recherche d'utilisateur approprié à utiliser lors de la récupération des informations utilisateur à partir du serveur LDAP.
+. Dans la section *correspondance utilisateur*, procédez comme suit :
++
+.. Entrez le DN de base et un filtre de recherche d'utilisateur approprié à utiliser lors de la récupération des informations utilisateur à partir du serveur LDAP.
+.. (Facultatif) si votre répertoire utilise l'attribut de connexion utilisateur `userPrincipalName` au lieu de `mail`, entrez `userPrincipalName` Dans le champ *User login attribute* de l'attribut correct.
+
+
 . Dans la section *correspondance de groupe*, entrez le nom unique de base de recherche de groupe et un filtre de recherche de groupe personnalisé approprié.
 +
 
@@ -106,7 +111,7 @@ NOTE: Vous ne pouvez pas modifier l'adresse IP ou l'URL du serveur LDAP lorsque 
 Vous pouvez vous déconnecter d'un serveur LDAP et supprimer les paramètres de configuration d'Astra Control.
 
 
-CAUTION: Lorsque vous vous déconnectez du serveur LDAP, tous les paramètres de configuration de ce serveur LDAP sont supprimés d'Astra Control, ainsi que tous les utilisateurs et groupes distants ajoutés à partir de ce serveur LDAP.
+CAUTION: Si vous êtes un utilisateur LDAP et que vous vous déconnectez, votre session prend fin immédiatement Lorsque vous vous déconnectez du serveur LDAP, tous les paramètres de configuration de ce serveur LDAP sont supprimés d'Astra Control, ainsi que tous les utilisateurs et groupes distants ajoutés à partir de ce serveur LDAP.
 
 .Étapes
 . Accédez à *compte > connexions*.

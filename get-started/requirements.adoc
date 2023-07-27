@@ -40,25 +40,22 @@ NOTE: Assurez-vous que l'environnement Kubernetes que vous choisissez d'héberge
 | Distribution Kubernetes sur le cluster hôte | Versions prises en charge 
 
 
-| Azure Kubernetes Service sur Azure Stack HCI | Pile Azure HCI 21H2 et 22H2 avec AKS 1.23 et 1.24 
+| Azure Kubernetes Service sur Azure Stack HCI | Pile Azure HCI 21H2 et 22H2 avec AKS 1.24.x et 1.25.x 
 
 
-| Anthos de Google | 1.12 à 1.14 (voir <<Exigences d'entrée de Google Anthos>>) 
+| Anthos de Google | 1.14 à 1.16 (voir <<Exigences d'entrée de Google Anthos>>) 
 
 
-| Kubernetes (en amont) | 1.24 à 1.26 (Astra Trident 22.10 ou version ultérieure requise pour Kubernetes 1.25 ou version ultérieure) 
+| Kubernetes (en amont) | 1.25 à 1.27 (Astra Trident 22.10 ou version ultérieure requise pour Kubernetes 1.25 ou version ultérieure) 
 
 
-| Rancher Kubernetes Engine (RKE) | RKE 1.3 avec Rancher 2.6 RKE 1.4 avec Rancher 2.7 RKE 2 (v1.23.x) avec Rancher 2.6 RKE 2 (v1.24.x) avec Rancher 2.7 
+| Rancher Kubernetes Engine (RKE) | RKE 1.3 avec Rancher Manager 2.6
+RKE 1.4 avec Rancher Manager 2.7
+RKE 2 (v1.24.x) avec Rancher 2.6
+RKE 2 (v1.25.x) avec Rancher 2.7 
 
 
-| Plateforme de conteneurs Red Hat OpenShift | 4.10 à 4.12 
-
-
-| VMware Tanzu Kubernetes Grid | 1.6 (voir <<Ressources requises pour le cluster hôte>>) 
-
-
-| VMware Tanzu Kubernetes Grid Integrated Edition | 1.14 et 1.15 (voir <<Ressources requises pour le cluster hôte>>) 
+| Plateforme de conteneurs Red Hat OpenShift | 4.11 à 4.13 
 |===
 
 
@@ -71,14 +68,6 @@ NOTE: De telles exigences supposent que Astra Control Center est la seule applic
 
 * *Extensions CPU* : les CPU de tous les noeuds de l'environnement d'hébergement doivent avoir des extensions AVX activées.
 * *Nœuds de travail* : au moins 3 nœuds de travail au total, avec 4 cœurs de processeur et 12 Go de RAM chacun
-* *Configuration requise pour le cluster VMware Tanzu Kubernetes Grid* : lors de l'hébergement d'Astra Control Center sur un cluster VMware Tanzu Kubernetes Grid (TKG) ou Tanzu Kubernetes Grid Integrated Edition (TKGi), tenez compte des points suivants.
-+
-** Le token de fichier de configuration VMware TKG et TKGi par défaut expire dix heures après le déploiement. Si vous utilisez des produits de la gamme Tanzu, vous devez générer un fichier de configuration de cluster Kubernetes Tanzu avec un jeton non expirant pour éviter les problèmes de connexion entre Astra Control Center et les clusters d'applications gérés. Pour obtenir des instructions, rendez-vous sur https://docs.vmware.com/en/VMware-NSX-T-Data-Center/3.2/nsx-application-platform/GUID-52A52C0B-9575-43B6-ADE2-E8640E22C29F.html["Documentation produit relative au data Center VMware NSX-T"^]
-** Utilisez le `kubectl get nsxlbmonitors -A` commande pour voir si un moniteur de service est déjà configuré pour accepter le trafic d'entrée. S'il en existe un, vous ne devez pas installer MetalLB, car le moniteur de service existant remplacera toute nouvelle configuration d'équilibreur de charge.
-** Désactivez la mise en œuvre par défaut des classes de stockage TKG ou TKGi sur les clusters d'applications devant être gérés par Astra Control. Vous pouvez le faire en modifiant le `TanzuKubernetesCluster` ressource sur le cluster d'espace de noms.
-** Tenez compte des exigences spécifiques de l'Astra Trident lorsque vous déployez le centre de contrôle Astra dans un environnement TKG ou TKGi. Pour plus d'informations, reportez-vous à la section https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#other-known-configuration-options["Documentation Astra Trident"^].
-
-
 
 
 
@@ -87,8 +76,8 @@ NOTE: De telles exigences supposent que Astra Control Center est la seule applic
 
 Assurez-vous de répondre aux exigences Astra Trident suivantes, spécifiques aux besoins de votre environnement :
 
-* *Version minimale pour une utilisation avec Astra Control Center* : Astra Trident 22.04 ou version ultérieure installée et configurée.
-* *Réplication SnapMirror* : Astra Trident 22.07 ou version ultérieure installée pour la réplication d'applications basée sur SnapMirror.
+* *Version minimale pour une utilisation avec Astra Control Center* : Astra Trident 22.10 ou version ultérieure installée et configurée.
+* *Réplication SnapMirror* : Astra Trident 22.10 ou version ultérieure installée pour la réplication d'applications basée sur SnapMirror.
 * *Pour la prise en charge de Kubernetes 1.25 ou version ultérieure* : Astra Trident 22.10 ou version ultérieure installée pour les clusters Kubernetes 1.25 ou version ultérieure (vous devez effectuer une mise à niveau vers Astra Trident 22.10 avant de procéder à la mise à niveau vers Kubernetes 1.25 ou version ultérieure)
 * *Configuration ONTAP avec Astra Trident* :
 +
@@ -111,14 +100,24 @@ Assurez-vous de répondre aux exigences Astra Trident suivantes, spécifiques au
 
 Assurez-vous que vous disposez d'un back-end pris en charge avec une capacité suffisante.
 
+* *Capacité de stockage requise* : au moins 500 Go disponibles
 * *Systèmes back-end pris en charge* : Astra Control Center prend en charge les systèmes back-end de stockage suivants :
 +
 ** NetApp ONTAP 9.8 ou version ultérieure des systèmes AFF, FAS et ASA
 ** NetApp ONTAP Select 9.8 ou version ultérieure
 ** NetApp Cloud Volumes ONTAP 9.8 ou version ultérieure
+** Longhorn 1.5.0 ou version ultérieure
++
+*** Nécessite la création manuelle d'un objet VolumeSnapshotClass. Reportez-vous à la https://longhorn.io/docs/1.5.0/snapshots-and-backups/csi-snapshot-support/csi-volume-snapshot-associated-with-longhorn-snapshot/#create-a-csi-volumesnapshot-associated-with-longhorn-snapshot["Documentation Longhorn"^] pour obtenir des instructions.
 
 
-* *Capacité de stockage requise* : au moins 500 Go disponibles
+** NetApp MetroCluster
++
+*** Les clusters Kubernetes gérés doivent se trouver dans une configuration étendue.
+
+
+
+
 
 
 
@@ -133,6 +132,19 @@ Pour utiliser Astra Control Center, vérifiez que vous disposez des licences ONT
 
 
 Pour vérifier si votre système ONTAP dispose des licences requises, reportez-vous à la section https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Gérer les licences ONTAP"^].
+
+
+
+=== NetApp MetroCluster
+
+Lorsque vous utilisez NetApp MetroCluster en tant que système back-end de stockage, vous devez spécifier une LIF de gestion de SVM en tant qu'option back-end dans le pilote Astra Trident que vous utilisez.
+
+Pour configurer le LIF MetroCluster, consultez la documentation d'Astra Trident pour plus d'informations sur chaque pilote :
+
+* https://docs.netapp.com/us-en/trident/trident-use/ontap-san-examples.html["SAN"^]
+* https://docs.netapp.com/us-en/trident/trident-use/ontap-nas-examples.html["NAS"^]
+* https://docs.netapp.com/us-en/trident/trident-use/trident-fsx-examples.html["FSX"^]
+
 
 
 

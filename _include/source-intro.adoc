@@ -157,7 +157,7 @@ Vous pouvez ajouter des applications à votre cluster. Si certaines applications
 * https://docs.netapp.com/us-en/astra/index.html["Documentation relative au service après-vente Astra Control"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentation Astra Control Center"^]
 * https://docs.netapp.com/us-en/trident/index.html["Documentation Astra Trident"^]
-* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]
 * https://docs.netapp.com/us-en/cloudinsights/["Documentation Cloud Insights"^]
 * https://docs.netapp.com/us-en/ontap/index.html["Documentation ONTAP"^]
 

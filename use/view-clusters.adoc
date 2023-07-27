@@ -25,7 +25,7 @@ Vous pouvez afficher des informations détaillées sur le cluster, telles que so
 . Sur la page *clusters*, sélectionnez le cluster dont vous souhaitez afficher les détails.
 +
 
-NOTE: Si un cluster se trouve dans le `removed` État et pourtant, la connectivité cluster et réseau semble saine (les tentatives externes d'accès au cluster via les API Kubernetes sont réussies). Le kubeconfig que vous avez fourni au contrôle Astra pourrait ne plus être valide. Cela peut être dû à une rotation ou à une expiration du certificat sur le cluster. Pour corriger ce problème, mettez à jour les informations d'identification associées au cluster dans Astra Control à l'aide du link:https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"].
+NOTE: Si un cluster se trouve dans le `removed` État et pourtant, la connectivité cluster et réseau semble saine (les tentatives externes d'accès au cluster via les API Kubernetes sont réussies). Le kubeconfig que vous avez fourni au contrôle Astra pourrait ne plus être valide. Cela peut être dû à une rotation ou à une expiration du certificat sur le cluster. Pour corriger ce problème, mettez à jour les informations d'identification associées au cluster dans Astra Control à l'aide du https://docs.netapp.com/us-en/astra-automation["API de contrôle Astra"].
 
 . Consultez les informations sur les onglets *Présentation*, *stockage* et *activité* pour trouver les informations que vous recherchez.
 +

@@ -164,5 +164,5 @@ Vous pouvez supprimer un système back-end de stockage qui n'est plus utilisé. 
 
 == Trouvez plus d'informations
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]
 

@@ -22,7 +22,7 @@ Vous pouvez utiliser les informations et exemples inclus ici pour comprendre les
 
 == PSA appliquée par Astra Control Center
 
-Pendant l'installation, Astra Control Center permet d'appliquer une entrée de sécurité de pod en ajoutant l'étiquette suivante au `netapp-acc` ou un espace de noms personnalisé :
+ASTRA Control Center permet de mettre en application une admission à la sécurité du pod en ajoutant l'étiquette suivante au namespace où Astra est installée (espace de noms NetApp-acc ou personnalisé) et aux espaces de noms créés pour les sauvegardes.
 
 [listing]
 ----

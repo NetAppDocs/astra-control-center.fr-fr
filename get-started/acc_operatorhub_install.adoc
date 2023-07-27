@@ -63,22 +63,23 @@ oc create namespace netapp-acc-operator
 
 == Téléchargez et extrayez Astra Control Center
 
-. Accédez au https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Page de téléchargements d'Astra Control Center"^] Sur le site de support NetApp.
-. Téléchargez le pack contenant Astra Control Center (`astra-control-center-[version].tar.gz`).
-. (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet :
+. Téléchargez le pack contenant Astra Control Center (`astra-control-center-[version].tar.gz`) du https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Page de téléchargements d'Astra Control Center"^].
+. (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet.
 +
+.Développez pour plus d'informations
+[%collapsible]
+====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
 ----
-+
 [source, console]
 ----
 openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
-+
 La sortie s'affiche `Verified OK` une fois la vérification terminée.
 
+====
 . Extraire les images du pack Astra Control Center :
 +
 [source, console]
@@ -171,7 +172,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.2-7
+export PACKAGEVERSION=23.07.0-24
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -190,7 +191,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.2-7
+export PACKAGEVERSION=23.07.0-24
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -206,7 +207,7 @@ NOTE: Le chemin d'accès à l'image que le script crée doit ressembler aux él�
 +
 [listing]
 ----
-https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.2-7/image:version
+https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.07.0-24/image:version
 ----
 
 
@@ -222,6 +223,10 @@ https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.0
 +
 ... Connectez-vous à l'interface utilisateur de OpenShift Container Platform.
 ... Dans le menu latéral, sélectionnez *Operators > OperatorHub*.
++
+
+NOTE: Vous ne pouvez effectuer la mise à niveau que vers la version actuelle d'Astra Control Center à l'aide de cet opérateur.
+
 ... Recherchez et sélectionnez l'opérateur NetApp Astra Control Center.
 
 
@@ -278,7 +283,7 @@ NOTE: Si vous avez sélectionné une stratégie d'approbation manuelle, vous ser
 .. Ajouter des étiquettes pour le centre de contrôle Astra.
 .. Activez ou désactivez Auto support. Il est recommandé de conserver la fonctionnalité Auto support.
 .. Saisissez le nom de domaine complet ou l'adresse IP d'Astra Control Center. N'entrez pas `http://` ou `https://` dans le champ d'adresse.
-.. Entrez la version d'Astra Control Center, par exemple 23.04.2-7.
+.. Entrez la version d'Astra Control Center, par exemple 23.07.0-24.
 .. Entrez un nom de compte, une adresse e-mail et un nom d'administrateur.
 .. Choisir une règle de récupération de volume de `Retain`, `Recycle`, ou `Delete`. La valeur par défaut est `Retain`.
 .. Sélectionnez la taille de l'échelle de l'installation.

@@ -91,7 +91,7 @@ Non Astra Control peut découvrir des applications qui utilisent un stockage aut
 
 *Devrais-je gérer Astra Control lui-même?*
 
-Non, vous ne devez pas gérer Astra Control lui-même, car il s'agit d'une « application système ».
+ASTRA Control Center n'est pas affiché par défaut en tant qu'application que vous pouvez gérer, mais vous pouvez sauvegarder et restaurer une instance Astra Control Center à l'aide d'une autre instance Astra Control Center.
 
 *Les pods défectueux affectent-ils la gestion des applications ?*
 

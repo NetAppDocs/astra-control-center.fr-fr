@@ -12,7 +12,7 @@ entries:
     url: "/use/protect-apps.html"
   - title: Restaurez les applications
     url: "/use/restore-apps.html"
-  - title: Réplication d'applications vers un système distant
+  - title: Réplication d'applications entre les systèmes back-end
     url: "/use/replicate_snapmirror.html"
   - title: Cloner et migrer les applications
     url: "/use/clone-apps.html"

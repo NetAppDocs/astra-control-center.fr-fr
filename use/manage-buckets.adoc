@@ -151,5 +151,5 @@ NOTE: Astra Control veille à l'absence de règles de planification qui utilise 
 
 == Trouvez plus d'informations
 
-* https://docs.netapp.com/us-en/astra-automation/index.html["Utilisez l'API de contrôle Astra"^]
+* https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]
 

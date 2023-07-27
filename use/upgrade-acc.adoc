@@ -15,44 +15,90 @@ summary: Pour mettre à niveau Astra Control Center, téléchargez le pack et me
 Pour mettre à niveau Astra Control Center, téléchargez le pack d'installation depuis le site de support NetApp et suivez ces instructions. Vous pouvez utiliser cette procédure pour mettre à niveau Astra Control Center dans des environnements connectés à Internet ou à air comprimé.
 
 .Avant de commencer
-* Avant de procéder à la mise à niveau, reportez-vous à la section link:../get-started/requirements.html["de l'environnement opérationnel"^] Pour garantir que votre environnement respecte les exigences minimales en matière de déploiement d'Astra Control Center. Votre environnement doit disposer des éléments suivants :
+Avant de procéder à la mise à niveau, assurez-vous que votre environnement respecte toujours le link:../get-started/requirements.html["Configuration minimale requise pour le déploiement d'Astra Control Center"^]. Votre environnement doit disposer des éléments suivants :
+
+* Version d'Astra Trident prise en charge
 +
-** Une version d'Astra Trident prise en charge pour déterminer la version que vous exécutez, exécutez la commande suivante contre votre Astra Control Center existant :
-+
-[listing]
+[%collapsible]
+====
+Déterminez la version de Trident que vous exécutez :
+
+[source, console]
 ----
 kubectl get tridentversion -n trident
 ----
-+
 Reportez-vous à la section https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html#determine-the-version-to-upgrade-to["Documentation Astra Trident"] pour effectuer une mise à niveau à partir d'une ancienne version.
 
-+
 
 WARNING: Vous devez effectuer une mise à niveau vers Astra Trident 22.10 * AVANT* pour la mise à niveau vers Kubernetes 1.25.
 
-** Une distribution Kubernetes prise en charge pour déterminer la version que vous exécutez, exécutez la commande suivante par rapport à votre Astra Control Center existant : `kubectl get nodes -o wide`
-** Suffisamment de ressources de cluster pour déterminer les ressources de cluster, exécutez la commande suivante dans votre cluster Astra Control Center existant : `kubectl describe node <node name>`
-** Registre que vous pouvez utiliser pour diffuser et télécharger des images Astra Control Center
-** Une classe de stockage par défaut pour déterminer votre classe de stockage par défaut, exécutez la commande suivante avec votre Astra Control Center existant : `kubectl get storageclass`
-
-
-* (OpenShift uniquement) Assurez-vous que tous les opérateurs de cluster sont en bon état et disponibles.
+====
+* Distribution Kubernetes prise en charge
 +
-[listing]
+[%collapsible]
+====
+Déterminez la version Kubernetes que vous exécutez :
+
+[source, console]
 ----
-kubectl get clusteroperators
+kubectl get nodes -o wide
 ----
-* Assurez-vous que tous les services API sont dans un état sain et disponibles.
+====
+* Ressources du cluster suffisantes
 +
-[listing]
+[%collapsible]
+====
+Déterminer les ressources disponibles du cluster :
+
+[source, console]
+----
+kubectl describe node <node name>
+----
+====
+* Registre que vous pouvez utiliser pour diffuser et télécharger des images Astra Control Center
+* Classe de stockage par défaut
++
+[%collapsible]
+====
+Déterminez votre classe de stockage par défaut :
+
+[source, console]
+----
+kubectl get storageclass
+----
+====
+* Services d'API sains et disponibles
++
+[%collapsible]
+====
+Assurez-vous que tous les services API sont en état de santé et disponibles :
+
+[source, console]
 ----
 kubectl get apiservices
 ----
-* Déconnectez-vous de l'interface utilisateur de l'Astra Control Center avant de commencer la mise à niveau.
+====
+* (OpenShift uniquement) opérateurs de cluster sains et disponibles
++
+[%collapsible]
+====
+S'assurer que tous les opérateurs du groupe d'instruments sont en état de fonctionnement et disponibles.
 
+[source, console]
+----
+kubectl get clusteroperators
+----
+====
+
+
+
+IMPORTANT: Dans le cadre de cette procédure, vous devrez le faire  Si vous mettez à niveau Astra Control Center. Vous ne pouvez pas effectuer la mise à niveau vers des versions antérieures d'Astra Control Center à l'aide de cet opérateur mis à jour.
 
 .Description de la tâche
 Le processus de mise à niveau d'Astra Control Center vous guide à travers les étapes de haut niveau suivantes :
+
+
+NOTE: Déconnectez-vous de l'interface utilisateur de l'Astra Control Center avant de commencer la mise à niveau.
 
 * <<Téléchargez et extrayez Astra Control Center>>
 * <<Retirez le plug-in NetApp Astra kubectl et réinstallez-le>>
@@ -73,21 +119,22 @@ TIP: Effectuez les mises à niveau dans une fenêtre de maintenance lorsque les 
 == Téléchargez et extrayez Astra Control Center
 
 . Accédez au https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Page de téléchargement des produits Astra Control Center"^] Sur le site de support NetApp. Vous pouvez sélectionner la dernière version ou une autre version souhaitée dans le menu déroulant.
-. Téléchargez le pack contenant Astra Control Center (`astra-control-center-[version].tar.gz`).
-. (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet :
+. (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet.
 +
+.Développez pour plus d'informations
+[%collapsible]
+====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
 ----
-+
 [source, console]
 ----
 openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature certs/astra-control-center-[version].tar.gz.sig astra-control-center-[version].tar.gz
 ----
-+
 La sortie s'affiche `Verified OK` une fois la vérification terminée.
 
+====
 . Extraire les images du pack Astra Control Center :
 +
 [source, console]
@@ -104,13 +151,13 @@ Vous pouvez utiliser le plug-in de ligne de commande NetApp Astra kubectl pour e
 
 . Déterminez si le plug-in est installé :
 +
-[listing]
+[source, console]
 ----
 kubectl astra
 ----
 . Faites l'une des actions suivantes :
 +
-** Si le plug-in est installé, la commande doit renvoyer l'aide du plug-in kubectl. Pour supprimer une version existante de kubectl-astra, exécutez la commande suivante : `delete /usr/local/bin/kubectl-astra`.
+** Si le plug-in est installé, la commande doit renvoyer l'aide du plug-in kubectl et vous pouvez supprimer la version existante de kubectl-astra : `delete /usr/local/bin/kubectl-astra`.
 ** Si la commande renvoie une erreur, le plug-in n'est pas installé et vous pouvez passer à l'étape suivante pour l'installer.
 
 
@@ -192,7 +239,7 @@ podman login <YOUR_REGISTRY>
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.2-7
+export PACKAGEVERSION=23.07.0-24
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -211,7 +258,7 @@ done
 ----
 export REGISTRY=<MY_FULL_REGISTRY_PATH>
 export PACKAGENAME=acc
-export PACKAGEVERSION=23.04.2-7
+export PACKAGEVERSION=23.07.0-24
 export DIRECTORYNAME=acc
 for astraImageFile in $(ls ${DIRECTORYNAME}/images/*.tar) ; do
 astraImage=$(podman load --input ${astraImageFile} | sed 's/Loaded image: //')
@@ -227,7 +274,7 @@ NOTE: Le chemin d'accès à l'image que le script crée doit ressembler aux él�
 +
 [listing]
 ----
-https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.04.2-7/image:version
+https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.07.0-24/image:version
 ----
 
 
@@ -239,33 +286,38 @@ https://netappdownloads.jfrog.io/docker-astra-control-prod/netapp/astra/acc/23.0
 
 . Modifier le répertoire :
 +
-[listing]
+[source, console]
 ----
 cd manifests
 ----
 . Modifiez le yaml de déploiement de l'opérateur Astra Control Center (`astra_control_center_operator_deploy.yaml`) pour faire référence à votre registre local et à votre secret.
 +
-[listing]
+[source, console]
 ----
 vim astra_control_center_operator_deploy.yaml
 ----
 +
 .. Si vous utilisez un registre qui nécessite une authentification, remplacez ou modifiez la ligne par défaut de `imagePullSecrets: []` avec les éléments suivants :
 +
-[listing]
+[source, console]
 ----
 imagePullSecrets: [{name: astra-registry-cred}]
 ----
-.. Changer `[your_registry_path]` pour le `kube-rbac-proxy` image dans le chemin du registre où vous avez poussé les images dans un <<Ajoutez les images à votre registre local,étape précédente>>.
-.. Changer `[your_registry_path]` pour le `acc-operator` image dans le chemin du registre où vous avez poussé les images dans un <<Ajoutez les images à votre registre local,étape précédente>>.
+.. Changer `ASTRA_IMAGE_REGISTRY` pour le `kube-rbac-proxy` image dans le chemin du registre où vous avez poussé les images dans un <<Ajoutez les images à votre registre local,étape précédente>>.
+.. Changer `ASTRA_IMAGE_REGISTRY` pour le `acc-operator` image dans le chemin du registre où vous avez poussé les images dans un <<Ajoutez les images à votre registre local,étape précédente>>.
 .. Ajoutez les valeurs suivantes à la `env` section :
 +
-[listing]
+[source, console]
 ----
 - name: ACCOP_HELM_UPGRADETIMEOUT
   value: 300m
 ----
+
+
 +
+.Exemple astra_control_Center_Operator_Deploy.yaml :
+[%collapsible]
+====
 [listing, subs="+quotes"]
 ----
 apiVersion: apps/v1
@@ -293,7 +345,7 @@ spec:
         - --upstream=http://127.0.0.1:8080/
         - --logtostderr=true
         - --v=10
-        *image: [your_registry_path]/kube-rbac-proxy:v4.8.0*
+        *image: ASTRA_IMAGE_REGISTRY/kube-rbac-proxy:v4.8.0*
         name: kube-rbac-proxy
         ports:
         - containerPort: 8443
@@ -307,7 +359,7 @@ spec:
           value: "2"
         *- name: ACCOP_HELM_UPGRADETIMEOUT*
           *value: 300m*
-        *image: [your_registry_path]/acc-operator:23.04.36*
+        *image: ASTRA_IMAGE_REGISTRY/acc-operator:23.07.24*
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -336,18 +388,17 @@ spec:
         runAsUser: 65532
       terminationGracePeriodSeconds: 10
 ----
-
-
+====
 . Installez le nouveau conducteur du centre de contrôle Astra :
 +
-[listing]
+[source, console]
 ----
 kubectl apply -f astra_control_center_operator_deploy.yaml
 ----
 +
-Exemple de réponse :
-
-+
+.Exemple de réponse :
+[%collapsible]
+====
 [listing]
 ----
 namespace/netapp-acc-operator unchanged
@@ -363,9 +414,10 @@ configmap/acc-operator-manager-config unchanged
 service/acc-operator-controller-manager-metrics-service unchanged
 deployment.apps/acc-operator-controller-manager configured
 ----
+====
 . Vérifiez que les pods sont en cours d'exécution :
 +
-[listing]
+[source, console]
 ----
 kubectl get pods -n netapp-acc-operator
 ----
@@ -377,7 +429,7 @@ kubectl get pods -n netapp-acc-operator
 
 . Modifiez la ressource personnalisée Astra Control Center (CR) :
 +
-[listing]
+[source, console]
 ----
 kubectl edit AstraControlCenter -n [netapp-acc or custom namespace]
 ----
@@ -398,14 +450,14 @@ spec:
 ----
 . Ajoutez les éléments suivants à votre `crds` configuration à l'intérieur de `spec`:
 +
-[listing]
+[source, console]
 ----
 crds:
   shouldUpgrade: true
 ----
 . Ajoutez les lignes suivantes dans `additionalValues` intérieur de `spec` Dans le CR Astra Control Center :
 +
-[listing]
+[source, console]
 ----
 additionalValues:
     nautilus:
@@ -416,13 +468,13 @@ additionalValues:
 . Enregistrez et quittez l'éditeur de fichiers. Les modifications seront appliquées et la mise à niveau commencera.
 . (Facultatif) Vérifiez que les modules se terminent et deviennent disponibles à nouveau :
 +
-[listing]
+[source, console]
 ----
 watch kubectl get pods -n [netapp-acc or custom namespace]
 ----
 . Attendez que les conditions d'état de l'Astra Control indiquent que la mise à niveau est terminée et prête (`True`) :
 +
-[listing]
+[source, console]
 ----
 kubectl get AstraControlCenter -n [netapp-acc or custom namespace]
 ----
@@ -433,7 +485,7 @@ Réponse :
 [listing]
 ----
 NAME    UUID                                      VERSION     ADDRESS         READY
-astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.04.2-7   10.111.111.111  True
+astra   9aa5fdae-4214-4cb7-9976-5d8b4c0ce27f      23.07.0-24   10.111.111.111  True
 ----
 +
 

@@ -25,20 +25,19 @@ Astra Control prend en charge les types de crochets d'exécution suivants, en fo
 * Avant sauvegarde
 * Post-sauvegarde
 * Post-restauration
+* Après le basculement
 
 
 
 
 == Filtres de crochet d'exécution
 
-Lorsque vous ajoutez ou modifiez un crochet d'exécution à une application, vous pouvez ajouter des filtres à un crochet d'exécution pour gérer les conteneurs auxquels le crochet correspond. Les filtres sont utiles pour les applications qui utilisent la même image de conteneur sur tous les conteneurs, mais ils peuvent utiliser chaque image à des fins différentes (comme Elasticsearch). Les filtres vous permettent de créer des scénarios dans lesquels des crochets d'exécution s'exécuteront sur certains de ces conteneurs identiques, mais pas nécessairement tous. Si vous créez plusieurs filtres pour un seul crochet d'exécution, ils sont combinés avec un opérateur ET logique. Vous pouvez avoir jusqu'à 10 filtres actifs par crochet d'exécution.
+Lorsque vous ajoutez ou modifiez un crochet d'exécution à une application, vous pouvez ajouter des filtres à un crochet d'exécution pour gérer les conteneurs auxquels le crochet correspond. Les filtres sont utiles pour les applications qui utilisent la même image de conteneur sur tous les conteneurs, mais ils peuvent utiliser chaque image à des fins différentes (comme Elasticsearch). Les filtres vous permettent de créer des scénarios dans lesquels des crochets d'exécution s'exécutent sur certains conteneurs, mais pas nécessairement tous identiques. Si vous créez plusieurs filtres pour un seul crochet d'exécution, ils sont combinés avec un opérateur ET logique. Vous pouvez avoir jusqu'à 10 filtres actifs par crochet d'exécution.
 
-Chaque filtre que vous ajoutez à un crochet d'exécution utilise une expression régulière pour faire correspondre les conteneurs de votre cluster. Lorsqu'un crochet correspond à un conteneur, le crochet exécute son script associé sur ce conteneur.
+Chaque filtre que vous ajoutez à un crochet d'exécution utilise une expression régulière pour faire correspondre les conteneurs de votre cluster. Lorsqu'un crochet correspond à un conteneur, le crochet exécute son script associé sur ce conteneur. Les expressions régulières pour les filtres utilisent la syntaxe de l'expression régulière 2 (RE2), qui ne prend pas en charge la création d'un filtre qui exclut les conteneurs de la liste des correspondances. Pour plus d'informations sur la syntaxe prise en charge par Astra Control pour les expressions régulières dans les filtres de crochet d'exécution, voir https://github.com/google/re2/wiki/Syntax["Prise en charge de la syntaxe de l'expression régulière 2 (RE2)"^].
 
 
-NOTE: Les expressions régulières pour les filtres utilisent la syntaxe de l'expression régulière 2 (RE2), qui ne prend pas en charge la création d'un filtre qui exclut les conteneurs de la liste des correspondances.
-
-Pour plus d'informations sur la syntaxe prise en charge par Astra Control pour les expressions régulières dans les filtres de crochet d'exécution, voir https://github.com/google/re2/wiki/Syntax["Prise en charge de la syntaxe de l'expression régulière 2 (RE2)"^].
+NOTE: Si vous ajoutez un filtre d'espace de noms à un crochet d'exécution qui s'exécute après une opération de restauration ou de clonage et que la source et la destination de restauration ou de clonage sont dans des espaces de noms différents, le filtre d'espace de noms est appliqué uniquement à l'espace de noms de destination.
 
 
 
@@ -48,7 +47,8 @@ Lors de la planification de crochets d'exécution pour vos applications, tenez c
 
 [NOTE]
 ====
-Puisque les crochets d'exécution réduisent souvent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils sont en cours d'exécution, vous devez toujours essayer de réduire le temps d'exécution de vos crochets d'exécution personnalisés. Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Cela signifie que la logique utilisée dans un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde a été effectuée.
+Puisque les crochets d'exécution réduisent ou désactivent complètement la fonctionnalité de l'application contre laquelle ils s'exécutent, vous devez toujours essayer de réduire le temps d'exécution de vos crochets personnalisés.
+Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Cela signifie que la logique utilisée dans un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde a été effectuée.
 
 ====
 * Un crochet d'exécution doit utiliser un script pour effectuer des actions. De nombreux crochets d'exécution peuvent référencer le même script.
@@ -58,9 +58,12 @@ Puisque les crochets d'exécution réduisent souvent ou désactivent complèteme
 * Toutes les défaillances de crochet d'exécution sont des pannes logicielles ; d'autres crochets et l'opération de protection des données sont toujours tentées même en cas de défaillance d'un crochet. Cependant, lorsqu'un crochet échoue, un événement d'avertissement est enregistré dans le journal des événements de la page *activité*.
 * Pour créer, modifier ou supprimer des crochets d'exécution, vous devez être un utilisateur disposant des autorisations propriétaire, administrateur ou membre.
 * Si l'exécution d'un crochet d'exécution prend plus de 25 minutes, le crochet échoue, créant une entrée de journal d'événements avec un code retour « N/A ». Tout instantané affecté expire et sera marqué comme ayant échoué, avec une entrée du journal des événements qui en résulte indiquant le délai d'attente.
-* Pour les opérations de protection de données ad hoc, tous les événements hook sont générés et enregistrés dans le journal des événements de la page *Activity*. Cependant, pour les opérations planifiées de protection des données, seuls les événements de défaillance de type « hook » sont enregistrés dans le journal des événements (les événements générés par les opérations de protection des données planifiées sont toujours enregistrés).
-* Si Astra Control Center bascule une application source répliquée vers l'application de destination, tous les crochets d'exécution post-restauration activés pour l'application source sont exécutés pour l'application de destination une fois le basculement terminé.
-* Si vous ajoutez un filtre d'espace de noms à un crochet d'exécution qui s'exécute après une opération de restauration ou de clonage et que la source et la destination de restauration ou de clonage sont dans des espaces de noms différents, le filtre d'espace de noms est appliqué uniquement à l'espace de noms de destination.
+* Pour les opérations de protection des données ad hoc, tous les événements hook sont générés et enregistrés dans le journal des événements de la page *Activity*. Cependant, pour les opérations planifiées de protection des données, seuls les événements de défaillance de type « hook » sont enregistrés dans le journal des événements (les événements générés par les opérations de protection des données planifiées sont toujours enregistrés).
+* Si Astra Control Center bascule une application source répliquée vers l'application de destination, tous les crochets d'exécution post-basculement activés pour l'application source sont exécutés pour l'application de destination une fois le basculement terminé.
++
+
+NOTE: Si vous avez exécuté des crochets de post-restauration avec Astra Control Center 23.04 et mis à niveau votre Astra Control Center vers la version 23.07, les crochets d'exécution post-restauration ne seront plus exécutés après une réplication de basculement. Vous devez créer de nouveaux crochets d'exécution post-basculement pour vos applications. Vous pouvez également remplacer le type d'opération des crochets post-restauration existants destinés aux basculements par « post-restauration » ou « post-basculement ».
+
 
 
 
@@ -74,7 +77,7 @@ Lors de l'exécution d'une opération de protection des données, les événemen
 . Tous les crochets d'exécution de post-opération personnalisés applicables sont exécutés sur les conteneurs appropriés. Vous pouvez créer et exécuter autant de crochets post-opération personnalisés que vous le souhaitez, mais l'ordre d'exécution de ces crochets après l'opération n'est ni garanti ni configurable.
 
 
-Si vous créez plusieurs crochets d'exécution du même type (par exemple, pré-instantané), l'ordre d'exécution de ces crochets n'est pas garanti. Cependant, l'ordre d'exécution des crochets de différents types est garanti. Par exemple, l'ordre d'exécution d'une configuration comportant les cinq types différents de crochets se présente comme suit :
+Si vous créez plusieurs crochets d'exécution du même type (par exemple, pré-instantané), l'ordre d'exécution de ces crochets n'est pas garanti. Cependant, l'ordre d'exécution des crochets de différents types est garanti. Par exemple, l'ordre d'exécution d'une configuration ayant tous les types de crochets se présente comme suit :
 
 . Crochets de pré-secours exécutés
 . Crochets pré-instantanés exécutés
@@ -109,40 +112,46 @@ Si vous démarrez mais annulez ensuite une sauvegarde qui inclut un instantané 
 
 ====
 |===
-| Scénario | Fonctionnement | Snapshot existant | Sauvegarde existante | Espace de noms | Cluster | Les crochets de snapshot sont exécutés | Les crochets de secours sont en place | Restaurer la course des crochets 
+| Scénario | Fonctionnement | Snapshot existant | Sauvegarde existante | Espace de noms | Cluster | Les crochets de snapshot sont exécutés | Les crochets de secours sont en place | Restaurer la course des crochets | Les crochets de basculement s'exécutent 
 
 
-| 1 | Clonage | N | N | Nouveau | Identique | Y | N | Y 
+| 1 | Clonage | N | N | Nouveau | Identique | Y | N | Y | N 
 
 
-| 2 | Clonage | N | N | Nouveau | Différente | Y | Y | Y 
+| 2 | Clonage | N | N | Nouveau | Différente | Y | Y | Y | N 
 
 
-| 3 | Cloner ou restaurer | Y | N | Nouveau | Identique | N | N | Y 
+| 3 | Cloner ou restaurer | Y | N | Nouveau | Identique | N | N | Y | N 
 
 
-| 4 | Cloner ou restaurer | N | Y | Nouveau | Identique | N | N | Y 
+| 4 | Cloner ou restaurer | N | Y | Nouveau | Identique | N | N | Y | N 
 
 
-| 5 | Cloner ou restaurer | Y | N | Nouveau | Différente | N | N | Y 
+| 5 | Cloner ou restaurer | Y | N | Nouveau | Différente | N | N | Y | N 
 
 
-| 6 | Cloner ou restaurer | N | Y | Nouveau | Différente | N | N | Y 
+| 6 | Cloner ou restaurer | N | Y | Nouveau | Différente | N | N | Y | N 
 
 
-| 7 | Restaurer | Y | N | Existant | Identique | N | N | Y 
+| 7 | Restaurer | Y | N | Existant | Identique | N | N | Y | N 
 
 
-| 8 | Restaurer | N | Y | Existant | Identique | N | N | Y 
+| 8 | Restaurer | N | Y | Existant | Identique | N | N | Y | N 
 
 
-| 9 | Snapshot | S/O | S/O | S/O | S/O | Y | S/O | S/O 
+| 9 | Snapshot | S/O | S/O | S/O | S/O | Y | S/O | S/O | N 
 
 
-| 10 | Sauvegarde | N | S/O | S/O | S/O | Y | Y | S/O 
+| 10 | Sauvegarde | N | S/O | S/O | S/O | Y | Y | S/O | N 
 
 
-| 11 | Sauvegarde | Y | S/O | S/O | S/O | N | N | S/O 
+| 11 | Sauvegarde | Y | S/O | S/O | S/O | N | N | S/O | N 
+
+
+| 12 | Basculement | Y | S/O | Créé par réplication | Différente | N | N | N | Y 
+
+
+| 13 | Basculement | Y | S/O | Créé par réplication | Identique | N | N | N | Y 
 |===
 
 
@@ -182,7 +191,7 @@ Cette page affiche la liste des scripts chargés existants. La colonne *utilisé
 
 == Ajouter un script
 
-Chaque crochet d'exécution doit utiliser un script pour effectuer des actions. Vous pouvez ajouter un ou plusieurs scripts que les crochets d'exécution peuvent référencer. De nombreux crochets d'exécution peuvent référencer le même script ; cela vous permet de mettre à jour de nombreux crochets d'exécution en ne changeant qu'un seul script.
+Chaque crochet d'exécution doit utiliser un script pour effectuer des actions. Vous pouvez ajouter un ou plusieurs scripts que les crochets d'exécution peuvent référencer. De nombreux crochets d'exécution peuvent référencer le même script ; ceci vous permet de mettre à jour de nombreux crochets d'exécution en modifiant un seul script.
 
 .Étapes
 . Accédez à *compte*.
@@ -235,7 +244,7 @@ NOTE: Si le script est associé à un ou plusieurs crochets d'exécution, l'acti
 
 == Créer un crochet d'exécution personnalisé
 
-Vous pouvez créer un crochet d'exécution personnalisé pour une application. Reportez-vous à la section <<Exemples de crochet d'exécution>> pour des exemples de crochet. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour créer des crochets d'exécution.
+Vous pouvez créer un crochet d'exécution personnalisé pour une application et l'ajouter à Astra Control. Reportez-vous à la section <<Exemples de crochet d'exécution>> pour des exemples de crochet. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour créer des crochets d'exécution.
 
 
 NOTE: Lorsque vous créez un script de shell personnalisé à utiliser comme crochet d'exécution, n'oubliez pas de spécifier le shell approprié au début du fichier, sauf si vous exécutez des commandes spécifiques ou fournissez le chemin complet à un exécutable.

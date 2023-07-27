@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concepts/choose-class-and-size.html 
 keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
-summary: Le centre de contrôle Astra prend en charge les classes de stockage Trident basées sur le stockage ONTAP. Comprenez comment la classe de stockage et la taille de volume persistant peuvent vous aider à atteindre vos objectifs de performance. 
+summary: ASTRA Control Center prend en charge plusieurs systèmes back-end de stockage.  Comprenez comment la classe de stockage et la taille de volume persistant peuvent vous aider à atteindre vos objectifs de performance. 
 ---
 = Classes de stockage et taille de volume persistant
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Le centre de contrôle Astra prend en charge les classes de stockage Tr
 
 
 [role="lead"]
-Astra Control Center prend en charge ONTAP en tant que système de stockage back-end.
+ASTRA Control Center prend en charge NetApp ONTAP et Longhorn en tant que systèmes back-end de stockage.
 
 
 
@@ -21,6 +21,7 @@ Astra Control Center prend en charge ONTAP en tant que système de stockage back
 Le centre de contrôle Astra est compatible avec les éléments suivants :
 
 * *Classes de stockage Astra Trident reposant sur le stockage ONTAP* : si vous utilisez un système back-end ONTAP, Astra Control Center offre la possibilité d'importer le système back-end ONTAP pour générer des rapports sur diverses informations de surveillance.
+* *Classes de stockage CSI soutenues par Longhorn* : vous pouvez utiliser Longhorn avec le pilote Longhorn Container Storage interface (CSI).
 
 
 
