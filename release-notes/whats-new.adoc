@@ -16,7 +16,7 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 
 
 
-== 26 juillet 2023 (23.07.0)
+== 31 juillet 2023 (23.07.0)
 
 .Nouvelles fonctionnalités et prises en charge
 * link:../get-started/requirements.html#storage-backends["Prise en charge de l'utilisation de NetApp MetroCluster dans une configuration étendue en tant que back-end de stockage"^]
