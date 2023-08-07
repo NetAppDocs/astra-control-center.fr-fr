@@ -464,6 +464,11 @@ additionalValues:
       startupProbe:
         periodSeconds: 30
         failureThreshold: 600
+    polaris-keycloak:
+      livenessProbe:
+        initialDelaySeconds: 180
+      readinessProbe:
+        initialDelaySeconds: 180
 ----
 . Enregistrez et quittez l'éditeur de fichiers. Les modifications seront appliquées et la mise à niveau commencera.
 . (Facultatif) Vérifiez que les modules se terminent et deviennent disponibles à nouveau :
