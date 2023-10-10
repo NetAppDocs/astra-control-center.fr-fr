@@ -55,6 +55,10 @@ Avant de commencer, vous devez remplir les conditions préalables suivantes :
 * *Peering* :
 +
 ** *Cluster et SVM* : les systèmes back-end de stockage ONTAP doivent être peering. Reportez-vous à la section https://docs.netapp.com/us-en/ontap-sm-classic/peering/index.html["Présentation du cluster et de SVM peering"^] pour en savoir plus.
++
+
+IMPORTANT: S'assurer que les noms de SVM utilisés dans la relation de réplication entre deux clusters ONTAP sont uniques.
+
 ** *Astra Trident et SVM* : les SVM distants à peering doivent être disponibles pour Astra Trident sur le cluster destination.
 
 

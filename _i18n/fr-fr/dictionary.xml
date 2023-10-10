@@ -2961,4 +2961,5 @@ RKE 2 (v1.25.x) avec Rancher 2.7</block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">Si vous ajoutez le cluster à l'aide d'un fichier kubeconfig qui fait référence à une autorité de certification privée (CA), ajoutez la ligne suivante au<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> section du fichier kubeconfig. Cela permet à Astra Control d'ajouter le cluster :</block>
   <block id="6a73c62ec3ca96f8f08220eeac3380d9" category="list-text"><block ref="6a73c62ec3ca96f8f08220eeac3380d9" category="inline-link-rx"></block></block>
+  <block id="94ac6b3955eab183cb88ab17c91000eb" category="admonition">S'assurer que les noms de SVM utilisés dans la relation de réplication entre deux clusters ONTAP sont uniques.</block>
 </blocks>
