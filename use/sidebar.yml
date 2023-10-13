@@ -18,6 +18,8 @@ entries:
     url: "/use/clone-apps.html"
   - title: Gérer les crochets d'exécution de l'application
     url: "/use/execution-hooks.html"
+  - title: Protégez Astra Control Center à l'aide d'Astra Control Center
+    url: "/use/protect-acc-with-acc.html"
 - title: Surveillez l'état des applications et des clusters
   entries:
   - title: Récapitulatif du tableau de bord
