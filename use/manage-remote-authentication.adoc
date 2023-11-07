@@ -56,7 +56,7 @@ NOTE: Il est recommandé d'utiliser LDAPS lors de la connexion au serveur LDAP. 
 . Dans la section *correspondance utilisateur*, procédez comme suit :
 +
 .. Entrez le DN de base et un filtre de recherche d'utilisateur approprié à utiliser lors de la récupération des informations utilisateur à partir du serveur LDAP.
-.. (Facultatif) si votre répertoire utilise l'attribut de connexion utilisateur `userPrincipalName` au lieu de `mail`, entrez `userPrincipalName` Dans le champ *User login attribute* de l'attribut correct.
+.. (Facultatif) si votre répertoire utilise l'attribut de connexion utilisateur `userPrincipalName` au lieu de `mail`, entrez `userPrincipalName` Dans l'attribut correct dans le champ *User login attribute*.
 
 
 . Dans la section *correspondance de groupe*, entrez le nom unique de base de recherche de groupe et un filtre de recherche de groupe personnalisé approprié.

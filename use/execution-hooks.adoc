@@ -18,7 +18,7 @@ Un crochet d'exécution est une action personnalisée que vous pouvez configurer
 
 == Types de crochets d'exécution
 
-Astra Control prend en charge les types de crochets d'exécution suivants, en fonction du moment où ils peuvent être exécutés :
+ASTRA Control Center prend en charge les types de crochets d'exécution suivants, en fonction du moment où ils peuvent être exécutés :
 
 * Pré-instantané
 * Post-snapshot
@@ -51,6 +51,13 @@ Puisque les crochets d'exécution réduisent ou désactivent complètement la fo
 Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochets d'exécution associés, mais que vous l'annulez, les crochets sont toujours autorisés à s'exécuter si l'opération de sauvegarde ou d'instantané a déjà commencé. Cela signifie que la logique utilisée dans un crochet d'exécution post-sauvegarde ne peut pas présumer que la sauvegarde a été effectuée.
 
 ====
+* La fonction crochets d'exécution est désactivée par défaut pour les nouveaux déploiements d'Astra Control.
++
+** Vous devez activer la fonction crochets d'exécution avant de pouvoir utiliser les crochets d'exécution.
+** Les utilisateurs propriétaires ou administrateurs peuvent activer ou désactiver la fonction crochets d'exécution pour tous les utilisateurs définis dans le compte Astra Control actuel. Reportez-vous à la section <<Activez la fonction crochets d'exécution>> et <<Désactivez la fonction crochets d'exécution>> pour obtenir des instructions.
+** Le statut d'activation de la fonctionnalité est conservé pendant les mises à niveau d'Astra Control.
+
+
 * Un crochet d'exécution doit utiliser un script pour effectuer des actions. De nombreux crochets d'exécution peuvent référencer le même script.
 * Astra Control exige que les scripts utilisés par les crochets d'exécution soient écrits au format de scripts shell exécutables.
 * La taille du script est limitée à 96 Ko.
@@ -62,7 +69,7 @@ Si vous démarrez une opération de sauvegarde ou d'instantané avec les crochet
 * Si Astra Control Center bascule une application source répliquée vers l'application de destination, tous les crochets d'exécution post-basculement activés pour l'application source sont exécutés pour l'application de destination une fois le basculement terminé.
 +
 
-NOTE: Si vous avez exécuté des crochets de post-restauration avec Astra Control Center 23.04 et mis à niveau votre Astra Control Center vers la version 23.07, les crochets d'exécution post-restauration ne seront plus exécutés après une réplication de basculement. Vous devez créer de nouveaux crochets d'exécution post-basculement pour vos applications. Vous pouvez également remplacer le type d'opération des crochets post-restauration existants destinés aux basculements par « post-restauration » ou « post-basculement ».
+NOTE: Si vous avez exécuté des crochets de post-restauration avec Astra Control Center 23.04 et mis à niveau votre Astra Control Center vers la version 23.07 ou ultérieure, les crochets d'exécution post-restauration ne seront plus exécutés après une réplication de basculement. Vous devez créer de nouveaux crochets d'exécution post-basculement pour vos applications. Vous pouvez également remplacer le type d'opération des crochets post-restauration existants destinés aux basculements par « post-restauration » ou « post-basculement ».
 
 
 
@@ -161,6 +168,41 @@ Consultez le https://github.com/NetApp/Verda["Projet GitHub NetApp Verda"] Pour 
 
 
 
+== Activez la fonction crochets d'exécution
+
+Si vous êtes propriétaire ou administrateur, vous pouvez activer la fonction crochets d'exécution. Lorsque vous activez la fonctionnalité, tous les utilisateurs définis dans ce compte Astra Control peuvent utiliser des crochets d'exécution et afficher des crochets d'exécution et des scripts hook existants.
+
+.Étapes
+. Accédez à *applications*, puis sélectionnez le nom d'une application gérée.
+. Sélectionnez l'onglet *crochets d'exécution*.
+. Sélectionnez *Activer les crochets d'exécution*.
++
+L'onglet *compte* > *paramètres de fonction* s'affiche.
+
+. Dans le volet *crochets d'exécution*, sélectionnez le menu Paramètres.
+. Sélectionnez *Activer*.
+. Notez l'avertissement de sécurité qui s'affiche.
+. Sélectionnez *Oui, activer les crochets d'exécution*.
+
+
+
+
+== Désactivez la fonction crochets d'exécution
+
+Si vous êtes propriétaire ou administrateur, vous pouvez désactiver la fonction crochets d'exécution pour tous les utilisateurs définis dans ce compte Astra Control. Vous devez supprimer tous les crochets d'exécution existants avant de pouvoir désactiver la fonction crochets d'exécution. Reportez-vous à la section <<Supprimer un crochet d'exécution>> pour obtenir des instructions sur la suppression d'un crochet d'exécution existant.
+
+.Étapes
+. Accédez à *compte*, puis sélectionnez l'onglet *Paramètres de fonction*.
+. Sélectionnez l'onglet *crochets d'exécution*.
+. Dans le volet *crochets d'exécution*, sélectionnez le menu Paramètres.
+. Sélectionnez *Désactiver*.
+. Notez l'avertissement qui s'affiche.
+. Type `disable` pour confirmer que vous souhaitez désactiver la fonction pour tous les utilisateurs.
+. Sélectionnez *Oui, désactiver*.
+
+
+
+
 == Afficher les crochets d'exécution existants
 
 Vous pouvez afficher les crochets d'exécution personnalisés existants pour une application.
@@ -194,6 +236,7 @@ Cette page affiche la liste des scripts chargés existants. La colonne *utilisé
 Chaque crochet d'exécution doit utiliser un script pour effectuer des actions. Vous pouvez ajouter un ou plusieurs scripts que les crochets d'exécution peuvent référencer. De nombreux crochets d'exécution peuvent référencer le même script ; ceci vous permet de mettre à jour de nombreux crochets d'exécution en modifiant un seul script.
 
 .Étapes
+. Assurez-vous que la fonction crochets d'exécution est <<Activez la fonction crochets d'exécution,activé>>.
 . Accédez à *compte*.
 . Sélectionnez l'onglet *scripts*.
 . Sélectionnez *Ajouter*.
@@ -250,6 +293,7 @@ Vous pouvez créer un crochet d'exécution personnalisé pour une application et
 NOTE: Lorsque vous créez un script de shell personnalisé à utiliser comme crochet d'exécution, n'oubliez pas de spécifier le shell approprié au début du fichier, sauf si vous exécutez des commandes spécifiques ou fournissez le chemin complet à un exécutable.
 
 .Étapes
+. Assurez-vous que la fonction crochets d'exécution est <<Activez la fonction crochets d'exécution,activé>>.
 . Sélectionnez *applications*, puis le nom d'une application gérée.
 . Sélectionnez l'onglet *crochets d'exécution*.
 . Sélectionnez *Ajouter*.

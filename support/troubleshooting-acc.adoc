@@ -14,7 +14,7 @@ summary: 'NetApp prend en charge Astra Control de plusieurs façons. De nombreus
 [role="lead"]
 Apprenez à contourner certains problèmes courants que vous pourriez rencontrer.
 
-https://kb.netapp.com/Cloud/Astra/Control["Base de connaissances NetApp pour Astra"^]
+https://kb.netapp.com/Cloud/Astra/Control["Base de connaissances NetApp pour Astra Control"^]
 
 [discrete]
 == Trouvez plus d'informations

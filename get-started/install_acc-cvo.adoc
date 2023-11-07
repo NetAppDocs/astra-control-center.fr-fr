@@ -43,7 +43,7 @@ Avant de déployer Astra Control Center dans AWS, vous aurez besoin des élémen
 * En cas d'utilisation des autorisations OCP, Red Hat OpenShift Container Platform (OCP) (au niveau de l'espace de noms pour créer des pods)
 * Les identifiants AWS, l'ID d'accès et la clé secrète avec des autorisations qui vous permettent de créer des compartiments et des connecteurs
 * Accès et connexion au registre d'instance de conteneur souple (ECR) du compte AWS
-* Zone hébergée sur AWS et entrée route 53 nécessaires pour accéder à l'interface utilisateur de contrôle Astra
+* La zone hébergée AWS et l'entrée Amazon route 53 sont requises pour accéder à l'interface utilisateur d'Astra Control
 
 
 
@@ -86,7 +86,7 @@ Méthode permettant de pointer le FQDN de Astra Control Center vers l'adresse IP
 
 
 | Astra Trident (installé dans le cadre de la découverte du cluster Kubernetes dans NetApp BlueXP, anciennement Cloud Manager)  a| 
-ASTRA Trident 22.10 ou version ultérieure est installé et configuré et NetApp ONTAP version 9.8 ou version ultérieure en tant que système back-end de stockage [[aws-registry]]
+ASTRA Trident 23.01 ou version ultérieure est installé et configuré et NetApp ONTAP version 9.9.1 ou version ultérieure en tant que système back-end de stockage [[aws-registry]]
 
 
 
@@ -282,7 +282,7 @@ Méthode permettant de pointer le FQDN de Astra Control Center vers l'adresse IP
 
 
 | Astra Trident (installé dans le cadre de la découverte du cluster Kubernetes dans NetApp BlueXP, anciennement Cloud Manager)  a| 
-ASTRA Trident 22.10 ou version ultérieure est installé et configuré et NetApp ONTAP version 9.8 ou version ultérieure en tant que système back-end de stockage [[gcp-registry]]
+ASTRA Trident 23.01 ou version ultérieure est installé et configuré et NetApp ONTAP version 9.9.1 ou version ultérieure en tant que système back-end de stockage [[gcp-registry]]
 
 
 
@@ -385,15 +385,7 @@ gcloud auth activate-service-account <service account email address>
 --key-file=<GCP Service Account JSON file>
 ----
 +
-Ce script nécessite un fichier manifeste Astra Control Center et votre emplacement dans le registre d'images Google.
-
-
-
-+
-Exemple :
-
-+
-+
+Ce script nécessite un fichier manifeste Astra Control Center et votre emplacement dans le registre d'images Google. Exemple :
 
 +
 [listing]
@@ -411,6 +403,8 @@ while IFS= read -r image; do
     docker push $GCP_CR_REGISTRY/$image
 done < astra-control-center-22.04.41.manifest
 ----
+
+
 . Configurer les zones DNS.
 
 
@@ -530,7 +524,7 @@ Méthode permettant de pointer le FQDN de Astra Control Center vers l'adresse IP
 
 
 | Astra Trident (installé dans le cadre de la découverte du cluster Kubernetes dans NetApp BlueXP)  a| 
-ASTRA Trident 22.10 ou version ultérieure installée et configurée et NetApp ONTAP version 9.8 ou ultérieure seront utilisés en tant que système back-end de stockage [[Azure-registry]]
+ASTRA Trident 23.01 ou version ultérieure installée et configurée et NetApp ONTAP version 9.9.1 ou ultérieure seront utilisés en tant que système back-end de stockage [[Azure-registry]]
 
 
 

@@ -42,6 +42,7 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 * <<Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy>>
 * <<Les connexions existantes à un pod Postgres provoquent des défaillances>>
 * <<La page activité affiche jusqu'à 100000 événements>>
+* <<SnapMirror ne prend pas en charge les applications utilisant NVMe over TCP pour les systèmes back-end de stockage>>
 
 
 
@@ -102,7 +103,7 @@ Un utilisateur doté de contraintes RBAC d'espace de noms ne doit pas être auto
 
 == Un membre avec des contraintes d'espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n'ajoute pas l'espace de noms à la contrainte
 
-Toutes `member` Les utilisateurs ayant des contraintes RBAC en fonction du nom/ID de l'espace de noms peuvent cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de leur entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après la création d'un espace de noms par une opération de clonage ou de restauration, le compte admin/propriétaire peut modifier le `member` contraintes de compte d'utilisateur et de rôle de mise à jour pour l'utilisateur affecté pour accorder l'accès au nouvel espace de noms.
+Toutes `member` Les utilisateurs ayant des contraintes RBAC en fonction du nom/ID de l'espace de noms peuvent cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de leur entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après la création d'un clone ou d'une opération de restauration, l'administrateur/propriétaire du compte peut modifier le `member` contraintes de compte d'utilisateur et de rôle de mise à jour pour l'utilisateur affecté pour accorder l'accès au nouvel espace de noms.
 
 
 
@@ -212,6 +213,12 @@ Lorsque vous exécutez des opérations sur les modules Postgres, vous ne devez p
 == La page activité affiche jusqu'à 100000 événements
 
 La page activité Astra Control peut afficher jusqu'à 100,000 événements. Pour afficher tous les événements consignés, récupérez-les à l'aide du link:../rest-api/api-intro.html["API de contrôle Astra"^].
+
+
+
+== SnapMirror ne prend pas en charge les applications utilisant NVMe over TCP pour les systèmes back-end de stockage
+
+ASTRA Control Center ne prend pas en charge la réplication NetApp SnapMirror pour les systèmes back-end de stockage utilisant le protocole NVMe over TCP.
 
 
 

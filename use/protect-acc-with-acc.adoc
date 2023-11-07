@@ -156,7 +156,7 @@ Réponse :
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.07.0-24 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.10.0-68 ocp-cluster-1.company.com           True
 ----
 .. Si le `ADDRESS` Dans la réponse ci-dessus, le champ ne contient pas le nom de domaine complet de l'instance principale d'Astra Control Center. Mettez à jour la configuration pour référencer le DNS d'Astra Control Center :
 +
@@ -379,7 +379,7 @@ Réponse :
 [listing]
 ----
 NAME  UUID                                 VERSION    ADDRESS                             READY
-astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.07.0-24 ocp-cluster-1.company.com           True
+astra 89f4fd47-0cf0-4c7a-a44e-43353dc96ba8 23.10.0-68 ocp-cluster-1.company.com           True
 ----
 * *Confirmez l'état du déploiement* : affichez les informations de déploiement d'Astra Control Center pour le confirmer `Deployment State` est `Deployed`.
 +

@@ -25,7 +25,8 @@ Assurez-vous que votre environnement répond aux exigences suivantes :
 
 *Intégration du stockage*
 
-* link:../get-started/requirements.html#astra-trident-requirements["Vérifiez que votre environnement inclut la version prise en charge d'Astra Trident"^]
+* link:../get-started/requirements.html#astra-trident-requirements["Assurez-vous que votre environnement inclut une version d'Astra Trident prise en charge"^]
+* link:../use/enable-acp.html["Activez les fonctionnalités avancées de provisionnement du stockage et de gestion Astra Control"^]
 * https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html["Préparez les nœuds worker"^]
 * https://docs.netapp.com/us-en/trident/trident-use/backends.html["Configurer le système back-end de stockage Astra Trident"^]
 * https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["Configurez des classes de stockage Astra Trident"^]

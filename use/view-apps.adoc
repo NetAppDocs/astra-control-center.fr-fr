@@ -12,13 +12,15 @@ summary: 'Une fois que vous avez commencé à gérer une application, Astra Cont
 
 
 [role="lead"]
-Une fois que vous avez commencé à gérer une application, Astra Control fournit des informations détaillées sur l'application qui vous permet d'identifier son état (qu'il s'agisse d'une application en bon état), son état de protection (qu'il soit entièrement protégé en cas de défaillance), les pods, le stockage persistant, et bien plus encore.
+Une fois que vous avez commencé à gérer une application, Astra Control fournit des informations détaillées sur l'application qui vous permet d'identifier son état de communication (si Astra Control peut communiquer avec l'application), son état de protection (qu'il soit entièrement protégé en cas de défaillance), les pods, le stockage persistant, etc.
 
 .Étapes
 . Dans l'interface utilisateur du Centre de contrôle Astra, sélectionnez *applications*, puis le nom d'une application.
 . Vérifiez les informations.
 +
-** *App Status* : fournit un état qui reflète l'état de l'application dans Kubernetes. Par exemple, les pods et les volumes persistants sont-ils en ligne ? Si une application est défectueuse, vous devez chercher à résoudre le problème sur le cluster en consultant les journaux Kubernetes. Astra ne fournit pas d'informations pour vous aider à réparer une application défaillante.
+Statut de l'application:: Fournit un état qui indique si Astra Control peut communiquer avec l'application.
++
+--
 ** *App protection Status* : indique l'état de protection de l'application :
 +
 *** *Entièrement protégé* : l'application dispose d'un programme de sauvegarde actif et d'une sauvegarde réussie qui a moins d'une semaine
@@ -38,6 +40,9 @@ _Vous ne pouvez pas être entièrement protégé tant que vous n'avez pas une sa
 
 NOTE: Vous pouvez également afficher les informations de l'application à partir du Centre de contrôle Astra *Tableau de bord*. Dans l'onglet *applications* sous *Résumé des ressources*, vous pouvez sélectionner les applications gérées, qui vous permettent d'accéder à la page *applications*. Après avoir accédé à la page *applications*, suivez les étapes décrites ci-dessus.
 
+
+
+--
 
 
 

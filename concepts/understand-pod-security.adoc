@@ -32,7 +32,7 @@ pod-security.kubernetes.io/enforce: privileged
 
 == PSP installé par Astra Control Center
 
-Lorsque vous installez Astra Control Center sur Kubernetes 1.23 ou 1.24, plusieurs règles de sécurité du pod sont créées lors de l'installation. Certaines sont permanentes, certaines d'entre elles sont créées pendant certaines opérations et sont supprimées une fois l'opération terminée. Astra Control Center ne tente pas d'installer les PSP lorsque le cluster hôte exécute Kubernetes 1.25 ou une version ultérieure, car ils ne sont pas pris en charge sur ces versions.
+Lorsque vous installez Astra Control Center sur Kubernetes 1.24, plusieurs politiques de sécurité du pod sont créées lors de l'installation. Certaines sont permanentes, certaines d'entre elles sont créées pendant certaines opérations et sont supprimées une fois l'opération terminée. Astra Control Center ne tente pas d'installer les PSP lorsque le cluster hôte exécute Kubernetes 1.25 ou une version ultérieure, car ils ne sont pas pris en charge sur ces versions.
 
 
 

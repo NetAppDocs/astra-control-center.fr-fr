@@ -6,12 +6,18 @@
 
 == Téléchargez et extrayez Astra Control Center
 
+Vous pouvez choisir de télécharger le bundle Astra Control Center depuis le site du support NetApp ou d'utiliser Docker pour extraire le bundle du registre d'images Astra Control Service.
+
+[role="tabbed-block"]
+====
+.Site de support NetApp
+--
 . Téléchargez le pack contenant Astra Control Center (`astra-control-center-[version].tar.gz`) du https://mysupport.netapp.com/site/products/all/details/astra-control-center/downloads-tab["Page de téléchargements d'Astra Control Center"^].
 . (Recommandé mais facultatif) Téléchargez le lot de certificats et de signatures pour Astra Control Center (`astra-control-center-certs-[version].tar.gz`) pour vérifier la signature du paquet.
 +
 .Développez pour plus d'informations
 [%collapsible]
-====
+=====
 [source, console]
 ----
 tar -vxzf astra-control-center-certs-[version].tar.gz
@@ -22,7 +28,7 @@ openssl dgst -sha256 -verify certs/AstraControlCenter-public.pub -signature cert
 ----
 La sortie s'affiche `Verified OK` une fois la vérification terminée.
 
-====
+=====
 . Extraire les images du pack Astra Control Center :
 +
 [source, console]
@@ -30,3 +36,14 @@ La sortie s'affiche `Verified OK` une fois la vérification terminée.
 tar -vxzf astra-control-center-[version].tar.gz
 ----
 
+
+--
+.Registre d'images Astra Control
+--
+. Connectez-vous à Astra Control Service.
+. Sur le tableau de bord, sélectionnez *Deploy a autogéré instance d'Astra Control*.
+. Suivez les instructions pour vous connecter au registre d'images Astra Control, extraire l'image d'installation d'Astra Control Center et extraire l'image.
+
+
+--
+====

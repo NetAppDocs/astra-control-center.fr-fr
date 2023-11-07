@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/restore-apps.html 
-keywords: restore app, restoring an app, restore, migrate nas-economy 
-summary: 'Astra permet de restaurer la configuration de vos applications et le stockage persistant à partir d"un snapshot ou d"une sauvegarde. Les sauvegardes de stockage persistant sont transférées depuis votre magasin d"objets. Ainsi, la restauration à partir d"une sauvegarde existante est effectuée le plus rapidement.' 
+keywords: restore app, restoring an app, restore, ontap-nas-economy, disruptive, migration 
+summary: 'Astra permet de restaurer la configuration de vos applications et le stockage persistant à partir d"un snapshot ou d"une sauvegarde. Les sauvegardes de stockage persistant sont transférées à partir de votre magasin d"objets, de sorte qu"une restauration à partir d"une sauvegarde existante se fera le plus rapidement possible.' 
 ---
 = Restaurez les applications
 :hardbreaks:
@@ -14,16 +14,17 @@ summary: 'Astra permet de restaurer la configuration de vos applications et le s
 [role="lead"]
 Astra Control peut restaurer votre application à partir d'un snapshot ou d'une sauvegarde. La restauration d'un snapshot existant est plus rapide lors de la restauration d'une application sur le même cluster. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation["API de contrôle Astra"^] pour restaurer des applications.
 
-.Description de la tâche
-* *Protéger vos applications en premier* : il est fortement recommandé de prendre un instantané ou une sauvegarde de votre application avant de la restaurer. Cela vous permettra de cloner à partir du snapshot ou de la sauvegarde en cas d'échec de la restauration.
+.Avant de commencer
+* *Protéger vos applications en premier* : il est fortement recommandé de prendre un instantané ou une sauvegarde de votre application avant de la restaurer. Vous pourrez ainsi cloner à partir de l'instantané ou de la sauvegarde si la restauration échoue.
 * *Vérifier les volumes de destination* : si vous restaurez vers une classe de stockage différente, assurez-vous que la classe de stockage utilise le même mode d'accès au volume persistant (par exemple, ReadWriteMaly). L'opération de restauration échoue si le mode d'accès au volume persistant de destination est différent. Par exemple, si votre volume persistant source utilise le mode d'accès RWX, en sélectionnant une classe de stockage de destination qui ne peut pas fournir RWX, comme les disques gérés Azure, AWS EBS, Google persistent Disk ou `ontap-san`, provoque l'échec de l'opération de restauration. Pour plus d'informations sur les modes d'accès aux volumes persistants, reportez-vous au https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes["Kubernetes"^] documentation :
 * *Planifier les besoins en espace* : lorsque vous effectuez une restauration sur place d'une application utilisant un stockage NetApp ONTAP, l'espace utilisé par l'application restaurée peut doubler. Une fois la restauration sur place effectuée, supprimez les snapshots indésirables de l'application restaurée pour libérer de l'espace de stockage.
-* *(clusters OpenShift uniquement) Ajouter des règles* : lorsque vous créez un projet pour héberger une application sur un cluster OpenShift, un UID SecurityContext est affecté au projet (ou à l'espace de noms Kubernetes). Pour permettre à Astra Control Center de protéger votre application et de la déplacer vers un autre cluster ou projet dans OpenShift, vous devez ajouter des règles qui permettent à l'application de s'exécuter comme un UID. Par exemple, les commandes OpenShift CLI suivantes octroient les règles appropriées à une application WordPress.
+* * (Clusters Red Hat OpenShift uniquement) Ajouter des stratégies* : lorsque vous créez un projet pour héberger une application sur un cluster OpenShift, un UID SecurityContext est affecté au projet (ou espace de noms Kubernetes). Pour permettre à Astra Control Center de protéger votre application et de la déplacer vers un autre cluster ou projet dans OpenShift, vous devez ajouter des règles qui permettent à l'application de s'exécuter comme un UID. Par exemple, les commandes OpenShift CLI suivantes octroient les règles appropriées à une application WordPress.
 +
 `oc new-project wordpress`
 `oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
 `oc adm policy add-scc-to-user privileged -z default -n wordpress`
 
+* * (Pilote ontap-nas-Economy uniquement) sauvegardes et restaurations* : avant de sauvegarder ou de restaurer une application qui utilise une classe de stockage sauvegardée par `ontap-nas-economy` pilote, vérifiez que link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["Le répertoire Snapshot du système back-end de stockage ONTAP est masqué"]. Si ce répertoire n'est pas masqué, l'accès à votre application risque d'être perdu, en particulier s'il utilise NFSv3.
 * *Les applications déployées par Helm* : les applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement prises en charge. Les applications déployées avec Helm 2 ne sont pas prises en charge.
 
 
@@ -52,10 +53,6 @@ NOTE: Si vous restaurez vers un espace de nom qui a déjà été supprimé, un n
 
 
 ** *Restaurer vers de nouveaux espaces de noms* : utilisez cette procédure pour restaurer l'application vers un autre cluster ou avec des espaces de noms différents de la source.
-+
-
-NOTE: Vous pouvez utiliser cette procédure pour  à une classe de stockage soutenue par `ontap-nas` Sur le même cluster *OU*, copiez l'application sur un autre cluster avec une classe de stockage soutenue par `ontap-nas-economy` conducteur.
-
 +
 ... Spécifiez le nom de l'application restaurée.
 ... Choisissez le cluster de destination pour l'application que vous souhaitez restaurer.
@@ -104,7 +101,7 @@ Astra Control restaure l'application en fonction des informations que vous avez 
 NOTE: Après une opération de protection des données (clonage, sauvegarde ou restauration) et après le redimensionnement du volume persistant, la nouvelle taille du volume s'affiche dans l'interface utilisateur Web pendant vingt minutes. La protection des données fonctionne avec succès en quelques minutes et vous pouvez utiliser le logiciel de gestion pour le système back-end pour confirmer la modification de la taille du volume.
 
 
-IMPORTANT: Tout utilisateur membre aux contraintes de namespace par nom/ID d'espace de noms ou par libellés de namespace peut cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de son entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après la création d'un espace de noms par une opération de clonage ou de restauration, l'administrateur/propriétaire du compte peut modifier le compte d'utilisateur membre et mettre à jour les contraintes de rôle pour l'utilisateur affecté afin d'autoriser l'accès au nouvel espace de noms.
+IMPORTANT: Tout utilisateur membre aux contraintes de namespace par nom/ID d'espace de noms ou par libellés de namespace peut cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de son entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après qu'une opération de clonage ou de restauration a créé un nouvel espace de noms, l'administrateur/propriétaire du compte peut modifier le compte utilisateur membre et mettre à jour les contraintes de rôle pour que l'utilisateur affecté accorde l'accès au nouvel espace de noms.
 
 
 
@@ -163,12 +160,6 @@ NOTE: Si vous utilisez un filtre GVK, vous devez spécifier la version et le typ
 TIP: Vous pouvez créer autant de règles d'inclusion et d'exclusion de ressources que vous le souhaitez. Les règles apparaissent dans le résumé de l'application de restauration avant de lancer l'opération.
 
 
-
-
-
-== Migrez du stockage ontap-nas-Economy vers le stockage ontap-nas
-
-Vous pouvez utiliser un système Astra Control link:../use/restore-apps.html["restauration des applications"] ou link:../use/clone-apps.html["clone de l'application"^] opération de migration des volumes d'application à partir d'une classe de stockage soutenue par `ontap-nas-economy`, qui autorise des options limitées de protection des applications, à une classe de stockage soutenue par `ontap-nas` Grâce à sa gamme complète d'options de protection Astra Control. L'opération de clonage ou de restauration migre les volumes basés sur Qtree qui utilisent un `ontap-nas-economy` back-end aux volumes standard sauvegardés par `ontap-nas`. Des volumes, qu'ils soient `ontap-nas-economy` sauvegardé uniquement ou mixte, sera migré vers la classe de stockage cible. Une fois la migration terminée, les options de protection ne sont plus limitées.
 
 
 

@@ -56,5 +56,7 @@ entries:
   url: "/use/unmanage.html"
 - title: Mettez à niveau Astra Control Center
   url: "/use/upgrade-acc.html"
+- title: Activez le mécanisme de provisionnement Astra Control
+  url: "/use/enable-acp.html"
 - title: Désinstaller Astra Control Center
   url: "/use/uninstall_acc.html"

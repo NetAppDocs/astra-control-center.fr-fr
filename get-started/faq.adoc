@@ -87,11 +87,11 @@ Toutes les sauvegardes ou tous les instantanés existants seront supprimés. Les
 
 *Astra Control peut-il gérer une application qui se trouve sur un système de stockage autre que NetApp?*
 
-Non Astra Control peut découvrir des applications qui utilisent un stockage autre que NetApp, mais il ne peut pas gérer une application qui utilise un stockage non NetApp.
+Non Même si Astra Control peut détecter les applications qui utilisent un stockage non-NetApp, il ne peut pas gérer une application utilisant un stockage non-NetApp.
 
 *Devrais-je gérer Astra Control lui-même?*
 
-ASTRA Control Center n'est pas affiché par défaut en tant qu'application que vous pouvez gérer, mais vous pouvez sauvegarder et restaurer une instance Astra Control Center à l'aide d'une autre instance Astra Control Center.
+ASTRA Control Center n'est pas affiché par défaut en tant qu'application que vous pouvez gérer, mais vous le pouvez link:../use/protect-acc-with-acc.html["sauvegarde et restauration"] Instance Astra Control Center utilisant une autre instance Astra Control Center.
 
 *Les pods défectueux affectent-ils la gestion des applications ?*
 
@@ -108,3 +108,77 @@ Oui. Une opération d'instantané sur une application par Astra Control inclut u
 *Puis-je gérer les instantanés pris par Astra Control directement via une interface ou un stockage objet différent?*
 
 Non Les copies Snapshot et les sauvegardes effectuées par Astra Control ne peuvent être gérées qu'avec Astra Control.
+
+
+
+== De provisionnement Astra Control
+
+*En quoi les fonctionnalités de provisionnement du stockage d'Astra Control Provisioner sont-elles différentes de celles d'Astra Trident ?*
+
+ASTRA Control Provisioner, dans le cadre d'Astra Control, prend en charge un ensemble complet de fonctionnalités de provisionnement du stockage qui ne sont pas disponibles dans Astra Trident open source. Ces fonctionnalités viennent s'ajouter à toutes les fonctionnalités disponibles pour Trident open source.
+
+*Le mécanisme de provisionnement Astra Control remplace-t-il Astra Trident?*
+
+Dans les prochaines mises à jour d'Astra Control, Astra Control Provisioner remplacera Astra Trident en tant que mécanisme de provisionnement et d'orchestration du stockage dans l'architecture Astra Control. C'est pourquoi il est vivement recommandé aux utilisateurs d'Astra Control link:../use/enable-acp.html["Activez le mécanisme de provisionnement Astra Control"]. ASTRA Trident continuera à rester open source et sera publié, maintenu, pris en charge et mis à jour avec le nouveau CSI et d'autres fonctionnalités de NetApp.
+
+*Dois-je payer pour Astra Trident?*
+
+Non ASTRA Trident continuera d'être open source et téléchargeable gratuitement.
+
+*Puis-je utiliser les fonctionnalités de gestion et de provisionnement du stockage dans Astra Control sans installer et utiliser toutes les fonctionnalités d'Astra Control ?*
+
+Oui, vous pouvez effectuer une mise à niveau vers Astra Trident 23.10 ou version ultérieure et activer la fonctionnalité Astra Control Provisioner même si vous ne souhaitez pas utiliser l'ensemble complet de fonctionnalités de gestion des données Astra Control.
+
+*Comment passer du statut d'utilisateur Trident à celui d'Astra Control pour utiliser les fonctionnalités avancées de gestion et de provisionnement du stockage ?*
+
+Si vous utilisez déjà Trident (y compris les utilisateurs d'Astra Trident dans le cloud public), vous devez d'abord acquérir une licence Astra Control. À cette fin, vous pouvez télécharger le bundle Astra Control Provisioner, mettre à niveau Astra Trident et link:../use/enable-acp.html["Activez la fonctionnalité Astra Control Provisioner"].
+
+*Comment savoir si Astra Control Provisioner a remplacé Astra Trident sur mon cluster?*
+
+Une fois Astra Control Provisioner installé, le cluster hôte dans l'interface utilisateur Astra Control affiche un `ACP version` plutôt que `Trident version` et le numéro de version actuellement installé.
+
+image:use/ac-acp-version.png["Capture d'écran illustrant l'emplacement de la version ACP dans l'interface utilisateur"]
+
+Si vous n'avez pas accès à l'interface utilisateur, vous pouvez confirmer que l'installation a réussi en utilisant les méthodes suivantes :
+
+[role="tabbed-block"]
+====
+.Opérateur Astra Trident
+--
+Vérifiez le `trident-acp` le conteneur est en cours d'exécution `acpVersion` est `23.10.0` avec un état de `Installed`:
+
+[listing]
+----
+kubectl get torc -o yaml
+----
+Réponse :
+
+[listing]
+----
+status:
+  acpVersion: 23.10.0
+  currentInstallationParams:
+    ...
+    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    enableACP: "true"
+    ...
+  ...
+  status: Installed
+----
+--
+.tridentctl
+--
+Vérifiez que le mécanisme de provisionnement Astra Control a été activé :
+
+[listing]
+----
+./tridentctl -n trident version
+----
+Réponse :
+
+[listing]
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
+----
+--
+====

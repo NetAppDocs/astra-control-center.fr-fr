@@ -19,4 +19,4 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 * link:../release-notes/known-limitations.html["Limites connues"]
 
 
-Suivez-nous sur Twitter @NetAppDoc. Envoyez vos commentaires sur la documentation en devenant un link:https://docs.netapp.com/us-en/contribute/["Contributeur GitHub"^] ou en envoyant un e-mail à doccomments@netapp.com.
+Envoyez vos commentaires sur la documentation en devenant un link:https://docs.netapp.com/us-en/contribute/["Contributeur GitHub"^] ou en envoyant un e-mail à doccomments@netapp.com.
