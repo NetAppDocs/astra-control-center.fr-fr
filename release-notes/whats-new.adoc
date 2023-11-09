@@ -42,6 +42,8 @@ Les fonctions suivantes sont disponibles avec l'Astra Control Provisioner 23.10 
 
 
 
+* *Prise en charge de la gestion des applications qui utilisent le stockage NVMe/TCP*
+ASTRA Control peut désormais gérer des applications sauvegardées par des volumes persistants et connectés via NVMe/TCP.
 * *Crochets d'exécution désactivés par défaut* : à partir de cette version, la fonctionnalité crochets d'exécution peut être link:../use/execution-hooks.html#enable-the-execution-hooks-feature["activé"] ou désactivé pour une sécurité supplémentaire (il est désactivé par défaut). Si vous n'avez pas encore créé de crochets d'exécution pour une utilisation avec Astra Control, vous devez le faire link:../use/execution-hooks.html#enable-the-execution-hooks-feature["activez la fonction crochets d'exécution"^] pour commencer à créer des crochets. Si vous avez créé des crochets d'exécution avant cette version, la fonctionnalité crochets d'exécution reste activée et vous pouvez utiliser des crochets comme vous le feriez normalement.
 
 
