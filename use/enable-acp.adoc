@@ -229,7 +229,7 @@ WARNING: N'utilisez pas HHelm pour activer le mécanisme de provisionnement Astr
 . Modifiez la CR TridentOrchestrator et apportez les modifications suivantes :
 +
 ** Activez le mécanisme de provisionnement Astra Control (`enableACP: true`)
-** Définissez l'emplacement du registre pour l'image Astra Control Provisioner (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`).
+** Définissez l'emplacement du registre pour l'image Astra Control Provisioner (`acpImage: <my_custom_registry>/trident-acp:23.10.0`).
 +
 
 NOTE: Si vous avez établi <<pull-secrets,secrets d'extraction d'image>> plus tôt dans cette procédure, vous pouvez les utiliser ici (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`)
@@ -247,7 +247,7 @@ spec:
   debug: true
   namespace: trident
   *enableACP: true*
-  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
+  *acpImage: <my_custom_registry>/trident-acp:23.10.0*
 ----
 . Appliquer les modifications :
 +
@@ -291,7 +291,7 @@ status:
   acpVersion: 23.10.0
   currentInstallationParams:
     ...
-    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    acpImage: <my_custom_registry>/trident-acp:23.10.0
     enableACP: "true"
     ...
   ...
@@ -307,7 +307,7 @@ status:
 +
 [listing]
 ----
-./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
+./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:23.10
 ----
 . Vérifiez que le mécanisme de provisionnement Astra Control a été activé :
 +
