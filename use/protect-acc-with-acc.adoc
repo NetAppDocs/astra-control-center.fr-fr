@@ -101,7 +101,7 @@ NOTE: Bien que cela ne soit pas décrit, l'opérateur d'Astra Control Center peu
 .. Sélectionnez *Ajouter inclure règle*.
 .. Sélectionnez ces entrées et sélectionnez *Ajouter* :
 +
-*** Sélecteur d'étiquettes : acc-crds
+*** Sélecteur d'étiquette : <label name>
 *** Groupe : apiextensions.k8s.io
 *** Version : v1
 *** Type : CustomResourceDefinition
