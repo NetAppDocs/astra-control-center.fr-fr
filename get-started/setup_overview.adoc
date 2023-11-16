@@ -932,11 +932,11 @@ curl --cacert ontap_signed_cert.crt  --key ontap_test_client.key --cert ontap_te
 
 == Ajout d'un système back-end
 
-Vous pouvez ajouter un système de stockage back-end ONTAP à Astra Control Center pour gérer ses ressources.
+Après avoir configuré les informations d'identification ou d'authentification de certificat, vous pouvez ajouter un système back-end de stockage ONTAP existant à Astra Control Center pour gérer ses ressources.
 
 La gestion des clusters de stockage d'Astra Control en tant que backend de stockage vous permet d'obtenir des liens entre les volumes persistants (PVS) et le back-end de stockage, ainsi que des metrics de stockage supplémentaires.
 
-Après avoir configuré les informations d'identification ou d'authentification de certificat, vous pouvez ajouter un système back-end de stockage ONTAP existant à Astra Control Center pour gérer ses ressources.
+*_Astra Control Provisioner uniquement_* : l'ajout et la gestion de systèmes back-end de stockage ONTAP dans Astra Control Center sont facultatifs si vous utilisez la technologie NetApp SnapMirror si vous avez activé Astra Control Provisioner avec Astra Control Center 23.10 ou version ultérieure.
 
 .Étapes
 . Dans la zone de navigation gauche du tableau de bord, sélectionnez *Backends*.
