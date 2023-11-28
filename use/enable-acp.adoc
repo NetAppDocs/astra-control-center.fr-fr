@@ -14,7 +14,7 @@ summary: Activez le mécanisme de provisionnement Astra Control pour accéder à
 [role="lead"]
 Les versions 23.10 et ultérieures d'Astra Trident incluent la possibilité d'utiliser Astra Control Provisioner qui permet aux utilisateurs d'Astra Control sous licence d'accéder à des fonctionnalités avancées de provisionnement du stockage. ASTRA Control Provisioner offre cette fonctionnalité étendue en plus des fonctionnalités standard d'Astra Trident CSI.
 
-Dans les prochaines mises à jour d'Astra Control, Astra Control Provisioner remplacera Astra Trident en tant que mécanisme de provisionnement et d'orchestration du stockage dans l'architecture Astra Control. De ce fait, il est fortement recommandé aux utilisateurs d'Astra Control d'activer le mécanisme de provisionnement Astra Control. ASTRA Trident continuera à rester open source et sera publié, maintenu, pris en charge et mis à jour avec le nouveau CSI et d'autres fonctionnalités de NetApp.
+Dans les prochaines mises à jour d'Astra Control, Astra Control Provisioner remplacera Astra Trident en tant que mécanisme de provisionnement et d'orchestration du stockage dans l'architecture Astra Control. Pour cette raison, il est fortement recommandé aux utilisateurs d'Astra Control d'activer Astra Control Provisioner. ASTRA Trident continuera à rester open source et sera publié, maintenu, pris en charge et mis à jour avec le nouveau CSI et d'autres fonctionnalités de NetApp.
 
 .Description de la tâche
 Vous devez suivre cette procédure si vous êtes un utilisateur d'Astra Control Center sous licence et que vous cherchez à utiliser la fonctionnalité Astra Control Provisioner. Vous devez également suivre cette procédure si vous êtes un utilisateur d'Astra Trident et souhaitez utiliser les fonctionnalités supplémentaires d'Astra Control Provisioner sans également utiliser Astra Control.
@@ -26,7 +26,7 @@ Si vous activez Astra Control Provisioner, effectuez d'abord les opérations sui
 
 [role="tabbed-block"]
 ====
-.ASTRA Control assure aux utilisateurs un provisionnement avec Astra Control Center
+.Utilisateurs d'Astra Control Provisioner avec Astra Control Center
 * *Obtenir une licence Astra Control Center* : vous aurez besoin d'une licence link:../concepts/licensing.html["Licence Astra Control Center"] Pour activer le mécanisme de provisionnement Astra Control et accéder aux fonctionnalités qu'il fournit.
 * *Installer ou mettre à niveau vers Astra Control Center 23.10*: Vous aurez besoin de cette version si vous prévoyez d'utiliser Astra Control Provisioner avec Astra Control.
 * *Confirmez que votre cluster a une architecture système AMD64* : l'image Astra Control Provisioner est fournie dans les architectures CPU AMD64 et ARM64, mais seul AMD64 est pris en charge par Astra Control Center.
