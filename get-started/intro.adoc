@@ -85,14 +85,26 @@ Vous gérez toutes les mises à jour
 * Clusters autogérés :
 +
 ** Amazon EBS
-** Disque persistant Google
 ** Disques gérés Azure
+** Disque persistant Google
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** NetApp MetroCluster
+** https://longhorn.io/["Longhorn"^]
+
+
+* Clusters sur site :
++
+** NetApp MetroCluster
+** Systèmes NetApp ONTAP AFF et FAS
+** NetApp ONTAP Select
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** https://longhorn.io/["Longhorn"^]
 
 
 
  a| 
 * Systèmes NetApp ONTAP AFF et FAS
+* NetApp ONTAP Select
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
