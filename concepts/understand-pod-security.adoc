@@ -22,11 +22,11 @@ Vous pouvez utiliser les informations et exemples inclus ici pour comprendre les
 
 == PSA appliquée par Astra Control Center
 
-ASTRA Control Center permet de mettre en application une admission à la sécurité du pod en ajoutant l'étiquette suivante au namespace où Astra est installée (espace de noms NetApp-acc ou personnalisé) et aux espaces de noms créés pour les sauvegardes.
+Avec Astra Control Center, vous pouvez link:../get-started/setup_overview.html#enable-psa["activez la mise en application"] d'une admission de sécurité de pod en ajoutant l'étiquette suivante au `netapp-acc-operator` et `netapp-monitoring` Espaces de noms pour Astra :
 
 [listing]
 ----
-pod-security.kubernetes.io/enforce: privileged
+pod-security.kubernetes.io/enforce=privileged
 ----
 
 

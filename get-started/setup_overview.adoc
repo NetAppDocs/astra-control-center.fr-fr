@@ -74,6 +74,24 @@ Avant d'ajouter un cluster, assurez-vous que les conditions préalables suivante
 ----
 insecure-skip-tls-verify: true
 ----
+
+
+* [[enable-psa]]*Activer les restrictions PSA* : si l'application d'admission de sécurité du pod est activée sur votre cluster, ce qui est standard pour les clusters Kubernetes 1.25 et versions ultérieures, vous devez activer les restrictions PSA sur ces espaces de noms :
++
+** `netapp-acc-operator` espace de noms :
++
+[listing]
+----
+kubectl label --overwrite ns netapp-acc-operator pod-security.kubernetes.io/enforce=privileged
+----
+** `netapp monitoring` espace de noms :
++
+[listing]
+----
+kubectl label --overwrite ns netapp-monitoring pod-security.kubernetes.io/enforce=privileged
+----
+
+
 * *Exigences relatives à Astra Trident* :
 +
 ** *Installez une version prise en charge* : une version d'Astra Trident qui est link:../get-started/requirements.html#astra-trident-requirements["Pris en charge par Astra Control Center"^] est installé :
