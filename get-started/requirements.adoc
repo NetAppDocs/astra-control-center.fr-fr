@@ -199,7 +199,7 @@ NOTE: Vous pouvez déployer Astra Control Center dans un cluster Kubernetes à d
 | Source | Destination | Port | Protocole | Objectif 
 
 
-| PC client | Centre de contrôle Astra | 443 | HTTPS | Accès à l'interface utilisateur/à l'API : assurez-vous que ce port est ouvert à la fois entre le cluster hébergeant Astra Control Center et chaque cluster géré 
+| PC client | Centre de contrôle Astra | 443 | HTTPS | Accès à l'interface utilisateur / à l'API : assurez-vous que ce port est ouvert dans les deux sens entre Astra Control Center et le système utilisé pour accéder à Astra Control Center 
 
 
 | Consommateurs de metrics | Nœud de travail Astra Control Center | 9090 | HTTPS | Communication de données de metrics : assurez-vous que chaque cluster géré peut accéder à ce port sur le cluster hébergeant Astra Control Center (communication bidirectionnelle requise). 
@@ -212,6 +212,10 @@ NOTE: Vous pouvez déployer Astra Control Center dans un cluster Kubernetes à d
 
 
 | Centre de contrôle Astra | NetApp AutoSupport  | 443 | HTTPS | Communication avec NetApp AutoSupport 
+
+
+| Centre de contrôle Astra | Cluster Kubernetes géré | 443/6443
+*REMARQUE* : le port utilisé par le cluster géré peut varier en fonction du cluster. Consultez la documentation fournie par le fournisseur du logiciel du cluster. | HTTPS | Communication avec le cluster géré : assurez-vous que ce port est ouvert des deux manières entre le cluster hébergeant Astra Control Center et chaque cluster géré 
 |===
 
 
