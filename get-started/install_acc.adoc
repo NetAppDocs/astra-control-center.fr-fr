@@ -30,7 +30,8 @@ Pour une démonstration du processus d'installation d'Astra Control Center, repo
 
 TIP: Déployez Astra Control Center dans un troisième domaine de panne ou sur un site secondaire. Cela est recommandé pour la réplication d'applications et la reprise sur incident transparente.
 
-* *Envisagez les stratégies de sécurité du pod* : si vous avez configuré ou souhaitez configurer les stratégies de sécurité du pod dans votre environnement, familiarisez-vous avec les stratégies de sécurité du pod et leur incidence sur l'installation d'Astra Control Center. Reportez-vous à la section link:../concepts/understand-pod-security.html["restrictions de sécurité du pod"^].
+
+
 * *Assurer des services sains* : vérifier que tous les services API sont en bon état et disponibles :
 +
 [source, console]
