@@ -81,6 +81,14 @@ Astra Control implémente la règle de protection des données en créant et en 
 
 Vous pouvez créer un snapshot à la demande à tout moment.
 
+.Description de la tâche
+ASTRA Control prend en charge la création de snapshots à l'aide de classes de stockage basées sur les pilotes suivants :
+
+* `ontap-nas`
+* `ontap-san`
+* `ontap-san-economy`
+
+
 
 IMPORTANT: Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, les snapshots ne peuvent pas être créés. Utilisez une autre classe de stockage pour les snapshots.
 
@@ -105,6 +113,17 @@ Les compartiments d'Astra Control ne signalent pas la capacité disponible. Avan
 
 Si votre application utilise une classe de stockage soutenue par `ontap-nas-economy` pilote, vous devez <<Sauvegardez et restaurez les opérations ontap-nas,activer la sauvegarde et la restauration>> fonctionnalité. Assurez-vous d'avoir défini un `backendType` dans votre https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects["Objet de stockage Kubernetes"^] avec une valeur de `ontap-nas-economy` avant d'effectuer toute opération de protection.
 
+[NOTE]
+====
+ASTRA Control prend en charge la création de sauvegardes à l'aide de classes de stockage basées sur les pilotes suivants :
+
+* `ontap-nas`
+* `ontap-nas-economy`
+* `ontap-san`
+* `ontap-san-economy`
+
+
+====
 .Étapes
 . Sélectionnez *applications*.
 . Dans le menu Options de la colonne *actions* de l'application souhaitée, sélectionnez *Sauvegarder*.

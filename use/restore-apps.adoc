@@ -24,6 +24,14 @@ Astra Control peut restaurer votre application à partir d'un snapshot ou d'une 
 `oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
 `oc adm policy add-scc-to-user privileged -z default -n wordpress`
 
+* *Pilotes de classe de stockage pris en charge* : Astra Control prend en charge la restauration des sauvegardes à l'aide de classes de stockage soutenues par les pilotes suivants :
++
+** `ontap-nas`
+** `ontap-nas-economy`
+** `ontap-san`
+** `ontap-san-economy`
+
+
 * * (Pilote ontap-nas-Economy uniquement) sauvegardes et restaurations* : avant de sauvegarder ou de restaurer une application qui utilise une classe de stockage sauvegardée par `ontap-nas-economy` pilote, vérifiez que link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["Le répertoire Snapshot du système back-end de stockage ONTAP est masqué"]. Si ce répertoire n'est pas masqué, l'accès à votre application risque d'être perdu, en particulier s'il utilise NFSv3.
 * *Les applications déployées par Helm* : les applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement prises en charge. Les applications déployées avec Helm 2 ne sont pas prises en charge.
 
