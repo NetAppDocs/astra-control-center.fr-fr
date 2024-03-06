@@ -94,7 +94,7 @@ Assurez-vous de répondre aux exigences Astra Trident suivantes, spécifiques au
 *** `ontap-nas`
 *** `ontap-san`
 *** `ontap-san-economy` (la réplication d'application n'est pas disponible avec ce type de classe de stockage)
-*** `ontap-nas-economy` (les snapshots, les règles de réplication et les règles de protection ne sont pas disponibles avec ce type de classe de stockage)
+*** `ontap-nas-economy` (les snapshots et les règles de réplication ne sont pas disponibles avec ce type de classe de stockage)
 
 
 
