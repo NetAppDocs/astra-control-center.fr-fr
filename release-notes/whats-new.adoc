@@ -16,25 +16,52 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 
 
 
+== 14 mars 2023 (24.02.0)
+
+.Nouvelles fonctionnalités et prises en charge
+* *Déployez Astra Control Center sans registre privé* : vous n'avez plus besoin d'envoyer les images d'Astra Control Center vers un registre privé ou d'en utiliser une dans votre environnement Astra Control.
+* *Corrections mineures de bogues*
+
+
+.Problèmes et limites connus
+* link:../release-notes/known-issues.html["Problèmes connus pour cette version"]
+* link:../release-notes/known-limitations.html["Restrictions connues pour cette version"]
+
+
+.(Préversion technique) workflows Kubernetes déclaratifs
+Cette version d'Astra Control Center contient une fonctionnalité Kubernetes déclarative qui permet d'effectuer une gestion des données à partir d'une ressource personnalisée Kubernetes native.
+
+Après avoir installé le link:../get-started/install-astra-connector.html["Connecteur Astra"] Sur le cluster que vous souhaitez gérer, vous pourrez effectuer les opérations de cluster CR suivantes dans l'interface utilisateur ou à partir d'une CR :
+
+* link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource["Définissez une application à l'aide d'une ressource personnalisée"]
+* link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource["Définissez le compartiment"]
+* link:../use/protect-apps.html#create-a-backup["Sauvegardez votre application"]
+* link:../use/protect-apps.html#create-a-snapshot["Créer un snapshot"]
+* link:../use/protect-apps.html#configure-a-protection-policy["Créer des plannings pour les snapshots ou les sauvegardes"]
+* link:../use/restore-apps.html["Restaurez une application à partir d'un snapshot ou d'une sauvegarde"]
+
+
+
+
 == 7 novembre 2023 (23.10.0)
 
 [[nas-eco-backup-restore]]
 .Nouvelles fonctionnalités et prises en charge
-* *Fonctionnalités de sauvegarde et de restauration pour les applications avec les systèmes back-end de stockage ontap-nas économiques à base de pilotes* : activez les opérations de sauvegarde et de restauration `ontap-nas-economy` avec certains link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["étapes simples"^].
-* *Sauvegardes immuables* : Astra Control prend désormais en charge link:../concepts/data-protection.html#immutable-backups["sauvegardes inaltérables et en lecture seule"^] en tant que couche de sécurité supplémentaire contre les programmes malveillants et autres menaces.
+* *Fonctionnalités de sauvegarde et de restauration pour les applications avec les systèmes back-end de stockage ontap-nas économiques à base de pilotes* : activez les opérations de sauvegarde et de restauration `ontap-nas-economy` avec certains https://docs.netapp.com/us-en/astra-control-center-2310/use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["étapes simples"^].
+* *Sauvegardes immuables* : Astra Control prend désormais en charge https://docs.netapp.com/us-en/astra-control-center-2310/concepts/data-protection.html#immutable-backups["sauvegardes inaltérables et en lecture seule"^] en tant que couche de sécurité supplémentaire contre les programmes malveillants et autres menaces.
 * *Présentation d'Astra Control provisionner*
 +
 Avec la version 23.10, Astra Control présente un nouveau composant logiciel appelé Astra Control Provisioner qui sera disponible pour tous les utilisateurs d'Astra Control sous licence. ASTRA Control Provisioner offre un accès à un ensemble complet de fonctionnalités de gestion et de provisionnement du stockage avancées qui vont au-delà de celles d'Astra Trident. Ces fonctionnalités sont disponibles sans frais supplémentaires pour tous les clients d'Astra Control.
 
 +
 ** *Commencez avec Astra Control Provisioner*
-C'est possible link:../use/enable-acp.html["Activez le mécanisme de provisionnement Astra Control"^] Si vous avez installé et configuré votre environnement pour utiliser Astra Trident 23.10.
+C'est possible https://docs.netapp.com/us-en/astra-control-center-2310/use/enable-acp.html["Activez le mécanisme de provisionnement Astra Control"^] Si vous avez installé et configuré votre environnement pour utiliser Astra Trident 23.10.
 ** *Fonctionnalité Astra Control Provisioner*
 +
 Les fonctions suivantes sont disponibles avec l'Astra Control Provisioner 23.10 :
 
 +
-*** *Sécurité renforcée du back-end de stockage avec le cryptage Kerberos 5* : vous pouvez améliorer la sécurité du stockage par link:../use-acp/configure-storage-backend-encryption.html["activation du chiffrement"^] pour le trafic entre votre cluster géré et le back-end de stockage. ASTRA Control Provisioner prend en charge le chiffrement Kerberos 5 sur connexions NFSv4.1 des clusters Red Hat OpenShift aux volumes Azure NetApp Files et ONTAP sur site
+*** *Sécurité renforcée du back-end de stockage avec le cryptage Kerberos 5* : vous pouvez améliorer la sécurité du stockage par https://docs.netapp.com/us-en/astra-control-center-2310/use-acp/configure-storage-backend-encryption.html["activation du chiffrement"^] pour le trafic entre votre cluster géré et le back-end de stockage. ASTRA Control Provisioner prend en charge le chiffrement Kerberos 5 sur connexions NFSv4.1 des clusters Red Hat OpenShift aux volumes Azure NetApp Files et ONTAP sur site
 *** *Récupérer des données à l'aide d'un snapshot* : Astra Control provisionner offre une restauration rapide de volume sur place à partir d'un snapshot à l'aide du `TridentActionSnapshotRestore` (TASR) CR.
 *** *Améliorations de SnapMirror* : utilisez la fonctionnalité de réplication d'applications dans les environnements où Astra Control ne dispose pas d'une connectivité directe à un cluster ONTAP ou d'un accès aux informations d'identification ONTAP. Cette fonctionnalité vous permet d'utiliser la réplication sans devoir gérer un système back-end de stockage ou ses identifiants dans Astra Control.
 *** *Fonctionnalités de sauvegarde et de restauration pour les applications avec `ontap-nas-economy` Systèmes back-end avec sauvegarde par pilote* : comme décrit <<nas-eco-backup-restore,ci-dessus>>.
@@ -44,21 +71,18 @@ Les fonctions suivantes sont disponibles avec l'Astra Control Provisioner 23.10 
 
 * *Prise en charge de la gestion des applications qui utilisent le stockage NVMe/TCP*
 ASTRA Control peut désormais gérer des applications sauvegardées par des volumes persistants et connectés via NVMe/TCP.
-* *Crochets d'exécution désactivés par défaut* : à partir de cette version, la fonctionnalité crochets d'exécution peut être link:../use/execution-hooks.html#enable-the-execution-hooks-feature["activé"] ou désactivé pour une sécurité supplémentaire (il est désactivé par défaut). Si vous n'avez pas encore créé de crochets d'exécution pour une utilisation avec Astra Control, vous devez le faire link:../use/execution-hooks.html#enable-the-execution-hooks-feature["activez la fonction crochets d'exécution"^] pour commencer à créer des crochets. Si vous avez créé des crochets d'exécution avant cette version, la fonctionnalité crochets d'exécution reste activée et vous pouvez utiliser des crochets comme vous le feriez normalement.
+* *Crochets d'exécution désactivés par défaut* : à partir de cette version, la fonctionnalité crochets d'exécution peut être https://docs.netapp.com/us-en/astra-control-center-2310/use/execution-hooks.html#enable-the-execution-hooks-feature["activé"^] ou désactivé pour une sécurité supplémentaire (il est désactivé par défaut). Si vous n'avez pas encore créé de crochets d'exécution pour une utilisation avec Astra Control, vous devez le faire https://docs.netapp.com/us-en/astra-control-center-2310/use/execution-hooks.html#enable-the-execution-hooks-feature["activez la fonction crochets d'exécution"^] pour commencer à créer des crochets. Si vous avez créé des crochets d'exécution avant cette version, la fonctionnalité crochets d'exécution reste activée et vous pouvez utiliser des crochets comme vous le feriez normalement.
 
 
 .Problèmes et limites connus
-* link:../release-notes/known-issues.html["Problèmes connus pour cette version"^]
-* link:../release-notes/known-limitations.html["Restrictions connues pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2310/release-notes/known-issues.html["Problèmes connus pour cette version"^]
+* https://docs.netapp.com/us-en/astra-control-center-2310/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
 
 
 == 31 juillet 2023 (23.07.0)
 
-.Détails
-[%collapsible]
-====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2307/get-started/requirements.html#storage-backends["Prise en charge de l'utilisation de NetApp MetroCluster dans une configuration étendue en tant que back-end de stockage"^]
 * https://docs.netapp.com/us-en/astra-control-center-2307/get-started/requirements.html#storage-backends["Prise en charge de l'utilisation de Longhorn en tant que système back-end de stockage"^]
@@ -73,28 +97,20 @@ ASTRA Control peut désormais gérer des applications sauvegardées par des volu
 * https://docs.netapp.com/us-en/astra-control-center-2307/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
-====
 
 
 == 18 mai 2023 (23.04.2)
 
-.Détails
-[%collapsible]
-====
 Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https://newreleases.io/project/github/kubernetes-csi/external-snapshotter/release/v6.1.0["Plug-in externe Kubernetes CSI v6.1.0"^] et corrige les problèmes suivants :
 
 * Bogue avec la restauration d'applications sur place lors de l'utilisation de hooks d'exécution
 * Problèmes de connexion avec le service de godet
 
 
-====
 
 
 == 25 avril 2023 (23.04.0)
 
-.Détails
-[%collapsible]
-====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2304/concepts/licensing.html["Licence d'évaluation de 90 jours activée par défaut pour les nouvelles installations d'Astra Control Center"^]
 * https://docs.netapp.com/us-en/astra-control-center-2304/use/execution-hooks.html["Fonctionnalité améliorée de crochets d'exécution avec options de filtrage supplémentaires"^]
@@ -109,14 +125,10 @@ Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https
 * https://docs.netapp.com/us-en/astra-control-center-2304/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
-====
 
 
 == 22 novembre 2022 (22.11.0)
 
-.Détails
-[%collapsible]
-====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["Prise en charge des applications réparties sur plusieurs espaces de noms"^]
 * https://docs.netapp.com/us-en/astra-control-center-2211/use/manage-apps.html#define-apps["La prise en charge de l'inclusion des ressources de cluster dans une définition d'application"^]
@@ -130,24 +142,16 @@ Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https
 * https://docs.netapp.com/us-en/astra-control-center-2211/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
-====
 
 
 == 8 septembre 2022 (22.08.1)
 
-.Détails
-[%collapsible]
-====
 Cette version (22.08.1) pour Astra Control Center (22.08.0) corrige les bugs mineurs dans la réplication d'applications à l'aide de NetApp SnapMirror.
 
-====
 
 
 == 10 août 2022 (22.08.0)
 
-.Détails
-[%collapsible]
-====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2208/use/replicate_snapmirror.html["Réplication d'applications à l'aide de la technologie NetApp SnapMirror"^]
 * https://docs.netapp.com/us-en/astra-control-center-2208/use/manage-apps.html#define-apps["Workflow de gestion des applications amélioré"^]
@@ -166,14 +170,10 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 * https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
-====
 
 
 == 26 avril 2022 (22.04.0)
 
-.Détails
-[%collapsible]
-====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2204/concepts/user-roles-namespaces.html["Contrôle d'accès basé sur des rôles (RBAC) dans un espace de noms"^]
 * https://docs.netapp.com/us-en/astra-control-center-2204/get-started/install_acc-cvo.html["Prise en charge de Cloud Volumes ONTAP"^]
@@ -187,14 +187,10 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 * https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
-====
 
 
 == 14 décembre 2021 (21.12)
 
-.Détails
-[%collapsible]
-====
 .Nouvelles fonctionnalités et prises en charge
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/restore-apps.html["Restauration des applications"^]
 * https://docs.netapp.com/us-en/astra-control-center-2112/use/execution-hooks.html["Crochets d'exécution"^]
@@ -213,14 +209,10 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 * https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/known-limitations.html["Restrictions connues pour cette version"^]
 
 
-====
 
 
 == 5 août 2021 (21.08)
 
-.Détails
-[%collapsible]
-====
 Lancement initial du centre de contrôle Astra.
 
 * https://docs.netapp.com/us-en/astra-control-center-2108/concepts/intro.html["Ce qu'il est"^]
@@ -233,7 +225,6 @@ Lancement initial du centre de contrôle Astra.
 * https://docs.netapp.com/us-en/astra-control-center-2108/rest-api/api-intro.html["Automatisez votre système avec des API"^]
 
 
-====
 
 
 == Trouvez plus d'informations

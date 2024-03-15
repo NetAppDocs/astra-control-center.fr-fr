@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-license.html 
+keywords: set up astra control, astra control license 
+summary: 'Après avoir installé Astra Control Center, connectez-vous à l"interface utilisateur et modifiez votre mot de passe, vous devez configurer une licence.' 
+---
+= Ajoutez une licence pour Astra Control Center
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Lorsque vous installez Astra Control Center, une licence d'évaluation intégrée est déjà installée. Si vous évaluez Astra Control Center, vous pouvez ignorer cette étape.
+
+Vous pouvez ajouter une nouvelle licence à l'aide de l'interface utilisateur Astra Control ou https://docs.netapp.com/us-en/astra-automation["API de contrôle Astra"^].
+
+Les licences Astra Control Center mesurent les ressources CPU avec des unités de processeur Kubernetes et représentent les ressources de processeur attribuées aux nœuds de travail de tous les clusters Kubernetes gérés. Les licences dépendent de l'utilisation des processeurs virtuels. Pour plus d'informations sur le calcul des licences, reportez-vous à la section link:../concepts/licensing.html["Licences"].
+
+
+NOTE: Si votre installation dépasse le nombre de processeurs sous licence, Astra Control Center vous empêche de gérer de nouvelles applications. Une alerte s'affiche lorsque la capacité est dépassée.
+
+
+NOTE: Pour mettre à jour une évaluation existante ou une licence complète, reportez-vous à la section link:../use/update-licenses.html["Mettre à jour une licence existante"].
+
+.Avant de commencer
+* Accès à une instance Astra Control Center récemment installée.
+* Autorisations de rôle d'administrateur.
+* A link:../concepts/licensing.html["Fichier de licence NetApp"] (NLF).
+
+
+.Étapes
+. Connectez-vous à l'interface utilisateur du centre de contrôle Astra.
+. Sélectionnez *compte* > *Licence*.
+. Sélectionnez *Ajouter licence*.
+. Accédez au fichier de licence (NLF) que vous avez téléchargé.
+. Sélectionnez *Ajouter licence*.
+
+
+La page *Account* > *License* affiche les informations de licence, la date d'expiration, le numéro de série de licence, l'ID de compte et les unités UC utilisées.
+
+
+NOTE: Si vous disposez d'une licence d'évaluation et que vous n'envoyez pas de données à AutoSupport, assurez-vous de stocker votre identifiant de compte pour éviter toute perte de données en cas de défaillance d'Astra Control Center.

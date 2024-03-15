@@ -25,7 +25,7 @@ summary: 'ASTRA Control Provisioner prend en charge la création de relations de
 Assurez-vous que les conditions préalables suivantes sont remplies avant de commencer :
 
 .Clusters ONTAP
-* *Astra Control Provisioner* : Astra Control Provisioner version 22.10 ou ultérieure doit exister sur les clusters Kubernetes source et de destination qui utilisent ONTAP en tant que backend.
+* *Astra Control Provisioner* : Astra Control Provisioner version 23.10 ou ultérieure ou a link:../get-started/requirements.html["Prise en charge d'Astra Trident"] Doit exister sur les clusters Kubernetes source et destination qui utilisent ONTAP en tant que back-end.
 * *Licences* : les licences asynchrones de SnapMirror ONTAP utilisant le bundle protection des données doivent être activées sur les clusters ONTAP source et cible. Reportez-vous à la section https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-licensing-concept.html["Présentation des licences SnapMirror dans ONTAP"^] pour en savoir plus.
 
 

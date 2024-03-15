@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/monitor-protect.html 
-keywords: proxy, cloud insights, connections, fluent bit, accounts, protect, security 
-summary: 'Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Si le réseau où vous utilisez Astra Control Center requiert un proxy pour vous connecter à Internet, configurez ce serveur proxy dans Astra Control Center. Vous pouvez utiliser NetApp Cloud Insights pour surveiller l"ensemble de votre infrastructure et obtenir des informations exploitables. Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Pour contrôler l"ensemble de votre infrastructure et obtenir des informations exploitables, créez une connexion à NetApp Cloud Insights, configurez Prometheus ou ajoutez une connexion Fluentd.' 
+keywords: proxy, connections, fluent bit, accounts, protect, security 
+summary: 'Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Si le réseau où vous utilisez Astra Control Center requiert un proxy pour vous connecter à Internet, configurez ce serveur proxy dans Astra Control Center. Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Pour surveiller l"ensemble de votre infrastructure et obtenir des informations exploitables, configurez Prometheus ou ajoutez une connexion Fluentd.' 
 ---
-= Surveillez l'infrastructure avec des connexions Cloud Insights, Prometheus ou Fluentd
+= Surveillez l'infrastructure avec des connexions Prometheus ou Fluentd
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,20 +12,19 @@ summary: 'Vous pouvez configurer plusieurs paramètres en option pour améliorer
 
 
 [role="lead"]
-Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Pour contrôler l'ensemble de votre infrastructure et obtenir des informations exploitables, créez une connexion à NetApp Cloud Insights, configurez Prometheus ou ajoutez une connexion Fluentd.
+Vous pouvez configurer plusieurs paramètres en option pour améliorer votre expérience avec Astra Control Center. Pour surveiller l'ensemble de votre infrastructure et obtenir des informations exploitables, configurez Prometheus ou ajoutez une connexion Fluentd.
 
-Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans le centre de contrôle Astra.
+Si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy pour vous connecter à Internet (pour télécharger des packs de support sur le site de support NetApp), vous devez configurer un serveur proxy dans Astra Control Center.
 
-* <<Connectez-vous à Cloud Insights>>
 * <<Connectez-vous à Prometheus>>
 * <<Connectez-vous à Fluentd>>
 
 
 
 
-== Ajoutez un serveur proxy pour les connexions à Cloud Insights ou au site de support NetApp
+== Ajoutez un serveur proxy pour les connexions au site de support NetApp
 
-Si le réseau sur lequel vous exécutez Astra Control Center requiert un proxy pour vous connecter à Internet (pour télécharger des bundles de support vers le site de support NetApp ou établir une connexion avec Cloud Insights), vous devez configurer un serveur proxy dans le centre de contrôle Astra.
+Si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy pour vous connecter à Internet (pour télécharger des packs de support sur le site de support NetApp), vous devez configurer un serveur proxy dans Astra Control Center.
 
 
 IMPORTANT: Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy. Assurez-vous de saisir les valeurs correctes.
@@ -65,133 +64,13 @@ Vous pouvez modifier les paramètres du serveur proxy.
 
 === Désactiver la connexion au serveur proxy
 
-Vous pouvez désactiver la connexion au serveur proxy. Vous serez averti avant de désactiver cette interruption potentielle à d'autres connexions.
+Vous pouvez désactiver la connexion au serveur proxy. Vous serez averti avant de désactiver cette interruption potentielle des autres connexions.
 
 .Étapes
 . Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
 . Sélectionnez *compte* > *connexions*.
 . Sélectionnez *déconnecter* dans la liste déroulante pour désactiver la connexion.
 . Dans la boîte de dialogue qui s'ouvre, confirmez l'opération.
-
-
-
-
-== Connectez-vous à Cloud Insights
-
-Pour surveiller et obtenir des informations exploitables sur l'ensemble de votre infrastructure, connectez NetApp Cloud Insights à votre instance Astra Control Center. Cloud Insights est inclus dans votre licence Astra Control Center.
-
-Cloud Insights doit être accessible à partir du réseau utilisé par Astra Control Center, ou indirectement via un serveur proxy.
-
-Lorsque le centre de contrôle Astra est connecté à Cloud Insights, un pod d'unité d'acquisition est créé. Ce pod collecte les données des systèmes back-end gérés par Astra Control Center et les pousse dans Cloud Insights. Ce pod requiert 8 Go de RAM et 2 cœurs de CPU.
-
-
-NOTE: Lorsque Astra Control Center est couplée à Cloud Insights, vous ne devez pas utiliser l'option *Modifier le déploiement* dans Cloud Insights. 
-
-
-NOTE: Après avoir activé la connexion Cloud Insights, vous pouvez afficher les informations de débit sur la page *systèmes back-end* et vous connecter à Cloud Insights après avoir sélectionné un système back-end de stockage. Vous pouvez également trouver les informations sur le *Tableau de bord* dans la section cluster et vous y connecter à Cloud Insights.
-
-.Avant de commencer
-* Un compte Astra Control Center avec *admin*/*propriétaire* privilèges.
-* Licence Astra Control Center valide.
-* Un serveur proxy si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy pour se connecter à Internet.
-
-
-
-TIP: Si vous découvrez Cloud Insights, familiarisez-vous avec les fonctions et les fonctionnalités. Reportez-vous à la section link:https://docs.netapp.com/us-en/cloudinsights/index.html["Documentation Cloud Insights"^].
-
-.Étapes
-. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
-. Sélectionnez *compte* > *connexions*.
-. Sélectionnez *Connect* où apparaît *déconnecté* dans la liste déroulante pour ajouter la connexion.
-+
-image:ci-connect.png["Cette image montre l'option connexion dans la liste déroulante pour activer la connexion Cloud Insights."]
-
-. Entrez les jetons de l'API Cloud Insights et l'URL du locataire. L'URL du locataire a le format suivant, par exemple :
-+
-[listing]
-----
-https://<environment-name>.c01.cloudinsights.netapp.com/
-----
-+
-Vous obtenez l'URL du locataire lorsque vous obtenez la licence Cloud Insights. Si vous ne disposez pas de l'URL du locataire, reportez-vous à la section link:https://docs.netapp.com/us-en/cloudinsights/task_cloud_insights_onboarding_1.html["Documentation Cloud Insights"^].
-
-+
-.. Pour obtenir le link:https://docs.netapp.com/us-en/cloudinsights/API_Overview.html#api-access-tokens["Jeton API"^], Connectez-vous à l'URL de votre locataire Cloud Insights.
-.. Dans Cloud Insights, générez un jeton d'accès à l'API *lecture/écriture* et un jeton d'accès à l'API *lecture seule* en cliquant sur *Admin* > *API Access*.
-+
-image:cloud-insights-api.png["Cette image montre la page de génération de jetons de l'API Cloud Insights."]
-
-.. Copiez la clé *lecture seule*. Vous devrez la coller dans la fenêtre du centre de contrôle Astra pour activer la connexion Cloud Insights. Pour les autorisations de clé de token d'accès à l'API de lecture, sélectionnez : actifs, alertes, unité d'acquisition et collecte de données.
-.. Copiez la clé *lecture/écriture*. Vous devrez le coller dans la fenêtre Centre de contrôle Astra *connexion Cloud Insights*. Pour les autorisations de clé de token d'accès à l'API Read/Write, sélectionnez : data ingestion, gestion des journaux, unité d'acquisition et collecte de données.
-+
-
-NOTE: Nous vous recommandons de générer une clé *lecture seule* et une clé *lecture/écriture*, et de ne pas utiliser la même clé à ces deux fins. Par défaut, la période d'expiration du token est définie sur un an. Nous vous recommandons de conserver la sélection par défaut pour donner au token la durée maximale avant son expiration. Si votre jeton expire, la télémétrie s'arrête.
-
-.. Collez les clés que vous avez copiées de Cloud Insights dans le centre de contrôle Astra.
-
-
-. Sélectionnez *connexion*.
-
-
-
-IMPORTANT: Après avoir sélectionné *connexion,* l'état de la connexion devient *en attente* dans la section *Cloud Insights* de la page *compte* > *connexions*. Il peut y avoir quelques minutes pour que la connexion soit activée et que l'état passe à *Connected*.
-
-
-NOTE: Pour passer facilement entre le centre de contrôle Astra et les interfaces utilisateur Cloud Insights, assurez-vous d'être connecté aux deux.
-
-
-
-=== Afficher les données dans Cloud Insights
-
-Si la connexion a réussi, la section *Cloud Insights* de la page *compte* > *connexions* indique qu'elle est connectée et affiche l'URL du locataire. Vous pouvez accéder à Cloud Insights pour consulter les données reçues et affichées avec succès.
-
-image:cloud-insights.png["Cette image montre la connexion Cloud Insights activée dans l'interface utilisateur du centre de contrôle Astra."]
-
-Si la connexion a échoué pour une raison quelconque, l'état indique *FAILED*. Vous pouvez trouver la raison de l'échec sous *Notifications* en haut à droite de l'interface utilisateur.
-
-image:cloud-insights-notifications.png["Cette image affiche le message d'erreur en cas d'échec de la connexion Cloud Insights."]
-
-Vous pouvez également trouver les mêmes informations sous *compte* > *Notifications*.
-
-À partir du Centre de contrôle Astra, vous pouvez afficher les informations sur le débit sur la page *Backends* et vous connecter à Cloud Insights à partir d'ici après avoir sélectionné un back-end de stockage.image:throughput.png["Cette image montre les informations de débit sur la page Backends dans Astra Control Center."]
-
-Pour accéder directement à Cloud Insights, sélectionnez l'icône *Cloud Insights* située en regard de l'image de metrics.
-
-Vous pouvez également trouver les informations sur le *Dashboard*.
-
-image:dashboard-ci.png["Cette image affiche l'icône Cloud Insights sur le tableau de bord."]
-
-
-IMPORTANT: Après l'activation de la connexion Cloud Insights, si vous supprimez les systèmes back-end ajoutés dans Astra Control Center, le système back-end cesse de créer des rapports avec Cloud Insights.
-
-
-
-=== Modifier la connexion Cloud Insights
-
-Vous pouvez modifier la connexion Cloud Insights.
-
-
-NOTE: Vous pouvez uniquement modifier les clés API. Pour modifier l'URL du locataire Cloud Insights, nous vous recommandons de déconnecter la connexion Cloud Insights et de vous connecter à la nouvelle URL.
-
-.Étapes
-. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
-. Sélectionnez *compte* > *connexions*.
-. Sélectionnez *Modifier* dans la liste déroulante pour modifier la connexion.
-. Modifiez les paramètres de connexion Cloud Insights.
-. Sélectionnez *Enregistrer*.
-
-
-
-
-=== Désactiver la connexion Cloud Insights
-
-Vous pouvez désactiver la connexion Cloud Insights pour un cluster Kubernetes géré par Astra Control Center. La désactivation de la connexion Cloud Insights ne supprime pas les données de télémétrie déjà chargées sur Cloud Insights.
-
-.Étapes
-. Connectez-vous à Astra Control Center à l'aide d'un compte disposant du privilège *admin*/*propriétaire*.
-. Sélectionnez *compte* > *connexions*.
-. Sélectionnez *déconnecter* dans la liste déroulante pour désactiver la connexion.
-. Dans la boîte de dialogue qui s'ouvre, confirmez l'opération. Après avoir confirmé l'opération, sur la page *compte* > *connexions*, l'état Cloud Insights devient *en attente*. Le changement d'état prend quelques minutes à *déconnecté*.
 
 
 

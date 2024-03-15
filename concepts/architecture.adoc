@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concepts/architecture.html 
-keywords: what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, clusters, astra trident 
+keywords: what is astra, astra control, astra control architecture, astra control center, astra control service, kubernetes, netapp, clusters, astra trident, astra control provisioner 
 summary: 'Voici un aperçu des divers composants de l"environnement Astra Control.' 
 ---
 = Architecture et composants
@@ -14,14 +14,14 @@ summary: 'Voici un aperçu des divers composants de l"environnement Astra Contro
 [role="lead"]
 Voici un aperçu des divers composants de l'environnement Astra Control.
 
-image:astra-architecture-diagram-v5.png["Image conceptuelle décrivant l'architecture Astra Control et ses composants"]
+image:astra-architecture-diagram-v6.png["Image conceptuelle décrivant l'architecture Astra Control et ses composants"]
 
 
 
 == Composants d'Astra Control
 
 * *Clusters Kubernetes* : Kubernetes est une plateforme portable, extensible et open source pour la gestion des workloads et des services conteneurisés, qui facilite à la fois la configuration déclarative et l'automatisation. Astra propose des services de gestion pour les applications hébergées dans un cluster Kubernetes.
-* *Astra Trident* : en tant que fournisseur de stockage open source entièrement pris en charge et orchestrateur géré par NetApp, Astra Trident vous permet de créer des volumes de stockage pour les applications conteneurisées gérées par Docker et Kubernetes. Lorsqu'il est déployé avec Astra Control Center, Trident inclut un système back-end de stockage ONTAP configuré.
+* *Astra Control Provisioner* : en tant que mécanisme de provisionnement et d'orchestration de stockage entièrement pris en charge et géré par NetApp, qui contient la fonctionnalité Astra Trident CSI ainsi que des fonctionnalités de gestion du stockage étendues, Astra Control Provisioner vous permet de créer des volumes de stockage pour les applications conteneurisées gérées par Docker et Kubernetes. Lorsqu'il est déployé avec Astra Control Center, Astra Control Provisioner inclut un système back-end de stockage ONTAP configuré.
 * *Back-end de stockage* :
 +
 ** Le service Astra Control utilise les systèmes de stockage back-end suivants :
@@ -39,7 +39,6 @@ image:astra-architecture-diagram-v5.png["Image conceptuelle décrivant l'archite
 
 
 
-* *Cloud Insights* : un outil NetApp de surveillance de l'infrastructure cloud, Cloud Insights vous permet de surveiller les performances et l'utilisation de vos clusters Kubernetes gérés par Astra Control Center. Cloud Insights met en corrélation l'utilisation du stockage avec les charges de travail. Lorsque vous activez la connexion Cloud Insights dans le centre de contrôle Astra, les informations de télémétrie s'affichent dans les pages de l'interface utilisateur du centre de contrôle Astra.
 
 
 
@@ -60,8 +59,6 @@ Astra Control Center vous permet également de gérer, de migrer et de protéger
 
 * https://docs.netapp.com/us-en/astra/index.html["Documentation relative au service après-vente Astra Control"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentation Astra Control Center"^]
-* https://docs.netapp.com/us-en/trident/index.html["Documentation Astra Trident"^]
 * https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]
-* https://docs.netapp.com/us-en/cloudinsights/["Documentation Cloud Insights"^]
 * https://docs.netapp.com/us-en/ontap/index.html["Documentation ONTAP"^]
 

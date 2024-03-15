@@ -2,24 +2,17 @@
 :allow-uri-read: 
 
 
-* *Accéder au registre d'images NetApp Astra Control* :
 Vous avez la possibilité d'obtenir des images d'installation et des améliorations de fonctionnalités pour Astra Control, telles que Astra Control Provisioner, à partir du registre d'images NetApp.
-+
-.Développez pour les étapes
-[%collapsible]
-====
-.. Notez l'ID de votre compte Astra Control dont vous aurez besoin pour vous connecter au registre.
+
+. Notez l'ID de votre compte Astra Control dont vous aurez besoin pour vous connecter au registre.
 +
 Votre ID de compte s'affiche dans l'interface utilisateur web d'Astra Control Service. Sélectionnez l'icône de figure en haut à droite de la page, sélectionnez *API Access* et notez votre ID de compte.
 
-.. A partir de la même page, sélectionnez *générer jeton API* et copiez la chaîne de jeton API dans le presse-papiers et enregistrez-la dans votre éditeur.
-.. Connectez-vous au registre Astra Control :
+. A partir de la même page, sélectionnez *générer jeton API* et copiez la chaîne de jeton API dans le presse-papiers et enregistrez-la dans votre éditeur.
+. Connectez-vous au registre Astra Control :
 +
 [source, console]
 ----
 docker login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
-
-
-====
 

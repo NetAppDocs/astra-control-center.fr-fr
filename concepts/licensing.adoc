@@ -17,7 +17,7 @@ Lorsque vous déployez Astra Control Center, il est installé avec une licence d
 Vous obtenez une licence de l'une des manières suivantes :
 
 * Si vous évaluez Astra Control Center et que vous avez besoin de termes d'évaluation différents de ceux inclus dans la licence d'évaluation intégrée, contactez NetApp pour demander un fichier de licence d'évaluation différent.
-* link:https://mysupport.netapp.com/site/["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence NetApp (NLF)"^] En vous connectant au site du support NetApp et en accédant à vos licences logicielles via le menu systèmes.
+* https://mysupport.netapp.com/site/["Si vous avez déjà acheté Astra Control Center, générez votre fichier de licence NetApp (NLF)"^] En vous connectant au site du support NetApp et en accédant à vos licences logicielles via le menu systèmes.
 
 
 Pour plus d'informations sur les licences requises pour les systèmes de stockage back-end ONTAP, reportez-vous à la link:../get-started/requirements.html["systèmes back-end de stockage pris en charge"].
@@ -60,6 +60,6 @@ NOTE: Les nœuds d'infrastructure Red Hat OpenShift ne consomment pas de licence
 
 == Trouvez plus d'informations
 
-* link:../get-started/setup_overview.html#add-a-license-for-astra-control-center["Ajoutez une licence lorsque vous configurez Astra Control Center pour la première fois"]
+* link:../get-started/add-license.html["Ajoutez une licence lorsque vous configurez Astra Control Center pour la première fois"]
 * link:../use/update-licenses.html["Mettre à jour une licence existante"]
 

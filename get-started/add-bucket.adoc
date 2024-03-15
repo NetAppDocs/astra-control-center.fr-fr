@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-bucket.html 
+keywords: set up astra control, add bucket 
+summary: 'Après avoir installé Astra Control Center, vous devez envisager d"ajouter un compartiment pour la configuration.' 
+---
+= Ajouter un godet
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Vous pouvez ajouter un compartiment à l'aide de l'interface utilisateur Astra Control ou https://docs.netapp.com/us-en/astra-automation["API de contrôle Astra"^]. Il est essentiel d'ajouter des fournisseurs de compartiments de stockage objet pour sauvegarder les applications et le stockage persistant ou pour cloner les applications entre les clusters. Astra Control stocke les sauvegardes ou les clones dans les compartiments de magasin d'objets que vous définissez.
+
+Si vous clonez la configuration de vos applications et le stockage persistant vers le même cluster, il n'est pas nécessaire d'utiliser un compartiment dans Astra Control. La fonctionnalité de copie Snapshot des applications ne nécessite pas de compartiment.
+
+.Avant de commencer
+* Assurez-vous que vous disposez d'un compartiment accessible depuis vos clusters gérés par Astra Control Center.
+* Vérifiez que vous disposez des informations d'identification pour le compartiment.
+* S'assurer que le godet est de l'un des types suivants :
++
+** NetApp ONTAP S3
+** NetApp StorageGRID S3
+** Microsoft Azure
+** S3 générique
+
+
+
+
+
+NOTE: Amazon Web Services (AWS) et Google Cloud Platform (GCP) utilisent le type de compartiment S3 générique.
+
+
+NOTE: Bien qu'Astra Control Center prenne en charge Amazon S3 en tant que fournisseur de compartiments génériques, Astra Control Center peut ne pas prendre en charge tous les fournisseurs de magasins d'objets qui affirment la prise en charge d'Amazon S3.
+
+.Étapes
+. Dans la zone de navigation de gauche, sélectionnez *godets*.
+. Sélectionnez *Ajouter*.
+. Sélectionner le type de godet.
++
+
+NOTE: Lorsque vous ajoutez un compartiment, sélectionnez le fournisseur approprié et fournissez les identifiants appropriés pour ce fournisseur. Par exemple, l'interface utilisateur accepte NetApp ONTAP S3 comme type et accepte les identifiants StorageGRID. Toutefois, toutes les futures sauvegardes et restaurations des applications à l'aide de ce compartiment échoueront.
+
+. Saisissez un nom de compartiment existant et une description facultative.
++
+
+TIP: Le nom et la description du compartiment apparaissent comme un emplacement de sauvegarde que vous pouvez choisir plus tard lors de la création d'une sauvegarde. Ce nom apparaît également lors de la configuration de la règle de protection.
+
+. Entrez le nom ou l'adresse IP du terminal S3.
+. Sous *Sélectionner les informations d'identification*, choisissez l'onglet *Ajouter* ou *utiliser l'onglet existant*.
++
+** Si vous avez choisi *Ajouter*:
++
+... Saisissez un nom pour l'identifiant qui le distingue des autres identifiants dans Astra Control.
+... Saisissez l'ID d'accès et la clé secrète en collant le contenu dans le presse-papiers.
+
+
+** Si vous avez choisi *utiliser existant*:
++
+... Sélectionnez les informations d'identification existantes à utiliser avec le compartiment.
+
+
+
+
+. Sélectionnez `Add`.
++
+
+NOTE: Lorsque vous ajoutez un godet, Astra Control marque un godet avec l'indicateur de compartiment par défaut. Le premier compartiment que vous créez devient le compartiment par défaut. Au fur et à mesure que vous ajoutez des compartiments, vous pourrez décider plus tard link:../use/manage-buckets.html#set-the-default-bucket["définir un autre compartiment par défaut"].
+
+

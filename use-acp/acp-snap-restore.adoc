@@ -90,7 +90,7 @@ metadata:
 ----
 [NOTE]
 ====
-* Dans la plupart des cas, Astra Control Provisioner ne réessaiera pas automatiquement l'opération en cas de panne. Vous devrez effectuer à nouveau l'opération.
+* Dans la plupart des cas, Astra Control Provisioner ne réessaiera pas automatiquement l'opération en cas de panne. Vous devrez exécuter à nouveau l'opération.
 * Les utilisateurs Kubernetes sans accès administrateur peuvent avoir à obtenir l'autorisation de l'administrateur pour créer une CR ASR dans l'espace de noms de leur application.
 
 

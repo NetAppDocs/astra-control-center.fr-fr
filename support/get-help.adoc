@@ -17,7 +17,7 @@ NetApp prend en charge Astra Control de plusieurs façons. De nombreuses options
 
 IMPORTANT: Si vous disposez d'une licence d'évaluation pour Astra Control Center, vous pouvez obtenir de l'aide technique. Toutefois, la création de dossier via le site de support NetApp (NSS) n'est pas disponible. Vous pouvez entrer en contact avec l'assistance via l'option de retour ou utiliser le canal de discorde pour le libre-service.
 
-Vous devez d'abord link:../get-started/setup_overview.html["Activez le support de votre numéro de série NetApp"] afin d'utiliser ces options d'assistance non disponibles en libre-service. Un compte SSO du site de support NetApp (NSS) est nécessaire pour la discussion en ligne et la gestion des dossiers.
+Vous devez d'abord link:../get-started/add-license.html["Activez le support de votre numéro de série NetApp"] afin d'utiliser ces options d'assistance non disponibles en libre-service. Un compte SSO du site de support NetApp (NSS) est nécessaire pour la discussion en ligne et la gestion des dossiers.
 
 
 

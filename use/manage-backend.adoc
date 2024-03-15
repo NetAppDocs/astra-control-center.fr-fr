@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage-backend.html 
 keywords: how to use astra control, what is astra storage, how to set up astra storage backend, ontap storage in astra, backend storage in astra 
-summary: 'La gestion des clusters de stockage d"Astra Control en tant que backend de stockage vous permet d"obtenir des liens entre les volumes persistants (PVS) et le back-end de stockage, ainsi que des metrics de stockage supplémentaires. Il est possible de surveiller la capacité du stockage et les informations concernant son état, y compris les performances si le centre de contrôle Astra est connecté à Cloud Insights.' 
+summary: 'La gestion des clusters de stockage d"Astra Control en tant que backend de stockage vous permet d"obtenir des liens entre les volumes persistants (PVS) et le back-end de stockage, ainsi que des metrics de stockage supplémentaires. Vous pouvez surveiller les détails de la capacité de stockage et de l"état de santé.' 
 ---
 = Gérer le stockage back-end
 :hardbreaks:
@@ -12,13 +12,13 @@ summary: 'La gestion des clusters de stockage d"Astra Control en tant que backen
 
 
 [role="lead"]
-La gestion des clusters de stockage d'Astra Control en tant que backend de stockage vous permet d'obtenir des liens entre les volumes persistants (PVS) et le back-end de stockage, ainsi que des metrics de stockage supplémentaires. Il est possible de surveiller la capacité du stockage et les informations concernant son état, y compris les performances si le centre de contrôle Astra est connecté à Cloud Insights.
+La gestion des clusters de stockage d'Astra Control en tant que backend de stockage vous permet d'obtenir des liens entre les volumes persistants (PVS) et le back-end de stockage, ainsi que des metrics de stockage supplémentaires.
 
 Pour obtenir des instructions sur la gestion des systèmes back-end avec l'API Astra Control, consultez le link:https://docs.netapp.com/us-en/astra-automation/["Informations sur l'automatisation et les API d'Astra"^].
 
 Vous pouvez effectuer les tâches suivantes liées à la gestion d'un système back-end :
 
-* link:../get-started/setup_overview.html#add-a-storage-backend["Ajout d'un système back-end"]
+* link:../get-started/add-storage-backend.html["Ajout d'un système back-end"]
 * <<Afficher les détails du système back-end>>
 * <<Modifier les détails de l'authentification du système back-end du stockage>>
 * <<Gérez un système back-end de stockage découvert>>
@@ -53,19 +53,11 @@ Vous pouvez afficher les informations de stockage back-end à partir du tableau 
 
 Affichez des informations sur l'état du système back-end, la capacité et les performances (débit et/ou latence des IOPS).
 
-Vous pouvez voir les volumes utilisés par les applications Kubernetes, qui sont stockés sur un back-end de stockage sélectionné. Avec Cloud Insights, des informations supplémentaires s'affichent. Voir https://docs.netapp.com/us-en/cloudinsights/["Documentation Cloud Insights"^].
+Vous pouvez voir les volumes utilisés par les applications Kubernetes, qui sont stockés sur un back-end de stockage sélectionné.
 
 .Étapes
 . Dans la zone de navigation de gauche, sélectionnez *Backends*.
 . Sélectionnez le système back-end.
-+
-
-TIP: Si vous êtes connecté à NetApp Cloud Insights, des extraits de données de Cloud Insights s'affichent sur la page Backends.
-
-+
-image:../use/acc_backends_ci_connection2.png["Capture d'écran de la page Backends"]
-
-. Pour accéder directement à Cloud Insights, sélectionnez l'icône *Cloud Insights* située en regard de l'image de metrics.
 
 
 
@@ -80,7 +72,7 @@ ASTRA Control Center offre deux modes d'authentification d'un backend ONTAP.
 
 Vous pouvez mettre à jour les systèmes back-end existants pour passer d'un type d'authentification à une autre méthode. Une seule méthode d'authentification est prise en charge à la fois.
 
-Pour plus d'informations sur l'activation de l'authentification basée sur un certificat, reportez-vous à la section link:../get-started/setup_overview.html#enable-authentication-on-the-ontap-storage-backend["Activez l'authentification sur le back-end de stockage ONTAP"].
+Pour plus d'informations sur l'activation de l'authentification basée sur un certificat, reportez-vous à la section link:../get-started/enable-auth-ontap-backend.html["Activez l'authentification sur le back-end de stockage ONTAP"].
 
 .Étapes
 . Dans le menu de navigation de gauche, sélectionnez *Backends*.

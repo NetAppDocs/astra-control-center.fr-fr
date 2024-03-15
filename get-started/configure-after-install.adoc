@@ -83,7 +83,7 @@ kubectl delete limitrange cpu-limit-range -n [netapp-acc or custom namespace]
 
 == Ajouter un certificat TLS personnalisé
 
-Par défaut, Astra Control Center utilise un certificat TLS auto-signé pour le trafic du contrôleur d'entrée (uniquement dans certaines configurations) et l'authentification de l'interface utilisateur Web avec des navigateurs Web. Vous pouvez supprimer le certificat TLS auto-signé existant et le remplacer par un certificat TLS signé par une autorité de certification (AC).
+Par défaut, Astra Control Center utilise un certificat TLS auto-signé pour le trafic du contrôleur d'entrée (uniquement dans certaines configurations) et l'authentification de l'interface utilisateur Web avec des navigateurs Web. Pour une utilisation en production, vous devez supprimer le certificat TLS auto-signé existant et le remplacer par un certificat TLS signé par une autorité de certification (CA).
 
 [NOTE]
 ====
@@ -181,6 +181,10 @@ Status:
 Events:                    <none>
 ----
 . Créer le `certificate.yaml` fichier avec l'exemple suivant, en remplaçant les valeurs de paramètre fictif entre parenthèses <> par les informations appropriées :
++
+
+NOTE: Cet exemple utilise le `dnsNames` Propriété permettant de spécifier l'adresse DNS d'Astra Control Center. ASTRA Control Center ne prend pas en charge l'utilisation de la propriété Common Name (CN) pour spécifier l'adresse DNS.
+
 +
 [source, yaml, subs="+quotes"]
 ----

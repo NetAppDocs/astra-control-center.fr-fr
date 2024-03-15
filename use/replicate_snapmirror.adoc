@@ -47,7 +47,7 @@ Avec Astra Control, vous pouvez effectuer les tâches suivantes relatives aux ap
 Avant de commencer, vous devez remplir les conditions préalables suivantes :
 
 .Clusters ONTAP
-* *Astra Trident* : Astra Trident version 22.10 ou ultérieure doit exister sur les clusters Kubernetes source et de destination qui utilisent ONTAP en tant que back-end. ASTRA Control prend en charge la réplication avec la technologie NetApp SnapMirror à l'aide de classes de stockage basées sur les pilotes suivants :
+* *Astra Control Provisioner ou Astra Trident* : Astra Control Provisioner ou Astra Trident doit exister sur les clusters Kubernetes source et de destination qui utilisent ONTAP en tant que back-end. ASTRA Control prend en charge la réplication avec la technologie NetApp SnapMirror à l'aide de classes de stockage basées sur les pilotes suivants :
 +
 ** `ontap-nas`
 ** `ontap-san`
@@ -62,13 +62,17 @@ Avant de commencer, vous devez remplir les conditions préalables suivantes :
 
 IMPORTANT: S'assurer que les noms de SVM utilisés dans la relation de réplication entre deux clusters ONTAP sont uniques.
 
-* *Astra Trident et SVM* : les SVM distants à peering doivent être disponibles pour Astra Trident sur le cluster destination.
+* *Astra Control Provisioner ou Astra Trident et SVM* : les SVM distants à peering doivent être disponibles pour Astra Control Provisioner ou Astra Trident sur le cluster destination.
 
 
 .Centre de contrôle Astra
+
+TIP: link:../get-started/install_acc.html["Déployez Astra Control Center"] dans un troisième domaine de panne ou un site secondaire pour une reprise après incident transparente.
+
 * *Systèmes back-end gérés* : vous devez ajouter et gérer des systèmes back-end de stockage ONTAP dans Astra Control Center pour créer une relation de réplication.
 +
-*_Astra Control Provisioner uniquement_* : l'ajout et la gestion de systèmes back-end de stockage ONTAP dans Astra Control Center sont facultatifs si vous avez activé Astra Control Provisioner pour Astra Control Center 23.10 ou version ultérieure.
+
+NOTE: L'ajout et la gestion de systèmes back-end de stockage ONTAP dans Astra Control Center sont facultatifs si vous avez activé le mécanisme de provisionnement Astra Control.
 
 * *Clusters gérés* : ajoutez et gérez les clusters suivants avec Astra Control, idéalement sur différents sites ou domaines de défaillance :
 +
@@ -79,12 +83,10 @@ IMPORTANT: S'assurer que les noms de SVM utilisés dans la relation de réplicat
 
 * *Comptes d'utilisateur* : lorsque vous ajoutez un back-end de stockage ONTAP à Astra Control Center, appliquez les informations d'identification de l'utilisateur avec le rôle « admin ». Ce rôle a des méthodes d'accès `http` et `ontapi` Activation sur les clusters ONTAP source et de destination Reportez-vous à la section https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_cluster_user_accounts.html#users-list["Gérer les comptes utilisateur dans la documentation ONTAP"^] pour en savoir plus.
 +
-*_Astra Control Provisioner Only_*: Si vous avez activé la fonctionnalité Astra Control Provisioner, vous n'avez plus besoin de définir spécifiquement un rôle « admin » pour gérer les clusters dans Astra Control Center, car ces identifiants ne sont plus requis dans Astra Control Center.
+
+NOTE: Grâce à la fonctionnalité Astra Control Provisioner, vous n'avez pas besoin de définir spécifiquement un rôle d'administrateur pour gérer les clusters dans Astra Control Center, car ces identifiants ne sont pas requis par Astra Control Center.
 
 
-
-
-TIP: link:../get-started/install_acc.html["Déployez Astra Control Center"^] dans un troisième domaine de panne ou un site secondaire pour une reprise après incident transparente.
 
 
 NOTE: ASTRA Control Center ne prend pas en charge la réplication NetApp SnapMirror pour les systèmes back-end de stockage utilisant le protocole NVMe over TCP.

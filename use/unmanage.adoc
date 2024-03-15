@@ -50,7 +50,7 @@ NOTE: Avant d'annuler la gestion du cluster, vous devez annuler la gestion des a
 Lorsque vous dégérez un cluster :
 
 * Cette action empêche votre cluster d'être géré par Astra Control Center. Elle ne modifie pas la configuration du cluster et ne supprime pas le cluster.
-* Astra Trident ne sera pas désinstallé du cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Découvrez comment désinstaller Astra Trident"^].
+* ASTRA Control Provisioner ou Astra Trident ne seront pas désinstallés du cluster. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Découvrez comment désinstaller Astra Trident"^].
 
 
 .Étapes
@@ -64,4 +64,4 @@ Lorsque vous dégérez un cluster :
 L'état du cluster devient *Suppression*. Ensuite, le cluster sera supprimé de la page *clusters* et il n'est plus géré par Astra Control Center.
 
 
-IMPORTANT: *Si le Centre de contrôle Astra et le Cloud Insights ne sont pas connectés*, la dégestion du cluster supprime toutes les ressources qui ont été installées pour envoyer des données de télémétrie. *Si le Centre de contrôle Astra et le Cloud Insights sont connectés*, la dégestion du cluster supprime uniquement le `fluentbit` et `event-exporter` pods.
+IMPORTANT: L'annulation de la gestion du cluster supprime toutes les ressources qui ont été installées pour l'envoi de données de télémétrie.

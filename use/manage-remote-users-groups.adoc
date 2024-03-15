@@ -74,9 +74,13 @@ NOTE: Le rôle que vous sélectionnez est attribué à tous les utilisateurs de 
 
 . Vous pouvez éventuellement attribuer une ou plusieurs contraintes d'espace de noms à ce groupe et sélectionner *restreindre le rôle aux contraintes* pour les appliquer. Vous pouvez ajouter une nouvelle contrainte d'espace de noms en sélectionnant *Ajouter une contrainte*.
 +
+[NOTE]
+====
+** *Si les ressources auxquelles vous accédez appartiennent à des clusters qui ont installé le dernier connecteur Astra* : lorsqu'un utilisateur reçoit plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes des rôles sont combinées. Par exemple, si un utilisateur doté d'un rôle de visualiseur local joint trois groupes liés au rôle membre, l'utilisateur dispose désormais d'un accès de rôle de visualiseur aux ressources d'origine ainsi que d'un accès de rôle membre aux ressources acquises via l'appartenance à un groupe.
+** *Si les ressources auxquelles vous accédez appartiennent à des clusters qui n'ont pas installé Astra Connector* : lorsqu'un utilisateur reçoit plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes du rôle le plus autorisé sont les seules qui prennent effet.
 
-NOTE: Lorsqu'un utilisateur se voit attribuer plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes du rôle le plus permissif sont les seules qui prennent effet. Par exemple, si un utilisateur avec un rôle de visualiseur local rejoint trois groupes liés au rôle membre, la somme des contraintes des rôles de membre prend effet et toutes les contraintes du rôle de visualiseur sont ignorées.
 
+====
 . Sélectionnez *Ajouter*.
 
 

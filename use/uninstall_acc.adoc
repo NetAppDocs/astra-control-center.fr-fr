@@ -17,8 +17,8 @@ Vous devrez peut-être retirer les composants du centre de contrôle Astra si vo
 Si vous rencontrez des problèmes avec la désinstallation, reportez-vous à la section <<Dépannage des problèmes de désinstallation>>.
 
 .Avant de commencer
-. link:../use/unmanage.html#unmanage-an-app["Annulez la gestion de toutes les applications"^] sur les clusters.
-. link:../use/unmanage.html#unmanage-a-cluster["Dégérer tous les clusters"^].
+. link:../use/unmanage.html#unmanage-an-app["Annulez la gestion de toutes les applications"] sur les clusters.
+. link:../use/unmanage.html#unmanage-a-cluster["Dégérer tous les clusters"].
 
 
 .Étapes

@@ -22,6 +22,7 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 .Limites du contrôle d'accès basé sur des rôles (RBAC)
 * <<Un utilisateur doté de contraintes RBAC d'espace de noms peut ajouter et annuler la gestion d'un cluster>>
 * <<Un membre avec des contraintes d'espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n'ajoute pas l'espace de noms à la contrainte>>
+* <<Les contraintes de rôle restrictives peuvent être ignorées pour les ressources sur les clusters sans connecteur>>
 
 
 .Limites de gestion des applications
@@ -107,6 +108,14 @@ Toutes `member` Les utilisateurs ayant des contraintes RBAC en fonction du nom/I
 
 
 
+== Les contraintes de rôle restrictives peuvent être ignorées pour les ressources sur les clusters sans connecteur
+
+* *Si les ressources auxquelles vous accédez appartiennent à des clusters qui ont installé le dernier connecteur Astra* : lorsqu'un utilisateur reçoit plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes des rôles sont combinées. Par exemple, si un utilisateur doté d'un rôle de visualiseur local joint trois groupes liés au rôle membre, l'utilisateur dispose désormais d'un accès de rôle de visualiseur aux ressources d'origine ainsi que d'un accès de rôle membre aux ressources acquises via l'appartenance à un groupe.
+* *Si les ressources auxquelles vous accédez appartiennent à des clusters qui n'ont pas installé Astra Connector* : lorsqu'un utilisateur reçoit plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes du rôle le plus autorisé sont les seules qui prennent effet.
+
+
+
+
 == De même, vous ne pouvez pas restaurer collectivement plusieurs applications dans un autre espace de noms
 
 Si vous gérez plusieurs applications dans un seul espace de noms (en créant plusieurs définitions d'applications dans Astra Control), vous ne pouvez pas restaurer toutes les applications dans un espace de noms différent. Chaque application doit être restaurée dans son propre espace de noms distinct.
@@ -171,7 +180,7 @@ Pour contourner ce problème, procédez comme suit lorsque vous mettez à niveau
 
 . Supprimez tous les CRD de snapshot existants et tout contrôleur de snapshot existant.
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Désinstaller Astra Trident"^].
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["Installez les CRD de snapshot et le contrôleur de snapshot"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["Installez les CRD de snapshot et le contrôleur de snapshot"^].
 . https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Installez la dernière version d'Astra Trident"^].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["Créez une VolumeSnapshotClass"^].
 
@@ -212,7 +221,7 @@ Lorsque vous exécutez des opérations sur les modules Postgres, vous ne devez p
 
 == La page activité affiche jusqu'à 100000 événements
 
-La page activité Astra Control peut afficher jusqu'à 100,000 événements. Pour afficher tous les événements consignés, récupérez-les à l'aide du link:../rest-api/api-intro.html["API de contrôle Astra"^].
+La page activité Astra Control peut afficher jusqu'à 100,000 événements. Pour afficher tous les événements consignés, récupérez-les à l'aide du https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^].
 
 
 
