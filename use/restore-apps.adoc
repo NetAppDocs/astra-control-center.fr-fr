@@ -130,7 +130,7 @@ Vous pouvez restaurer des données à partir d'une sauvegarde à l'aide d'un fic
 +
 [listing]
 ----
-minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
 ----
 ** <SOURCE_NAMESPACE> : espace de noms source de l'opération de restauration.
 ** <DESTINATION_NAMESPACE> : espace de noms de destination de l'opération de restauration.
@@ -201,7 +201,7 @@ kubectl apply -f astra-control-backup-restore-cr.yaml
 +
 [listing]
 ----
-minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
 ----
 +
 [source, yaml]
@@ -278,7 +278,7 @@ Vous pouvez restaurer les données d'un instantané à l'aide d'un fichier de re
 +
 [listing]
 ----
-minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
 ----
 ** <SOURCE_NAMESPACE> : espace de noms source de l'opération de restauration.
 ** <DESTINATION_NAMESPACE> : espace de noms de destination de l'opération de restauration.
@@ -349,7 +349,7 @@ kubectl apply -f astra-control-snapshot-restore-cr.yaml
 +
 [listing]
 ----
-minio_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
 ----
 +
 [source, yaml]
