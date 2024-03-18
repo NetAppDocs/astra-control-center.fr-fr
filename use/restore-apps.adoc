@@ -124,7 +124,6 @@ Vous pouvez restaurer des données à partir d'une sauvegarde à l'aide d'un fic
 . Créez le fichier de ressource personnalisée (CR) et nommez-le `astra-control-backup-restore-cr.yaml`. Mettez à jour les valeurs entre parenthèses <> pour correspondre à votre environnement Astra Control et à la configuration du cluster :
 +
 ** <CR_NAME> : nom de cette opération CR ; choisissez un nom sensible pour votre environnement.
-** <ASTRA_CONNECTOR_NAMESPACE> : espace de noms dans lequel Astra Connector est installé.
 ** <APPVAULT_NAME> : nom de l'AppVault dans lequel sont stockés le contenu de la sauvegarde.
 ** <BACKUP_PATH> : chemin d'accès dans AppVault où sont stockés le contenu de la sauvegarde. Par exemple :
 +
@@ -141,7 +140,7 @@ apiVersion: astra.netapp.io/v1
 kind: BackupRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appVaultRef: <APPVAULT_NAME>
   appArchivePath: <BACKUP_PATH>
@@ -195,7 +194,6 @@ kubectl apply -f astra-control-backup-restore-cr.yaml
 . Créez le fichier de ressource personnalisée (CR) et nommez-le `astra-control-backup-ipr-cr.yaml`. Mettez à jour les valeurs entre parenthèses <> pour correspondre à votre environnement Astra Control et à la configuration du cluster :
 +
 ** <CR_NAME> : nom de cette opération CR ; choisissez un nom sensible pour votre environnement.
-** <ASTRA_CONNECTOR_NAMESPACE> : espace de noms dans lequel Astra Connector est installé. Il doit s'agir de l'espace de noms dans lequel la sauvegarde a été créée.
 ** <APPVAULT_NAME> : nom de l'AppVault dans lequel sont stockés le contenu de la sauvegarde.
 ** <BACKUP_PATH> : chemin d'accès dans AppVault où sont stockés le contenu de la sauvegarde. Par exemple :
 +
@@ -210,7 +208,7 @@ apiVersion: astra.netapp.io/v1
 kind: BackupInplaceRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appVaultRef: <APPVAULT_NAME>
   appArchivePath: <BACKUP_PATH>
@@ -272,7 +270,6 @@ Vous pouvez restaurer les données d'un instantané à l'aide d'un fichier de re
 . Créez le fichier de ressource personnalisée (CR) et nommez-le `astra-control-snapshot-restore-cr.yaml`. Mettez à jour les valeurs entre parenthèses <> pour correspondre à votre environnement Astra Control et à la configuration du cluster :
 +
 ** <CR_NAME> : nom de cette opération CR ; choisissez un nom sensible pour votre environnement.
-** <ASTRA_CONNECTOR_NAMESPACE> : espace de noms dans lequel Astra Connector est installé.
 ** <APPVAULT_NAME> : nom de l'AppVault dans lequel sont stockés le contenu de la sauvegarde.
 ** <BACKUP_PATH> : chemin d'accès dans AppVault où sont stockés le contenu de la sauvegarde. Par exemple :
 +
@@ -289,7 +286,7 @@ apiVersion: astra.netapp.io/v1
 kind: SnapshotRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appArchivePath: <BACKUP_PATH>
   appVaultRef: <APPVAULT_NAME>
@@ -343,7 +340,6 @@ kubectl apply -f astra-control-snapshot-restore-cr.yaml
 . Créez le fichier de ressource personnalisée (CR) et nommez-le `astra-control-snapshot-ipr-cr.yaml`. Mettez à jour les valeurs entre parenthèses <> pour correspondre à votre environnement Astra Control et à la configuration du cluster :
 +
 ** <CR_NAME> : nom de cette opération CR ; choisissez un nom sensible pour votre environnement.
-** <ASTRA_CONNECTOR_NAMESPACE> : espace de noms dans lequel Astra Connector est installé. Il doit s'agir de l'espace de noms dans lequel le snapshot a été créé.
 ** <APPVAULT_NAME> : nom de l'AppVault dans lequel sont stockés le contenu de la sauvegarde.
 ** <BACKUP_PATH> : chemin d'accès dans AppVault où sont stockés le contenu de la sauvegarde. Par exemple :
 +
@@ -358,7 +354,7 @@ apiVersion: astra.netapp.io/v1
 kind: SnapshotInplaceRestore
 metadata:
   name: <CR_NAME>
-  namespace: <ASTRA_CONNECTOR_NAMESPACE>
+  namespace: astra-connector
 spec:
   appArchivePath: <BACKUP_PATH>
   appVaultRef: <APPVAULT_NAME>
