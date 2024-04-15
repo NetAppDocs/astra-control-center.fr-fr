@@ -18,10 +18,10 @@ Pour une comparaison entre les sauvegardes/restaurations et la réplication, rep
 
 Vous pouvez répliquer des applications dans différents scénarios, comme : uniquement sur site, environnements hybrides et multicloud :
 
-* Du site A sur site au site A sur site
-* Du site A au site B sur site
+* Du site A sur le site A sur le site A sur site
+* Du site A sur site au site B sur site
 * Du site au cloud avec Cloud Volumes ONTAP
-* Cloud avec Cloud Volumes ONTAP vers une infrastructure sur site
+* Le cloud avec Cloud Volumes ONTAP sur site
 * Cloud avec Cloud Volumes ONTAP vers le cloud (entre différentes régions du même fournisseur cloud ou vers des fournisseurs de cloud différents)
 
 
