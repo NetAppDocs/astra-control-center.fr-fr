@@ -48,7 +48,7 @@ Vous pouvez effectuer les tâches suivantes liées à la gestion des compartimen
 * <<Définir le compartiment par défaut>>
 * <<Faire pivoter ou supprimer les identifiants de compartiment>>
 * <<Déposer un godet>>
-* link:../use/manage-buckets.html#manage-a-bucket-using-a-custom-resource["(Aperçu technique) Gérez un compartiment à l'aide d'une ressource personnalisée"]
+* link:["[Aperçu technique] Gérez un compartiment à l'aide d'une ressource personnalisée"]
 
 
 
@@ -179,19 +179,19 @@ La ressource personnalisée du compartiment pour Astra Control est appelée AppV
 
 
 
-NOTE: Amazon Web Services (AWS) et Google Cloud Platform (GCP) utilisent le type de compartiment S3 générique.
+NOTE: Amazon Web Services (AWS) utilise le type de compartiment S3 générique.
 
 
 NOTE: Bien qu'Astra Control Center prenne en charge Amazon S3 en tant que fournisseur de compartiments génériques, Astra Control Center peut ne pas prendre en charge tous les fournisseurs de magasins d'objets qui affirment la prise en charge d'Amazon S3.
 
 .Étapes
-. Créer le fichier de ressource personnalisée (CR) et le nommer (par exemple, `astra_appvault.yaml`).
+. Créer le fichier de ressource personnalisée (CR) et le nommer (par exemple, `astra-appvault.yaml`).
 . Configurez les attributs suivants :
 +
 ** *metadata.name*: _(obligatoire)_ le nom de la ressource personnalisée AppVault.
 ** *Spec.prefix*: _(Facultatif)_ chemin précédé des noms de toutes les entités stockées dans le AppVault.
 ** *spec.providerConfig*: _(obligatoire)_ stocke la configuration nécessaire pour accéder à AppVault à l'aide du fournisseur spécifié.
-** *spec.providerCredentials*: _(Facultatif)_ stocke les références à toute information d'identification requise pour accéder à AppVault à l'aide du fournisseur spécifié.
+** *spec.providerCredentials*: _(obligatoire)_ stocke les références à toute information d'identification requise pour accéder à AppVault à l'aide du fournisseur spécifié.
 +
 *** *spec.providerCredentials.valueFromSecret*: _(Facultatif)_ indique que la valeur d'identification doit provenir d'un secret.
 +
@@ -201,7 +201,7 @@ NOTE: Bien qu'Astra Control Center prenne en charge Amazon S3 en tant que fourni
 
 
 
-** *spec.providerType*: _(obligatoire)_ détermine ce qui fournit la sauvegarde, par exemple S3 ou le système de fichiers.
+** *spec.providerType*: _(obligatoire)_ détermine ce qui fournit la sauvegarde, par exemple, NetApp ONTAP S3 ou Microsoft Azure.
 +
 Exemple YAML :
 
@@ -211,7 +211,7 @@ Exemple YAML :
 apiVersion: astra.netapp.io/v1
 kind: AppVault
 metadata:
-  name: astra_appvault
+  name: astra-appvault
 spec:
   providerType: generic-s3
   providerConfig:
@@ -231,11 +231,11 @@ spec:
 ----
 
 
-. Après avoir renseigné le `astra_appvault.yaml` Fichier avec les valeurs correctes, appliquer la CR :
+. Après avoir renseigné le `astra-appvault.yaml` Fichier avec les valeurs correctes, appliquer la CR :
 +
 [source, console]
 ----
-kubectl apply -f astra_appvault.yaml -n astra-connector
+kubectl apply -f astra-appvault.yaml -n astra-connector
 ----
 +
 
