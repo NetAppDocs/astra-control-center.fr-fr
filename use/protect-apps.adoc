@@ -288,6 +288,52 @@ Astra Control crée une sauvegarde de l'application.
 ====
 
 
+=== [Aperçu technique] Créez une sauvegarde planifiée des espaces de noms
+
+Vous pouvez créer une sauvegarde automatique planifiée de tout ou partie des espaces de noms sur un cluster. Ces workflows sont fournis par NetApp sous forme de fichiers CR couplés à un script Python. Lorsque vous configurez et installez les flux de travail, les sauvegardes de l'espace de noms sont automatiquement créées selon le planning que vous choisissez lors de l'installation. Vous pouvez protéger tous les espaces de noms d'un cluster avec le workflow complet de sauvegarde de cluster, ou seulement certains espaces de noms avec le workflow de sauvegarde basé sur des libellés.
+
+Lorsqu'un nouvel espace de noms ou une nouvelle application entrant dans le cadre de votre planification de sauvegarde est ajouté au cluster, il est automatiquement protégé.
+
+.Exemple : sauvegarde complète du cluster
+Par exemple, lorsque vous configurez et installez l'intégralité du flux de travail de sauvegarde du cluster, toutes les applications de n'importe quel espace de noms sont régulièrement sauvegardées sans que l'administrateur n'ait à faire appel à lui. L'espace de noms n'a pas besoin d'exister au moment de l'installation du workflow ; si un espace de noms est ajouté ultérieurement, il sera protégé.
+
+.Exemple : sauvegarde basée sur des étiquettes
+Pour plus de granularité, vous pouvez utiliser le flux de production basé sur des étiquettes. Par exemple, vous pouvez installer ce flux de travail et demander à vos utilisateurs d'appliquer l'une des étiquettes à tous les espaces de noms qu'ils souhaitent protéger, en fonction du niveau de protection dont ils ont besoin. Cela permet aux utilisateurs de créer l'espace de noms avec l'une de ces étiquettes et ils n'ont pas à en avertir l'administrateur. Le nouveau namespace et toutes les applications qu'il contient sont automatiquement protégés.
+
+
+
+==== Créer une sauvegarde planifiée de tous les espaces de noms
+
+Vous pouvez créer une sauvegarde planifiée de tous les espaces de noms sur un cluster à l'aide du workflow complet de sauvegarde du cluster.
+
+.Étapes
+. Téléchargez les fichiers suivants sur un ordinateur disposant d'un accès réseau à votre cluster :
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/components.yaml["Components.yaml fichier CRD"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/protectCluster.py["protectCluster.py script Python"]
+
+
+. Pour configurer et installer la boîte à outils, https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/fullcluster-backup/README.md["suivez les instructions fournies"^].
+
+
+
+
+==== Créer une sauvegarde planifiée d'espaces de noms spécifiques
+
+Vous pouvez créer une sauvegarde planifiée d'espaces de noms spécifiques en utilisant leurs étiquettes à l'aide du flux de travail de sauvegarde basé sur des étiquettes.
+
+.Étapes
+. Téléchargez les fichiers suivants sur un ordinateur disposant d'un accès réseau à votre cluster :
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/components.yaml["Components.yaml fichier CRD"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/protectCluster.py["protectCluster.py script Python"]
+
+
+. Pour configurer et installer la boîte à outils, https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/labelbased-backup/README.md["suivez les instructions fournies"^].
+
+
+
+
 == Sauvegardez et restaurez les opérations ontap-nas
 
 ASTRA Control Provisioner offre des fonctionnalités de sauvegarde et de restauration qui peuvent être activées pour les systèmes back-end qui utilisent le `ontap-nas-economy` classe de stockage.
