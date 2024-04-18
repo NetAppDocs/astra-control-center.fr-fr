@@ -4,7 +4,7 @@ permalink: get-started/faq.html
 keywords: astra faq, astra frequently asked questions, what is astra, astra control, kubernetes, persistent volumes 
 summary: Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question. 
 ---
-= Foire aux questions pour Astra Control Center
+= Foire aux questions
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -24,8 +24,7 @@ Les sections suivantes fournissent des réponses à des questions supplémentair
 
 == Accès au centre de contrôle Astra
 
-*Qu'est-ce que l'URL de contrôle Astra?*
-
+.Qu'est-ce que l'URL Astra Control ?
 Astra Control Center utilise l'authentification locale et une URL spécifique à chaque environnement.
 
 Pour l'URL, dans un navigateur, entrez le nom de domaine complet (FQDN) que vous avez défini dans le champ spec.astraAddress du fichier de ressource personnalisée astra_control_Center.yaml lorsque vous avez installé Astra Control Center. L'e-mail est la valeur que vous avez définie dans le champ spec.email de l'astra_Control_Center.yaml CR.
@@ -34,8 +33,7 @@ Pour l'URL, dans un navigateur, entrez le nom de domaine complet (FQDN) que vous
 
 == Licences
 
-*J'utilise une licence d'évaluation. Comment passer à la licence complète?*
-
+.J'utilise une licence d'évaluation. Comment passer à la licence complète ?
 Vous pouvez facilement choisir une licence complète en obtenant le fichier de licence NetApp (NLF) auprès de NetApp.
 
 *Étapes*
@@ -46,95 +44,79 @@ Vous pouvez facilement choisir une licence complète en obtenant le fichier de l
 . Naviguez jusqu'au fichier de licence que vous avez téléchargé et sélectionnez *Ajouter*.
 
 
-*J'utilise une licence d'évaluation. Puis-je toujours gérer les applications ?*
-
+.J'utilise une licence d'évaluation. Est-il toujours possible de gérer des applications ?
 Oui, vous pouvez tester la fonctionnalité de gestion des applications avec une licence d'évaluation (y compris la licence d'évaluation intégrée installée par défaut). Il n'y a pas de différence entre les capacités ou les fonctionnalités d'une licence d'évaluation et d'une licence complète; la licence d'évaluation a simplement une durée de vie plus courte. Reportez-vous à la section link:../concepts/licensing.html["Licences"^] pour en savoir plus.
 
 
 
 == Enregistrement des clusters Kubernetes
 
-*J'ai besoin d'ajouter des nœuds workers à mon cluster Kubernetes après avoir ajouté Astra Control. Que dois-je faire?*
-
+.Je dois ajouter des nœuds workers à mon cluster Kubernetes après l'ajout d'Astra Control. Que dois-je faire ?
 De nouveaux nœuds workers peuvent être ajoutés aux pools existants. Elles seront automatiquement découvertes par Astra Control. Si les nouveaux nœuds ne sont pas visibles dans Astra Control, vérifiez si les nouveaux nœuds de travail exécutent le type d'image pris en charge. Vous pouvez également vérifier l'état de santé des nouveaux nœuds workers à l'aide de la `kubectl get nodes` commande.
 
-*Comment puis-je dégérer correctement un cluster?*
-
+.Comment puis-je gérer correctement un cluster ?
 . link:../use/unmanage.html["Gérez les applications avec Astra Control"].
 . link:../use/unmanage.html#stop-managing-compute["Dégérer le cluster à partir d'Astra Control"].
 
 
-*Que se passe-t-il pour mes applications et données après avoir retiré le cluster Kubernetes d'Astra Control?*
-
+.Que se passe-t-il pour mes applications et mes données après la suppression du cluster Kubernetes d'Astra Control ?
 La suppression d'un cluster d'Astra Control ne modifie pas la configuration du cluster (applications et stockage persistant). Toute restauration de snapshots ou de sauvegardes Astra Control effectuée sur ce cluster sera indisponible. Les sauvegardes de stockage persistant créées par Astra Control restent dans le contrôle d'Astra, mais elles sont indisponibles pour les restaurations.
 
 
 WARNING: Retirez toujours un cluster d'Astra Control avant de le supprimer par d'autres méthodes. La suppression d'un cluster à l'aide d'un autre outil alors qu'il est toujours géré par Astra Control peut causer des problèmes pour votre compte Astra Control.
 
-*Astra Control Provisioner (ou Astra Trident) est-il automatiquement désinstallé d'un cluster lorsque je ne le gère pas ?*
+.Est-ce que le mécanisme de provisionnement Astra Control (ou Astra Trident) est automatiquement désinstallé d'un cluster lorsque je ne le gère pas ?
 Lorsque vous dégérez un cluster depuis Astra Control Center, Astra Control Provisioner ou Astra Trident n'est pas automatiquement désinstallé du cluster. Pour désinstaller Astra Control Provisioner et ses composants ou Astra Trident, vous devez le faire https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Procédez comme suit pour désinstaller l'instance Astra Trident qui contient le service Astra Control Provisioner"^].
 
 
 
 == La gestion des applications
 
-*Astra Control peut-il déployer une application?*
-
+.ASTRA Control peut-il déployer une application ?
 Astra Control ne déploie pas d'applications. Les applications doivent être déployées en dehors d'Astra Control.
 
-*Que se passe-t-il pour les applications après que je les ai cessent de les gérer à partir d'Astra Control?*
-
+.Qu'arrive-t-il aux applications après l'arrêt de leur gestion depuis Astra Control ?
 Toutes les sauvegardes ou tous les instantanés existants seront supprimés. Les applications et les données restent disponibles. Les opérations de gestion des données ne seront pas disponibles pour les applications non gérées ni pour les sauvegardes ou snapshots qui y appartiennent.
 
-*Astra Control peut-il gérer une application qui se trouve sur un système de stockage autre que NetApp?*
-
+.ASTRA Control peut-il gérer une application qui se trouve sur un système de stockage non NetApp ?
 Non Même si Astra Control peut détecter les applications qui utilisent un stockage non-NetApp, il ne peut pas gérer une application utilisant un stockage non-NetApp.
 
-*Devrais-je gérer Astra Control lui-même?*
-
+.Dois-je gérer Astra Control elle-même ?
 ASTRA Control Center n'est pas affiché par défaut en tant qu'application que vous pouvez gérer, mais vous le pouvez link:../use/protect-acc-with-acc.html["sauvegarde et restauration"] Instance Astra Control Center utilisant une autre instance Astra Control Center.
 
-*Les pods défectueux affectent-ils la gestion des applications ?*
-
+.Les pods défectueux affectent-ils la gestion des applications ?
 Non, l'état des pods n'a pas d'impact sur la gestion des applications.
 
 
 
 == Les opérations de gestion des données
 
-*Mon application utilise plusieurs PVS. ASTRA Control prendra-t-il des snapshots et des sauvegardes de ces volumes persistants ?*
-
+.Mon application utilise plusieurs volumes persistants. ASTRA Control prendra-t-il des copies Snapshot et des sauvegardes de ces volumes persistants ?
 Oui. Une opération d'instantané sur une application par Astra Control inclut un instantané de tous les volumes persistants liés aux demandes de volume persistant de l'application.
 
-*Puis-je gérer les instantanés pris par Astra Control directement via une interface ou un stockage objet différent?*
-
+.Puis-je gérer les snapshots pris par Astra Control directement via une interface ou un stockage objet différent ?
 Non Les copies Snapshot et les sauvegardes effectuées par Astra Control ne peuvent être gérées qu'avec Astra Control.
 
 
 
 == De provisionnement Astra Control
 
-*En quoi les fonctionnalités de provisionnement du stockage d'Astra Control Provisioner sont-elles différentes de celles d'Astra Trident ?*
-
+.En quoi les fonctionnalités de provisionnement du stockage d'Astra Control Provisioner sont-elles différentes de celles d'Astra Trident ?
 ASTRA Control Provisioner, dans le cadre d'Astra Control, prend en charge un ensemble complet de fonctionnalités de provisionnement du stockage qui ne sont pas disponibles dans Astra Trident open source. Ces fonctionnalités viennent s'ajouter à toutes les fonctionnalités disponibles pour Trident open source.
 
-*Le mécanisme de provisionnement Astra Control remplace-t-il Astra Trident?*
+.Le mécanisme de provisionnement Astra Control remplace-t-il Astra Trident ?
 ASTRA Control Provisioner a remplacé Astra Trident en tant que mécanisme de provisionnement et d'orchestration du stockage dans l'architecture Astra Control. Les utilisateurs d'Astra Control devraient link:../get-started/enable-acp.html["Activez le mécanisme de provisionnement Astra Control"] Utilisation d'Astra Control ASTRA Trident sera toujours pris en charge dans cette version, mais ne le sera pas dans les prochaines versions. ASTRA Trident demeurera une solution open source et sera publié, maintenu, pris en charge et mis à jour avec le nouveau CSI et d'autres fonctionnalités de NetApp. Seul le mécanisme de provisionnement Astra Control, qui contient la fonctionnalité Astra Trident CSI et des fonctionnalités de gestion du stockage étendues, peut être utilisé avec les prochaines versions d'Astra Control.
 
-*Dois-je payer pour Astra Trident?*
-
+.Dois-je payer pour Astra Trident ?
 Non ASTRA Trident continuera d'être open source et téléchargeable gratuitement. L'utilisation de la fonctionnalité Astra Control Provisioner nécessite maintenant une licence Astra Control.
 
-*Puis-je utiliser les fonctionnalités de gestion et de provisionnement du stockage dans Astra Control sans installer et utiliser toutes les fonctionnalités d'Astra Control ?*
-
+.Puis-je utiliser les fonctionnalités de gestion et de provisionnement du stockage dans Astra Control sans installer et utiliser toutes les fonctionnalités d'Astra Control ?
 Oui, vous pouvez effectuer une mise à niveau vers Astra Control provisionner et utiliser sa fonctionnalité même si vous ne souhaitez pas utiliser l'ensemble complet de fonctionnalités de gestion de données Astra Control.
 
-*Comment passer du statut d'utilisateur d'Astra Trident à celui d'Astra Control pour utiliser la fonctionnalité avancée de gestion et de provisionnement du stockage ?*
-
+.Comment passer d'un système Astra Trident existant à Astra Control en vue d'utiliser la fonctionnalité avancée de gestion et de provisionnement du stockage ?
 Si vous utilisez Astra Trident (y compris les utilisateurs d'Astra Trident dans le cloud public), vous devez d'abord acquérir une licence Astra Control. À cette fin, vous pouvez télécharger le bundle Astra Control Provisioner, mettre à niveau Astra Trident et link:../get-started/enable-acp.html["Activez la fonctionnalité Astra Control Provisioner"].
 
-[[running-acp-check]*Comment savoir si Astra Control Provisioner a remplacé Astra Trident sur mon cluster ?*
-
+.Comment savoir si Astra Control Provisioner a remplacé Astra Trident sur mon cluster ?
 Une fois Astra Control Provisioner installé, le cluster hôte dans l'interface utilisateur Astra Control affiche un `ACP version` plutôt que `Trident version` et le numéro de version actuellement installé.
 
 image:use/ac-acp-version.png["Une capture d'écran illustrant l'emplacement de la version d'Astra Control Provisioner dans l'interface utilisateur"]
