@@ -27,6 +27,8 @@ indexpage:
       url: "/use/manage-apps.html"
     - title: Protégez vos applications
       url: "/use/protect-apps.html"
+    - title: Protégez l'ensemble du cluster
+      url: "/use/back-up-full-cluster.html"
     - title: Cloner et migrer les applications
       url: "/use/clone-apps.html"
     - title: Réplication d'applications vers un système distant
