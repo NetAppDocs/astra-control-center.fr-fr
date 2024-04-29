@@ -156,6 +156,9 @@ NOTE: Si plusieurs données de cluster ont été collectées, les mesures de cha
 
 Vous pouvez envoyer des journaux (événements Kubernetes) à partir d'un système surveillé par Astra Control Center vers votre terminal Fluentd. La connexion Fluentd est désactivée par défaut.
 
+
+NOTE: Les connexions Fluentd ne sont pas prises en charge pour les clusters gérés avec des workflows Kubernetes déclaratifs. Vous pouvez connecter Fluentd uniquement aux clusters gérés avec des workflows non natifs Kubernetes.
+
 image:fluentbit.png["Voici un schéma conceptuel des journaux d'événements allant d'Astra à Fluentd."]
 
 
