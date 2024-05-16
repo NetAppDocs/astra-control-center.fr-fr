@@ -15,7 +15,7 @@ summary: 'Si vous utilisez Red Hat OpenShift, vous pouvez mettre à niveau Astra
 Si vous avez installé Astra Control Center à l'aide de son opérateur certifié Red Hat, vous pouvez mettre à niveau Astra Control Center à l'aide d'un opérateur mis à jour à partir d'OperatorHub. Utilisez cette procédure pour mettre à niveau Astra Control Center à partir du https://catalog.redhat.com/software/operators/explore["Catalogue de l'écosystème Red Hat"^] Ou utilisez Red Hat OpenShift Container Platform.
 
 .Avant de commencer
-* *Respecter les conditions préalables environnementales* : avant de procéder à la mise à niveau, assurez-vous que votre environnement respecte toujours le link:requirements.html["Configuration minimale requise pour le déploiement d'Astra Control Center"].
+* *Respecter les conditions préalables environnementales* : avant de procéder à la mise à niveau, assurez-vous que votre environnement respecte toujours le link:../get-started/requirements.html["Configuration minimale requise pour le déploiement d'Astra Control Center"].
 * *Assurez-vous que vous avez activé link:../get-started/requirements.html#astra-control-provisioner["De provisionnement Astra Control"] Avec Astra Trident en cours d'exécution*
 +
 .. Déterminez la version d'Astra Trident que vous exécutez :
