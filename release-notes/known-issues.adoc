@@ -20,7 +20,6 @@ Les problèmes connus suivants ont une incidence sur la version actuelle :
 * <<Les sauvegardes d'applications et les snapshots échouent si la classe volumesnapshotclass est ajoutée après la gestion d'un cluster>>
 * <<La gestion d'un cluster avec Astra Control Center échoue lorsque le fichier kubeconfig contient plusieurs contextes>>
 * <<Les opérations de gestion des données d'application échouent avec l'erreur de service interne (500) lorsque Astra Trident est hors ligne>>
-* <<Les opérations de restauration sur place pour les classes de stockage ontap-nas échouent>>
 * <<La restauration à partir d'une sauvegarde lors de l'utilisation du chiffrement à la volée Kerberos peut échouer>>
 * <<Les données de sauvegarde restent dans le compartiment après leur suppression pour les compartiments dont la règle de conservation a expiré>>
 
@@ -42,12 +41,6 @@ Vous ne pouvez pas utiliser un kubeconfig avec plus d'un cluster et un contexte.
 == Les opérations de gestion des données d'application échouent avec l'erreur de service interne (500) lorsque Astra Trident est hors ligne
 
 Si Astra Trident sur un cluster d'application est mis hors ligne (et reconnecté) et 500 erreurs de service internes sont rencontrées lors de la tentative de gestion des données d'application, redémarrez tous les nœuds Kubernetes du cluster d'application pour restaurer la fonctionnalité.
-
-
-
-== Les opérations de restauration sur place pour les classes de stockage ontap-nas échouent
-
-Si vous effectuez une restauration sur place d'une application (restaurez-la dans son espace de noms d'origine) et que la classe de stockage de l'application utilise le `ontap-nas-economy` pilote, l'opération de restauration peut échouer si le répertoire de snapshot n'est pas masqué. Avant de remettre le produit en place, suivez les instructions de la section link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["Sauvegardez et restaurez les opérations ontap-nas"] pour masquer le répertoire d'instantanés.
 
 
 

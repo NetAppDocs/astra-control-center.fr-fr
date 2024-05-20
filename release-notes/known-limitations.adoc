@@ -35,6 +35,7 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 * <<Les applications déployées avec Helm 2 ne sont pas prises en charge>>
 * <<Les snapshots peuvent échouer pour les clusters Kubernetes 1.25 ou versions ultérieures disposant de certaines versions de contrôleur Snapshot>>
 * <<Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center>>
+* <<Les opérations de restauration sur place pour les classes de stockage ontap-nas échouent>>
 
 
 .Limitations générales
@@ -190,6 +191,12 @@ Pour contourner ce problème, procédez comme suit lorsque vous mettez à niveau
 == Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center
 
 Si vous disposez d'une licence d'évaluation, veillez à stocker votre identifiant de compte afin d'éviter toute perte de données en cas d'échec du Centre de contrôle Astra si vous n'envoyez pas d'ASUP.
+
+
+
+== Les opérations de restauration sur place pour les classes de stockage ontap-nas échouent
+
+Si vous effectuez une restauration sur place d'une application (restaurez-la dans son espace de noms d'origine) et que la classe de stockage de l'application utilise le `ontap-nas-economy` pilote, l'opération de restauration peut échouer si le répertoire de snapshot n'est pas masqué. Avant de remettre le produit en place, suivez les instructions de la section link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["Sauvegardez et restaurez les opérations ontap-nas"] pour masquer le répertoire d'instantanés.
 
 
 
