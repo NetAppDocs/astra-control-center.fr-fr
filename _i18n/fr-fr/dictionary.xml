@@ -92,7 +92,6 @@
   <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">Utilisez ensuite le service Astra Control pour gérer ces applications, et commencez à créer des copies Snapshot, des sauvegardes et des clones.</block>
   <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Fonctionnement du centre de contrôle Astra</block>
   <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center fonctionne localement dans votre propre cloud privé.</block>
-  <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center est entièrement intégré à l'écosystème AutoSupport et Active IQ. Il fournit aux utilisateurs et au support NetApp des informations relatives à la résolution de problèmes et à l'utilisation.</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">de formation</block>
   <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">À un niveau élevé, le centre de contrôle Astra ressemble à ce qui suit :</block>
   <block id="2cb07ff1146f3d6896d00ffdcea250ef" category="inline-link">Poser le centre de contrôle Astra</block>
@@ -680,7 +679,6 @@
   <block id="35f3a2f7a0f2c01d03afedb95ece66ab" category="inline-link">Téléchargement de fichiers authentifiés NetApp (connexion requise)</block>
   <block id="1c2989d4329c8aeec5e01506816fb04e" category="list-text">Utiliser<block ref="4b0bc63f683ccbf4dcf0ba2a6a1b561f" category="inline-link-rx"></block>.</block>
   <block id="94bcffc8ff8a109a8267202d2aaa5526" category="list-text">Joignez le pack au dossier directement sur NSS.</block>
-  <block id="4345f2150d39e38a6a11ee7ee57bed28" category="list-text">Faites confiance à NetApp Active IQ.</block>
   <block id="4be9b50faf5ab46a9d28ac23f7713bec" category="inline-link">Comment télécharger un fichier vers NetApp (connexion requise)</block>
   <block id="3b6bf15bbdfc90c8dc6d6778808539e1" category="list-text"><block ref="3b6bf15bbdfc90c8dc6d6778808539e1" category="inline-link-rx"></block></block>
   <block id="a921a3947d243a28982ffc8a6f357d21" category="inline-link">Comment télécharger manuellement un fichier vers NetApp (connexion requise)</block>
@@ -3319,7 +3317,6 @@ C'est possible<block ref="095384769efa0cb75b3680e52d8f483a" category="inline-lin
 
 REMARQUE : ne pas utiliser<block ref="dbd7790bcd23fde7607101ef6a633779" prefix=" " category="inline-code"></block> ou<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block> dans l'adresse. Copier ce FQDN pour l'utiliser dans un <block ref="39c8566ec35b62823c898c5e38a4b78c" category="inline-xref-macro-rx"></block>.</block>
   <block id="5398d7dab242bfea13c044912cacfd10" category="example-title">AutoSupport</block>
-  <block id="0ce9b2186063c7d6c825ba5631c6f471" category="paragraph">Les sélections effectuées dans cette section déterminent si vous participerez à NetApp Active IQ, l'application de support proactif de NetApp, et à l'emplacement d'envoi des données. Une connexion Internet est requise (port 442) et toutes les données de support sont anonymisées.</block>
   <block id="0c83f57c786a0b4a39efab23731c7ebc" category="example-title">e-mail</block>
   <block id="ed89387bcd11937a7a92a99a2cbfb5d7" category="example-title">Prénom</block>
   <block id="539c5300bf48f8a3e3009ce33d49a240" category="example-title">Nom de famille</block>
@@ -3717,4 +3714,7 @@ ASTRA Control provisionner est automatiquement installé dans le cadre du proces
   <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
   <block id="a8d3d65f332ebd25e2d0cd4a39fa56bb" category="admonition">Les connexions Fluentd ne sont pas prises en charge pour les clusters gérés avec des workflows Kubernetes déclaratifs. Vous pouvez connecter Fluentd uniquement aux clusters gérés avec des workflows non natifs Kubernetes.</block>
   <block id="a4c308fa75b477e34ffefe1e02628412" category="list-text">*Respecter les conditions préalables environnementales* : avant de procéder à la mise à niveau, assurez-vous que votre environnement respecte toujours le <block ref="7b0354d91aa605027490ffc0bb4c260d" category="inline-link-macro-rx"></block>.</block>
+  <block id="a9cf730f8ab04a5b52f1d19c74c1483c" category="paragraph">ASTRA Control Center est entièrement intégré à l'écosystème AutoSupport et Active IQ Digital Advisor (également appelé Digital Advisor) pour fournir aux utilisateurs et au support NetApp des informations sur le dépannage et l'utilisation.</block>
+  <block id="10c74eb5a029f34a100ad38aab60e5a3" category="paragraph">Vos sélections dans cette section déterminent si vous participerez à l'application de support proactif de NetApp, au conseiller numérique et à l'emplacement d'envoi des données. Une connexion Internet est requise (port 442) et toutes les données de support sont anonymisées.</block>
+  <block id="3cf9bc07c0ae31018d3336b8f32de6c8" category="list-text">Utilisez Digital Advisor.</block>
 </blocks>

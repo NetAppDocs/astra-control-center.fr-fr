@@ -199,7 +199,7 @@ ASTRA Control Center prend en charge des clusters Kubernetes avec une classe de 
 
 Des fonctionnalités de contrôle et de télémétrie limitées (7 jours de metrics) sont disponibles dans Astra Control Center et exportées vers des outils de surveillance natifs Kubernetes (comme Prometheus et Grafana) via des terminaux de metrics ouverts.
 
-Astra Control Center est entièrement intégré à l'écosystème AutoSupport et Active IQ. Il fournit aux utilisateurs et au support NetApp des informations relatives à la résolution de problèmes et à l'utilisation.
+ASTRA Control Center est entièrement intégré à l'écosystème AutoSupport et Active IQ Digital Advisor (également appelé Digital Advisor) pour fournir aux utilisateurs et au support NetApp des informations sur le dépannage et l'utilisation.
 
 Vous pouvez essayer Astra Control Center avec une licence d'évaluation intégrée de 90 jours. Pendant que vous évaluez Astra Control Center, vous pouvez obtenir de l'aide par e-mail et via des options communautaires. Vous avez également accès aux articles et à la documentation de la base de connaissances à partir du tableau de bord de support des produits.
 

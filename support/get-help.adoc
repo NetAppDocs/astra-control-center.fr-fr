@@ -100,7 +100,7 @@ Pour ce faire, vous pouvez utiliser l'une des méthodes suivantes :
 +
 ** Utiliser https://upload.netapp.com/sg["Téléchargement de fichiers authentifiés NetApp (connexion requise)"^].
 ** Joignez le pack au dossier directement sur NSS.
-** Faites confiance à NetApp Active IQ.
+** Utilisez Digital Advisor.
 
 
 
