@@ -1,5 +1,14 @@
 ---
 indexpage:
+  title: Documentation d'Astra Control Center 24.02
+  summary: Le logiciel Astra Control Center offre une gestion des données compatible
+    avec les applications des clusters Kubernetes dans votre environnement sur site.
+    Sauvegardez facilement des applications Kubernetes, migrez des données vers un
+    autre cluster et créez instantanément des clones d'applications de travail. Si
+    vous devez gérer des applications Kubernetes exécutées dans un cloud public, accédez
+    à la documentation d'Astra Control Service.
+  keywords: astra control center, kubernetes data management, backup kubernetes apps,
+    migrate kubernetes data, on-premises kubernetes management
   lead: Le logiciel Astra Control Center offre une gestion des données compatible
     avec les applications des clusters Kubernetes dans votre environnement sur site.
     Sauvegardez facilement des applications Kubernetes, migrez des données vers un
