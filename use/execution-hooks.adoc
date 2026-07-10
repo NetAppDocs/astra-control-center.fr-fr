@@ -16,6 +16,7 @@ Un crochet d'exécution est une action personnalisée que vous pouvez configurer
 
 
 
+[[types-of-execution-hooks]]
 == Types de crochets d'exécution
 
 ASTRA Control Center prend en charge les types de crochets d'exécution suivants, en fonction du moment où ils peuvent être exécutés :
@@ -30,6 +31,7 @@ ASTRA Control Center prend en charge les types de crochets d'exécution suivants
 
 
 
+[[execution-hook-filters]]
 == Filtres de crochet d'exécution
 
 Lorsque vous ajoutez ou modifiez un crochet d'exécution à une application, vous pouvez ajouter des filtres à un crochet d'exécution pour gérer les conteneurs auxquels le crochet correspond. Les filtres sont utiles pour les applications qui utilisent la même image de conteneur sur tous les conteneurs, mais ils peuvent utiliser chaque image à des fins différentes (comme Elasticsearch). Les filtres vous permettent de créer des scénarios dans lesquels des crochets d'exécution s'exécutent sur certains conteneurs, mais pas nécessairement tous identiques. Si vous créez plusieurs filtres pour un seul crochet d'exécution, ils sont combinés avec un opérateur ET logique. Vous pouvez avoir jusqu'à 10 filtres actifs par crochet d'exécution.
@@ -41,6 +43,7 @@ NOTE: Si vous ajoutez un filtre d'espace de noms à un crochet d'exécution qui 
 
 
 
+[[important-notes-about-custom-execution-hooks]]
 == Remarques importantes sur les crochets d'exécution personnalisés
 
 Lors de la planification de crochets d'exécution pour vos applications, tenez compte des points suivants.
@@ -75,6 +78,7 @@ NOTE: Si vous avez exécuté des crochets de post-restauration avec Astra Contro
 
 
 
+[[order-of-execution]]
 === Ordre d'exécution
 
 Lors de l'exécution d'une opération de protection des données, les événements de hook d'exécution ont lieu dans l'ordre suivant :
@@ -100,6 +104,7 @@ NOTE: Vous devez toujours tester vos scripts d'exécution avant de les activer d
 
 
 
+[[determine-whether-a-hook-will-run]]
 === Déterminez si un crochet va courir
 
 Utilisez le tableau suivant pour déterminer si un crochet d'exécution personnalisé sera exécuté pour votre application.
@@ -162,12 +167,14 @@ Si vous démarrez mais annulez ensuite une sauvegarde qui inclut un instantané 
 |===
 
 
+[[execution-hook-examples]]
 == Exemples de crochet d'exécution
 
 Consultez le https://github.com/NetApp/Verda["Projet GitHub NetApp Verda"] Pour télécharger des crochets d'exécution réels pour des applications courantes telles qu'Apache Cassandra et Elasticsearch. Vous pouvez également voir des exemples et obtenir des idées pour structurer vos propres crochets d'exécution personnalisés.
 
 
 
+[[enable-the-execution-hooks-feature]]
 == Activez la fonction crochets d'exécution
 
 Si vous êtes propriétaire ou administrateur, vous pouvez activer la fonction crochets d'exécution. Lorsque vous activez la fonctionnalité, tous les utilisateurs définis dans ce compte Astra Control peuvent utiliser des crochets d'exécution et afficher des crochets d'exécution et des scripts hook existants.
@@ -187,6 +194,7 @@ L'onglet *compte* > *paramètres de fonction* s'affiche.
 
 
 
+[[disable-the-execution-hooks-feature]]
 == Désactivez la fonction crochets d'exécution
 
 Si vous êtes propriétaire ou administrateur, vous pouvez désactiver la fonction crochets d'exécution pour tous les utilisateurs définis dans ce compte Astra Control. Vous devez supprimer tous les crochets d'exécution existants avant de pouvoir désactiver la fonction crochets d'exécution. Reportez-vous à la section <<Supprimer un crochet d'exécution>> pour obtenir des instructions sur la suppression d'un crochet d'exécution existant.
@@ -203,6 +211,7 @@ Si vous êtes propriétaire ou administrateur, vous pouvez désactiver la foncti
 
 
 
+[[view-existing-execution-hooks]]
 == Afficher les crochets d'exécution existants
 
 Vous pouvez afficher les crochets d'exécution personnalisés existants pour une application.
@@ -217,6 +226,7 @@ Vous pouvez afficher tous les crochets d'exécution activés ou désactivés dan
 
 
 
+[[view-existing-scripts]]
 == Afficher les scripts existants
 
 Vous pouvez afficher les scripts chargés existants. Vous pouvez également voir quels scripts sont en cours d'utilisation, et quels crochets les utilisent, sur cette page.
@@ -231,6 +241,7 @@ Cette page affiche la liste des scripts chargés existants. La colonne *utilisé
 
 
 
+[[add-a-script]]
 == Ajouter un script
 
 Chaque crochet d'exécution doit utiliser un script pour effectuer des actions. Vous pouvez ajouter un ou plusieurs scripts que les crochets d'exécution peuvent référencer. De nombreux crochets d'exécution peuvent référencer le même script ; ceci vous permet de mettre à jour de nombreux crochets d'exécution en modifiant un seul script.
@@ -269,6 +280,7 @@ Le nouveau script apparaît dans la liste de l'onglet *scripts*.
 
 
 
+[[delete-a-script]]
 == Supprimer un script
 
 Vous pouvez supprimer un script du système s'il n'est plus nécessaire et s'il n'est pas utilisé par les crochets d'exécution.
@@ -285,6 +297,7 @@ NOTE: Si le script est associé à un ou plusieurs crochets d'exécution, l'acti
 
 
 
+[[create-a-custom-execution-hook]]
 == Créer un crochet d'exécution personnalisé
 
 Vous pouvez créer un crochet d'exécution personnalisé pour une application et l'ajouter à Astra Control. Reportez-vous à la section <<Exemples de crochet d'exécution>> pour des exemples de crochet. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour créer des crochets d'exécution.
@@ -362,6 +375,7 @@ Cela indique au crochet d'exécution d'utiliser ce script.
 
 
 
+[[check-the-state-of-an-execution-hook]]
 == Vérifier l'état d'un crochet d'exécution
 
 Une fois qu'une opération de snapshot, de sauvegarde ou de restauration a terminé, vous pouvez vérifier l'état des crochets d'exécution qui ont été exécutés dans le cadre de l'opération. Vous pouvez utiliser ces informations d'état pour déterminer si vous souhaitez maintenir le crochet d'exécution, le modifier ou le supprimer.
@@ -377,6 +391,7 @@ L'état *Hook* indique l'état de la séquence de crochet d'exécution une fois 
 
 
 
+[[view-script-usage]]
 == Afficher l'utilisation du script
 
 Vous pouvez voir quels crochets d'exécution utilisent un script particulier dans l'interface utilisateur Web Astra Control.
@@ -395,6 +410,7 @@ Une liste plus détaillée s'affiche, avec les noms des crochets qui utilisent l
 
 
 
+[[edit-an-execution-hook]]
 == Modifier un crochet d'exécution
 
 Vous pouvez modifier un crochet d'exécution si vous souhaitez modifier ses attributs, filtres ou le script qu'il utilise. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour modifier les crochets d'exécution.
@@ -410,6 +426,7 @@ Vous pouvez modifier un crochet d'exécution si vous souhaitez modifier ses attr
 
 
 
+[[disable-an-execution-hook]]
 == Désactivez un crochet d'exécution
 
 Vous pouvez désactiver un crochet d'exécution si vous souhaitez l'empêcher temporairement de s'exécuter avant ou après un instantané d'une application. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour désactiver les crochets d'exécution.
@@ -423,6 +440,7 @@ Vous pouvez désactiver un crochet d'exécution si vous souhaitez l'empêcher te
 
 
 
+[[delete-an-execution-hook]]
 == Supprimer un crochet d'exécution
 
 Vous pouvez supprimer entièrement un crochet d'exécution si vous n'en avez plus besoin. Vous devez disposer d'autorisations propriétaire, administrateur ou membre pour supprimer les crochets d'exécution.
@@ -438,6 +456,7 @@ Vous pouvez supprimer entièrement un crochet d'exécution si vous n'en avez plu
 
 
 
+[[for-more-information]]
 == Pour en savoir plus
 
 * https://github.com/NetApp/Verda["Projet GitHub NetApp Verda"]

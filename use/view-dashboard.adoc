@@ -18,6 +18,7 @@ Il ne s'agit pas seulement de numéros statiques ou d'États, mais vous pouvez e
 
 
 
+[[applications-tile]]
 == Mosaïque applications
 
 La mosaïque *applications* vous aide à identifier les éléments suivants :
@@ -33,12 +34,14 @@ Dans l'idéal, ce nombre est égal à zéro, car vous pouvez gérer ou ignorer l
 
 
 
+[[clusters-tile]]
 == Mosaïque de groupes
 
 La mosaïque *clusters* fournit des détails similaires sur l'état de santé des clusters que vous gérez en utilisant Astra Control Center, et vous pouvez explorer vers le bas pour obtenir plus de détails comme vous pouvez avec une application.
 
 
 
+[[storage-backends-tile]]
 == Mosaïque des systèmes back-end de stockage
 
 La mosaïque *Storage backend* fournit des informations pour vous aider à identifier la santé des systèmes back-end :

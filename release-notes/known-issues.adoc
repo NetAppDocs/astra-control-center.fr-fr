@@ -26,24 +26,28 @@ Les problèmes connus suivants ont une incidence sur la version actuelle :
 
 
 
+[[app-backups-and-snapshots-fail-if-the-volumesnapshotclass-is-added-after-a-cluster-is-managed]]
 == Les sauvegardes d'applications et les snapshots échouent si la classe volumesnapshotclass est ajoutée après la gestion d'un cluster
 
 Les sauvegardes et les snapshots échouent avec un `UI 500 error` dans ce scénario. Pour contourner ce problème, actualisez la liste des applications.
 
 
 
+[[managing-a-cluster-with-astra-control-center-fails-when-kubeconfig-file-contains-more-than-one-context]]
 == La gestion d'un cluster avec Astra Control Center échoue lorsque le fichier kubeconfig contient plusieurs contextes
 
 Vous ne pouvez pas utiliser un kubeconfig avec plus d'un cluster et un contexte. Voir la link:https://kb.netapp.com/Cloud/Astra/Control/Managing_cluster_with_Astra_Control_Center_may_fail_when_using_default_kubeconfig_file_contains_more_than_one_context["article de la base de connaissances"^] pour en savoir plus.
 
 
 
+[[app-data-management-operations-fail-with-internal-service-error-500-when-astra-trident-is-offline]]
 == Les opérations de gestion des données d'application échouent avec l'erreur de service interne (500) lorsque Astra Trident est hors ligne
 
 Si Astra Trident sur un cluster d'application est mis hors ligne (et reconnecté) et 500 erreurs de service internes sont rencontrées lors de la tentative de gestion des données d'application, redémarrez tous les nœuds Kubernetes du cluster d'application pour restaurer la fonctionnalité.
 
 
 
+[[restoring-from-a-backup-when-using-kerberos-in-flight-encryption-can-fail]]
 == La restauration à partir d'une sauvegarde lors de l'utilisation du chiffrement à la volée Kerberos peut échouer
 
 Lorsque vous restaurez une application à partir d'une sauvegarde vers un back-end de stockage utilisant le chiffrement à la volée Kerberos, l'opération de restauration peut échouer. Ce problème n'affecte pas la restauration à partir d'un snapshot ni la réplication des données d'application à l'aide de NetApp SnapMirror.
@@ -53,12 +57,14 @@ NOTE: Lors de l'utilisation du chiffrement à la volée Kerberos avec les volume
 
 
 
+[[backup-data-remains-in-bucket-after-deletion-for-buckets-with-expired-retention-policy]]
 == Les données de sauvegarde restent dans le compartiment après leur suppression pour les compartiments dont la règle de conservation a expiré
 
 Si vous supprimez la sauvegarde immuable d'une application après l'expiration de la politique de conservation du compartiment, la sauvegarde est supprimée d'Astra Control, mais pas du compartiment. Ce problème sera corrigé dans une prochaine version.
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * link:../release-notes/known-limitations.html["Limites connues"]

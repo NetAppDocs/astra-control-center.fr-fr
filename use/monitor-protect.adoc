@@ -22,6 +22,7 @@ Si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy
 
 
 
+[[add-a-proxy-server-for-connections-to-the-netapp-support-site]]
 == Ajoutez un serveur proxy pour les connexions au site de support NetApp
 
 Si le réseau sur lequel vous exécutez Astra Control Center nécessite un proxy pour vous connecter à Internet (pour télécharger des packs de support sur le site de support NetApp), vous devez configurer un serveur proxy dans Astra Control Center.
@@ -48,6 +49,7 @@ image:proxy-new.png["Cette image montre que le serveur proxy a bien été connec
 
 
 
+[[edit-proxy-server-settings]]
 === Modifier les paramètres du serveur proxy
 
 Vous pouvez modifier les paramètres du serveur proxy.
@@ -62,6 +64,7 @@ Vous pouvez modifier les paramètres du serveur proxy.
 
 
 
+[[disable-proxy-server-connection]]
 === Désactiver la connexion au serveur proxy
 
 Vous pouvez désactiver la connexion au serveur proxy. Vous serez averti avant de désactiver cette interruption potentielle des autres connexions.
@@ -75,6 +78,7 @@ Vous pouvez désactiver la connexion au serveur proxy. Vous serez averti avant d
 
 
 
+[[connect-to-prometheus]]
 == Connectez-vous à Prometheus
 
 Vous pouvez surveiller les données du centre de contrôle Astra avec Prometheus. Vous pouvez configurer Prometheus pour collecter des metrics à partir du terminal de metrics du cluster Kubernetes. Par ailleurs, vous pouvez utiliser Prometheus pour visualiser les données.
@@ -90,6 +94,7 @@ Prometheus doit pouvoir communiquer avec le cluster Kubernetes Astra Control Cen
 
 
 
+[[configure-prometheus]]
 === Configurez Prometheus
 
 Astra Control Center expose un service de metrics sur le port TCP 9090 dans le cluster Kubernetes. Vous devez configurer Prometheus pour pouvoir collecter des metrics à partir de ce service.
@@ -123,6 +128,7 @@ sudo systemctl restart prometheus
 
 
 
+[[access-prometheus]]
 === Accès à Prometheus
 
 Accédez à l'URL Prometheus.
@@ -134,6 +140,7 @@ Accédez à l'URL Prometheus.
 
 
 
+[[view-data-in-prometheus]]
 === Affichez les données de Prometheus
 
 Vous pouvez utiliser Prometheus pour afficher les données du centre de contrôle Astra.
@@ -152,6 +159,7 @@ NOTE: Si plusieurs données de cluster ont été collectées, les mesures de cha
 
 
 
+[[connect-to-fluentd]]
 == Connectez-vous à Fluentd
 
 Vous pouvez envoyer des journaux (événements Kubernetes) à partir d'un système surveillé par Astra Control Center vers votre terminal Fluentd. La connexion Fluentd est désactivée par défaut.
@@ -195,6 +203,7 @@ IMPORTANT: Si vous rencontrez des problèmes avec la collecte de journaux, vous 
 
 
 
+[[edit-the-fluentd-connection]]
 === Modifiez la connexion Fluentd
 
 Vous pouvez modifier la connexion Fluentd à votre instance Astra Control Center.
@@ -209,6 +218,7 @@ Vous pouvez modifier la connexion Fluentd à votre instance Astra Control Center
 
 
 
+[[disable-the-fluentd-connection]]
 === Désactivez la connexion Fluentd
 
 Vous pouvez désactiver la connexion Fluentd à votre instance Astra Control Center.

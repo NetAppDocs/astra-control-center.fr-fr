@@ -16,6 +16,7 @@ Vous pouvez créer une sauvegarde automatique planifiée de tout ou partie des e
 
 
 
+[[how-it-works]]
 == Comment cela fonctionne
 
 Lorsque vous configurez et installez le flux de travail de sauvegarde de cluster complet, une tâche cron s'exécute régulièrement et protège tout espace de noms qui n'est pas déjà géré, en créant automatiquement des stratégies de protection basées sur les planifications que vous choisissez pendant l'installation.
@@ -32,6 +33,7 @@ Pour plus de granularité, vous pouvez utiliser le flux de production basé sur 
 
 
 
+[[create-a-scheduled-backup-of-all-namespaces]]
 == Créer une sauvegarde planifiée de tous les espaces de noms
 
 Vous pouvez créer une sauvegarde planifiée de tous les espaces de noms sur un cluster à l'aide du workflow complet de sauvegarde du cluster.
@@ -48,6 +50,7 @@ Vous pouvez créer une sauvegarde planifiée de tous les espaces de noms sur un 
 
 
 
+[[create-a-scheduled-backup-of-specific-namespaces]]
 == Créer une sauvegarde planifiée d'espaces de noms spécifiques
 
 Vous pouvez créer une sauvegarde planifiée d'espaces de noms spécifiques en utilisant leurs étiquettes à l'aide du flux de travail de sauvegarde basé sur des étiquettes.

@@ -56,12 +56,13 @@ NOTE: Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capac
 
 
 
+[[edit-a-bucket]]
 == Modifier un godet
 
 Vous pouvez modifier les informations d'identification d'accès pour un compartiment et modifier si un compartiment sélectionné est le compartiment par défaut.
 
 
-NOTE: Lorsque vous ajoutez un compartiment, sélectionnez le fournisseur approprié et fournissez les identifiants appropriés pour ce fournisseur. Par exemple, l'interface utilisateur accepte NetApp ONTAP S3 comme type et accepte les identifiants StorageGRID. Toutefois, toutes les futures sauvegardes et restaurations des applications à l'aide de ce compartiment échoueront. Voir la link:../release-notes/known-issues.html#selecting-a-bucket-provider-type-with-credentials-for-another-type-causes-data-protection-failures["Notes de version"].
+NOTE: Lorsque vous ajoutez un compartiment, sélectionnez le fournisseur de compartiment approprié et fournissez les informations d'identification correctes pour ce fournisseur. Par exemple, l'interface utilisateur accepte NetApp ONTAP S3 comme type et accepte les informations d'identification StorageGRID ; cependant, cela entraînera l'échec de toutes les futures sauvegardes et restaurations d'applications utilisant ce compartiment. Voir la link:../release-notes/known-issues.html["Notes de version"].
 
 .Étapes
 . Dans le menu de navigation de gauche, sélectionnez *seaux*.
@@ -76,6 +77,7 @@ TIP: Vous ne pouvez pas modifier le type de compartiment.
 
 
 
+[[set-the-default-bucket]]
 == Définir le compartiment par défaut
 
 Lorsque vous effectuez un clone entre les clusters, Astra Control requiert un compartiment par défaut. La procédure suivante permet de définir un compartiment par défaut pour l'ensemble des clusters.
@@ -90,12 +92,14 @@ Lorsque vous effectuez un clone entre les clusters, Astra Control requiert un co
 
 
 
+[[rotate-or-remove-bucket-credentials]]
 == Faire pivoter ou supprimer les identifiants de compartiment
 
 Astra Control utilise des identifiants de compartiment pour accéder à ce compartiment et fournit des clés secrètes pour le compartiment S3 afin qu'Astra Control Center puisse communiquer avec le compartiment.
 
 
 
+[[rotate-bucket-credentials]]
 === Faire pivoter les identifiants du godet
 
 Si vous faites pivoter les informations d'identification, faites-les pivoter pendant une fenêtre de maintenance lorsqu'aucune sauvegarde n'est en cours (planifiée ou à la demande).
@@ -109,6 +113,7 @@ Si vous faites pivoter les informations d'identification, faites-les pivoter pen
 
 
 
+[[remove-bucket-credentials]]
 === Supprimer les identifiants du compartiment
 
 Le retrait des identifiants de compartiment est uniquement possible si de nouvelles informations d'identification ont été appliquées à un compartiment ou si ce dernier n'est plus utilisé activement.
@@ -123,6 +128,7 @@ Pour obtenir des instructions sur la suppression des informations d'identificati
 
 
 
+[[remove-a-bucket]]
 == Déposer un godet
 
 Il est possible de retirer un godet qui n'est plus utilisé ou qui n'est pas en bon état. Pour simplifier et à jour la configuration du magasin d'objets,
@@ -157,6 +163,7 @@ NOTE: Astra Control veille à l'absence de règles de planification qui utilise 
 
 
 
+[[tech-preview-manage-a-bucket-using-a-custom-resource]]
 == [Aperçu technique] Gérez un compartiment à l'aide d'une ressource personnalisée
 
 Vous pouvez ajouter un compartiment à l'aide d'une ressource personnalisée Astra Control (CR) sur le cluster d'applications. Il est essentiel d'ajouter des fournisseurs de compartiments de stockage objet pour sauvegarder les applications et le stockage persistant ou pour cloner les applications entre les clusters. Astra Control stocke les sauvegardes ou les clones dans les compartiments de magasin d'objets que vous définissez. Si vous utilisez la méthode de ressources personnalisées, la fonctionnalité de snapshots d'applications requiert un compartiment.
@@ -239,12 +246,13 @@ kubectl apply -f astra-appvault.yaml -n astra-connector
 ----
 +
 
-NOTE: Lorsque vous ajoutez un godet, Astra Control marque un godet avec l'indicateur de compartiment par défaut. Le premier compartiment que vous créez devient le compartiment par défaut. Au fur et à mesure que vous ajoutez des compartiments, vous pourrez décider plus tard link:../use/manage-buckets.html#set-the-default-bucket["définir un autre compartiment par défaut"^].
+NOTE: Lorsque vous ajoutez un godet, Astra Control marque un godet avec l'indicateur de compartiment par défaut. Le premier compartiment que vous créez devient le compartiment par défaut. Au fur et à mesure que vous ajoutez des compartiments, vous pourrez décider plus tard link:../use/manage-buckets.html#set-the-default-bucket["définir un autre compartiment par défaut"].
 
 
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]

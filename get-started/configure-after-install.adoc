@@ -16,6 +16,7 @@ En fonction de votre environnement, une configuration supplémentaire peut être
 
 
 
+[[remove-resource-limitations]]
 == Supprimer les limitations de ressources
 
 Certains environnements utilisent les objets ResourceQuotas et LimitRanges pour empêcher les ressources d'un namespace de consommer l'ensemble des CPU et de la mémoire disponibles sur le cluster. Le centre de contrôle Astra ne fixe pas de limites maximales, il ne sera donc pas conforme à ces ressources. Si votre environnement est configuré de cette façon, vous devez supprimer ces ressources des espaces de noms où vous prévoyez d'installer Astra Control Center.
@@ -81,6 +82,7 @@ kubectl delete limitrange cpu-limit-range -n [netapp-acc or custom namespace]
 
 
 
+[[add-a-custom-tls-certificate]]
 == Ajouter un certificat TLS personnalisé
 
 Par défaut, Astra Control Center utilise un certificat TLS auto-signé pour le trafic du contrôleur d'entrée (uniquement dans certaines configurations) et l'authentification de l'interface utilisateur Web avec des navigateurs Web. Pour une utilisation en production, vous devez supprimer le certificat TLS auto-signé existant et le remplacer par un certificat TLS signé par une autorité de certification (CA).
@@ -104,6 +106,7 @@ Le remplacement du certificat TLS par défaut remplace le certificat utilisé po
 
 
 
+[[remove-the-self-signed-certificate]]
 === Supprimez le certificat auto-signé
 
 Supprimez le certificat TLS auto-signé existant.
@@ -130,6 +133,7 @@ kubectl delete secret secure-testing-cert -n <ACC-deployment-namespace>
 
 
 
+[[add-a-new-certificate-using-the-command-line]]
 === Ajoutez un nouveau certificat à l'aide de la ligne de commande
 
 Ajoutez un nouveau certificat TLS signé par une autorité de certification.

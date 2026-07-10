@@ -16,6 +16,7 @@ Si vous avez activé l'authentification LDAP sur votre système Astra Control, v
 
 
 
+[[add-a-remote-user]]
 == Ajouter un utilisateur distant
 
 Les propriétaires et administrateurs de comptes peuvent ajouter des utilisateurs distants à Astra Control. ASTRA Control Center prend en charge jusqu'à 10,000 utilisateurs distants LDAP.
@@ -51,6 +52,7 @@ Le nouvel utilisateur apparaît dans la liste des utilisateurs distants. Dans ce
 
 
 
+[[add-a-remote-group]]
 == Ajouter un groupe distant
 
 Pour ajouter plusieurs utilisateurs distants à la fois, les propriétaires et administrateurs de comptes peuvent ajouter des groupes distants à Astra Control. Lorsque vous ajoutez un groupe distant, tous les utilisateurs distants de ce groupe peuvent se connecter à Astra Control et héritent du même rôle que le groupe.

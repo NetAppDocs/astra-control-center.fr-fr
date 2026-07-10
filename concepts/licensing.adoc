@@ -27,12 +27,14 @@ NOTE: Assurez-vous que votre licence active au moins autant d'UC que nécessaire
 
 
 
+[[evaluation-licenses-and-full-licenses]]
 == Licences d'évaluation et licences complètes
 
 Une licence d'évaluation intégrée est fournie avec une nouvelle installation d'Astra Control Center. Une licence d'évaluation offre les mêmes fonctionnalités qu'une licence complète pour une période limitée (90 jours). Après la période d'évaluation, une licence complète est requise pour continuer à bénéficier de toutes les fonctionnalités.
 
 
 
+[[license-expiration]]
 == Expiration de la licence
 
 Si la licence Astra Control Center active expire, l'interface utilisateur et les fonctionnalités d'API des fonctionnalités suivantes ne sont pas disponibles :
@@ -47,6 +49,7 @@ Si la licence Astra Control Center active expire, l'interface utilisateur et les
 
 
 
+[[how-license-consumption-is-calculated]]
 == Mode de calcul de la consommation des licences
 
 Lorsque vous ajoutez un nouveau cluster à Astra Control Center, il ne prend pas en compte les licences consommées tant qu'au moins une application exécutée sur le cluster est gérée par Astra Control Center.
@@ -58,6 +61,7 @@ NOTE: Les nœuds d'infrastructure Red Hat OpenShift ne consomment pas de licence
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * link:../get-started/add-license.html["Ajoutez une licence lorsque vous configurez Astra Control Center pour la première fois"]

@@ -72,6 +72,7 @@ insecure-skip-tls-verify: true
 
 
 
+[[run-eligibility-checks]]
 == Effectuer des vérifications d'éligibilité
 
 Effectuez les contrôles d'éligibilité suivants pour vous assurer que votre grappe est prête à être ajoutée au Centre de contrôle Astra.
@@ -131,6 +132,7 @@ ontap-gold (default)  csi.trident.netapp.io  Delete         Immediate          t
 
 
 
+[[create-a-cluster-role-kubeconfig]]
 == Créez un kubeconfig pour le rôle de cluster
 
 Pour les clusters gérés à l'aide de kubeconfig, vous pouvez éventuellement créer une autorisation limitée ou un rôle d'administrateur d'autorisations étendues pour Astra Control Center. Il ne s'agit pas d'une procédure requise pour la configuration d'Astra Control Center, car vous avez déjà configuré un kubeconfig dans le cadre du link:../get-started/install_acc.html#set-up-namespace-and-secret-for-registries-with-auth-requirements["processus d'installation"].

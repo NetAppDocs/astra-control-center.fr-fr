@@ -16,6 +16,7 @@ Découvrez les types de protection des données disponibles dans Astra Control C
 
 
 
+[[snapshots-backups-and-protection-policies]]
 == Snapshots, sauvegardes et règles de protection
 
 Les snapshots et les sauvegardes protègent les types de données suivants :
@@ -36,6 +37,7 @@ CAUTION: _Vous ne pouvez pas être entièrement protégé tant que vous n'avez p
 
 
 
+[[immutable-backups]]
 === Sauvegardes immuables
 
 Une sauvegarde immuable est une sauvegarde qui ne peut pas être modifiée ou supprimée au cours d'une période spécifiée. Lorsque vous créez une sauvegarde immuable, Astra Control vérifie que le compartiment que vous utilisez est un compartiment WORM (Write Once, Read Many) et, si oui, vérifie que la sauvegarde est immuable depuis Astra Control.
@@ -53,12 +55,14 @@ Notez les points suivants lorsque vous travaillez avec des sauvegardes immuables
 
 
 
+[[clones]]
 == Clones
 
 Un _clone_ est un doublon exact d'une application, de sa configuration et de ses volumes de données persistants. Vous pouvez créer manuellement un clone sur le même cluster Kubernetes ou sur un autre cluster. Le clonage d'une application peut être utile pour déplacer des applications et du stockage d'un cluster Kubernetes vers un autre.
 
 
 
+[[replication-between-storage-backends]]
 == Réplication entre les systèmes back-end
 
 Avec Astra Control, vous pouvez assurer la continuité de l'activité de vos applications avec un objectif de point de récupération (RPO) et un objectif de délai de restauration (RTO) faible grâce aux fonctionnalités de réplication asynchrone de la technologie NetApp SnapMirror. Une fois configuré, vos applications peuvent répliquer les modifications des données et des applications d'un système back-end de stockage vers un autre, sur le même cluster ou entre différents clusters.
@@ -87,6 +91,7 @@ image:acc-replication_4in.png["Cette image illustre la réplication et le bascul
 
 
 
+[[backups-snapshots-and-clones-with-an-expired-license]]
 == Sauvegardes, snapshots et clones avec une licence expirée
 
 Si votre licence expire, vous pouvez ajouter une nouvelle application ou effectuer des opérations de protection des applications (telles que les copies Snapshot, les sauvegardes, les clones et les opérations de restauration) uniquement si l'application que vous ajoutez ou protégez est une autre instance d'Astra Control Center.

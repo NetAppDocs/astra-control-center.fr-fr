@@ -74,6 +74,7 @@ Une fois la configuration d'Astra Control Center terminée, utilisez l'interface
 
 
 
+[[for-more-information]]
 == Pour en savoir plus
 
 * https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]

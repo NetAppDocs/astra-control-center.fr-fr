@@ -16,6 +16,7 @@ Supprimez toutes les applications ou clusters que vous ne souhaitez plus gérer 
 
 
 
+[[unmanage-an-app]]
 == Annuler la gestion d'une application
 
 Arrêtez de gérer les applications que vous ne souhaitez plus sauvegarder, créer des instantanés ou cloner à partir d'Astra Control Center.
@@ -40,6 +41,7 @@ Astra Control Center cesse de gérer l'application.
 
 
 
+[[unmanage-a-cluster]]
 == Annuler la gestion d'un cluster
 
 Arrêtez de gérer le cluster que vous ne souhaitez plus gérer à partir d'Astra Control Center.

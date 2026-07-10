@@ -45,6 +45,7 @@ Si vous activez Astra Control Provisioner, effectuez d'abord les opérations sui
 ====
 
 
+[[step-1-get-the-astra-control-provisioner-image]]
 == (Étape 1) Obtenez l'image Astra Control Provisioner
 
 Les utilisateurs d'Astra Control Center peuvent obtenir l'image d'Astra Control provisionner en utilisant le registre Astra Control ou la méthode du site de support NetApp. Les utilisateurs d'Astra Trident qui souhaitent utiliser Astra Control Provisioner sans Astra Control doivent utiliser la méthode de Registre.
@@ -162,6 +163,7 @@ docker push <my_custom_registry>/trident-acp:24.02.0
 ====
 
 
+[[step-2-enable-astra-control-provisioner-in-astra-trident]]
 == (Étape 2) Activer le provisionnement Astra Control dans Astra Trident
 
 Déterminez si la méthode d'installation d'origine utilisait un https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html#determine-the-original-installation-method["Opérateur (manuellement ou avec Helm) ou tridentctl"^] et suivez les étapes appropriées selon votre méthode d'origine.
@@ -170,7 +172,7 @@ Déterminez si la méthode d'installation d'origine utilisait un https://docs.ne
 ====
 .Opérateur Astra Trident
 --
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["Téléchargez le programme d'installation d'Astra Trident et extrayez-le"^].
+. https://docs.netapp.com/us-en/trident/trident-install/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["Téléchargez le programme d'installation d'Astra Trident et extrayez-le"^].
 . Si vous n'avez pas encore installé Astra Trident ou si vous avez supprimé l'opérateur de votre déploiement Astra Trident d'origine :
 +
 .. Créez le CRD :
@@ -416,6 +418,7 @@ Si vous rencontrez des problèmes pour déployer Trident à l'aide d'Helm, exéc
 ====
 
 
+[[result]]
 == Résultat
 
 La fonctionnalité Astra Control Provisioner est activée et vous pouvez utiliser toutes les fonctions disponibles pour la version que vous exécutez.

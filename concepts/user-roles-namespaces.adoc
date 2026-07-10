@@ -16,6 +16,7 @@ Apprenez-en plus sur les rôles d'utilisateur et les espaces de noms d'Astra Con
 
 
 
+[[user-roles]]
 == Rôles utilisateur
 
 Vous pouvez utiliser des rôles pour contrôler l'accès des utilisateurs aux ressources ou aux fonctionnalités d'Astra Control. Les rôles d'utilisateur dans Astra Control sont les suivants :
@@ -30,12 +31,14 @@ Vous pouvez ajouter des contraintes à un membre ou à un visualiseur pour limit
 
 
 
+[[namespaces]]
 == Espaces de noms
 
 Un espace de noms est une portée que vous pouvez attribuer à des ressources spécifiques au sein d'un cluster géré par Astra Control. Astra Control détecte les espaces de noms d'un cluster lorsque vous ajoutez le cluster à Astra Control. Une fois découverts, les espaces de noms sont disponibles pour leur attribuer en tant que contraintes. Seuls les membres ayant accès à cet espace de noms peuvent utiliser cette ressource. Vous pouvez utiliser les espaces de noms pour contrôler l'accès aux ressources à l'aide d'un paradigme adapté à votre entreprise (par exemple, par régions physiques ou par divisions au sein d'une entreprise). Lorsque vous ajoutez des contraintes à un utilisateur, vous pouvez configurer cet utilisateur pour qu'il ait accès à tous les espaces de noms ou seulement à un ensemble spécifique d'espaces de noms. Vous pouvez également affecter des contraintes d'espace de noms à l'aide d'étiquettes d'espace de noms.
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 link:../use/manage-local-users-and-roles.html["Gérez les utilisateurs et les rôles locaux"]

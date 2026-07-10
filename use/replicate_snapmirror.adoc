@@ -42,6 +42,7 @@ Avec Astra Control, vous pouvez effectuer les tâches suivantes relatives aux ap
 
 
 
+[[replication-prerequisites]]
 == Conditions préalables à la réplication
 
 Avant de commencer, vous devez remplir les conditions préalables suivantes :
@@ -99,6 +100,7 @@ IMPORTANT: La réplication Astra Control prend en charge les applications qui ut
 
 
 
+[[set-up-a-replication-relationship]]
 == Configuration d'une relation de réplication
 
 La configuration d'une relation de réplication implique les éléments suivants :
@@ -161,6 +163,7 @@ Pour en savoir plus sur l'état et l'état de la réplication, consultez cette r
 
 
 
+[[bring-a-replicated-app-online-on-the-destination-cluster-failover]]
 == Mettre une application répliquée en ligne sur le cluster de destination (basculement)
 
 Avec Astra Control, vous pouvez basculer les applications répliquées vers un cluster de destination. Cette procédure arrête la relation de réplication et met l'application en ligne sur le cluster de destination. Cette procédure n'arrête pas l'application sur le cluster source s'il était opérationnel.
@@ -185,6 +188,7 @@ La procédure de basculement entraîne les actions suivantes :
 
 
 
+[[resync-a-failed-over-replication]]
 == Resynchroniser un basculement de réplication impossible
 
 L'opération de resynchronisation rétablit la relation de réplication. Vous pouvez choisir la source de la relation pour conserver les données sur le cluster source ou destination. Cette opération rétablit les relations SnapMirror pour démarrer la réplication du volume dans le sens de votre choix.
@@ -217,6 +221,7 @@ CAUTION: Choisissez soigneusement la source de resynchronisation, car les donné
 
 
 
+[[reverse-application-replication]]
 == Réplication inverse des applications
 
 Il s'agit de l'opération planifiée pour déplacer l'application vers le back-end de stockage de destination tout en continuant à répliquer vers le back-end de stockage source d'origine. ASTRA Control arrête l'application source et réplique les données vers la destination avant de basculer vers l'application de destination.
@@ -243,6 +248,7 @@ Les actions suivantes se produisent suite à la réplication inverse :
 
 
 
+[[fail-back-applications-to-the-original-source-cluster]]
 == Rétablir le fonctionnement des applications sur le cluster source d'origine
 
 Avec Astra Control, vous pouvez obtenir le « retour arrière » après une opération de basculement à l'aide de la séquence d'opérations suivante. Dans ce flux de travail pour restaurer le sens de réplication d'origine, Astra Control réplique (resyncs) toute modification d'application vers l'application source d'origine avant d'inverser le sens de réplication.
@@ -270,6 +276,7 @@ Cette action associe les résultats des opérations de resynchronisation et de �
 
 
 
+[[delete-an-application-replication-relationship]]
 == Supprime une relation de réplication d'application
 
 La suppression de la relation se traduit par deux applications distinctes sans relation entre elles.
@@ -289,12 +296,14 @@ Les actions suivantes se produisent suite à la suppression d'une relation de r�
 
 
 
+[[replication-relationship-health-status-and-relationship-life-cycle-states]]
 == État de santé des relations de réplication et état du cycle de vie des relations
 
 Astra Control affiche l'état de santé de la relation et les États du cycle de vie de la relation de réplication.
 
 
 
+[[replication-relationship-health-statuses]]
 === États d'intégrité des relations de réplication
 
 Les États suivants indiquent l'état de santé de la relation de réplication :
@@ -312,6 +321,7 @@ Les États suivants indiquent l'état de santé de la relation de réplication :
 
 
 
+[[replication-life-cycle-states]]
 === États du cycle de vie de la réplication
 
 Les États suivants reflètent les différentes étapes du cycle de vie de la réplication :

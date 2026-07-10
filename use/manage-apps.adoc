@@ -18,6 +18,7 @@ Vous pouvez définir et gérer des applications qui incluent des ressources de s
 
 
 
+[[application-management-requirements]]
 == De gestion des applications
 
 Astra Control présente les exigences de gestion des applications suivantes :
@@ -61,6 +62,7 @@ Astra Control présente les exigences de gestion des applications suivantes :
 
 
 
+[[supported-app-installation-methods]]
 == Méthodes d'installation d'applications prises en charge
 
 Astra Control prend en charge les méthodes d'installation d'application suivantes :
@@ -93,12 +95,14 @@ Astra Control peut ne pas être en mesure de cloner un opérateur conçu avec un
 
 
 
+[[install-apps-on-your-cluster]]
 == Installez les applications sur votre cluster
 
 Après vous l'avez link:../get-started/add-cluster.html["a ajouté votre cluster"] Avec Astra Control, vous pouvez installer des applications ou gérer des applications existantes sur le cluster. Toute application dont la portée est étendue à un ou plusieurs espaces de noms peut être gérée.
 
 
 
+[[define-apps]]
 == Définir les applications
 
 Une fois qu'Astra Control détecte les espaces de noms sur vos clusters, vous pouvez définir les applications que vous souhaitez gérer. Vous pouvez choisir <<Définissez les ressources à gérer en tant qu'application,gérer une application couvrant un ou plusieurs espaces de noms>> ou <<Définissez un espace de noms à gérer en tant qu'application,gérer la totalité d'un namespace comme une seule application>>. La granularité est en effet au niveau de granularité requis pour les opérations de protection des données.
@@ -112,7 +116,7 @@ TIP: Par exemple, vous pouvez définir une stratégie de sauvegarde pour « mari
 * Un cluster Kubernetes ajouté à Astra Control.
 * Une ou plusieurs applications installées sur le cluster. <<Méthodes d'installation d'applications prises en charge,En savoir plus sur les méthodes d'installation d'applications prises en charge>>.
 * Espaces de noms existants sur le cluster Kubernetes que vous avez ajouté à Astra Control.
-* (Facultatif) Etiquette Kubernetes de toute link:../use/manage-apps.html#app-management-requirements["Ressources Kubernetes prises en charge"].
+* (Facultatif) Une étiquette Kubernetes sur n'importe quel link:../use/manage-apps.html#application-management-requirements["Ressources Kubernetes prises en charge"].
 +
 
 TIP: Une étiquette est une paire clé/valeur que vous pouvez attribuer aux objets Kubernetes pour identification. Elles facilitent le tri, l'organisation et la recherche des objets Kubernetes. Pour en savoir plus sur les étiquettes Kubernetes, https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["Consultez la documentation officielle Kubernetes"^].
@@ -133,6 +137,7 @@ TIP: Une étiquette est une paire clé/valeur que vous pouvez attribuer aux obje
 
 
 
+[[define-resources-to-manage-as-an-app]]
 === Définissez les ressources à gérer en tant qu'application
 
 Vous pouvez spécifier le link:../concepts/app-management.html["Ressources Kubernetes qui constituent une application"] Que vous voulez gérer avec Astra Control. La définition d'une application vous permet de regrouper des éléments de votre cluster Kubernetes dans une seule application. Cette collection de ressources Kubernetes est organisée par critères d'espace de noms et de sélecteur d'étiquettes.
@@ -221,6 +226,7 @@ Pour afficher les ressources ajoutées à cette application, sélectionnez l'ong
 
 
 
+[[define-a-namespace-to-manage-as-an-app]]
 === Définissez un espace de noms à gérer en tant qu'application
 
 Vous pouvez ajouter toutes les ressources Kubernetes dans un namespace à la gestion d'Astra Control en définissant les ressources de ce namespace comme une application. Cette méthode est préférable à définir des applications individuellement si vous avez l'intention de gérer et de protéger toutes les ressources d'un espace de noms particulier de la même manière et à intervalles communs.
@@ -243,6 +249,7 @@ Une fois le processus terminé, les applications associées à l'espace de noms 
 
 
 
+[[tech-preview-define-an-application-using-a-kubernetes-custom-resource]]
 === [Aperçu technique] définissez une application à l'aide d'une ressource personnalisée Kubernetes
 
 Vous pouvez spécifier les ressources Kubernetes que vous souhaitez gérer avec Astra Control en les définissant comme une application à l'aide d'une ressource personnalisée (CR). Vous pouvez ajouter des ressources définies dans le cluster si vous souhaitez gérer ces ressources individuellement ou toutes les ressources Kubernetes d'un namespace si, par exemple, vous avez l'intention de gérer et de protéger toutes les ressources d'un namespace spécifique de la même manière et à intervalles réguliers.
@@ -343,6 +350,7 @@ kubectl apply -f astra_mysql_app.yaml -n astra-connector
 
 
 
+[[what-about-system-namespaces]]
 == Qu'en est-il des espaces de noms système
 
 Astra Control détecte également les espaces de noms système sur un cluster Kubernetes. Nous ne vous montrons pas ces espaces de noms système par défaut, car il est rare qu'il soit nécessaire de sauvegarder les ressources d'applications système.
@@ -356,6 +364,7 @@ TIP: ASTRA Control Center n'est pas affiché par défaut en tant qu'application 
 
 
 
+[[example-separate-protection-policy-for-different-releases]]
 == Exemple : politique de protection distincte pour différentes versions
 
 Dans cet exemple, l'équipe devops gère un déploiement de version « canary ». Le cluster de l'équipe a trois modules exécutant Nginx. Deux des modules sont dédiés à la version stable. Le troisième pod est pour la libération des canaris.
@@ -368,6 +377,7 @@ Afin d'éviter d'éventuels conflits de données, l'administrateur va créer deu
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]

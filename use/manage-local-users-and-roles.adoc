@@ -18,6 +18,7 @@ Vous pouvez également utiliser LDAP pour effectuer l'authentification pour cert
 
 
 
+[[use-ldap]]
 == Utiliser LDAP
 
 LDAP est un protocole standard de l'industrie pour l'accès aux informations d'annuaires distribués et un choix populaire pour l'authentification d'entreprise. Vous pouvez connecter Astra Control Center à un serveur LDAP pour effectuer l'authentification de certains utilisateurs Astra Control. À un niveau élevé, la configuration implique l'intégration d'Astra avec LDAP et la définition des utilisateurs et des groupes Astra Control correspondant aux définitions LDAP. Vous pouvez utiliser l'API de contrôle Astra ou l'interface utilisateur Web pour configurer l'authentification LDAP et les utilisateurs et groupes LDAP. Pour plus d'informations, reportez-vous à la documentation suivante :
@@ -29,6 +30,7 @@ LDAP est un protocole standard de l'industrie pour l'accès aux informations d'a
 
 
 
+[[add-users]]
 == Ajouter des utilisateurs
 
 Les propriétaires et administrateurs de comptes peuvent ajouter d'autres utilisateurs à l'installation d'Astra Control Center.
@@ -61,12 +63,14 @@ Pour plus d'informations sur l'ajout de contraintes, voir link:manage-local-user
 
 
 
+[[manage-passwords]]
 == Gérer les mots de passe
 
 Vous pouvez gérer les mots de passe des comptes utilisateur dans Astra Control Center.
 
 
 
+[[change-your-password]]
 === Changer votre mot de passe
 
 Vous pouvez modifier le mot de passe de votre compte utilisateur à tout moment.
@@ -82,6 +86,7 @@ Vous pouvez modifier le mot de passe de votre compte utilisateur à tout moment.
 
 
 
+[[reset-another-users-password]]
 === Réinitialiser le mot de passe d'un autre utilisateur
 
 Si votre compte dispose des autorisations de rôle Administrateur ou propriétaire, vous pouvez réinitialiser les mots de passe des autres comptes utilisateur ainsi que les vôtres. Lorsque vous réinitialisez un mot de passe, vous attribuez un mot de passe temporaire que l'utilisateur devra modifier lors de la connexion.
@@ -101,6 +106,7 @@ NOTE: Lors de la prochaine connexion de l'utilisateur, l'utilisateur est invité
 
 
 
+[[remove-users]]
 == Supprimer des utilisateurs
 
 Les utilisateurs disposant du rôle propriétaire ou administrateur peuvent à tout moment supprimer d'autres utilisateurs du compte.
@@ -117,12 +123,14 @@ Astra Control Center supprime l'utilisateur du compte.
 
 
 
+[[manage-roles]]
 == Gérez les rôles
 
 Vous pouvez gérer les rôles en ajoutant des contraintes d'espace de noms et en restreignant les rôles des utilisateurs à ces contraintes. Cela vous permet de contrôler l'accès aux ressources de votre organisation. Vous pouvez utiliser l'interface utilisateur de contrôle Astra ou https://docs.netapp.com/us-en/astra-automation["API de contrôle Astra"^] pour gérer les rôles.
 
 
 
+[[add-a-namespace-constraint-to-a-role]]
 === Ajoutez une contrainte d'espace de noms à un rôle
 
 Un administrateur ou un propriétaire peut ajouter des contraintes d'espace de noms aux rôles de membre ou de visualiseur.
@@ -157,6 +165,7 @@ NOTE: Si vous activez des contraintes pour un rôle et que vous sélectionnez *c
 
 
 
+[[remove-a-namespace-constraint-from-a-role]]
 === Supprime une contrainte d'espace de noms d'un rôle
 
 Un utilisateur Admin ou propriétaire peut supprimer une contrainte d'espace de noms d'un rôle.
@@ -175,6 +184,7 @@ La boîte de dialogue *Modifier le rôle* affiche les contraintes actives du rô
 
 
 
+[[for-more-information]]
 == Pour en savoir plus
 
 * link:../concepts/user-roles-namespaces.html["Rôles et espaces de noms d'utilisateur"]

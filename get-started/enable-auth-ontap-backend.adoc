@@ -22,6 +22,7 @@ Vous pouvez par la suite mettre à jour les systèmes back-end existants pour pa
 
 
 
+[[enable-credential-based-authentication]]
 === Activer l'authentification basée sur les informations d'identification
 
 ASTRA Control Center requiert les identifiants d'un cluster-scoped `admin` Pour communiquer avec le backend ONTAP. Vous devez utiliser des rôles standard prédéfinis, tels que `admin`. La compatibilité avec les futures versions d'ONTAP qui pourraient exposer les API de fonctionnalités à utiliser dans les futures versions d'Astra Control Center est ainsi garantie.
@@ -48,6 +49,7 @@ La définition du back-end est le seul endroit où les informations d'identifica
 
 
 
+[[enable-certificate-based-authentication]]
 === Activer l'authentification basée sur certificat
 
 ASTRA Control Center peut utiliser des certificats pour communiquer avec les systèmes back-end ONTAP, nouveaux et existants. Vous devez entrer les informations suivantes dans la définition du back-end.

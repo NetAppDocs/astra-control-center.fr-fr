@@ -39,6 +39,7 @@ Vous pouvez effectuer les tâches suivantes liées à la protection de vos donn�
 
 
 
+[[configure-a-protection-policy]]
 == Configurer une règle de protection
 
 Une règle de protection protège une application en créant des snapshots, des sauvegardes ou les deux à un calendrier défini. Vous pouvez choisir de créer des snapshots et des sauvegardes toutes les heures, tous les jours, toutes les semaines et tous les mois, et vous pouvez spécifier le nombre de copies à conserver. Vous pouvez définir une règle de protection à l'aide de l'interface utilisateur Web d'Astra Control ou d'un fichier de ressource personnalisée (CR).
@@ -136,6 +137,7 @@ Astra Control implémente la règle de protection des données en créant et en 
 
 
 
+[[create-a-snapshot]]
 == Créer un snapshot
 
 Vous pouvez créer un snapshot à la demande à tout moment.
@@ -208,6 +210,7 @@ Le processus d'instantané commence. Un instantané a réussi lorsque l'état es
 
 
 
+[[create-a-backup]]
 == Créer une sauvegarde
 
 Vous pouvez sauvegarder une application à tout moment.
@@ -288,6 +291,7 @@ Astra Control crée une sauvegarde de l'application.
 ====
 
 
+[[enable-backup-and-restore-for-ontap-nas-economy-operations]]
 == Sauvegardez et restaurez les opérations ontap-nas
 
 ASTRA Control Provisioner offre des fonctionnalités de sauvegarde et de restauration qui peuvent être activées pour les systèmes back-end qui utilisent le `ontap-nas-economy` classe de stockage.
@@ -351,6 +355,7 @@ L'application est prête à effectuer des sauvegardes et des restaurations à l'
 
 
 
+[[create-an-immutable-backup]]
 == Créez une sauvegarde immuable
 
 Une sauvegarde immuable ne peut pas être modifiée, supprimée ou écrasée tant que la stratégie de conservation sur le compartiment qui stocke la sauvegarde l'interdit. Vous pouvez créer des sauvegardes immuables en sauvegardant les applications dans des compartiments dont une stratégie de conservation est configurée. Reportez-vous à la section link:../concepts/data-protection.html#immutable-backups["Protection des données"] pour obtenir des informations importantes sur l'utilisation de sauvegardes immuables.
@@ -396,6 +401,7 @@ ASTRA Control crée une sauvegarde immuable de l'application.
 ====
 
 
+[[view-snapshots-and-backups]]
 == Afficher les snapshots et les sauvegardes
 
 Vous pouvez afficher les instantanés et les sauvegardes d'une application à partir de l'onglet protection des données.
@@ -414,6 +420,7 @@ Les snapshots s'affichent par défaut.
 
 
 
+[[delete-snapshots]]
 == Supprimer les instantanés
 
 Supprimez les snapshots programmés ou à la demande dont vous n'avez plus besoin.
@@ -433,6 +440,7 @@ Astra Control supprime le snapshot.
 
 
 
+[[cancel-backups]]
 == Annuler les sauvegardes
 
 Vous pouvez annuler une sauvegarde en cours.
@@ -453,6 +461,7 @@ NOTE: Vous ne pouvez pas annuler une sauvegarde immuable en cours d'exécution.
 
 
 
+[[delete-backups]]
 == Supprimer les sauvegardes
 
 Supprimez les sauvegardes planifiées ou à la demande qui ne vous sont plus nécessaires. Vous ne pouvez pas supprimer une sauvegarde effectuée dans un compartiment immuable tant que la politique de conservation du compartiment ne vous y autorise pas.

@@ -21,6 +21,7 @@ Vous devez d'abord link:../get-started/add-license.html["Activez le support de v
 
 
 
+[[self-support-options]]
 == Options d'auto-assistance
 
 Vous pouvez accéder aux options de support à partir de l'interface utilisateur du Centre de contrôle Astra en sélectionnant l'onglet *support* dans le menu principal.
@@ -36,12 +37,14 @@ Ces options sont disponibles gratuitement, 24h/24, 7j/7 :
 
 
 
+[[enable-daily-scheduled-support-bundle-upload-to-netapp-support]]
 == Activer le téléchargement quotidien de bundle de support planifié vers le support NetApp
 
 Au cours de l'installation d'Astra Control Center, si vous spécifiez `enrolled: true` pour `autoSupport` Dans le fichier de ressources personnalisées (CR) Astra Control Center (`astra_control_center.yaml`), les offres de support quotidien sont automatiquement téléchargées sur le https://mysupport.netapp.com/site/["Site de support NetApp"^].
 
 
 
+[[generate-support-bundle-to-provide-to-netapp-support]]
 == Générez un bundle de support à fournir au support NetApp
 
 Avec le centre de contrôle Astra, l'utilisateur administratif peut générer des bundles qui incluent des informations utiles pour le support NetApp, y compris des journaux, des événements pour tous les composants du déploiement Astra, des mesures et des informations de topologie sur les clusters et les applications sous gestion. Si vous êtes connecté à Internet, vous pouvez télécharger des packs de support sur le site de support NetApp (NSS) directement à partir de l'interface utilisateur du centre de contrôle Astra.
@@ -87,6 +90,7 @@ TIP: L'icône de notifications en haut à droite de l'interface utilisateur four
 
 
 
+[[if-you-have-an-air-gapped-installation]]
 === Si vous avez une installation pneumatique
 
 Si vous disposez d'une installation pneumatique, effectuez les opérations suivantes après la génération du pack support. Lorsque le bundle est disponible au téléchargement, l'icône Télécharger apparaît en regard de *generate* dans la section *support Bundles* de la page *support*.

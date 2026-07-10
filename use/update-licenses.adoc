@@ -28,6 +28,7 @@ La page *compte* > *licences* affiche les informations de licence, la date d'exp
 
 
 
+[[for-more-information]]
 == Pour en savoir plus
 
 * link:../concepts/licensing.html["Licence Astra Control Center"]

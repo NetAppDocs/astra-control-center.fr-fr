@@ -4,6 +4,7 @@
 
 
 
+[[features]]
 == Caractéristiques
 
 Astra Control offre des fonctionnalités stratégiques pour la gestion du cycle de vie des données d'application Kubernetes :
@@ -20,6 +21,7 @@ Astra Control offre des fonctionnalités stratégiques pour la gestion du cycle 
 
 
 
+[[deployment-models]]
 == Modèles de déploiement
 
 Astra Control est disponible dans deux modèles de déploiement :
@@ -147,6 +149,7 @@ Vous gérez toutes les mises à jour
 |===
 
 
+[[how-astra-control-service-works]]
 == Fonctionnement du service Astra Control
 
 Astra Control Service est un service cloud géré par NetApp qui est constamment disponible et mis à jour avec les dernières fonctionnalités. Elle utilise plusieurs composants pour faciliter la gestion du cycle de vie des données des applications.
@@ -155,8 +158,8 @@ Astra Control Service est un service cloud géré par NetApp qui est constamment
 
 * Commencez avec le service Astra Control en configurant votre fournisseur de services cloud et en vous inscrivant à un compte Astra.
 +
-** Pour les clusters GKE, Astra Control Service utilise https://cloud.netapp.com/cloud-volumes-service-for-gcp["NetApp Cloud Volumes Service pour Google Cloud"^] Ou des disques persistants Google en tant que système de stockage back-end pour vos volumes persistants.
-** Pour les clusters AKS, Astra Control Service utilise https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] Ou des disques gérés Azure en tant que backend de stockage pour les volumes persistants.
+** Pour les clusters GKE, Astra Control Service utilise  https://www.netapp.com/google-cloud/netapp-volumes/["NetApp Cloud Volumes Service pour Google Cloud"^] ou Google Persistent Disks comme système de stockage pour vos volumes persistants.
+** Pour les clusters AKS, Astra Control Service utilise  https://www.netapp.com/azure/azure-netapp-files/["Azure NetApp Files"^] ou des disques gérés par Azure comme backend de stockage pour vos volumes persistants.
 ** Pour les clusters Amazon EKS, Astra Control Service utilise https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] ou https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSX pour NetApp ONTAP"^] en tant que système back-end de stockage pour vos volumes persistants.
 
 
@@ -179,6 +182,7 @@ Le plan gratuit d'Astra Control vous permet de gérer jusqu'à 10 espaces de nom
 
 
 
+[[how-astra-control-center-works]]
 == Fonctionnement du centre de contrôle Astra
 
 Astra Control Center fonctionne localement dans votre propre cloud privé.
@@ -212,6 +216,7 @@ Vous pouvez ajouter des applications à votre cluster. Si certaines applications
 
 
 
+[[for-more-information]]
 == Pour en savoir plus
 
 * https://docs.netapp.com/us-en/astra/index.html["Documentation relative au service après-vente Astra Control"^]

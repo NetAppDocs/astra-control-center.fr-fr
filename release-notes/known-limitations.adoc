@@ -49,9 +49,10 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 
 
 
+[[the-same-cluster-cannot-be-managed-by-two-astra-control-center-instances]]
 == Le même cluster ne peut pas être géré par deux instances Astra Control Center
 
-Si vous souhaitez gérer un cluster sur une autre instance Astra Control Center, vous devez d'abord link:../use/unmanage.html#stop-managing-compute["annuler la gestion du cluster"] à partir de l'instance sur laquelle elle est gérée avant de la gérer sur une autre instance. Une fois le cluster supprimé de la gestion, vérifiez que le cluster n'est pas géré en exécutant la commande suivante :
+Si vous souhaitez gérer un cluster sur une autre instance d'Astra Control Center, vous devez d'abord link:../use/unmanage.html#unmanage-a-cluster["annuler la gestion du cluster"] depuis l'instance sur laquelle il est géré avant de le gérer sur une autre instance. Après avoir retiré le cluster de la gestion, vérifiez qu'il n'est plus géré en exécutant cette commande :
 
 [listing]
 ----
@@ -61,6 +62,7 @@ Il ne doit y avoir aucun pod en cours d'exécution dans cet espace de nom, sinon
 
 
 
+[[astra-control-center-cannot-manage-two-identically-named-clusters]]
 == Astra Control Center ne peut pas gérer deux clusters nommés de manière identique
 
 Si vous tentez d'ajouter un cluster portant le même nom qu'un cluster existant, l'opération échoue. Ce problème se produit le plus souvent dans un environnement Kubernetes standard si vous n'avez pas modifié le nom de cluster par défaut dans les fichiers de configuration Kubernetes.
@@ -97,18 +99,21 @@ current-context: kubernetes-admin@kubernetes
 
 
 
+[[a-user-with-namespace-rbac-constraints-can-add-and-unmanage-a-cluster]]
 == Un utilisateur doté de contraintes RBAC d'espace de noms peut ajouter et annuler la gestion d'un cluster
 
 Un utilisateur doté de contraintes RBAC d'espace de noms ne doit pas être autorisé à ajouter ou annuler la gestion des clusters. En raison d'une limitation actuelle, Astra n'empêche pas ces utilisateurs de dégérer les clusters.
 
 
 
+[[a-member-with-namespace-constraints-cannot-access-the-cloned-or-restored-apps-until-admin-adds-the-namespace-to-the-constraint]]
 == Un membre avec des contraintes d'espace de noms ne peut pas accéder aux applications clonées ou restaurées tant que admin n'ajoute pas l'espace de noms à la contrainte
 
 Toutes `member` Les utilisateurs ayant des contraintes RBAC en fonction du nom/ID de l'espace de noms peuvent cloner ou restaurer une application vers un nouvel espace de noms sur le même cluster ou vers tout autre cluster du compte de leur entreprise. Cependant, le même utilisateur ne peut pas accéder à l'application clonée ou restaurée dans le nouvel espace de noms. Après la création d'un clone ou d'une opération de restauration, l'administrateur/propriétaire du compte peut modifier le `member` contraintes de compte d'utilisateur et de rôle de mise à jour pour l'utilisateur affecté pour accorder l'accès au nouvel espace de noms.
 
 
 
+[[restrictive-role-constraints-can-be-ignored-for-resources-on-non-connector-clusters]]
 == Les contraintes de rôle restrictives peuvent être ignorées pour les ressources sur les clusters sans connecteur
 
 * *Si les ressources auxquelles vous accédez appartiennent à des clusters qui ont installé le dernier connecteur Astra* : lorsqu'un utilisateur reçoit plusieurs rôles via l'appartenance à un groupe LDAP, les contraintes des rôles sont combinées. Par exemple, si un utilisateur doté d'un rôle de visualiseur local joint trois groupes liés au rôle membre, l'utilisateur dispose désormais d'un accès de rôle de visualiseur aux ressources d'origine ainsi que d'un accès de rôle membre aux ressources acquises via l'appartenance à un groupe.
@@ -117,24 +122,28 @@ Toutes `member` Les utilisateurs ayant des contraintes RBAC en fonction du nom/I
 
 
 
+[[multiple-applications-in-a-single-namespace-cannot-be-restored-collectively-to-a-different-namespace]]
 == De même, vous ne pouvez pas restaurer collectivement plusieurs applications dans un autre espace de noms
 
 Si vous gérez plusieurs applications dans un seul espace de noms (en créant plusieurs définitions d'applications dans Astra Control), vous ne pouvez pas restaurer toutes les applications dans un espace de noms différent. Chaque application doit être restaurée dans son propre espace de noms distinct.
 
 
 
+[[astra-control-does-not-support-apps-that-use-multiple-storage-classes-per-namespace]]
 == ASTRA Control ne prend pas en charge les applications qui utilisent plusieurs classes de stockage par espace de noms
 
 ASTRA Control prend en charge les applications qui utilisent une seule classe de stockage par espace de nom. Lorsque vous ajoutez une application à un espace de noms, assurez-vous que cette application possède la même classe de stockage que les autres applications de l'espace de noms.
 
 
 
+[[astra-control-does-not-automatically-assign-default-buckets-for-cloud-instances]]
 == Astra Control n'attribue pas automatiquement de compartiments par défaut pour les instances de cloud
 
 Astra Control n'attribue pas automatiquement de compartiment par défaut à une instance de cloud. Vous devez définir manuellement un compartiment par défaut pour une instance de cloud. Si un compartiment par défaut n'est pas défini, vous ne pourrez pas effectuer les opérations de clonage d'applications entre les deux clusters.
 
 
 
+[[clones-of-apps-installed-using-pass-by-reference-operators-can-fail]]
 == Les clones des applications installées à l'aide d'opérateurs pass-by-Reference peuvent échouer
 
 Astra Control prend en charge les applications installées avec des opérateurs à espace de noms. Ces opérateurs sont généralement conçus avec une architecture « pass-by-value » plutôt qu'une architecture « pass-by-Reference ». Voici quelques applications opérateur qui suivent ces modèles :
@@ -155,24 +164,28 @@ NOTE: Lors des opérations de clonage, les applications nécessitant une ressour
 
 
 
+[[in-place-restore-operations-of-apps-that-use-a-certificate-manager-are-not-supported]]
 == Les opérations de restauration sur place des applications qui utilisent un gestionnaire de certificats ne sont pas prises en charge
 
 Cette version d'Astra Control Center ne prend pas en charge la restauration sur place des applications avec des gestionnaires de certificats. Les opérations de restauration vers un espace de noms et des clones différents sont prises en charge.
 
 
 
+[[olm-enabled-and-cluster-scoped-operator-deployed-apps-not-supported]]
 == Applications activées par OLM et déployées par l'opérateur à étendue de cluster non prises en charge
 
 Astra Control Center ne prend pas en charge les activités de gestion d'applications avec des opérateurs à périmètre de cluster.
 
 
 
+[[apps-deployed-with-helm-2-are-not-supported]]
 == Les applications déployées avec Helm 2 ne sont pas prises en charge
 
 Si vous utilisez Helm pour déployer des applications, Astra Control Center requiert Helm version 3. La gestion et le clonage des applications déployées avec Helm 3 (ou mises à niveau de Helm 2 à Helm 3) sont entièrement pris en charge. Pour plus d'informations, reportez-vous à la section link:../get-started/requirements.html["Exigences du centre de contrôle Astra"].
 
 
 
+[[snapshots-might-fail-for-kubernetes-1-25-or-later-clusters-with-certain-snapshot-controller-versions]]
 == Les snapshots peuvent échouer pour les clusters Kubernetes 1.25 ou versions ultérieures disposant de certaines versions de contrôleur Snapshot
 
 Les snapshots pour les clusters Kubernetes exécutant la version 1.25 ou ultérieure peuvent échouer si la version v1beta1 des API du contrôleur de snapshot est installée sur le cluster.
@@ -188,18 +201,21 @@ Pour contourner ce problème, procédez comme suit lorsque vous mettez à niveau
 
 
 
+[[backups-and-snapshots-might-not-be-retained-during-removal-of-an-astra-control-center-instance]]
 == Il est possible que les sauvegardes et les snapshots ne soient pas conservés lors du retrait d'une instance Astra Control Center
 
 Si vous disposez d'une licence d'évaluation, veillez à stocker votre identifiant de compte afin d'éviter toute perte de données en cas d'échec du Centre de contrôle Astra si vous n'envoyez pas d'ASUP.
 
 
 
+[[in-place-restore-operations-to-ontap-nas-economy-storage-classes-fail]]
 == Les opérations de restauration sur place pour les classes de stockage ontap-nas échouent
 
 Si vous effectuez une restauration sur place d'une application (restaurez-la dans son espace de noms d'origine) et que la classe de stockage de l'application utilise le `ontap-nas-economy` pilote, l'opération de restauration peut échouer si le répertoire de snapshot n'est pas masqué. Avant de remettre le produit en place, suivez les instructions de la section link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["Sauvegardez et restaurez les opérations ontap-nas"] pour masquer le répertoire d'instantanés.
 
 
 
+[[ldap-user-and-group-limitations]]
 == Limitations de l'utilisateur et du groupe LDAP
 
 Astra Control Center prend en charge jusqu'à 5,000 groupes distants et 10,000 utilisateurs distants.
@@ -208,36 +224,42 @@ ASTRA Control ne prend pas en charge une entité LDAP (utilisateur ou groupe) qu
 
 
 
+[[s3-buckets-in-astra-control-center-do-not-report-available-capacity]]
 == Les compartiments S3 du centre de contrôle Astra n'indiquent pas la capacité disponible
 
 Avant de sauvegarder ou de cloner des applications gérées par Astra Control Center, vérifiez les informations de compartiment dans le système de gestion ONTAP ou StorageGRID.
 
 
 
+[[astra-control-center-does-not-validate-the-details-you-enter-for-your-proxy-server]]
 == Astra Control Center ne valide pas les détails que vous entrez pour votre serveur proxy
 
-Assurez-vous que vous link:../use/monitor-protect.html#add-a-proxy-server["entrez les valeurs correctes"] lors de l'établissement d'une connexion.
+Assurez-vous de link:../use/monitor-protect.html#add-a-proxy-server-for-connections-to-the-netapp-support-site["entrez les valeurs correctes"] le faire lors de l’établissement d’une connexion.
 
 
 
+[[existing-connections-to-a-postgres-pod-causes-failures]]
 == Les connexions existantes à un pod Postgres provoquent des défaillances
 
 Lorsque vous exécutez des opérations sur les modules Postgres, vous ne devez pas vous connecter directement dans le pod pour utiliser la commande psql. Astra Control nécessite un accès psql pour geler et dégeler les bases de données. S'il existe une connexion existante, le snapshot, la sauvegarde ou le clone échoueront.
 
 
 
+[[the-activity-page-displays-up-to-100000-events]]
 == La page activité affiche jusqu'à 100000 événements
 
 La page activité Astra Control peut afficher jusqu'à 100,000 événements. Pour afficher tous les événements consignés, récupérez-les à l'aide du https://docs.netapp.com/us-en/astra-automation/index.html["API de contrôle Astra"^].
 
 
 
+[[snapmirror-does-not-support-applications-using-nvme-over-tcp-for-storage-backends]]
 == SnapMirror ne prend pas en charge les applications utilisant NVMe over TCP pour les systèmes back-end de stockage
 
 ASTRA Control Center ne prend pas en charge la réplication NetApp SnapMirror pour les systèmes back-end de stockage utilisant le protocole NVMe over TCP.
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * link:../release-notes/known-issues.html["Problèmes connus"]

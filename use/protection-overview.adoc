@@ -18,12 +18,14 @@ En outre, vous pouvez répliquer des applications sur un cluster distant en pré
 
 
 
+[[app-protection-workflow]]
 == Workflow de protection des applications
 
 Vous pouvez utiliser l'exemple de flux de travail suivant pour commencer à protéger vos applications.
 
 
 
+[[imagehttpsraw-githubusercontent-comnetappdocscommonmainmedianumber-1-pngone-protect-all-apps]]
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Protégez toutes vos applications
 
 [role="quick-margin-para"]
@@ -31,6 +33,7 @@ Pour être sûr que vos applications sont immédiatement protégées, link:prote
 
 
 
+[[imagehttpsraw-githubusercontent-comnetappdocscommonmainmedianumber-2-pngtwo-configure-a-protection-policy-for-each-app]]
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurez une stratégie de protection pour chaque application
 
 [role="quick-margin-para"]
@@ -38,6 +41,7 @@ Pour automatiser les sauvegardes et snapshots futurs, link:protect-apps.html#con
 
 
 
+[[imagehttpsraw-githubusercontent-comnetappdocscommonmainmedianumber-3-pngthree-adjust-the-protection-policies]]
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Ajuster les règles de protection
 
 [role="quick-margin-para"]
@@ -45,6 +49,7 @@ Pour automatiser les sauvegardes et snapshots futurs, link:protect-apps.html#con
 
 
 
+[[imagehttpsraw-githubusercontent-comnetappdocscommonmainmedianumber-4-pngfour-replicate-apps-to-a-remote-cluster]]
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Répliquer les applications sur un cluster distant
 
 [role="quick-margin-para"]
@@ -52,6 +57,7 @@ link:replicate_snapmirror.html["Réplication d'applications"] Sur un cluster dis
 
 
 
+[[imagehttpsraw-githubusercontent-comnetappdocscommonmainmedianumber-5-pngfive-in-case-of-a-disaster-restore-your-apps-with-the-latest-backup-or-replication-to-remote-system]]
 === image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"] En cas d'incident, restaurez vos applications avec la dernière sauvegarde ou réplication sur un système distant
 
 [role="quick-margin-para"]

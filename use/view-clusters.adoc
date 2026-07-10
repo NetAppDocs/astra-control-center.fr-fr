@@ -16,6 +16,7 @@ Une fois que vous avez ajouté des clusters à gérer par Astra Control Center, 
 
 
 
+[[view-cluster-health-and-details]]
 == Afficher les détails et l'état de santé des clusters
 
 Vous pouvez afficher des informations détaillées sur le cluster, telles que son emplacement, les nœuds de travail, les volumes persistants et les classes de stockage.
@@ -41,6 +42,7 @@ NOTE: Vous pouvez également afficher les informations du groupe d'instruments �
 
 
 
+[[change-the-default-storage-class]]
 == Modifiez la classe de stockage par défaut
 
 Vous pouvez modifier la classe de stockage par défaut d'un cluster. Lorsque Astra Control gère un cluster, il conserve le suivi de la classe de stockage par défaut du cluster.

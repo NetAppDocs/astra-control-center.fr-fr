@@ -16,6 +16,7 @@ Nous sommes heureux d'annoncer la dernière version d'Astra Control Center.
 
 
 
+[[15-march-2024-24-02-0]]
 == 15 mars 2024 (24.02.0)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -44,6 +45,7 @@ Après avoir installé le link:../get-started/install-astra-connector.html["Conn
 
 
 
+[[7-november-2023-23-10-0]]
 == 7 novembre 2023 (23.10.0)
 
 [[nas-eco-backup-restore]]
@@ -82,6 +84,7 @@ ASTRA Control peut désormais gérer des applications sauvegardées par des volu
 
 
 
+[[31-july-2023-23-07-0]]
 == 31 juillet 2023 (23.07.0)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -100,6 +103,7 @@ ASTRA Control peut désormais gérer des applications sauvegardées par des volu
 
 
 
+[[18-may-2023-23-04-2]]
 == 18 mai 2023 (23.04.2)
 
 Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https://newreleases.io/project/github/kubernetes-csi/external-snapshotter/release/v6.1.0["Plug-in externe Kubernetes CSI v6.1.0"^] et corrige les problèmes suivants :
@@ -110,6 +114,7 @@ Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https
 
 
 
+[[25-april-2023-23-04-0]]
 == 25 avril 2023 (23.04.0)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -128,6 +133,7 @@ Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https
 
 
 
+[[22-november-2022-22-11-0]]
 == 22 novembre 2022 (22.11.0)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -145,12 +151,14 @@ Ce correctif (23.04.2) pour Astra Control Center (23.04.0) prend en charge https
 
 
 
+[[8-september-2022-22-08-1]]
 == 8 septembre 2022 (22.08.1)
 
 Cette version (22.08.1) pour Astra Control Center (22.08.0) corrige les bugs mineurs dans la réplication d'applications à l'aide de NetApp SnapMirror.
 
 
 
+[[10-august-2022-22-08-0]]
 == 10 août 2022 (22.08.0)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -173,6 +181,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 
 
+[[26-april-2022-22-04-0]]
 == 26 avril 2022 (22.04.0)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -190,6 +199,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 
 
+[[14-december-2021-21-12]]
 == 14 décembre 2021 (21.12)
 
 .Nouvelles fonctionnalités et prises en charge
@@ -212,6 +222,7 @@ NOTE: Les crochets d'exécution par défaut avant ou après snapshot de NetApp o
 
 
 
+[[5-august-2021-21-08]]
 == 5 août 2021 (21.08)
 
 Lancement initial du centre de contrôle Astra.
@@ -228,6 +239,7 @@ Lancement initial du centre de contrôle Astra.
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * link:../release-notes/known-issues.html["Problèmes connus pour cette version"]

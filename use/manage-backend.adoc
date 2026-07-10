@@ -28,12 +28,14 @@ Vous pouvez effectuer les tâches suivantes liées à la gestion d'un système b
 
 
 
+[[view-storage-backend-details]]
 == Afficher les détails du système back-end
 
 Vous pouvez afficher les informations de stockage back-end à partir du tableau de bord ou de l'option Backends.
 
 
 
+[[view-storage-backend-details-from-the-dashboard]]
 === Affichez les détails du système de stockage back-end à partir du tableau de bord
 
 .Étapes
@@ -49,6 +51,7 @@ Vous pouvez afficher les informations de stockage back-end à partir du tableau 
 
 
 
+[[view-storage-backend-details-from-the-backends-option]]
 === Afficher les détails du système de stockage back-end à partir de l'option Backends
 
 Affichez des informations sur l'état du système back-end, la capacité et les performances (débit et/ou latence des IOPS).
@@ -62,6 +65,7 @@ Vous pouvez voir les volumes utilisés par les applications Kubernetes, qui sont
 
 
 
+[[edit-storage-backend-authentication-details]]
 == Modifier les détails de l'authentification du système back-end du stockage
 
 ASTRA Control Center offre deux modes d'authentification d'un backend ONTAP.
@@ -93,6 +97,7 @@ NOTE: L'utilisateur dont vous saisissez ici les informations d'identification do
 
 
 
+[[manage-a-discovered-storage-backend]]
 == Gérez un système back-end de stockage découvert
 
 Vous pouvez choisir de gérer un système back-end de stockage non géré, mais découvert. Lorsque vous gérez un système back-end de stockage, Astra Control indique si un certificat pour l'authentification a expiré.
@@ -108,6 +113,7 @@ Vous pouvez choisir de gérer un système back-end de stockage non géré, mais 
 
 
 
+[[unmanage-a-storage-backend]]
 == Annuler la gestion d'un système back-end
 
 Vous pouvez annuler la gestion du système back-end.
@@ -122,6 +128,7 @@ Vous pouvez annuler la gestion du système back-end.
 
 
 
+[[remove-a-storage-backend]]
 == Retirer un système back-end
 
 Vous pouvez supprimer un système back-end de stockage qui n'est plus utilisé. Pour que votre configuration reste simple et à jour, nous vous le souhaitons.
@@ -154,6 +161,7 @@ Vous pouvez supprimer un système back-end de stockage qui n'est plus utilisé. 
 
 
 
+[[find-more-information]]
 == Trouvez plus d'informations
 
 * https://docs.netapp.com/us-en/astra-automation["Utilisez l'API de contrôle Astra"^]

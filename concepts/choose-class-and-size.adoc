@@ -16,6 +16,7 @@ ASTRA Control Center prend en charge NetApp ONTAP et Longhorn en tant que systè
 
 
 
+[[overview]]
 == Présentation
 
 Le centre de contrôle Astra est compatible avec les éléments suivants :
@@ -29,6 +30,7 @@ NOTE: Les classes de stockage doivent être https://docs.netapp.com/us-en/triden
 
 
 
+[[storage-classes]]
 == Classes de stockage
 
 Lorsque vous ajoutez un cluster à Astra Control Center, vous êtes invité à sélectionner une classe de stockage précédemment configurée sur ce cluster comme classe de stockage par défaut. Cette classe de stockage sera utilisée lorsqu'aucune classe de stockage n'est spécifiée dans une demande de volume persistant. La classe de stockage par défaut peut être modifiée à tout moment dans Astra Control Center et toute classe de stockage peut être utilisée à tout moment en spécifiant le nom de la classe de stockage dans le graphique ESV ou Helm. Assurez-vous de n'avoir qu'une seule classe de stockage par défaut définie pour votre cluster Kubernetes.
